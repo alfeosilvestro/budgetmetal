@@ -1,0 +1,74 @@
+version: '3'
+
+services:
+
+  ####### Development and Test Environment #######
+
+  metalpolis-db:
+    build: 
+      context: ./mysql
+    environment:
+      DB_USER: metal_dbuser
+      DB_PASS: vackertech2018
+      DB_NAME: metalpolis_database
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
+      DB_IMPORT_FILE: /home/dbsetup.sql
+    hostname: metalpolis-db
+    ports:
+      - 3306:3306
+    # volumes:
+    #   - "./mysql/data:/var/lib/mysql:rw"
+  
+  metalpolis-web:
+    build: 
+      context: .
+    volumes:
+      - "./www:/var/www/site:rw"
+      - "./php.ini:/etc/php/7.0/cli/php.ini"
+    hostname: metalpolis-web
+    ports:
+      - 8080:80
+      # - 25:25
+    links:
+      - metalpolis-db
+    depends_on:
+      - metalpolis-db
+
+#   metalpolis-mail:
+#     image: tvial/docker-mailserver:latest
+#     hostname: dockermail
+#     domainname: domain.com
+#     container_name: metalpolis-mail
+#     ports:
+#     - "25:25"
+#     - "143:143"
+#     - "587:587"
+#     - "993:993"
+#     volumes:
+#     - maildata:/var/mail
+#     - mailstate:/var/mail-state
+#     - ./config/:/tmp/docker-mailserver/
+#     environment:
+#     - ENABLE_SPAMASSASSIN=1
+#     - ENABLE_CLAMAV=1
+#     - ENABLE_FAIL2BAN=1
+#     - ENABLE_POSTGREY=1
+#     - ONE_DIR=1
+#     - DMS_DEBUG=0
+#     cap_add:
+#     - NET_ADMIN
+#     - SYS_PTRACE
+
+# volumes:
+#   maildata:
+#     driver: local
+#   mailstate:
+#     driver: local
+
+
+  
+    
+  
+  
+  

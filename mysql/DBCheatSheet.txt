@@ -1,0 +1,14 @@
+### Docker Build
+docker build -t metalpolis_mysql .
+
+### Docker Run
+docker run --name metalpolis_db --net=host -p 3306:3306 -d \
+  -e 'DB_USER=metal_dbuser' -e 'DB_PASS=vackertech2018' -e 'DB_NAME=metalpolis_database' \
+  -e 'MYSQL_CHARSET=utf8mb4' -e 'MYSQL_COLLATION=utf8mb4_unicode_ci' \
+  -e 'DB_IMPORT_FILE=/home/dbsetup.sql' \
+  metalpolis_mysql:latest
+
+### Access DB
+docker exec -it metalpolis_db bash
+
+docker-enter mysql

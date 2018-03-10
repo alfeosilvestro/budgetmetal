@@ -1,0 +1,28 @@
+INSERT INTO mysql.user (User,Host,Password) VALUES(�metal_dbuser�,�localhost�,�vackertech2018�);
+
+database: metalpolis_database
+user : metal_dbuser
+password : vackertech2018
+
+> docker build -t metalpolis .
+> docker rm <container-id>
+> docker ps -a
+> docker stop <container-id>
+> docker run -p 80:80 -d metalpolis
+> docker run --name metalpolis_web --net=host -p 80:80 -d metalpolis
+
+## enter following command to pull latest source code from git 
+> git pull https://github.com/alfeosilvestro/metalpolis-php.git
+
+## enter following command to run web container
+> docker-compose -f prod-docker.yml up -d
+
+## enter following command to enter docker container
+> docker exec -it metalpolisphp_metalpolis-web_1 bash
+
+http://35.198.239.233
+
+
+In order to copy a file from a container to the host, you can use the command
+
+docker cp <containerId>:/file/path/within/container /host/path/target

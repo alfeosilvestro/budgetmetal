@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+
+  ####### Production Environment #######
+    metalpolis-prod-web:
+      build: 
+        context: .
+      volumes:
+        - "./www:/var/www/site:rw"
+        - "/home/metalpolis/metal/www/market/attachment:/var/www/site/market/attachment:rw"
+        - "./php.ini:/etc/php/7.0/cli/php.ini"
+      hostname: "metalpolis-prod-web"
+      # ports:
+      #   - 80:80
+      #   - 25:25
+      # /home/metalpolis/metal/www/market/attachment
+      # /var/www/site/market/attachment/
+      network_mode: "host"
+
+    
+  
+  
+  
