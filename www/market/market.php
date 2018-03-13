@@ -244,7 +244,8 @@
 		} else{
 			$C_RfqStatus = "10";
 		}
-		$CreatedDate = date('Y-m-d H:i:s');
+		//$CreatedDate = date('Y-m-d H:i:s');
+		$CreatedDate = date('Y-m-d', strtotime( $_GET['rfq_date']));
 		$CreatedBy = $_GET['user_id'];
 		$Status = "1";
 		$M_User_Id = $_GET['user_id'];

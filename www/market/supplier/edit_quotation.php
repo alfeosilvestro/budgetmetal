@@ -109,7 +109,7 @@
                         <input name="first_name" type="text" class="form-control" value="<?php echo $FName; ?>" placeholder="First Name">
                     </div>
                     <div class="form-group">
-                        <label>Valid Date</label>
+                        <label>Valid Until</label>
 
 						<div class="input-group date col-sm-5">
 						  <div class="input-group-addon">
@@ -281,14 +281,9 @@
 	   format: "dd-mm-yyyy",
 	   autoclose: true,
     todayHighlight: true,
-	todayBtn: "linked",
+	startDate : "today",
     })
-	$('#due_datepicker').datepicker({
 
-	   format: "dd-mm-yyyy",
-	   autoclose: true,
-    todayHighlight: true
-    });
 	});
 
 

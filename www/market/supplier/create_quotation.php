@@ -66,7 +66,7 @@
 				$db->insert('t_document', $dataArray);
 
 				//t_supplierquotation
-				$dataArray = array('Document_Id' => $Id, 'T_Rfq_Id' => $T_Rfq_Id, 'QuotedFigure' => "0.00", 'ValidToDate' => date('Y-m-d'), 'RevisionNo' => '1', 'Comments' => '');
+				$dataArray = array('Document_Id' => $Id, 'T_Rfq_Id' => $T_Rfq_Id, 'QuotedFigure' => "0.00", 'ValidToDate' => date('Y-m-d', strtotime("+30 days")), 'RevisionNo' => '1', 'Comments' => '');
 
 				$db->insert('t_supplierquotation', $dataArray);
 
@@ -146,7 +146,7 @@
                         <input name="first_name" type="text" class="form-control" value="" placeholder="First Name">
                     </div>
                     <div class="form-group">
-                        <label>Valid Date</label>
+                        <label>Valid Until</label>
 
 						<div class="input-group date col-sm-5">
 						  <div class="input-group-addon">
@@ -276,14 +276,9 @@
 	   format: "dd-mm-yyyy",
 	   autoclose: true,
     todayHighlight: true,
-	todayBtn: "linked",
+    startDate : "today",
     })
-	$('#due_datepicker').datepicker({
 
-	   format: "dd-mm-yyyy",
-	   autoclose: true,
-    todayHighlight: true
-    });
 	});
 
 

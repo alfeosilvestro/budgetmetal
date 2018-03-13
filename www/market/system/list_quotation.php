@@ -41,8 +41,8 @@
 					<thead>
                         <tr>
                             <th>No.</th>
-                            <th>RFQ Ref No.</th>
                             <th>Company</th>
+                            <th>RFQ Ref No.</th>
                             <th>Bid Price</th>
                             <th>Created Date</th>
                             <th>Status</th>
@@ -65,8 +65,8 @@
 								?>
 								<tr>
 									<td><?php echo $count; ?></td>
-									<td><?php echo $row["DocumentNo"];?></td>
                   <td><?php echo $row["CompanyName"];?></td>
+									<td><?php echo $row["DocumentNo"];?></td>
                   <td>$<?php echo $row["QuotedFigure"];?></td>
 									<td><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
 									<td><?php echo $row["Status"];?></td>

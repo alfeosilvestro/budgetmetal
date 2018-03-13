@@ -170,6 +170,7 @@ $FinalClosingDate = "";
                         <label>RFQ Date: </label>
 						  </div>
 						 <div class="col-sm-6">
+               <input type="hidden" name="rfq_createddate" id="rfq_datepicker" value="<?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>">
                         <?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>
 						 </div>
 					</div>
@@ -693,20 +694,7 @@ $FinalClosingDate = "";
         <div class="box-body">
 	<div >
   <div class="post-comments">
-<?php
-if(($rfq_statusid == '10')){?>
-    <form  id="frm_comment">
-      <div class="form-group">
-        <label for="comment">Clarification</label><br>
-		<input type="hidden" name="document_id" value="<?php echo $rfq_id;?>">
-		<input type="hidden" name="askinguser_id" value="<?php echo $userid;?>">
-    <input type="hidden" id="txt_ownerrfq"  name="ownerrfq" value="<?php echo $ownerrfq;?>">
-        <textarea id="txt_comment" name="comment"  rows="3" cols="50"></textarea>
-      </div>
-	  <button type="button" id="btn_Send" class="btn btn-warning">Send</button>
 
-    </form >
-<?php }?>
 
 
 
@@ -875,7 +863,30 @@ if(($rfq_statusid == '10')){?>
 
       <!-- first comment -->
     </div>
+    <?php
+    if(($rfq_statusid == '10')){?>
+        <form  id="frm_comment">
+          <div class="form-group">
+            <label for="comment">
+              <?php
+            	 if(($_SESSION['usertype'] == 'Supplier') ){
+            		 echo "Clarifications";
+            	 }elseif(($_SESSION['usertype'] == 'Buyer') ){
+            		 echo "Announcement";
+            	 }
+               ?>
 
+
+            </label><br>
+    		<input type="hidden" name="document_id" value="<?php echo $rfq_id;?>">
+    		<input type="hidden" name="askinguser_id" value="<?php echo $userid;?>">
+        <input type="hidden" id="txt_ownerrfq"  name="ownerrfq" value="<?php echo $ownerrfq;?>">
+            <textarea id="txt_comment" name="comment"  rows="3" cols="50"></textarea>
+          </div>
+    	  <button type="button" id="btn_Send" class="btn btn-warning">Send</button>
+
+        </form >
+    <?php }?>
   </div>
   <!-- post-comments -->
 </div>
@@ -934,9 +945,11 @@ if(($rfq_statusid == '10')){?>
 
 
   $(function () {
-
+    var rfq_date = $("#rfq_datepicker").val();
+    var res = rfq_date.split("-");
+    var tmp = res[1] + "-" + res[0] + "-" + res[2];
     $('#due_datepicker').datepicker({
-
+      startDate : new Date(tmp),
        format: "dd-mm-yyyy",
        autoclose: true,
       todayHighlight: true

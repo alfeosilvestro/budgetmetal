@@ -418,18 +418,27 @@
 	$(function () {
 		//Date picker
     $('#rfq_datepicker').datepicker({
-
 	   format: "dd-mm-yyyy",
 	   autoclose: true,
     todayHighlight: true,
-	todayBtn: "linked",
-    })
-	$('#due_datepicker').datepicker({
-
-	   format: "dd-mm-yyyy",
-	   autoclose: true,
-    todayHighlight: true
+	   startDate: "today",
+   }).on('changeDate', function(selected) {
+     var minDate = new Date(selected.date.valueOf());
+        $('#due_datepicker').datepicker('setStartDate', minDate);
     });
+
+    var rfq_date = $("#rfq_datepicker").val();
+    var res = rfq_date.split("-");
+    var tmp = res[1] + "-" + res[0] + "-" + res[2];
+
+    $('#due_datepicker').datepicker({
+      startDate : new Date(tmp),
+      format: "dd-mm-yyyy",
+     autoclose: true,
+     todayHighlight: true,
+    });
+
+
 	});
 
 
