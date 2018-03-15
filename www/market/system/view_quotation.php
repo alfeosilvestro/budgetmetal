@@ -595,19 +595,7 @@
                                     <div class="media-body">
                                       <p><?php echo $row["ClarificationAnswer"];?></p>
                                       <div class="comment-meta">
-                                        <?php
-                                        if(($_SESSION['usertype'] == 'Supplier') ){ }elseif(($_SESSION['usertype'] == 'Buyer') ){
-                                          if($row["make_public"] != "1"){
-                                            ?>
-                                            <span><a href="#" class="public_comment" onclick="make_public_comment(<?php echo $row["Id"];?>)" value="<?php echo $row["Id"];?>">Mark as public</a></span>
-                                            <?php
-                                          }else{
-                                            ?>
-                                            <span>This comment has been published to other.</span>
-                                            <?php
-                                          }
-                                        }
-                                        ?>
+                                        
                                       </div>
                                     </div>
                                   </div>
