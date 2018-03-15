@@ -456,211 +456,149 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <div >
-            <div class="post-comments">
+		<div class="container">
+  <div class="post-comments">
 
-              <div class="row">
-                <?php
-                if(($_SESSION['usertype'] == 'Supplier') ){
-                  $sql = "SELECT * FROM `t_clarifications` t1 where Status = 1 and  t1.T_Document_Id = ".$rfq_id ." AND (t1.M_Asking_Person_Id = " . $userid." OR t1.make_public = 1)";
+	<div class="row">
+	<?php
+	 if(($_SESSION['usertype'] == 'Buyer') ){
+		 $sql = "SELECT * FROM `t_clarifications` t1 where Status = 1 and  t1.T_Document_Id = ".$q_id ." AND t1.M_Asking_Person_Id = " . $userid;
 
-                }elseif(($_SESSION['usertype'] == 'Buyer') ){
-                  $sql = "SELECT * FROM `t_clarifications` t1 where Status = 1 and  t1.T_Document_Id = ".$rfq_id;
-                }
-                $result = $conn->query($sql);
-                if (isset($result)){
-                  if ($result->num_rows > 0) {
-                    ?>
-                    <div class="comments-nav">
-                      <ul class="nav nav-pills">
-                        <li role="presentation" class="dropdown">
-                          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            there are <?php echo $result->num_rows; ?> comments <span class="caret"></span>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <?php
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-                      //$FinalClosingDate = $row["FinalClosingDate"];
-                      ?>
-                      <div class="media">
-                        <!-- first comment -->
+	 }elseif(($_SESSION['usertype'] == 'Supplier') ){
+		 $sql = "SELECT * FROM `t_clarifications` t1 where Status = 1 and  t1.T_Document_Id = ".$q_id;
+	 }
+    $result = $conn->query($sql);
+	if (isset($result)){
+		if ($result->num_rows > 0) {
+			?>
+			 <div class="comments-nav">
+				  <ul class="nav nav-pills">
+					<li role="presentation" class="dropdown">
+					  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							  there are <?php echo $result->num_rows; ?> comments <span class="caret"></span>
+							</a>
 
-                        <div class="media-heading">
-                          <?php
-                          $asking_person = "";
-                          $sql_user = "SELECT * FROM `m_user` t1 where Status = 1 and  t1.Id = ".$row["M_Asking_Person_Id"];
-                          $result_user = $conn->query($sql_user);
-                          if (isset($result_user)){
-                            if ($result_user->num_rows > 0) {
-                              while($row_user = $result_user->fetch_assoc()) {
-                                $asking_person = "";
-                                if($row["make_public"] != "1"){
-                                  $asking_person = $row_user["UserName"];
-                                }
-                                if($row_user["C_UserType"] == 2 ){
-                                  $asking_type = "Supplier";
-                                }elseif($row_user["C_UserType"] == 3 ){
-                                  $asking_type = "Buyer";
-                                }
-                              }
-                            }
-                          }
-                          ?>
-                          <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button> <span class="label label-info"><?php echo $asking_type;?></span>
-                          <?php if($row["make_public"] != "1"){echo $asking_person;} ?> asked:
-                          </div>
+					</li>
+				  </ul>
+				</div>
+			<?php
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				//$FinalClosingDate = $row["FinalClosingDate"];
+				?>
+	<div class="media">
+        <!-- first comment -->
 
-                          <div class="panel-collapse collapse in" id="collapseThree">
+        <div class="media-heading">
+          <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button> <span class="label label-info">Supplier</span> <?php echo $row["M_Asking_Person_Id"];?> asked:
+        </div>
 
-                            <div class="media-left">
-                              <div class="vote-wrap">
-                                <div class="save-post">
-                                  <a href="#"><span class="glyphicon glyphicon-star" aria-label="Kaydet"></span></a>
-                                </div>
-                                <div class="vote up">
-                                  <i class="glyphicon glyphicon-menu-up"></i>
-                                </div>
-                                <div class="vote inactive">
-                                  <i class="glyphicon glyphicon-menu-down"></i>
-                                </div>
-                              </div>
-                              <!-- vote-wrap -->
-                            </div>
-                            <!-- media-left -->
+        <div class="panel-collapse collapse in" id="collapseThree">
 
-
-                            <div class="media-body">
-                              <p><?php echo $row["ClarificationQuestion"];?></p>
-                              <div class="comment-meta">
-                                <?php
-                                if($row["M_Asking_Person_Id"] == $userid){
-
-
-                                  ?>
-                                  <span><a href="#" class="del_comment" onclick="del_comment(<?php echo $row["Id"];?>)" value="<?php echo $row["Id"];?>">Delete</a></span>
-                                  <?php
-
-                                }
-                                if($row["ClarificationAnswer"] == ""){
-                                  if(($_SESSION['usertype'] == 'Supplier') ){
-                                    if($row["M_Asking_Person_Id"] == $userid){}else{
-                                      ?>
-                                      <span><a class="" role="button" data-toggle="collapse" href="#replyComment<?php echo $row["Id"];?>" aria-expanded="false" aria-controls="collapseExample">Reply</a>      </span>
-                                      <?php
-                                    }
-                                  }
-                                }
-                                ?>
-                                <div class="collapse" id="replyComment<?php echo $row["Id"];?>">
-                                  <form id="RFQReply<?php echo $row["Id"];?>">
-                                    <div class="form-group">
-                                      <label for="comment">Reply</label>
-                                      <input type="hidden" name="comment_id" value="<?php echo $row["Id"];?>">
-                                      <textarea name="replyComment" class="" rows="3" cols="50"></textarea>
-                                    </div>
-                                    <button type="button" id="Send_Reply" class="btn btn-default" onclick="reply_Comment(<?php echo $row["Id"];?>)">Send</button>
-                                  </form>
-                                </div>
-                              </div>
-                              <!-- comment-meta -->
-                              <?php
-                              if($row["ClarificationAnswer"] != ""){
-                                ?>
-                                <div class="media">
-                                  <!-- answer to the first comment -->
-                                  <div class="media-heading">
-                                    <button class="btn btn-default btn-collapse btn-xs" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button> answered:
-                                  </div>
-
-                                  <div class="panel-collapse collapse in" id="collapseTwo">
-
-                                    <div class="media-left">
-                                      <div class="vote-wrap">
-                                        <div class="save-post">
-                                          <a href="#"><span class="glyphicon glyphicon-star" aria-label="Save"></span></a>
-                                        </div>
-                                        <div class="vote up">
-                                          <i class="glyphicon glyphicon-menu-up"></i>
-                                        </div>
-                                        <div class="vote inactive">
-                                          <i class="glyphicon glyphicon-menu-down"></i>
-                                        </div>
-                                      </div>
-                                      <!-- vote-wrap -->
-                                    </div>
-                                    <!-- media-left -->
-                                    <div class="media-body">
-                                      <p><?php echo $row["ClarificationAnswer"];?></p>
-                                      <div class="comment-meta">
-                                        <?php
-                                        if(($_SESSION['usertype'] == 'Supplier') ){ }elseif(($_SESSION['usertype'] == 'Buyer') ){
-                                          if($row["make_public"] != "1"){
-                                            ?>
-                                            <span><a href="#" class="public_comment" onclick="make_public_comment(<?php echo $row["Id"];?>)" value="<?php echo $row["Id"];?>">Mark as public</a></span>
-                                            <?php
-                                          }else{
-                                            ?>
-                                            <span>This comment has been published to other.</span>
-                                            <?php
-                                          }
-                                        }
-                                        ?>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <!-- comments -->
-
-                                </div>
-                                <!-- comments -->
-                                <?php
-                              }
-                              ?>
-
-
-                            </div>
-
-                          </div></div>
-
-                          <?php
-                        }
-                      }
-                    }
-
-                    ?>
-
-                    <!-- first comment -->
-
-                    <!-- first comment -->
-                  </div>
-                  <?php
-                  if(($q_statusid == '16')){
-                    if(($_SESSION['usertype'] == 'Buyer') ){
-                    ?>
-                    <form  id="frm_comment">
-                      <div class="form-group">
-                        <label for="comment">
-
-Clarifications
-
-                        </label><br>
-                        <input type="hidden" name="document_id" value="<?php echo $rfq_id;?>">
-                        <input type="hidden" name="askinguser_id" value="<?php echo $userid;?>">
-                        <input type="hidden" id="txt_ownerrfq"  name="ownerrfq" value="<?php echo $ownerrfq;?>">
-                        <textarea id="txt_comment" name="comment"  rows="3" cols="50"></textarea>
-                      </div>
-                      <button type="button" id="btn_Send" class="btn btn-warning">Send</button>
-
-                    </form >
-                  <?php
-                }
-                }?>
-                </div>
-                <!-- post-comments -->
+          <div class="media-left">
+            <div class="vote-wrap">
+              <div class="save-post">
+                <a href="#"><span class="glyphicon glyphicon-star" aria-label="Kaydet"></span></a>
+              </div>
+              <div class="vote up">
+                <i class="glyphicon glyphicon-menu-up"></i>
+              </div>
+              <div class="vote inactive">
+                <i class="glyphicon glyphicon-menu-down"></i>
               </div>
             </div>
+            <!-- vote-wrap -->
+          </div>
+          <!-- media-left -->
+
+
+          <div class="media-body">
+            <p><?php echo $row["ClarificationQuestion"];?></p>
+            <div class="comment-meta">
+			<span><a href="#" class="del_comment" onclick="del_comment(<?php echo $row["Id"];?>)" value="<?php echo $row["Id"];?>">Delete</a></span>
+				 <?php
+				if($row["ClarificationAnswer"] == ""){
+				?>
+				   <span><a class="" role="button" data-toggle="collapse" href="#replyComment<?php echo $row["Id"];?>" aria-expanded="false" aria-controls="collapseExample">Reply</a>      </span>
+				  <?php
+			 }
+			?>
+              <div class="collapse" id="replyComment<?php echo $row["Id"];?>">
+                <form id="RFQReply<?php echo $row["Id"];?>">
+                  <div class="form-group">
+                    <label for="comment">Reply</label>
+					               <input type="hidden" name="comment_id" value="<?php echo $row["Id"];?>">
+                    <textarea name="replyComment" class="" rows="3"  cols="50"></textarea>
+                  </div>
+                  <button type="button" id="Send_Reply" class="btn btn-default Send_Reply" data-clarificationid="<?php echo $row["Id"];?>">Reply Message</button>
+                </form>
+              </div>
+            </div>
+            <!-- comment-meta -->
+
+			 <?php
+			if($row["ClarificationAnswer"] != ""){
+				?>
+				<div class="media">
+              <!-- answer to the first comment -->
+
+              <div class="media-heading">
+                <button class="btn btn-default btn-collapse btn-xs" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button> <span class="label label-info">Buyer</span> answered:
+              </div>
+
+              <div class="panel-collapse collapse in" id="collapseTwo">
+
+                <div class="media-left">
+                  <div class="vote-wrap">
+                    <div class="save-post">
+                      <a href="#"><span class="glyphicon glyphicon-star" aria-label="Save"></span></a>
+                    </div>
+                    <div class="vote up">
+                      <i class="glyphicon glyphicon-menu-up"></i>
+                    </div>
+                    <div class="vote inactive">
+                      <i class="glyphicon glyphicon-menu-down"></i>
+                    </div>
+                  </div>
+                  <!-- vote-wrap -->
+                </div>
+                <!-- media-left -->
+                <div class="media-body">
+                  <p><?php echo $row["ClarificationAnswer"];?></p>
+
+                </div>
+              </div>
+              <!-- comments -->
+            </div>
+        <!-- comments -->
+				<?php
+			}
+			?>
+      </div>
+		</div>
+	</div>
+				<?php
+			}
+		}
+	}
+	?>
+    </div>
+    <?php if(($q_statusid == '16')){?>
+      <form  id="frm_comment">
+        <div class="form-group">
+          <label for="comment">Clarification</label><br>
+          <input type="hidden" name="document_id" value="<?php echo $q_id;?>">
+          <input type="hidden" name="askinguser_id" value="<?php echo $userid;?>">
+          <textarea id="txt_comment" name="comment"  rows="3" cols="50"></textarea>
+        </div>
+      <button type="button" id="btn_Send" class="btn btn-warning">Send</button>
+
+      </form >
+    <?php }?>
+  </div>
+  <!-- post-comments -->
+</div>
+</div>
 </div>
 
 <div class="modal fade" id="ratebox" role="dialog">
