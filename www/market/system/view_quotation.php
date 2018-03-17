@@ -369,6 +369,17 @@
 
             <div class="btn-group pull-left">
 			<?php if(($_SESSION['usertype'] == 'Supplier') && ($_SESSION['userid'] == $q_userid) && (($q_statusid == 15) || ($q_statusid == 16)) ){
+        $query4 = "SELECT * FROM `t_document` WHERE Status = 1 and C_DocumentType = 6 and `DocumentNo` = '".$rfq_ref."'  Limit 1";
+  
+        $results4 = $db->pdoQuery($query4)->results();
+        if (!empty($results4)){
+
+          foreach ($results4 as $row4) {
+            $rfq_owner = "yes";
+            $rfq_id = $row4["Id"];
+
+          }
+        }
 
 			?>
 				<a href="index.php?rdp=edit_quotation&id=<?php echo $q_id;?>" class="btn btn-warning">
@@ -461,12 +472,8 @@
 
               <div class="row">
                 <?php
-                if(($_SESSION['usertype'] == 'Supplier') ){
-                  $sql = "SELECT * FROM `t_clarifications` t1 where Status = 1 and  t1.T_Document_Id = ".$rfq_id ." AND (t1.M_Asking_Person_Id = " . $userid." OR t1.make_public = 1)";
+                  $sql = "SELECT * FROM `t_clarifications` t1 where Status = 1 and  t1.T_Document_Id = ".$id;
 
-                }elseif(($_SESSION['usertype'] == 'Buyer') ){
-                  $sql = "SELECT * FROM `t_clarifications` t1 where Status = 1 and  t1.T_Document_Id = ".$rfq_id;
-                }
                 $result = $conn->query($sql);
                 if (isset($result)){
                   if ($result->num_rows > 0) {
@@ -559,6 +566,9 @@
                                     <div class="form-group">
                                       <label for="comment">Reply</label>
                                       <input type="hidden" name="comment_id" value="<?php echo $row["Id"];?>">
+                                      <input type="hidden" name="askinguser_id" value="<?php echo $row["M_Asking_Person_Id"];?>">
+                                      <input type="hidden" name="document_id" value="<?php echo $q_id;?>">
+                                      <input type="hidden" name="replyuser_id" value="<?php echo $userid;?>">
                                       <textarea name="replyComment" class="" rows="3" cols="50"></textarea>
                                     </div>
                                     <button type="button" id="Send_Reply" class="btn btn-default" onclick="reply_Comment(<?php echo $row["Id"];?>)">Send</button>
@@ -595,7 +605,7 @@
                                     <div class="media-body">
                                       <p><?php echo $row["ClarificationAnswer"];?></p>
                                       <div class="comment-meta">
-                                        
+
                                       </div>
                                     </div>
                                   </div>
@@ -634,7 +644,7 @@
 Clarifications
 
                         </label><br>
-                        <input type="hidden" name="document_id" value="<?php echo $rfq_id;?>">
+                        <input type="hidden" name="document_id" value="<?php echo $id;?>">
                         <input type="hidden" name="askinguser_id" value="<?php echo $userid;?>">
                         <input type="hidden" id="txt_ownerrfq"  name="ownerrfq" value="<?php echo $ownerrfq;?>">
                         <textarea id="txt_comment" name="comment"  rows="3" cols="50"></textarea>
@@ -1060,14 +1070,14 @@ $(document).ready(function(){
 
 	function withdrawn_quotation(id){
 		$.ajax({
-                url: 'market.php?function=UpdateStatus&type=q&Status=20&ModifiedBy='+<?php echo $userid;?>+'&id='+id,
+                url: 'market.php?function=UpdateStatus&type=q&Status=20&ModifiedBy='+<?php echo $userid;?>+'&rfq_id='+<?php echo $rfq_id;?>+'&id='+id,
                 type: 'GET',
 				dataType: 'json',
                 success: function (data) {
-				  location.reload();
+				  //location.reload();
                 },
                 error: function (data) {
-                    location.reload();
+                  //  location.reload();
                 }
 
             });

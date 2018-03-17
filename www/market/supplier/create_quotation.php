@@ -2,6 +2,7 @@
 	include("dbcon.php");
 	 include_once('lib/pdowrapper/class.pdowrapper.php');
 	 $dbConfig = array("host" => $server, "dbname" => $database, "username" => $db_user, "password" => $db_pass);
+   date_default_timezone_set("Asia/Singapore");
 	// get instance of PDO Wrapper object
 	$db = new PdoWrapper($dbConfig);
     if(isset($_SESSION['userid'])){
@@ -80,8 +81,9 @@
 						}
 					}
 				}
+
 				$Message = "$company_name has interested on your $rfq_ref.";
-				$dataArray = array('Document' => $Id, 'First_Opened_User' => $CreatedBy, 'Receiving_Company' => $buyer_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $CreatedBy,'Status' => "1", 'Type' => 'Create_Quotation	');
+				$dataArray = array('Document' => $Id, 'First_Opened_User' => $CreatedBy, 'Receiving_Company' => $buyer_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $CreatedBy,'Status' => "1", 'Type' => 'Interest_RFQ');
 				$dt = $db->insert('company_notification', $dataArray);
 
         $email = "";
@@ -93,7 +95,7 @@
             while($row = $result->fetch_assoc()) {
               $email = $email .  $row["EmailAddress"].";";
             }
-            sendEmailforNotification($email,$Message, $Message);
+            sendEmailforNotification($email,$Message, $Message,"RFQ",$rfq_ref);
           }
          }
 

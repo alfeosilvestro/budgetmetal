@@ -5,6 +5,7 @@ session_start();
     include("checkusersession.php");
 
     include("header.php");
+		date_default_timezone_set("Asia/Singapore");
 ?>
  <!-- Full Width Column -->
   <div class="content-wrapper" style="min-height: 130px;">

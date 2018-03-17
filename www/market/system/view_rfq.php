@@ -795,6 +795,9 @@ if (isset($result)){
                               <div class="form-group">
                                 <label for="comment">Reply</label>
                                 <input type="hidden" name="comment_id" value="<?php echo $row["Id"];?>">
+                                <input type="hidden" name="askinguser_id" value="<?php echo $row["M_Asking_Person_Id"];?>">
+                                <input type="hidden" name="document_id" value="<?php echo $rfq_id;?>">
+                                <input type="hidden" name="replyuser_id" value="<?php echo $userid;?>">
                                 <textarea name="replyComment" class="" rows="3" cols="50"></textarea>
                               </div>
                               <button type="button" id="Send_Reply" class="btn btn-default" onclick="reply_Comment(<?php echo $row["Id"];?>)">Send</button>
