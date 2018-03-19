@@ -85,8 +85,9 @@
               <div class="row">
 
                   <div class="col-sm-6">
-                    <?php if (!empty($_POST)){ ?>
-                      <?php
+                    <?php
+include("piwik.php");
+                    if (!empty($_POST)){
 
                       $email = htmlspecialchars($_POST["email"]);
                       include("dbcon.php"); //including config.php in our file

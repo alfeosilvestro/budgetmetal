@@ -1,11 +1,11 @@
 <?php
 session_start();
+include("piwik.php");
+include("dbcon.php");
+include("checkusersession.php");
 
-	include("dbcon.php");
-    include("checkusersession.php");
-
-    include("header.php");
-		date_default_timezone_set("Asia/Singapore");
+include("header.php");
+date_default_timezone_set("Asia/Singapore");
 ?>
  <!-- Full Width Column -->
   <div class="content-wrapper" style="min-height: 130px;">

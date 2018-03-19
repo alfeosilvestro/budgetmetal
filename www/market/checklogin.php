@@ -43,7 +43,20 @@
         $_SESSION['start'] = time(); // taking now logged in time
         $_SESSION['expire'] = $_SESSION['start'] + (180 * 60); // ending a session in 30     minutes from the starting time
 		//echo $usertype. $userid;
+    $id = "";
+    if(isset($_POST["id"])){
+      $id = $_POST["id"];
+    }
+    if(isset($_POST["doc_type"])){
+      if($_POST["doc_type"] == "RFQ"){
+        header("location:index.php?rdp=view_rfq&rfq_ref=".$id);
+      }elseif($_POST["doc_type"] == "Quotation"){
+          header("location:index.php?rdp=view_quotation&id=".$id);
+      }else{
         header("location:index.php?rdp=dashboard");
+      }
+    }
+
     }  else { //if ($username != "zms") {
         header("location:../index.php?l=". $username);
     }

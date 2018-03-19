@@ -26,6 +26,9 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <?php
+      include("piwik.php");
+    ?>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
@@ -90,7 +93,20 @@
 
                             ?>"/>
                             <input name="password" placeholder="Password" type="password" />
-
+                            <?php
+                            $doc_type = "";
+                            $id = "";
+                            if(isset($_GET["id"])){
+                             $id = $_GET["id"];
+                             $doc_type = "Quotation";
+                           }
+                           if(isset($_GET["rfq_ref"])){
+                            $id = $_GET["rfq_ref"];
+                            $doc_type = "RFQ";
+                          }
+                            ?>
+                            <input type="hidden" name="doc_type" value="<?php echo $doc_type;?>">
+                            <input type="hidden" name="id" value="<?php echo $id;?>">
 
                             <div class="remember-forgot">
                                 <div class="row">

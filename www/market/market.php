@@ -1299,12 +1299,12 @@ function sendEmailtoverify($email){
 }
 
 
-function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
+function sendEmailforNotification1($email,$subject, $message,$doc_type,$doc_id){
 
 }
 
 
-function sendEmailforNotification1($email,$subject, $message,$doc_type,$doc_id){
+function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 	$mail_to = $email;
 	//error_reporting(E_STRICT);
 	error_reporting(E_ERROR);
@@ -1312,7 +1312,12 @@ function sendEmailforNotification1($email,$subject, $message,$doc_type,$doc_id){
 
 	require_once('../class.phpmailer.php');
 	//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
-	$actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+	$host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+	if($doc_type == "RFQ"){
+		$actual_link = $host .  "/index.php?rfq_ref=". $doc_id;
+	}else{
+		$actual_link = $host .  "/index.php?id=". $doc_id;
+	}
 	$sitelink = "<br><a href='".$actual_link."'>Go to Site</a>";
 	$from_mail = "info@metalpolis.com";
 	$from_name = "BudgetMetal";

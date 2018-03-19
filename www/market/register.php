@@ -174,6 +174,7 @@
 														   class="form-control"
 														   data-bind="value: contact_number, valueUpdate: 'blur'"
 														   placeholder="Enter Contact Number" maxlength="10">
+															 
 												</div>
 
 												<div class="form-group">

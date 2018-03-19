@@ -100,6 +100,7 @@
                   <div class="col-sm-6">
                     <?php
                         session_start();
+                        include("piwik.php");
                         $email_encode = $_GET["a"]; //Storing username in $username variable.
                         $date_encode = $_GET["b"]; //Storing password in $password variable.
 
@@ -151,7 +152,7 @@
           </div>
           <!-- /.box-body -->
       </div>
-        
+
     </div>
 
     <!-- AdminLTE for demo purposes -->
