@@ -394,12 +394,12 @@
 
 
 
-  function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
+  function sendEmailforNotification1($email,$subject, $message,$doc_type,$doc_id){
 
   }
 
 
-  function sendEmailforNotification1($email,$subject, $message,$doc_type,$doc_id){
+  function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
   	$mail_to = $email;
   	//error_reporting(E_STRICT);
   	error_reporting(E_ERROR);
