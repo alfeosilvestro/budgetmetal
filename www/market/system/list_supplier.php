@@ -22,6 +22,61 @@ if(isset($_SESSION['userid'])){
     </div>
   </div>
 </div>
+<div class="box box-info">
+  <div class="box-header with-border">
+    <h3 class="box-title">Supplier List</h3>
+    <div class="box-tools pull-right">
+      <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+      </button>
+    </div>
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body">
+    <div class="form-group">
+
+    </div>
+    <div class="form-group">
+      <table id="supplier_lists" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Company Name</th>
+            <th>Registration No.</th>
+            <th>Address</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          $query = "SELECT * FROM m_company Where Id in (SELECT `M_Company_Id`  FROM `m_user` WHERE `C_UserType` = 2 AND`Status` = 1)";
+          $results = $db->pdoQuery($query)->results();
+          if (!empty($results)){
+            $count = 0;
+            foreach ($results as $row) {
+              $count = $count+1;
+              ?>
+              <tr>
+                <td><?php echo $count; ?></td>
+                <td><?php echo $row["Name"];?></td>
+                <td><?php echo $row["Reg_No"];?></td>
+                <td><?php echo $row["Address"];?></td>
+                <td><?php
+
+                $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a> ';
+                echo $out;
+                ?></td>
+              </tr>
+
+              <?php
+            }
+          }
+          ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 
 <div class="box box-warning">
   <div class="box-header with-border">
@@ -162,7 +217,7 @@ if(isset($_SESSION['userid'])){
 
 <script>
 $(function () {
-
+  $('#supplier_lists').DataTable();
   $("#btnsearch").click(function (e) {
     $('#values').val(
       $('#treeview-checkbox-demo').treeview('selectedValues')

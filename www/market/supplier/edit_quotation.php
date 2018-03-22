@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label>RFQ Ref <a href="index.php?page=view_rfq&rfq_ref=<?php echo $rfq_ref; ?>">View</a></label>
+                        <label>RFQ Ref <a href="index.php?rdp=view_rfq&rfq_ref=<?php echo $rfq_ref; ?>">View</a></label>
 						<input name="rfq_ref" type="text" readonly class="form-control" value="<?php echo $rfq_ref; ?>" >
 
 

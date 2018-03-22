@@ -130,7 +130,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label>RFQ Ref <a href="index.php?page=view_rfq&rfq_ref=<?php echo $rfq_ref; ?>">View</a></label>
+                        <label>RFQ Ref <a href="index.php?rdp=view_rfq&rfq_ref=<?php echo $rfq_ref; ?>">View</a></label>
 						<input name="rfq_ref" type="text" readonly class="form-control" value="<?php echo $rfq_ref; ?>" >
 
 
@@ -394,76 +394,87 @@
 
 
 
-  function sendEmailforNotification($email,$subject, $message){
-    $mail_to = $email;
-		//error_reporting(E_STRICT);
-		error_reporting(E_ERROR);
-		date_default_timezone_set('Asia/Singapore');
+  function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 
-		require_once('../class.phpmailer.php');
-		//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
+  }
 
-		$from_mail = "info@metalpolis.com";
-		$from_name = "BudgetMetal";
-		//$to_address = $email;
-		$to_name = "Info";
-		//$subject = "Verification for registeration at BudgetMetal";
-		//$message = $message;
-		$smtp_host = "127.0.0.1";
-		$smtp_port = 25;
-		// $smtp_username = "info@metalpolis.com";
-		// $smtp_password = "12345678";
-		$smtp_username = "";
-		$smtp_password = "";
-		//$smtp_debug = 2;
 
-		$mail = new PHPMailer();
+  function sendEmailforNotification1($email,$subject, $message,$doc_type,$doc_id){
+  	$mail_to = $email;
+  	//error_reporting(E_STRICT);
+  	error_reporting(E_ERROR);
+  	date_default_timezone_set('Asia/Singapore');
 
-		//$message             = file_get_contents('contents.html');
-		//$message             = eregi_replace("[\]",'',$message);
+  	require_once('../../class.phpmailer.php');
+  	//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
+  	$host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+  	if($doc_type == "RFQ"){
+  		$actual_link = $host .  "/index.php?rfq_ref=". $doc_id;
+  	}else{
+  		$actual_link = $host .  "/index.php?id=". $doc_id;
+  	}
+  	$sitelink = "<br><a href='".$actual_link."'>Go to Site</a>";
+  	$from_mail = "info@metalpolis.com";
+  	$from_name = "BudgetMetal";
+  	//$to_address = $email;
+  	$to_name = "Info";
+  	//$subject = "Verification for registeration at Metalpolis";
+  	//$message = $message;
+  	$smtp_host = "127.0.0.1";
+  	$smtp_port = 25;
+  	// $smtp_username = "info@metalpolis.com";
+  	// $smtp_password = "12345678";
+  	$smtp_username = "";
+  	$smtp_password = "";
+  	//$smtp_debug = 2;
 
-		$mail->IsSMTP(); // telling the class to use SMTP
-		$mail->Host       = $smtp_host; // SMTP server
-		//$mail->SMTPDebug  = $smtp_debug;                     // enables SMTP debug information (for testing)
-																							 // 1 = errors and messages
-																							 // 2 = messages only
-		$mail->SMTPAuth   = false;                  // enable SMTP authentication
-		$mail->Port       = $smtp_port;                    // set the SMTP port for the GMAIL server
-		//$mail->Username   = $smtp_username;       // SMTP account username
-		//$mail->Password   = $smtp_password;        // SMTP account password
+  	$mail = new PHPMailer();
+  	$mail->IsHTML(true);
+  	//$message  = file_get_contents('contents.html');
+  	//$message  = eregi_replace("[\]",'',$message);
 
-		$mail->SetFrom($from_mail);
+  	$mail->IsSMTP(); // telling the class to use SMTP
+  	$mail->Host       = $smtp_host; // SMTP server
+  	//$mail->SMTPDebug  = $smtp_debug;                     // enables SMTP debug information (for testing)
+  	// 1 = errors and messages
+  	// 2 = messages only
+  	$mail->SMTPAuth   = false;                  // enable SMTP authentication
+  	$mail->Port       = $smtp_port;                    // set the SMTP port for the GMAIL server
+  	//$mail->Username   = $smtp_username;       // SMTP account username
+  	//$mail->Password   = $smtp_password;        // SMTP account password
 
-		$mail->AddReplyTo($from_mail);
+  	$mail->SetFrom($from_mail);
 
-		$mail->Subject    = $subject;
+  	$mail->AddReplyTo($from_mail);
 
-		$mail->AltBody    = $message; // optional, comment out and test
+  	$mail->Subject    = $subject;
 
-		$mail->MsgHTML($message);
+  	$mail->AltBody    = $message . $sitelink; // optional, comment out and test
 
-		$to_address = "info@metalpolis.com";
-		$emails = explode(";", $email);
-		for($i = 0, $l = count($emails); $i < $l-1; ++$i) {
+  	$mail->MsgHTML($message);
 
-			 if($i==0){
-				 $to_address = $emails[$i];
-				 $mail->AddAddress($to_address);
-			 }else{
-				 $mail->AddCC($emails[$i]);
-			 }
-		}
+  	$to_address = "info@metalpolis.com";
+  	$emails = explode(";", $email);
+  	for($i = 0, $l = count($emails); $i < $l-1; ++$i) {
 
-		try {
+  		if($i==0){
+  			$to_address = $emails[$i];
+  			$mail->AddAddress($to_address);
+  		}else{
+  			$mail->AddCC($emails[$i]);
+  		}
+  	}
 
-			if(!$mail->Send()) {
+  	try {
 
-			} else {
+  		if(!$mail->Send()) {
 
-			}
-		}
-		catch(Exception $e) {
+  		} else {
 
-		}
-	}
+  		}
+  	}
+  	catch(Exception $e) {
+
+  	}
+  }
 ?>
