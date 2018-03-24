@@ -261,6 +261,7 @@
                         <li><a href="#" data-filter=".testing">Testing</a></li>
                         <li><a href="#" data-filter=".finishing">Finishing</a></li>
                         <li><a href="#" data-filter=".logistics">Logistics</a></li>
+                        <li><a href="#" data-filter=".2d3d">2D / 3D Modelling</a></li>
                     </ol>
                 </li>
             </ul>
@@ -729,7 +730,21 @@
                     </div>
                 </div>
                 <!--Logistics-->
-
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 2d3d isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/CustomFabrication_Ducting_Sauna.jpg"
+                               title="Ducting"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>2D /3D</h4>
+                                    <p>Modelling and Simulation</p>
+                                </div>
+                                <img src="img/services/CustomFabrication_Ducting_Sauna.jpg"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
