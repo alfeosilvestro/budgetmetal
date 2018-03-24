@@ -35,27 +35,6 @@ services:
     depends_on:
       - metalpolis-db
 
-  piwik_mysql:
-    image: mysql
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=piwik
-      - MYSQL_USER=piwik
-      - MYSQL_PASSWORD=password
-    volumes:
-      - ./database:/var/lib/mysql
-
-  piwik:
-    image: benhutchins/piwik
-    restart: always
-    links:
-      - piwik_mysql
-    ports:
-      - 8006:80
-    volumes:
-      - ./config:/var/www/html/config:rw
-
 #   metalpolis-mail:
 #     image: tvial/docker-mailserver:latest
 #     hostname: dockermail
