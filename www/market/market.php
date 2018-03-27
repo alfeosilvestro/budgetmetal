@@ -31,7 +31,7 @@ if ($function == "changeaccounttype"){
 					}
 				}
 			}
-			$returntext = $company_name. " profile is already in our system. The company services profile can be change only by user with administrative rights. Please contact your company administrator for more details.";
+			$returntext = $company_name. " profile is already in our system. The company services profile can be change only by user with administrative rights. Please contact your company administrator for more details. If you are not able to identify the administrator, please contact our support team at '+65 87456321' or 'info@budgetmetal.com'.";
 		}
 	}
 	echo $returntext;
