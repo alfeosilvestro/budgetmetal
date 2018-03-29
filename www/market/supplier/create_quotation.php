@@ -406,7 +406,7 @@
   	error_reporting(E_ERROR);
   	date_default_timezone_set('Asia/Singapore');
 
-  	require_once('../../class.phpmailer.php');
+  	require_once('../class.phpmailer.php');
   	//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
   	$host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
   	if($doc_type == "RFQ"){
@@ -452,7 +452,7 @@
 
   	$mail->AltBody    = $message . $sitelink; // optional, comment out and test
 
-  	$mail->MsgHTML($message);
+  	$mail->MsgHTML($message.$sitelink);
 
   	$to_address = "info@metalpolis.com";
   	$emails = explode(";", $email);

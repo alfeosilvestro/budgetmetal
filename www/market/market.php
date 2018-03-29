@@ -1356,7 +1356,7 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 
 	$mail->AltBody    = $message . $sitelink; // optional, comment out and test
 
-	$mail->MsgHTML($message);
+	$mail->MsgHTML($message.$sitelink);
 
 	$to_address = "info@metalpolis.com";
 	$emails = explode(";", $email);

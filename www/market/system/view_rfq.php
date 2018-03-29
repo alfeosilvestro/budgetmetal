@@ -883,7 +883,7 @@ if (isset($result)){
                     if(($_SESSION['usertype'] == 'Supplier') ){
                       echo "Clarifications";
                     }elseif(($_SESSION['usertype'] == 'Buyer') ){
-                      echo "Announcement";
+                      echo "Announcement (To all suppliers)";
                     }
                     ?>
 
