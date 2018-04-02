@@ -241,9 +241,7 @@
 																		echo "<option value='". $row2["Id"] ."'>" . $row2["TagName"] ;
 																		echo "</option>";
 																	}
-
 																}
-
 															}
 															?>
 
