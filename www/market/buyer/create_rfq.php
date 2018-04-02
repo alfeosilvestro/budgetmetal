@@ -346,7 +346,7 @@
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#tab_searchsuppliers" data-toggle="tab" aria-expanded="false">Search Suppliers</a></li>
-              <li class=""><a href="#tab_selectedsuppliers" data-toggle="tab" aria-expanded="true">Selected Suppliers</a></li>
+              <li class=""><a href="#tab_selectedsuppliers" data-toggle="tab" aria-expanded="true">Selected Suppliers &nbsp;<span id="selectedRCount" class="label-danger"><span></a></li>
 
             </ul>
             <div class="tab-content">
@@ -356,7 +356,7 @@
 				<tr>
                     <th>Company Name</th>
                     <th>Address</th>
-                      <th>Tags</th>
+                    <th>Tags</th>
                     <th>Status</th>
                     <th>&nbsp;</th>
                 </tr>
@@ -763,8 +763,6 @@
 			searchsupplier();
 		}
 
-
-
 		$('button[id=btn_search_suppliers]').click(function(){
 
 		searchsupplier();
@@ -820,6 +818,8 @@
 			 objButton.innerHTML = "Remove from Selected Supplier List";
 			objButton.setAttribute( "onClick", "RemoveFromList(this);" );
 			$('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
+
+            GetSelectedSupplierCount();
 		}
 
 		function RemoveFromList(objButton){
@@ -829,7 +829,21 @@
 			 objButton.innerHTML = "Add to Selected Supplier List";
 			objButton.setAttribute( "onClick", "AddtoRequestList(this);" );
 			$('#' + trid + ' input[name="selected_supplier_id[]"]').val("0");
+
+            GetSelectedSupplierCount();
 		}
+
+        function GetSelectedSupplierCount(){
+            var rowCount = $('#selected_suppliers tbody tr').length;
+            if(rowCount==0){
+                rowCount = "";
+                $("span").removeClass("badge");
+            }
+            else{
+                $("span").addClass("badge");
+            }
+            $("#selectedRCount").text(rowCount);
+        }
 
 		function ViewProfile(objButton){
 			var company_id = objButton.value;
@@ -892,9 +906,9 @@
                     $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
                     $btn.button("reset");
                 }
-
+    
             });
-
+    
     }
 
 	function SubmitRFQ() {
@@ -918,8 +932,7 @@
                     $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
                     $btn.button("reset");
                 }
-
+    
             });
-
     }
 	</script>
