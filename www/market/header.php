@@ -41,7 +41,7 @@
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/knockout-3.4.2.js"></script>
-      <script src="js/js-webshim/minified/polyfiller.js"></script>
+    <!-- <script src="js/js-webshim/minified/polyfiller.js"></script> -->
     <link rel="stylesheet" href="typeahead/typeaheadStyle.css" >
 
 

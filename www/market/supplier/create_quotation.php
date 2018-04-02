@@ -11,9 +11,6 @@
 		echo "no userid";
 	}
 
-
-
-
    $sql = "SELECT t1.username, t1.EmailAddress, t3.Name, t3.Reg_No FROM `m_user` t1  INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$userid;
     $result = $conn->query($sql);
 	if (isset($result)){
@@ -176,11 +173,11 @@
                     </div>
                     <div class="form-group">
                         <label>Bid Price</label>
-                        <!--<input id="bid_price" name="bid_price" type="number" class="form-control pull-right" placeholder="Please enter bid price">
-                        -->
+                        <!-- <input id="bid_price_KJIK" name="bid_price-asdfa" type="number" class="form-control pull-right" placeholder="Please enter bid price"> -->
+                        
                         <div class="input-group">
                           <span class="input-group-addon">$</span>
-                          <input  id="bid_price" name="bid_price" type="number" value="0" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" id="c2" />
+                          <input  id="bid_price" name="bid_price" type="number" value="0" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -316,8 +313,10 @@
 		}
 
     $("input[id='bid_price']").keyup(function () {
-    var bid_price = $("input[id='bid_price']").val();
-    $("input[id='bid_price']").val(parseInt(bid_price));
+		
+		var bid_price = $("input[id='bid_price']").val();
+		$("input[id='bid_price']").val(parseInt(bid_price));
+		
     });
 
 		$("#btnsave_quotation_top").click(function (e) {
