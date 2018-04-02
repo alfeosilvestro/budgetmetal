@@ -105,11 +105,11 @@
 												?>
 												<h3 class="timeline-header"><a href="#"><?php echo $First_Opened_User;?></a>
 												<?php
-												if($row1["Type"] == "Invited"){
-													echo "has invited for their RFQ";
-												}else{
+												//if($row1["Type"] == "Invited"){
+												//	echo "has invited for their RFQ";
+											//	}else{
 
-												}
+											//	}
 
 												?>
 

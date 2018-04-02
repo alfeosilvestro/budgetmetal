@@ -187,11 +187,11 @@
             </div>
 			<br>
 			<div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-9">
 				  <table class="table table-hover" id="fileList">
 					<thead>
 						<tr>
-							<th>File</th>
+							<th style="width:40%">File</th>
 							<th>Description</th>
 							<th></th>
 						</tr>
@@ -262,6 +262,7 @@
             <div class="btn-group pull-left">
                 <button type="button" class="btn btn-success" id="btnsave_quotation_top" >Save as Draft</button>
                 <button type="button" id="btnsubmit_quotation_top" class="btn btn-warning">Submit</button>
+                <a href="index.php?rdp=list_quotation" class="btn btn-default">Cancel</a>
             </div>
         </div>
     </div>

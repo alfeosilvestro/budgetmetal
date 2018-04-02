@@ -294,12 +294,12 @@
         <div class="box-body">
 
 			<div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-9">
 				  <table class="table table-hover" id="fileList">
 					<thead>
 						<tr>
 						<th>No.</th>
-							<th>File</th>
+							<th style="width:40%">File</th>
 							<th>Description</th>
 
 						</tr>

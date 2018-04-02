@@ -213,11 +213,11 @@
             </div>
 			<br>
 			<div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-9">
 				  <table class="table table-hover" id="fileList">
 					<thead>
 						<tr>
-							<th>File</th>
+							<th style="width:40%">File</th>
 							<th>Description</th>
 							<th></th>
 						</tr>
@@ -258,6 +258,7 @@
             <div class="btn-group pull-left">
                 <button type="button" class="btn btn-success" id="btnsave_quotation_top" >Save as Draft</button>
                 <button type="button" id="btnsubmit_quotation_top" class="btn btn-warning">Submit</button>
+                  <a href="index.php?rdp=list_quotation" class="btn btn-default">Cancel</a>
             </div>
         </div>
     </div>
@@ -405,7 +406,7 @@
   	error_reporting(E_ERROR);
   	date_default_timezone_set('Asia/Singapore');
 
-  	require_once('../../class.phpmailer.php');
+  	require_once('../class.phpmailer.php');
   	//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
   	$host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
   	if($doc_type == "RFQ"){
@@ -451,7 +452,7 @@
 
   	$mail->AltBody    = $message . $sitelink; // optional, comment out and test
 
-  	$mail->MsgHTML($message);
+  	$mail->MsgHTML($message.$sitelink);
 
   	$to_address = "info@metalpolis.com";
   	$emails = explode(";", $email);

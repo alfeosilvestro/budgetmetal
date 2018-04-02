@@ -160,7 +160,7 @@ if (isset($result)){
           <h4 class="modal-title">Change Account Type</h4>
         </div>
         <div class="modal-body">
-          <p>Are you sure to change accout type as <?php echo $changeto;?>? </p>
+          <p>Changing profile type will sign out of the system and user is required to sign in again to complete this process. Are you sure you want to change your profile type to <?php echo $changeto;?>? </p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" id="yesbtn" >Yes</button>

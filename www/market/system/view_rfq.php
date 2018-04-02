@@ -310,12 +310,12 @@ if (isset($result)){
       <div class="box-body">
 
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-9">
             <table class="table table-hover" id="fileList">
               <thead>
                 <tr>
                   <th>No.</th>
-                  <th>File</th>
+                  <th style="width:40%">File</th>
                   <th>Description</th>
 
                 </tr>
@@ -883,7 +883,7 @@ if (isset($result)){
                     if(($_SESSION['usertype'] == 'Supplier') ){
                       echo "Clarifications";
                     }elseif(($_SESSION['usertype'] == 'Buyer') ){
-                      echo "Announcement";
+                      echo "Announcement (To all suppliers)";
                     }
                     ?>
 

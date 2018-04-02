@@ -174,7 +174,7 @@
 														   class="form-control"
 														   data-bind="value: contact_number, valueUpdate: 'blur'"
 														   placeholder="Enter Contact Number" maxlength="10">
-															 
+
 												</div>
 
 												<div class="form-group">
@@ -478,9 +478,10 @@ $(document).ready(function () {
 				 }
 		 	 	xmlhttp.onreadystatechange = function() {
 				 if (this.readyState == 4 && this.status == 200) {
-					 $("#messageforsupplier").append(this.responseText);
+
 					 if(this.responseText != ""){
 						$("input[id='txt_company_name']").val(this.responseText);
+
 					 }
 				 }
 		 };
@@ -496,7 +497,6 @@ $(document).ready(function () {
 			}
 		 xmlhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				$("#messageforsupplier").append(this.responseText);
 				if(this.responseText != ""){
 				 $("textarea[id='txt_address']").val(this.responseText);
 				}

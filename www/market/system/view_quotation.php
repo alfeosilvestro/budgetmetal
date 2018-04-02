@@ -294,12 +294,12 @@
         <div class="box-body">
 
 			<div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-9">
 				  <table class="table table-hover" id="fileList">
 					<thead>
 						<tr>
 						<th>No.</th>
-							<th>File</th>
+							<th style="width:40%">File</th>
 							<th>Description</th>
 
 						</tr>
@@ -370,7 +370,7 @@
             <div class="btn-group pull-left">
 			<?php if(($_SESSION['usertype'] == 'Supplier') && ($_SESSION['userid'] == $q_userid) && (($q_statusid == 15) || ($q_statusid == 16)) ){
         $query4 = "SELECT * FROM `t_document` WHERE Status = 1 and C_DocumentType = 6 and `DocumentNo` = '".$rfq_ref."'  Limit 1";
-  
+
         $results4 = $db->pdoQuery($query4)->results();
         if (!empty($results4)){
 
