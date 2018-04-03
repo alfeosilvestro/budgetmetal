@@ -154,7 +154,7 @@
                         <!--<input id="bid_price" name="bid_price" type="number" class="form-control pull-right" placeholder="Please enter bid price" value="">-->
                         <div class="input-group">
                           <span class="input-group-addon">$</span>
-                          <input  id="bid_price" name="bid_price" type="number" value="<?php echo $QuotedFigure; ?>" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control currency" id="c2" />
+                          <input  id="bid_price" name="bid_price" type="number" value="<?php echo $QuotedFigure; ?>" min="0" step="0.01" data-number-to-fixed="2" data-number-stepfactor="100" class="form-control" />
                         </div>
                     </div>
                 </div>
