@@ -64,10 +64,10 @@
 								$count = $count+1;
 								?>
 								<tr>
-									<td><?php echo $count; ?></td>
-                  <td><?php echo $row["CompanyName"];?></td>
-									<td><?php echo $row["DocumentNo"];?></td>
-                  <td>$<?php echo $row["QuotedFigure"];?></td>
+                                    <td><?php echo $count; ?></td>
+                                    <td><?php echo $row["CompanyName"];?></td>
+                                    <td><?php echo $row["DocumentNo"];?></td>
+                                    <td>$<?php echo number_format($row["QuotedFigure"], 2); ?></td>
 									<td><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
 									<td><?php echo $row["Status"];?></td>
 									<td><?php

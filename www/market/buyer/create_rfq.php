@@ -651,7 +651,6 @@
 			if (this.readyState == 4 && this.status == 200) {
 				$("#services").find('option').remove().end();
 				$("#services").append(this.responseText);
-
             }
         };
         xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=servicecategory2",true);
@@ -699,7 +698,6 @@
         xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
         xmlhttp.send();
         });
-
 
 		$('button[id=add_service]').click(function(){
 		   var servicecategory1id = $('select[id=servicecategory1]').val();
