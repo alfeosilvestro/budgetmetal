@@ -93,7 +93,7 @@ if (isset($result)){
 
 
 .content {
-  height: 150px;
+  height: 89%;
 }
     </style>
     <div class="row row-flex">
@@ -129,7 +129,7 @@ if (isset($result)){
                   // output data of each row
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    echo ' <span class="label label-info">'.$TagName.'</span>';
+                    echo ' <span class="label label-info">'.$TagName.'</span> <br>';
                   }
                 }
               }
@@ -221,6 +221,19 @@ if($Is_supplier_company == "1"){
               </div>
           </div>
           <div class="box-body">
+            <div class="pull-right">
+              <?php
+
+              if($company_admin == 1){
+                ?>
+                <a href="#" id="btnEditService" class="btn btn-info"  onclick="EditService()">
+                  <i class="fa fa-pencil-square-o"></i>
+                </a>
+                <?php
+              }
+
+              ?>
+            </div>
             <ul>
               <?php
               $sql = "SELECT t1.`M_Services_Id`, t2.ServiceName FROM `md_supplierservices` t1 INNER JOIN m_services t2 ON t1.`M_Services_Id` = t2.Id Where t2.Status = 1 and t2.M_Parent_Services_Id is null and t1.`M_Company_Id` = ".$companyid;
@@ -455,9 +468,12 @@ if($Is_supplier_company == "1"){
         </div>
         <div class="modal-body">
           <div class="row">
+            <form id="update_profile" action="update_profile" method="get">
+              <input type="hidden" name="companyid" value="<?php echo $companyid; ?>">
+
             <div class="form-group col-md-9">
               <strong>Address</strong>
-              <textarea name="txt_address" id="txt_address"  class="form-control" rows="5" cols="50"><?php echo $Address;?></textarea>
+              <textarea name="address" id="txt_address"  class="form-control" rows="5" cols="50"><?php echo $Address;?></textarea>
             </div>
             <?php if($Is_supplier_company == "1"){ ?>
             <div class="form-group col-md-9">
@@ -490,10 +506,130 @@ if($Is_supplier_company == "1"){
               </select>
             </div>
           <?php } ?>
+          </form>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" id="btnSubmit_Profile" >Save</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="servicebox" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Company Services</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+
+            <input type="hidden" name="companyid" value="<?php echo $companyid; ?>">
+
+            <div class="form-group col-md-9">
+              <div id="treeview-checkbox-demo">
+                <ul>
+                  <?php
+                  $sql = "SELECT * FROM `m_services` where Status = 1 and M_Parent_Services_Id is null  ";
+                  $result = $conn->query($sql);
+                  if (isset($result)){
+                    if ($result->num_rows > 0) {
+                      // output data of each row
+                      while($row = $result->fetch_assoc()) {
+                        echo "<li class='chkservice' data-value='". $row["Id"] ."'>" . $row["ServiceName"] ;
+                        $servicecategory1id = $row["Id"];
+                        $sql1 = "SELECT * FROM `m_services` where Status = 1 and  M_Parent_Services_Id = ".$servicecategory1id ;
+                        $result1 = $conn->query($sql1);
+                        if (isset($result1)){
+                          if ($result1->num_rows > 0) {
+                            echo "<ul>";
+                            // output data of each row
+                            while($row1 = $result1->fetch_assoc()) {
+                              echo "<li class='chkservice' data-value='". $row1["Id"] ."'>" . $row1["ServiceName"] ;
+                              $servicecategory1id1 = $row1["Id"];
+                              $sql2 = "SELECT * FROM `m_services` where Status = 1 and  M_Parent_Services_Id = ".$servicecategory1id1 ;
+                              $result2 = $conn->query($sql2);
+                              if (isset($result2)){
+                                if ($result2->num_rows > 0) {
+                                  echo "<ul>";
+                                  // output data of each row
+                                  while($row2 = $result2->fetch_assoc()) {
+                                    echo "<li class='chkservice' data-value='". $row2["Id"] ."'>" . $row2["ServiceName"] ;
+                                    $servicecategory1id2 = $row2["Id"];
+                                    $sql3 = "SELECT * FROM `m_services` where Status = 1 and  M_Parent_Services_Id = ".$servicecategory1id2 ;
+                                    $result3 = $conn->query($sql3);
+                                    if (isset($result3)){
+                                      if ($result3->num_rows > 0) {
+                                        echo "<ul>";
+                                        // output data of each row
+                                        while($row3 = $result3->fetch_assoc()) {
+                                          echo "<li class='chkservice' data-value='". $row3["Id"] ."'>" . $row3["ServiceName"] ;
+                                          $servicecategory1id3 = $row3["Id"];
+                                          $sql4 = "SELECT * FROM `m_services` where Status = 1 and  M_Parent_Services_Id = ".$servicecategory1id3 ;
+                                          $result4 = $conn->query($sql4);
+                                          if (isset($result4)){
+                                            if ($result4->num_rows > 0) {
+                                              echo "<ul>";
+                                              // output data of each row
+                                              while($row4 = $result4->fetch_assoc()) {
+                                                echo "<li class='chkservice' data-value='". $row4["Id"] ."'>" . $row4["ServiceName"] ;
+
+                                                echo "</li>";
+                                              }
+                                              echo "</ul>";
+                                            }
+
+                                          }
+                                          echo "</li>";
+                                        }
+                                        echo "</ul>";
+                                      }
+
+                                    }
+                                    echo "</li>";
+                                  }
+                                  echo "</ul>";
+                                }
+
+                              }
+                              echo "</li>";
+                            }
+                            echo "</ul>";
+                          }
+
+                        }
+                        echo "</li>";
+                      }
+                    }
+                  }
+                  ?>
+
+                </ul>
+              </div>
+
+              	<input type="hidden" id="values" name="supported_service" value="">
+
+                <script src="dev/jquery.min.js"></script>
+                <script src="dev/bootstrap.min.js"></script>
+                <script src="dev/logger.js"></script>
+                <script src="dev/treeview.js"></script>
+
+                <script>
+                  $('#treeview-checkbox-demo').treeview({
+                    debug : true,
+                    data : ['links', 'Do WHile loop']
+                  });
+                </script>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="btnSubmit_Service" >Save</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         </div>
       </div>
@@ -532,8 +668,27 @@ if($Is_supplier_company == "1"){
   $('#btnSubmit_Profile').on('click', function(){
     var address = $('#txt_address').val();
     $.ajax({
+      type: 'GET',
+      url: "market.php?function=EditProfile",
+      data: $("#update_profile").serialize(),
+      dataType: "json",
+      success: function (response) {
+        location.reload();
+      },
+      failure: function (response) {
+        alert(response);
+      },
+      error: function (response) {
+        alert(response);
+      }
+    });
+  });
+
+  $('#btnSubmit_Service').on('click', function(){
+    var services = $('#treeview-checkbox-demo').treeview('selectedValues');
+    $.ajax({
       type: "GET",
-      url: "market.php?function=EditProfile&companyid=<?php echo $companyid;?>&address=" + address,
+      url: "market.php?function=EditService&companyid=<?php echo $companyid;?>&services=" + services,
       dataType: "json",
       success: function (response) {
         location.reload();
@@ -611,8 +766,27 @@ if($Is_supplier_company == "1"){
   function EditProfile(){
     $('#profilebox').modal('show');
   }
+
+  function EditService(){
+    $('#servicebox').modal('show');
+  }
+
   $(document).ready(function() {
 		$('.select2').select2();
 	});
+
+  $("[id*=treeview-checkbox-demo] input[type=checkbox]").bind("click", function () {
+
+          //Is Parent CheckBox
+          var isChecked = $(this).is(":checked");
+            $(this).parent().find("input[type=checkbox]").each(function () {
+              if (isChecked) {
+                  $(this).prop( "checked", true );
+              } else {
+                  $(this).removeAttr("checked");
+              }
+          });
+
+  });
 
   </script>
