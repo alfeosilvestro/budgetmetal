@@ -179,53 +179,37 @@ if ($function == "changeaccounttype"){
 	}
 }
 elseif ($function == "saverfq"){
+
 	$act = $_GET['act'];
-
-	if($act == 'draft'){
-
-		$sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Draft' ORDER BY Running_Number DESC Limit 1";
-		$result = $conn->query($sql);
-		if (isset($result)){
-			if ($result->num_rows > 0) {
-				// output data of each row
-				while($row = $result->fetch_assoc()) {
-					$rfq_ref = "RFQ_Draft_".($row["Running_Number"]+1);
-					$doc_id = $row["Id"]+1;
-					$running_number = $row["Running_Number"]+1;
-				}
-			}else{
-				$rfq_ref = "RFQ_Draft_1";
-				$doc_id = 1;
-				$running_number = 1;
+	$currentYear = date("Y");
+	$current_UserId = $_GET['user_id'];
+	
+	$sql = "SELECT * FROM `document_number` t1 where t1.Name='RFQ' and t1.Prefix = '$current_UserId' and t1.Suffix = '$currentYear' ORDER BY Running_Number DESC Limit 1";
+	$result = $conn->query($sql);
+	if (isset($result)){
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				$number = sprintf('%05d', $row["Running_Number"] + 1);
+				$twoYearFormat = date("y");
+				$rfq_ref = "RFQ-" . $current_UserId . "-" . $twoYearFormat . $number;
+				//$rfq_ref = "RFQ_Draft_".($row["Running_Number"]+1);
+				$doc_id = $row["Id"] + 1;
+				$running_number = $row["Running_Number"] + 1;
 			}
+		}else{
+			$twoYearFormat = date("y");
+			$rfq_ref = "RFQ-" . $current_UserId . "-" . $twoYearFormat . "00001";
+			$doc_id = 1;
+			$running_number = 1;
 		}
-
-		$dataArray = array('Name' => "RFQ", 'Prefix' => 'Draft', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
-		$dt = $db->insert('document_number', $dataArray);
-	} else{
-		$sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Submitted' ORDER BY Running_Number DESC Limit 1";
-		$result = $conn->query($sql);
-		if (isset($result)){
-			if ($result->num_rows > 0) {
-				// output data of each row
-				while($row = $result->fetch_assoc()) {
-					$rfq_ref = "RFQ_Submitted_".($row["Running_Number"]+1);
-					$doc_id = $row["Id"]+1;
-					$running_number = $row["Running_Number"]+1;
-				}
-			}else{
-				$rfq_ref = "RFQ_Submitted_1";
-				$doc_id = 1;
-				$running_number = 1;
-			}
-		}
-
-		$dataArray = array('Name' => "RFQ", 'Prefix' => 'Submitted', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
-		$dt = $db->insert('document_number', $dataArray);
-
 	}
+	
+	$dataArray = array('Name' => "RFQ", 'Prefix' => "$current_UserId", 'Suffix' => "$currentYear",'Format' => " $rfq_ref ", 'Running_Number' => $running_number);
+	
+	$dt = $db->insert('document_number', $dataArray);
 
-
+	
 
 	$doc_id = 0;
 	$row = $db->select('t_document', null, null, 'ORDER BY Id DESC')->results();
@@ -372,7 +356,7 @@ elseif ($function == "saverfq"){
 	$act = $_GET['act'];
 	$rfq_id = $_GET['rfq_id'];
 	$rfq_ref = $_GET['rfq_ref'];
-	if($act == 'draft'){
+	//if($act == 'draft'){
 
 		/* $sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Draft' ORDER BY Running_Number DESC Limit 1";
 		$result = $conn->query($sql);
@@ -394,26 +378,26 @@ $running_number = 1;
 $dataArray = array( 'Name' => "RFQ", 'Prefix' => 'Draft', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
 
 $dt = $db->insert('document_number', $dataArray); */
-} else{
-	$sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Submitted' ORDER BY Running_Number DESC Limit 1";
-	$result = $conn->query($sql);
-	if (isset($result)){
-		if ($result->num_rows > 0) {
-			// output data of each row
-			while($row = $result->fetch_assoc()) {
-				$rfq_ref = "RFQ_Submitted_".($row["Running_Number"]+1);
-				$doc_id = $row["Id"]+1;
-				$running_number = $row["Running_Number"]+1;
-			}
-		}else{
-			$rfq_ref = "RFQ_Submitted_1";
-			$doc_id = 1;
-			$running_number = 1;
-		}
-	}
-	$dataArray = array('Name' => "RFQ", 'Prefix' => 'Submitted', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
-	$dt = $db->insert('document_number', $dataArray);
-}
+// } else{
+// 	$sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Submitted' ORDER BY Running_Number DESC Limit 1";
+// 	$result = $conn->query($sql);
+// 	if (isset($result)){
+// 		if ($result->num_rows > 0) {
+// 			// output data of each row
+// 			while($row = $result->fetch_assoc()) {
+// 				$rfq_ref = "RFQ_Submitted_".($row["Running_Number"]+1);
+// 				$doc_id = $row["Id"]+1;
+// 				$running_number = $row["Running_Number"]+1;
+// 			}
+// 		}else{
+// 			$rfq_ref = "RFQ_Submitted_1";
+// 			$doc_id = 1;
+// 			$running_number = 1;
+// 		}
+// 	}
+// 	$dataArray = array('Name' => "RFQ", 'Prefix' => 'Submitted', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
+// 	$dt = $db->insert('document_number', $dataArray);
+// }
 
 $Id = $rfq_id;
 $title = $_GET['subject'];
