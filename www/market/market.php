@@ -900,7 +900,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 			$db->insert('t_clarifications', $dataArray);
 			$message['success'] = true;
 			if($asking_company_id == $document_owner_companyid){}else{
-				$Message = "$company_name has sent you a clarification on your document.";
+				$Message = "$company_name has sent you a clarification on your proposal.";
 				$dataArray = array('Document' => $rfq_id, 'First_Opened_User' => $askinguser_id, 'Receiving_Company' => $document_owner_companyid, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $askinguser_id,'Status' => "1", 'Type' => 'Comment');
 				$dt = $db->insert('company_notification', $dataArray);
 
