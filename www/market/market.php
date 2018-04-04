@@ -7,7 +7,34 @@ date_default_timezone_set("Asia/Singapore");
 $db = new PdoWrapper($dbConfig);
 $function = $_GET["function"];
 
-if ($function == "changeaccounttype"){
+if ($function == "UpdatePassword"){
+	$newpass = $_GET["newpass"];
+	$user_id = $_GET["user_id"];
+	$where = array('Id' => $user_id);
+	$dataArray = array( 'Password' => $newpass);
+	$db->update('m_user', $dataArray,$where);
+
+	$message['success'] = true;
+	echo json_encode($message);
+}elseif ($function == "UpdateUserProfile"){
+	$name = $_GET["name"];
+	$jobtitle = $_GET["jobtitle"];
+	$contactno = $_GET["contactno"];
+
+	$user_id = $_GET["user_id"];
+	$where = array('Id' => $user_id);
+	$dataArray = array( 'UserName' => $name);
+	$db->update('m_user', $dataArray,$where);
+
+	$dataArray = array( 'Title' => $jobtitle);
+	$db->update('m_user', $dataArray,$where);
+
+	$dataArray = array( 'ContactNumbers' => $contactno);
+	$db->update('m_user', $dataArray,$where);
+
+	$message['success'] = true;
+	echo json_encode($message);
+}elseif ($function == "changeaccounttype"){
 	$type_id = $_GET["type_id"];
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);
@@ -183,7 +210,7 @@ elseif ($function == "saverfq"){
 	$act = $_GET['act'];
 	$currentYear = date("Y");
 	$current_UserId = $_GET['user_id'];
-	
+
 	$sql = "SELECT * FROM `document_number` t1 where t1.Name='RFQ' and t1.Prefix = '$current_UserId' and t1.Suffix = '$currentYear' ORDER BY Running_Number DESC Limit 1";
 	$result = $conn->query($sql);
 	if (isset($result)){
@@ -204,12 +231,12 @@ elseif ($function == "saverfq"){
 			$running_number = 1;
 		}
 	}
-	
+
 	$dataArray = array('Name' => "RFQ", 'Prefix' => "$current_UserId", 'Suffix' => "$currentYear",'Format' => " $rfq_ref ", 'Running_Number' => $running_number);
-	
+
 	$dt = $db->insert('document_number', $dataArray);
 
-	
+
 
 	$doc_id = 0;
 	$row = $db->select('t_document', null, null, 'ORDER BY Id DESC')->results();
@@ -1178,6 +1205,61 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 	$dataArray = array( 'About' => $about);
 	$db->update('m_company', $dataArray,$where);
 
+
+	$message['success'] = true;
+	echo json_encode($message);
+}elseif ($function == "EditService"){
+	$message = array();
+	$companyid =$_GET['companyid'];
+	$supported_service =$_GET['services'];
+
+	//supplier service
+	$res = explode(",", $supported_service);
+	$db->query("Delete From `md_supplierservices` Where M_Company_Id = ".$companyid);
+	foreach($res as $item) {
+		$tagsupplier_id = 0;
+		$row = $db->select('md_supplierservices', null, null, 'ORDER BY Id DESC')->results();
+		if ($row) {
+			$tagsupplier_id = $row["Id"]+1;
+		}else{
+			$tagsupplier_id = 1;
+		}
+
+		$dataArray = array('Id' => $tagsupplier_id, 'M_Services_Id' => $item, 'M_Company_Id' => $companyid);
+
+		$db->insert('md_supplierservices', $dataArray);
+	}
+
+
+	$message['success'] = true;
+	echo json_encode($message);
+}
+elseif ($function == "EditProfile"){
+	$message = array();
+	$companyid =$_GET['companyid'];
+	$address =$_GET['address'];
+
+	$where = array('Id' => $companyid);
+	$dataArray = array( 'Address' => $address);
+	$db->update('m_company', $dataArray,$where);
+
+	//tag
+	if(isset($_GET['tagList'])){
+		$db->query("Delete From  `md_suppliertags` Where M_User_Id = ".$companyid);
+		foreach ($_GET['tagList'] as $index => $tag_id) {
+			$tagsupplier_id = 0;
+			$row = $db->select('md_suppliertags', null, null, 'ORDER BY Id DESC')->results();
+			if ($row) {
+				$tagsupplier_id = $row["Id"]+1;
+			}else{
+				$tagsupplier_id = 1;
+			}
+
+			$dataArray = array('Id' => $tagsupplier_id, 'C_Tags_Id' => $tag_id, 'M_User_Id' => $companyid);
+
+			$db->insert('md_suppliertags', $dataArray);
+		}
+	}
 
 	$message['success'] = true;
 	echo json_encode($message);
