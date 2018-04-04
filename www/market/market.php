@@ -7,7 +7,34 @@ date_default_timezone_set("Asia/Singapore");
 $db = new PdoWrapper($dbConfig);
 $function = $_GET["function"];
 
-if ($function == "changeaccounttype"){
+if ($function == "UpdatePassword"){
+	$newpass = $_GET["newpass"];
+	$user_id = $_GET["user_id"];
+	$where = array('Id' => $user_id);
+	$dataArray = array( 'Password' => $newpass);
+	$db->update('m_user', $dataArray,$where);
+
+	$message['success'] = true;
+	echo json_encode($message);
+}elseif ($function == "UpdateUserProfile"){
+	$name = $_GET["name"];
+	$jobtitle = $_GET["jobtitle"];
+	$contactno = $_GET["contactno"];
+
+	$user_id = $_GET["user_id"];
+	$where = array('Id' => $user_id);
+	$dataArray = array( 'UserName' => $name);
+	$db->update('m_user', $dataArray,$where);
+
+	$dataArray = array( 'Title' => $jobtitle);
+	$db->update('m_user', $dataArray,$where);
+
+	$dataArray = array( 'ContactNumbers' => $contactno);
+	$db->update('m_user', $dataArray,$where);
+
+	$message['success'] = true;
+	echo json_encode($message);
+}elseif ($function == "changeaccounttype"){
 	$type_id = $_GET["type_id"];
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);

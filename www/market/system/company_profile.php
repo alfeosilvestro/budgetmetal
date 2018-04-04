@@ -768,6 +768,9 @@ if($Is_supplier_company == "1"){
   }
 
   function EditService(){
+    $("[id*=treeview-checkbox-demo]").parent().find("input[type=checkbox]").each(function (){
+      //alert($(this).val());
+    })
     $('#servicebox').modal('show');
   }
 
