@@ -1197,6 +1197,18 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 
 	$message['success'] = true;
 	echo json_encode($message);
+}elseif ($function == "EditProfile"){
+	$message = array();
+	$companyid =$_GET['companyid'];
+	$address =$_GET['address'];
+
+	$where = array('Id' => $companyid);
+	$dataArray = array( 'Address' => $address);
+	$db->update('m_company', $dataArray,$where);
+
+
+	$message['success'] = true;
+	echo json_encode($message);
 }elseif ($function == "EditDueDate"){
 	$message = array();
 	$rfq_id =$_GET['rfq_id'];
