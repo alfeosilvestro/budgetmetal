@@ -376,6 +376,21 @@
                                      class="img-responsive" alt="Custom Fabrication"> </a></div>
                     </div>
                 </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 custom_fabrication isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/CustomFabrication_StructuralSteel.jpg"
+                               title="Structural Steel"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>Custom Fabrication</h4>
+                                    <p>Structural Steel</p>
+                                </div>
+                                <img src="img/services/CustomFabrication_StructuralSteel.jpg"
+                                     class="img-responsive" alt="Custom Fabrication"> </a></div>
+                    </div>
+                </div>
                 <!--Custom Fabrications-->
 
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 metal_materials isotope-item"
