@@ -7,7 +7,34 @@ date_default_timezone_set("Asia/Singapore");
 $db = new PdoWrapper($dbConfig);
 $function = $_GET["function"];
 
-if ($function == "changeaccounttype"){
+if ($function == "UpdatePassword"){
+	$newpass = $_GET["newpass"];
+	$user_id = $_GET["user_id"];
+	$where = array('Id' => $user_id);
+	$dataArray = array( 'Password' => $newpass);
+	$db->update('m_user', $dataArray,$where);
+
+	$message['success'] = true;
+	echo json_encode($message);
+}elseif ($function == "UpdateUserProfile"){
+	$name = $_GET["name"];
+	$jobtitle = $_GET["jobtitle"];
+	$contactno = $_GET["contactno"];
+
+	$user_id = $_GET["user_id"];
+	$where = array('Id' => $user_id);
+	$dataArray = array( 'UserName' => $name);
+	$db->update('m_user', $dataArray,$where);
+
+	$dataArray = array( 'Title' => $jobtitle);
+	$db->update('m_user', $dataArray,$where);
+
+	$dataArray = array( 'ContactNumbers' => $contactno);
+	$db->update('m_user', $dataArray,$where);
+
+	$message['success'] = true;
+	echo json_encode($message);
+}elseif ($function == "changeaccounttype"){
 	$type_id = $_GET["type_id"];
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);
@@ -179,51 +206,35 @@ if ($function == "changeaccounttype"){
 	}
 }
 elseif ($function == "saverfq"){
+
 	$act = $_GET['act'];
+	$currentYear = date("Y");
+	$current_UserId = $_GET['user_id'];
 
-	if($act == 'draft'){
-
-		$sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Draft' ORDER BY Running_Number DESC Limit 1";
-		$result = $conn->query($sql);
-		if (isset($result)){
-			if ($result->num_rows > 0) {
-				// output data of each row
-				while($row = $result->fetch_assoc()) {
-					$rfq_ref = "RFQ_Draft_".($row["Running_Number"]+1);
-					$doc_id = $row["Id"]+1;
-					$running_number = $row["Running_Number"]+1;
-				}
-			}else{
-				$rfq_ref = "RFQ_Draft_1";
-				$doc_id = 1;
-				$running_number = 1;
+	$sql = "SELECT * FROM `document_number` t1 where t1.Name='RFQ' and t1.Prefix = '$current_UserId' and t1.Suffix = '$currentYear' ORDER BY Running_Number DESC Limit 1";
+	$result = $conn->query($sql);
+	if (isset($result)){
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				$number = sprintf('%05d', $row["Running_Number"] + 1);
+				$twoYearFormat = date("y");
+				$rfq_ref = "RFQ-" . $current_UserId . "-" . $twoYearFormat . $number;
+				//$rfq_ref = "RFQ_Draft_".($row["Running_Number"]+1);
+				$doc_id = $row["Id"] + 1;
+				$running_number = $row["Running_Number"] + 1;
 			}
+		}else{
+			$twoYearFormat = date("y");
+			$rfq_ref = "RFQ-" . $current_UserId . "-" . $twoYearFormat . "00001";
+			$doc_id = 1;
+			$running_number = 1;
 		}
-
-		$dataArray = array('Name' => "RFQ", 'Prefix' => 'Draft', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
-		$dt = $db->insert('document_number', $dataArray);
-	} else{
-		$sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Submitted' ORDER BY Running_Number DESC Limit 1";
-		$result = $conn->query($sql);
-		if (isset($result)){
-			if ($result->num_rows > 0) {
-				// output data of each row
-				while($row = $result->fetch_assoc()) {
-					$rfq_ref = "RFQ_Submitted_".($row["Running_Number"]+1);
-					$doc_id = $row["Id"]+1;
-					$running_number = $row["Running_Number"]+1;
-				}
-			}else{
-				$rfq_ref = "RFQ_Submitted_1";
-				$doc_id = 1;
-				$running_number = 1;
-			}
-		}
-
-		$dataArray = array('Name' => "RFQ", 'Prefix' => 'Submitted', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
-		$dt = $db->insert('document_number', $dataArray);
-
 	}
+
+	$dataArray = array('Name' => "RFQ", 'Prefix' => "$current_UserId", 'Suffix' => "$currentYear",'Format' => " $rfq_ref ", 'Running_Number' => $running_number);
+
+	$dt = $db->insert('document_number', $dataArray);
 
 
 
@@ -372,7 +383,7 @@ elseif ($function == "saverfq"){
 	$act = $_GET['act'];
 	$rfq_id = $_GET['rfq_id'];
 	$rfq_ref = $_GET['rfq_ref'];
-	if($act == 'draft'){
+	//if($act == 'draft'){
 
 		/* $sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Draft' ORDER BY Running_Number DESC Limit 1";
 		$result = $conn->query($sql);
@@ -394,26 +405,26 @@ $running_number = 1;
 $dataArray = array( 'Name' => "RFQ", 'Prefix' => 'Draft', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
 
 $dt = $db->insert('document_number', $dataArray); */
-} else{
-	$sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Submitted' ORDER BY Running_Number DESC Limit 1";
-	$result = $conn->query($sql);
-	if (isset($result)){
-		if ($result->num_rows > 0) {
-			// output data of each row
-			while($row = $result->fetch_assoc()) {
-				$rfq_ref = "RFQ_Submitted_".($row["Running_Number"]+1);
-				$doc_id = $row["Id"]+1;
-				$running_number = $row["Running_Number"]+1;
-			}
-		}else{
-			$rfq_ref = "RFQ_Submitted_1";
-			$doc_id = 1;
-			$running_number = 1;
-		}
-	}
-	$dataArray = array('Name' => "RFQ", 'Prefix' => 'Submitted', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
-	$dt = $db->insert('document_number', $dataArray);
-}
+// } else{
+// 	$sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Submitted' ORDER BY Running_Number DESC Limit 1";
+// 	$result = $conn->query($sql);
+// 	if (isset($result)){
+// 		if ($result->num_rows > 0) {
+// 			// output data of each row
+// 			while($row = $result->fetch_assoc()) {
+// 				$rfq_ref = "RFQ_Submitted_".($row["Running_Number"]+1);
+// 				$doc_id = $row["Id"]+1;
+// 				$running_number = $row["Running_Number"]+1;
+// 			}
+// 		}else{
+// 			$rfq_ref = "RFQ_Submitted_1";
+// 			$doc_id = 1;
+// 			$running_number = 1;
+// 		}
+// 	}
+// 	$dataArray = array('Name' => "RFQ", 'Prefix' => 'Submitted', 'Suffix' => 'RFQ','Format' => 'RFQ', 'Running_Number' => $running_number);
+// 	$dt = $db->insert('document_number', $dataArray);
+// }
 
 $Id = $rfq_id;
 $title = $_GET['subject'];
@@ -889,7 +900,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 			$db->insert('t_clarifications', $dataArray);
 			$message['success'] = true;
 			if($asking_company_id == $document_owner_companyid){}else{
-				$Message = "$company_name has sent you a clarification on your document.";
+				$Message = "$company_name has sent you a clarification on your proposal.";
 				$dataArray = array('Document' => $rfq_id, 'First_Opened_User' => $askinguser_id, 'Receiving_Company' => $document_owner_companyid, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $askinguser_id,'Status' => "1", 'Type' => 'Comment');
 				$dt = $db->insert('company_notification', $dataArray);
 
@@ -1194,6 +1205,61 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 	$dataArray = array( 'About' => $about);
 	$db->update('m_company', $dataArray,$where);
 
+
+	$message['success'] = true;
+	echo json_encode($message);
+}elseif ($function == "EditService"){
+	$message = array();
+	$companyid =$_GET['companyid'];
+	$supported_service =$_GET['services'];
+
+	//supplier service
+	$res = explode(",", $supported_service);
+	$db->query("Delete From `md_supplierservices` Where M_Company_Id = ".$companyid);
+	foreach($res as $item) {
+		$tagsupplier_id = 0;
+		$row = $db->select('md_supplierservices', null, null, 'ORDER BY Id DESC')->results();
+		if ($row) {
+			$tagsupplier_id = $row["Id"]+1;
+		}else{
+			$tagsupplier_id = 1;
+		}
+
+		$dataArray = array('Id' => $tagsupplier_id, 'M_Services_Id' => $item, 'M_Company_Id' => $companyid);
+
+		$db->insert('md_supplierservices', $dataArray);
+	}
+
+
+	$message['success'] = true;
+	echo json_encode($message);
+}
+elseif ($function == "EditProfile"){
+	$message = array();
+	$companyid =$_GET['companyid'];
+	$address =$_GET['address'];
+
+	$where = array('Id' => $companyid);
+	$dataArray = array( 'Address' => $address);
+	$db->update('m_company', $dataArray,$where);
+
+	//tag
+	if(isset($_GET['tagList'])){
+		$db->query("Delete From  `md_suppliertags` Where M_User_Id = ".$companyid);
+		foreach ($_GET['tagList'] as $index => $tag_id) {
+			$tagsupplier_id = 0;
+			$row = $db->select('md_suppliertags', null, null, 'ORDER BY Id DESC')->results();
+			if ($row) {
+				$tagsupplier_id = $row["Id"]+1;
+			}else{
+				$tagsupplier_id = 1;
+			}
+
+			$dataArray = array('Id' => $tagsupplier_id, 'C_Tags_Id' => $tag_id, 'M_User_Id' => $companyid);
+
+			$db->insert('md_suppliertags', $dataArray);
+		}
+	}
 
 	$message['success'] = true;
 	echo json_encode($message);

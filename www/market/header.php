@@ -41,7 +41,7 @@
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/knockout-3.4.2.js"></script>
-      <script src="js/js-webshim/minified/polyfiller.js"></script>
+    <!-- <script src="js/js-webshim/minified/polyfiller.js"></script> -->
     <link rel="stylesheet" href="typeahead/typeaheadStyle.css" >
 
 
@@ -115,7 +115,13 @@
 							               <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="index.php?rdp=profile" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="index.php?rdp=profile" class="btn btn-default btn-flat">Change Profile to
+                                      <?php
+                                      if(($_SESSION['usertype'] == 'Buyer')){ echo "Supplier";}else{
+                                         echo "Buyer";;
+                                      }
+                                      ?>
+                                    </a>
                                 </div>
                                 <div class="pull-right">
                                    <button class="btn btn-primary" type="submit"  onClick="parent.location='logout.php'"><i class="icon-off icon-white"></i>  &nbsp;Logout </button>

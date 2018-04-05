@@ -173,7 +173,8 @@
                         <label>Company Name: </label>
                         </div>
 						 <div class="col-sm-6">
-							   <?php echo $company_name; ?>
+             <a href="index.php?rdp=company_profile&companyid=<?php echo $companyid; ?>" target="_blank"> <?php echo $company_name; ?> </a>
+							   
 							    </div>
 					  </div>
                     </div>

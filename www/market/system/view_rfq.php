@@ -150,7 +150,7 @@ if (isset($result)){
                   <label>Company Name: </label>
                 </div>
                 <div class="col-sm-6">
-                  <?php echo $company_name; ?>
+                <a href="index.php?rdp=company_profile&companyid=<?php echo $company_id; ?>" target="_blank"> <?php echo $company_name; ?> </a>
                 </div>
               </div>
             </div>
