@@ -760,20 +760,20 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="col-md-4">
                 <div class="contact-item"><i class="fa fa-map-marker fa-2x"></i>
-                    <p>6 Kian Teck Cres
+                    <p>100 Jalan Sultan, Sultan Plaza, #03-02
                         <br>
-                        Singapore 628873
+                        Singapore 19901
                     </p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="contact-item"><i class="fa fa-envelope-o fa-2x"></i>
-                    <p>info@metalpolis.com</p>
+                    <p>info@stylardigital.com</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="contact-item"><i class="fa fa-phone fa-2x"></i>
-                    <p> +65 97376159</p>
+                    <p> +65 65190961</p>
                 </div>
             </div>
             <div class="clearfix"></div>
