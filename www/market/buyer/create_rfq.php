@@ -892,11 +892,13 @@
                 data: $("#create_rfq").serialize(),
                 dataType: 'json',
                 success: function (data) {
+                    window.location.href = "index.php?rdp=list_rfq";
                     $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
                     $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
                     $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
                     $("#create_rfq").remove();
                     $btn.button("reset");
+                    
                 },
                 error: function (data) {
                     $("#notify .message").html("<strong>100000" + data.status + "</strong>: " + data.message);
@@ -918,11 +920,13 @@
                 data: $("#create_rfq").serialize(),
                 dataType: 'json',
                 success: function (data) {
-                    $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
-                    $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
-                    $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
-                    $("#create_rfq").remove();
-                    $btn.button("reset");
+                    window.location.href = "index.php?rdp=list_rfq";
+                    // $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
+                    // $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
+                    // $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+                    // $("#create_rfq").remove();
+                    // $btn.button("reset");
+                    
                 },
                 error: function (data) {
                     $("#notify .message").html("<strong>100000" + data.status + "</strong>: " + data.message);
