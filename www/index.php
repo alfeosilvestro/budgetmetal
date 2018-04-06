@@ -376,6 +376,21 @@
                                      class="img-responsive" alt="Custom Fabrication"> </a></div>
                     </div>
                 </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 custom_fabrication isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/CustomFabrication_StructuralSteel.jpg"
+                               title="Structural Steel"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>Custom Fabrication</h4>
+                                    <p>Structural Steel</p>
+                                </div>
+                                <img src="img/services/CustomFabrication_StructuralSteel.jpg"
+                                     class="img-responsive" alt="Custom Fabrication"> </a></div>
+                    </div>
+                </div>
                 <!--Custom Fabrications-->
 
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 metal_materials isotope-item"
@@ -760,20 +775,20 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="col-md-4">
                 <div class="contact-item"><i class="fa fa-map-marker fa-2x"></i>
-                    <p>6 Kian Teck Cres
+                    <p>100 Jalan Sultan, Sultan Plaza, #03-02
                         <br>
-                        Singapore 628873
+                        Singapore 19901
                     </p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="contact-item"><i class="fa fa-envelope-o fa-2x"></i>
-                    <p>info@metalpolis.com</p>
+                    <p>info@stylardigital.com</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="contact-item"><i class="fa fa-phone fa-2x"></i>
-                    <p> +65 97376159</p>
+                    <p> +65 65190961</p>
                 </div>
             </div>
             <div class="clearfix"></div>
