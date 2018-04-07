@@ -185,10 +185,7 @@ $(function () {
     //alert($('#values').val());
 var table = $('#supplier_lists').DataTable();
 
- var rows = table
-    .rows()
-     .remove()
-     .draw();
+
     var id = $('#values').val();
     if (window.XMLHttpRequest) {
       // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -199,13 +196,32 @@ var table = $('#supplier_lists').DataTable();
     }
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-      $("#supplier_lists tbody").append(this.responseText);
-      }
+      // var rows = table
+      //      .rows()
+      //      .remove()
+      //      .draw();
+      // $("#supplier_lists tbody").append(this.responseText);
+
+    table.clear();
+    table.row.add([
+        'new engine',
+        'new browser',
+        'new platform',
+        'new version',
+        'new css'
+    ]).draw();
+    table.row.add([
+        'new engine',
+        'new browser',
+        'new platform',
+        'new version',
+        'new css'
+    ]).draw();
+  }
     };
     xmlhttp.open("GET","system/searchsuppliersbyservices.php?selectedValues="+id,true);
     xmlhttp.send();
   //$('#supplier_lists').DataTable();
-  var rows = table.reload();
     e.preventDefault();
   });
 });
