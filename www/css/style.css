@@ -300,7 +300,7 @@ ul.cat li {
 }
 ol.type li {
 	display: inline-block;
-	margin-left: 20px;
+	margin-left: 10px;
     margin-bottom: 30px;
 }
 ol.type li a {
