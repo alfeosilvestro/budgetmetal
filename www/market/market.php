@@ -904,6 +904,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 				$dataArray = array('Document' => $rfq_id, 'First_Opened_User' => $askinguser_id, 'Receiving_Company' => $document_owner_companyid, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $askinguser_id,'Status' => "1", 'Type' => 'Comment');
 				$dt = $db->insert('company_notification', $dataArray);
 
+				$Message = "$company_name has sent you a clarification on your proposal as per following : <br> <br><b> ".$txt_comment ."</b><br>";
 				$email = "";
 				$sql = "SELECT * FROM `m_user` t1 where Status = 1 and Confirmed = 1 AND M_Company_Id = " . $document_owner_companyid;
 				$result = $conn->query($sql);
@@ -982,6 +983,19 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 		$dataArray = array('Document' => $rfq_id, 'First_Opened_User' => $replyuser_id, 'Receiving_Company' => $commentowner_companyid, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $replyuser_id,'Status' => "1", 'Type' => 'Comment');
 		$dt = $db->insert('company_notification', $dataArray);
 
+		$txt_comment = "";
+		$sql = "SELECT * FROM `t_clarifications` t1 where Id = $rfq_id";
+		$result = $conn->query($sql);
+		if (isset($result)){
+			if ($result->num_rows > 0) {
+				// output data of each row
+				while($row = $result->fetch_assoc()) {
+					$txt_comment = $row["ClarificationQuestion"];
+				}
+			}
+		}
+
+		$Message = "$company_name has replied on your comment as per following : <br> <br>Clarification : <b> ".$txt_comment ."</b><br><br> Reply : <b> ".$reply_message ."</b><br><br>";
 		$email = "";
 		$sql = "SELECT * FROM `m_user` t1 where Status = 1 and Confirmed = 1 AND M_Company_Id = " . $commentowner_companyid;
 		$result = $conn->query($sql);
@@ -1194,6 +1208,38 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 
 	$dataArray = array('Company_Id' => $companyid, 'User_Id' => $user_id, 'ServiceQuality' => $serviceRating, 'SpeedOfQuotation' =>$quotationRating, 'SpeedofDelivery' => $deliveryRating, 'Price' =>$priceRating, 'Title' =>$title, 'Description' =>$description, 'Ref_Document_Id' =>$document_id, 'Status' => 1, 'Created' =>$CreatedDate, 'CreatedBy' =>$user_id);
 	$db->insert('md_companyrating', $dataArray);
+
+	$company_name  = "";
+
+	$sql = "SELECT * FROM `m_company` t1 where Id in (SELECT M_Company_Id FROM `m_user` t1 where Id = $user_id)";
+	$result = $conn->query($sql);
+	if (isset($result)){
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				$company_name = $row["Name"];
+			}
+		}
+	}
+	$Message = "$company_name has given on your company.";
+	$dataArray = array('Document' => $document_id, 'First_Opened_User' => $user_id, 'Receiving_Company' => $companyid, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $user_id,'Status' => "1", 'Type' => 'Rating');
+	$dt = $db->insert('company_notification', $dataArray);
+
+	$Message = "$company_name has sent you a clarification on your proposal as per following : <br> <br><b> ".$txt_comment ."</b><br>";
+	$email = "";
+	$sql = "SELECT * FROM `m_user` t1 where Status = 1 and Confirmed = 1 AND M_Company_Id = " . $document_owner_companyid;
+	$result = $conn->query($sql);
+	if (isset($result)){
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				$email = $email .  $row["EmailAddress"].";";
+			}
+			sendEmailforNotification($email,$Message, $Message,"Rating","");
+
+		}
+	}
+
 	$message['success'] = true;
 	echo json_encode($message);
 }elseif ($function == "EditAbout"){
@@ -1378,12 +1424,17 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 
 	require_once('../class.phpmailer.php');
 	//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
+
 	$host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-	if($doc_type == "RFQ"){
-		$actual_link = $host .  "/index.php?rfq_ref=". $doc_id;
-	}else{
-		$actual_link = $host .  "/index.php?id=". $doc_id;
+	$actual_link = $host;
+	if($doc_id != ""){
+		if($doc_type == "RFQ"){
+			$actual_link = $host .  "/index.php?rfq_ref=". $doc_id;
+		}else{
+			$actual_link = $host .  "/index.php?id=". $doc_id;
+		}
 	}
+
 	$sitelink = "<br><a href='".$actual_link."'>Go to Site</a>";
 	$from_mail = "info@metalpolis.com";
 	$from_name = "BudgetMetal";

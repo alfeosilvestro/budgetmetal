@@ -269,32 +269,32 @@
 
 </form>
 
-	<script>
-  webshims.setOptions('forms-ext', {
-      replaceUI: 'auto',
-      types: 'number'
-  });
-  webshims.polyfill('forms forms-ext');
+<script>
+	webshims.setOptions('forms-ext', {
+		replaceUI: 'auto',
+		types: 'number'
+	});
+
+	webshims.polyfill('forms forms-ext');
 	$(function () {
 		//Date picker
-    $('#rfq_datepicker').datepicker({
+		$('#rfq_datepicker').datepicker({
 
-	   format: "dd-mm-yyyy",
-	   autoclose: true,
-    todayHighlight: true,
-	startDate : "today",
-    })
-
+		format: "dd-mm-yyyy",
+			autoclose: true,
+			todayHighlight: true,
+			startDate : "today",
+		})
 	});
 
 
 
-	  $('button[id=addfilelist]').click(function(){
+	$('button[id=addfilelist]').click(function(){
 		var fileno = $("input[id=fileno]").val();
 		var file_data = $('#rfq_upload').prop('files')[0];
 		var form_data = new FormData();
 		form_data.append('file', file_data);
-		$.ajax({
+			$.ajax({
 					url: 'upload.php', // point to server-side PHP script
 					dataType: 'text',  // what to expect back from the PHP script, if anything
 					cache: false,
@@ -302,48 +302,41 @@
 					processData: false,
 					data: form_data,
 					type: 'post',
-					  dataType: 'json',
+						dataType: 'json',
 					success: function(data){
 						fileno = parseInt(fileno)+1;
-						  $("#fileList tbody").append('<tr id="tr_'+fileno+'" align="left"><td><input type="hidden" name="attachment[]" value="'+data.message+'" ><a href="attachment/'+data.message+'" target="_blank">'+data.message+'</a> <input type="hidden" name="attachment_subject[]" value="" > </td><td><textarea name="attachment_message[]" row="3" cols="50"></textarea></td><td><button type="button" OnClick="RemoveFile(this);" class="btn btn-sm btn-del" value="tr_'+fileno+'">Remove </button> <br></td></tr>');
+							$("#fileList tbody").append('<tr id="tr_'+fileno+'" align="left"><td><input type="hidden" name="attachment[]" value="'+data.message+'" ><a href="attachment/'+data.message+'" target="_blank">'+data.message+'</a> <input type="hidden" name="attachment_subject[]" value="" > </td><td><textarea name="attachment_message[]" row="3" cols="50"></textarea></td><td><button type="button" OnClick="RemoveFile(this);" class="btn btn-sm btn-del" value="tr_'+fileno+'">Remove </button> <br></td></tr>');
 						$("input[id=fileno]").val(fileno);
 						$('#rfq_upload').val("");
 					}
-		 });
+			});
+	});
 
-
-
-
-
-
-	  });
-
-	  function RemoveFile(objButton){
+	function RemoveFile(objButton){
 		var trid = objButton.value;
 		row = $('#' + trid);
 		row.remove();
-		}
+	}
 
     $("input[id='bid_price']").keyup(function () {
-    var bid_price = $("input[id='bid_price']").val();
-    $("input[id='bid_price']").val(parseInt(bid_price));
+		var bid_price = $("input[id='bid_price']").val();
+		$("input[id='bid_price']").val(parseInt(bid_price));
     });
 
-		$("#btnsave_quotation_top").click(function (e) {
+	$("#btnsave_quotation_top").click(function (e) {
 
-			e.preventDefault();
+		e.preventDefault();
 
-				SaveQuotation();
+			SaveQuotation();
 
-		});
+	});
 
-		$("#btnsubmit_quotation_top").click(function (e) {
+	$("#btnsubmit_quotation_top").click(function (e) {
+		e.preventDefault();
 
-			e.preventDefault();
+			SubmitQuotation();
 
-				SubmitQuotation();
-
-		});
+	});
 
 	function SaveQuotation() {
 
@@ -380,11 +373,13 @@
                 data: $("#create_rfq").serialize(),
                 dataType: 'json',
                 success: function (data) {
-                    $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
-                    $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
-                    $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
-                    $("#create_rfq").remove();
-                    $btn.button("reset");
+					console.log('tks');
+					window.location.href = "index.php?rdp=list_quotation";
+                    // $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
+                    // $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
+                    // $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+                    // $("#create_rfq").remove();
+                    // $btn.button("reset");
                 },
                 error: function (data) {
                     $("#notify .message").html("<strong>100000" + data.status + "</strong>: " + data.message);
@@ -396,10 +391,11 @@
             });
 
     }
-	</script>
+</script>
+	
 	<?php
-				}
-		}else{
+	}
+	}else{
 		$rfq_ref = "";
 	}
 	?>

@@ -579,7 +579,7 @@
             autoclose: true,
             todayHighlight: true,
         });
-        
+
         $('button[id=addfilelist]').click(function(){
             var fileno = $("input[id=fileno]").val();
             var file_data = $('#rfq_upload').prop('files')[0];
@@ -909,7 +909,7 @@
 
         var rowLength_supplier = table_suppliers.rows.length;
         var selected_suppliers_id = "0";
-        
+
         for(var i=1; i<rowLength_supplier; i+=1){
             var row = table_suppliers.rows[i];
             var selected_suppliers = row.getElementsByTagName("input")[0];
@@ -948,7 +948,7 @@
 
     function searchsupplier(){
 
-        
+
     }
 
     function AddtoRequestList(objButton){
@@ -969,7 +969,7 @@
             objButton.innerHTML = "Add to Selected Supplier List";
         objButton.setAttribute( "onClick", "AddtoRequestList(this);" );
         $('#' + trid + ' input[name="selected_supplier_id[]"]').val("0");
-        
+
         GetSelectedSupplierCount();
     }
 
@@ -984,32 +984,56 @@
     $("#btnsave_rfq_top").click(function (e) {
 
         e.preventDefault();
-
-            SaveRFQ();
+        var rowCount = $('#selected_suppliers tbody tr').length;
+        if(rowCount==0){
+            alert("Please invite at least one supplier");
+        }
+        else{
+          SaveRFQ();
+        }
+          //  SaveRFQ();
 
     });
 
     $("#btnsubmit_rfq_top").click(function (e) {
 
         e.preventDefault();
-
-            SubmitRFQ();
+        var rowCount = $('#selected_suppliers tbody tr').length;
+        if(rowCount==0){
+            alert("Please invite at least one supplier");
+        }
+        else{
+          SubmitRFQ();
+        }
+            //SubmitRFQ();
 
     });
 
     $("#btnsave_rfq_bot").click(function (e) {
 
         e.preventDefault();
-
-            SaveRFQ();
+        var rowCount = $('#selected_suppliers tbody tr').length;
+        if(rowCount==0){
+            alert("Please invite at least one supplier");
+        }
+        else{
+          SaveRFQ();
+        }
+            //SaveRFQ();
 
     });
 
     $("#btnsubmit_rfq_bot").click(function (e) {
 
         e.preventDefault();
-
-            SubmitRFQ();
+        var rowCount = $('#selected_suppliers tbody tr').length;
+        if(rowCount==0){
+            alert("Please invite at least one supplier");
+        }
+        else{
+          SubmitRFQ();
+        }
+            //SubmitRFQ();
 
     });
 
@@ -1048,11 +1072,12 @@ function SubmitRFQ() {
             data: $("#create_rfq").serialize(),
             dataType: 'json',
             success: function (data) {
-                $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
-                $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
-                $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
-                $("#create_rfq").remove();
-                $btn.button("reset");
+                window.location.href = "index.php?rdp=list_rfq";
+                // $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
+                // $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
+                // $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+                // $("#create_rfq").remove();
+                // $btn.button("reset");
             },
             error: function (data) {
                 $("#notify .message").html("<strong>100000" + data.status + "</strong>: " + data.message);
