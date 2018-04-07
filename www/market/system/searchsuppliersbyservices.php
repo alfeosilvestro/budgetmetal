@@ -12,19 +12,19 @@ if (!empty($results)){
   $count = 0;
   foreach ($results as $row) {
     $count = $count+1;
+    if($count != 1){
+      echo 'AEIOUTSA';
+    }
     ?>
-    <tr>
-      <td><?php echo $count; ?></td>
-      <td><?php echo $row["Name"];?></td>
-      <td><?php echo $row["Reg_No"];?></td>
-      <td><?php echo $row["Address"];?></td>
-      <td><?php
+    ['<?php echo $count; ?>','
+    <?php echo $row["Name"];?>','
+      <?php echo $row["Reg_No"];?>','
+      <?php echo $row["Address"];?>','
+      <?php
 
       $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a> ';
       echo $out;
-      ?></td>
-    </tr>
-
+      ?>']
     <?php
   }
 }
