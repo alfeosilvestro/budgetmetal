@@ -1117,7 +1117,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 			$dataArray = array( 'C_RfqStatus' => 12,'ModifiedDate' => $ModifiedDate,'ModifiedBy' => $ModifiedBy);
 			$db->update('t_document', $dataArray,$where);
 
-			$Message = "Your Quotation($Id) has been awareded to your company.";
+			$Message = "Your Quotation($Id) has been awarded to your company.";
 			$dataArray = array('Document' => $Id, 'First_Opened_User' => $ModifiedBy, 'Receiving_Company' => $selected_supplier_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $ModifiedDate, 'Created_By' => $ModifiedBy,'Status' => "1", 'Type' => 'Accepted');
 			$dt = $db->insert('company_notification', $dataArray);
 
@@ -1185,11 +1185,8 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 					sendEmailforNotification($email,$Message, $Message,"Quotation",$Id);
 				}
 			}
-
 		}
-
 	}
-
 	$message['success'] = true;
 	echo json_encode($message);
 }elseif ($function == "SaveRatingforSupplier"){
