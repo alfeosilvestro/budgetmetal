@@ -200,23 +200,23 @@ var table = $('#supplier_lists').DataTable();
       //      .rows()
       //      .remove()
       //      .draw();
-      // $("#supplier_lists tbody").append(this.responseText);
+      // $("#supplier_lists tbody").append(this.responseText); AEIOUTSA
+      table.clear();
 
-    table.clear();
-    table.row.add([
-        'new engine',
-        'new browser',
-        'new platform',
-        'new version',
-        'new css'
-    ]).draw();
-    table.row.add([
-        'new engine',
-        'new browser',
-        'new platform',
-        'new version',
-        'new css'
-    ]).draw();
+      var trainindIdArray = this.responseText.split('AEIOUTSA');
+      console.log('tks');
+      console.log(trainindIdArray);
+      var i;
+      
+      for (i = 0; i < trainindIdArray.length; ++i) {
+          
+          var temp = trainindIdArray[i].trim();
+          
+          var ta = JSON.stringify(temp);
+          var tb = JSON.parse(ta).split('^^');
+         
+          table.row.add(tb).draw(); 
+      }
   }
     };
     xmlhttp.open("GET","system/searchsuppliersbyservices.php?selectedValues="+id,true);
@@ -236,4 +236,6 @@ $("[id*=treeview-checkbox-demo] input[type=checkbox]").bind("click", function ()
     }
   });
 });
+
+
 </script>
