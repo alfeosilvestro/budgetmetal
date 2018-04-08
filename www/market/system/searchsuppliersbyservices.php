@@ -5,8 +5,12 @@ $dbConfig = array("host" => $server, "dbname" => $database, "username" => $db_us
 // get instance of PDO Wrapper object
 $db = new PdoWrapper($dbConfig);
 $selectedValues = $_GET["selectedValues"];
+if($selectedValues != ""){
+  $query = "SELECT * FROM m_company Where Id in (SELECT `M_Company_Id`  FROM `md_supplierservices` WHERE `M_Services_Id` in ($selectedValues))";
+}else{
+    $query = "SELECT * FROM m_company Where Id in (SELECT `M_Company_Id`  FROM `md_supplierservices`)";
+}
 
-$query = "SELECT * FROM m_company Where Id in (SELECT `M_Company_Id`  FROM `md_supplierservices` WHERE `M_Services_Id` in ($selectedValues))";
 $results = $db->pdoQuery($query)->results();
 if (!empty($results)){
   $count = 0;
@@ -19,7 +23,7 @@ if (!empty($results)){
     <?php echo $count; ?> ^^ <?php echo $row["Name"];?> ^^ <?php echo $row["Reg_No"];?> ^^ <?php echo $row["Address"];?> ^^ <?php
 
       $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
-      
+
       $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
       echo $out;
       ?>
