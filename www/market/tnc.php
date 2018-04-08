@@ -1,3 +1,4 @@
+
 <html xmlns:v="urn:schemas-microsoft-com:vml"
 xmlns:o="urn:schemas-microsoft-com:office:office"
 xmlns:w="urn:schemas-microsoft-com:office:word"
@@ -11,8 +12,6 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <meta name=Generator content="Microsoft Word 15">
 <meta name=Originator content="Microsoft Word 15">
 <base href=www.simmondsstewart.com>
-<link rel=File-List
-href="file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/filelist.xml">
 <title>Website Terms of Use Template</title>
 <!--[if gte mso 9]><xml>
  <o:DocumentProperties>
@@ -20,20 +19,20 @@ href="file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/f
   <o:Author>TT</o:Author>
   <o:Keywords>Contract Template, Website Terms of Use Contract, Legal Disclaimer Contract, Technology Contract, Agreement Template, Free</o:Keywords>
   <o:Description>These are simple website terms of use that may be used for a website that describes a business and the team behind the business.&#10;&#10;Use of this document is subject to the terms and conditions set out at www.simmondsstewart.com/templates.</o:Description>
-  <o:LastAuthor>Peter Wang</o:LastAuthor>
-  <o:Revision>2</o:Revision>
-  <o:TotalTime>4125</o:TotalTime>
+  <o:LastAuthor>Aung Myat Khaing</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>4177</o:TotalTime>
   <o:LastPrinted>2016-09-15T03:21:00Z</o:LastPrinted>
-  <o:Created>2018-01-15T13:43:00Z</o:Created>
-  <o:LastSaved>2018-01-15T13:43:00Z</o:LastSaved>
+  <o:Created>2018-04-07T03:46:00Z</o:Created>
+  <o:LastSaved>2018-04-07T03:46:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>1564</o:Words>
-  <o:Characters>8920</o:Characters>
+  <o:Words>1567</o:Words>
+  <o:Characters>8938</o:Characters>
   <o:Category>Simmonds Stewart Template Document</o:Category>
   <o:Company>Simmonds Stewart</o:Company>
   <o:Lines>74</o:Lines>
   <o:Paragraphs>20</o:Paragraphs>
-  <o:CharactersWithSpaces>10464</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>10485</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:CustomDocumentProperties>
@@ -49,15 +48,11 @@ href="file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/f
   <o:DM_PROMPTFORVERSION dt:dt="float">0</o:DM_PROMPTFORVERSION>
  </o:CustomDocumentProperties>
 </xml><![endif]-->
-<link rel=dataStoreItem
-href="file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/item0001.xml"
-target="file:///C:\Users\galle\Downloads\Metalpolis%20website-terms-of-use_files\props002.xml">
-<link rel=themeData
-href="file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/themedata.thmx">
-<link rel=colorSchemeMapping
-href="file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/colorschememapping.xml">
+
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
   <w:TrackMoves>false</w:TrackMoves>
   <w:TrackFormatting>false</w:TrackFormatting>
   <w:PunctuationKerning/>
@@ -68,7 +63,7 @@ href="file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/c
   <w:DoNotPromoteQF/>
   <w:LidThemeOther>EN-NZ</w:LidThemeOther>
   <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
-  <w:LidThemeComplexScript>MY</w:LidThemeComplexScript>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
   <w:Compatibility>
    <w:BreakWrappedTables/>
    <w:SnapToGridInCell/>
@@ -669,14 +664,7 @@ href="file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/c
 	mso-font-charset:0;
 	mso-generic-font-family:roman;
 	mso-font-pitch:variable;
-	mso-font-signature:3 0 0 0 1 0;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:swiss;
-	mso-font-pitch:variable;
-	mso-font-signature:-536859905 -1073732485 9 0 511 0;}
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
 @font-face
 	{font-family:"Trebuchet MS";
 	panose-1:2 11 6 3 2 2 2 2 2 4;
@@ -714,8 +702,7 @@ href="file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/c
 	mso-fareast-font-family:"Times New Roman";
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 h1
 	{mso-style-name:"Heading 1\,1\.\,H1\,Heading 1 Char\,h1";
 	mso-style-unhide:no;
@@ -739,7 +726,6 @@ h1
 	mso-font-kerning:14.0pt;
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	layout-grid-mode:line;
 	mso-bidi-font-weight:normal;}
 h2
@@ -761,7 +747,6 @@ h2
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	font-weight:normal;}
 h3
 	{mso-style-name:"Heading 3\,Heading 3 Char1\,Heading 3 Char Char\,Heading 3 Char1 Char Char\,Heading 3 Char Char Char Char\,Heading 3 Char1 Char Char Char Char\,Heading 3 Char Char Char Char Char Char\,Heading 3 Char1 Char Char Char Char Char Char\,Heading 3 Char1 Char1\,Section";
@@ -782,7 +767,6 @@ h3
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	font-weight:normal;}
 h4
 	{mso-style-name:"Heading 4\,h4 sub sub heading\,h4\,\(Alt+4\)\,Map Title\,sub-sub-sub para\,Level 2 - a\,4\,sub-sub-sub-sect";
@@ -803,7 +787,6 @@ h4
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	font-weight:normal;}
 h5
 	{mso-style-name:"Heading 5\,A";
@@ -824,7 +807,6 @@ h5
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	font-weight:normal;}
 h6
 	{mso-style-unhide:no;
@@ -844,7 +826,6 @@ h6
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	font-weight:normal;}
 p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
 	{mso-style-unhide:no;
@@ -865,8 +846,7 @@ p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
 	mso-fareast-font-family:"Times New Roman";
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
 	{mso-style-unhide:no;
 	mso-style-qformat:yes;
@@ -885,8 +865,7 @@ p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
 	mso-fareast-font-family:"Times New Roman";
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
 	{mso-style-unhide:no;
 	mso-style-qformat:yes;
@@ -905,8 +884,7 @@ p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
 	mso-fareast-font-family:"Times New Roman";
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 p.MsoToc1, li.MsoToc1, div.MsoToc1
 	{mso-style-update:auto;
 	mso-style-noshow:yes;
@@ -923,8 +901,7 @@ p.MsoToc1, li.MsoToc1, div.MsoToc1
 	mso-fareast-font-family:"Times New Roman";
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 p.MsoToc2, li.MsoToc2, div.MsoToc2
 	{mso-style-update:auto;
 	mso-style-noshow:yes;
@@ -941,8 +918,7 @@ p.MsoToc2, li.MsoToc2, div.MsoToc2
 	mso-fareast-font-family:"Times New Roman";
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
 	{mso-style-unhide:no;
 	mso-style-link:"Comment Text Char";
@@ -956,8 +932,7 @@ p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
 	mso-fareast-font-family:"Times New Roman";
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 p.MsoHeader, li.MsoHeader, div.MsoHeader
 	{mso-style-unhide:no;
 	mso-style-link:"Header Char";
@@ -973,8 +948,7 @@ p.MsoHeader, li.MsoHeader, div.MsoHeader
 	mso-fareast-font-family:"Times New Roman";
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 p.MsoFooter, li.MsoFooter, div.MsoFooter
 	{mso-style-priority:99;
 	mso-style-unhide:no;
@@ -991,8 +965,7 @@ p.MsoFooter, li.MsoFooter, div.MsoFooter
 	mso-fareast-font-family:"Times New Roman";
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 span.MsoCommentReference
 	{mso-style-unhide:no;
 	mso-ansi-font-size:8.0pt;
@@ -1025,7 +998,6 @@ p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
 	mso-bidi-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	font-weight:bold;}
 p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
 	{mso-style-unhide:no;
@@ -1037,8 +1009,7 @@ p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
 	font-family:"Tahoma",sans-serif;
 	mso-fareast-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 span.FooterChar
 	{mso-style-name:"Footer Char";
 	mso-style-priority:99;
@@ -1094,7 +1065,6 @@ p.OutlinenumberedLevel1, li.OutlinenumberedLevel1, div.OutlinenumberedLevel1
 	color:#C00000;
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	font-weight:bold;
 	mso-bidi-font-weight:normal;}
 p.OutlinenumberedLevel2, li.OutlinenumberedLevel2, div.OutlinenumberedLevel2
@@ -1114,7 +1084,6 @@ p.OutlinenumberedLevel2, li.OutlinenumberedLevel2, div.OutlinenumberedLevel2
 	mso-fareast-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	mso-no-proof:yes;}
 p.OutlinenumberedLevel3, li.OutlinenumberedLevel3, div.OutlinenumberedLevel3
 	{mso-style-name:"Outline numbered Level 3";
@@ -1132,8 +1101,7 @@ p.OutlinenumberedLevel3, li.OutlinenumberedLevel3, div.OutlinenumberedLevel3
 	font-family:"Arial",sans-serif;
 	mso-fareast-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-US;}
 p.OutlinenumberedLevel4, li.OutlinenumberedLevel4, div.OutlinenumberedLevel4
 	{mso-style-name:"Outline numbered Level 4";
 	mso-style-unhide:no;
@@ -1152,7 +1120,6 @@ p.OutlinenumberedLevel4, li.OutlinenumberedLevel4, div.OutlinenumberedLevel4
 	mso-fareast-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	mso-no-proof:yes;}
 p.OutlinenumberedLevel5, li.OutlinenumberedLevel5, div.OutlinenumberedLevel5
 	{mso-style-name:"Outline numbered Level 5";
@@ -1173,7 +1140,6 @@ p.OutlinenumberedLevel5, li.OutlinenumberedLevel5, div.OutlinenumberedLevel5
 	mso-fareast-font-family:"Times New Roman";
 	mso-ansi-language:EN-NZ;
 	mso-fareast-language:EN-US;
-	mso-bidi-language:AR-SA;
 	mso-no-proof:yes;}
 span.Heading7Char
 	{mso-style-name:"Heading 7 Char";
@@ -1205,6 +1171,12 @@ span.CommentSubjectChar
 	mso-hansi-font-family:Arial;
 	mso-fareast-language:EN-US;
 	font-weight:bold;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
 .MsoChpDefault
 	{mso-style-type:export-only;
 	mso-default-props:yes;
@@ -1212,26 +1184,25 @@ span.CommentSubjectChar
 	mso-ansi-font-size:10.0pt;
 	mso-bidi-font-size:10.0pt;
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-NZ;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-NZ;}
  /* Page Definitions */
  @page
-	{mso-footnote-separator:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") fs;
-	mso-footnote-continuation-separator:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") fcs;
-	mso-footnote-continuation-notice:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") fcn;
-	mso-endnote-separator:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") es;
-	mso-endnote-continuation-separator:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") ecs;
-	mso-endnote-continuation-notice:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") ecn;}
+	{mso-footnote-separator:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") fs;
+	mso-footnote-continuation-separator:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") fcs;
+	mso-footnote-continuation-notice:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") fcn;
+	mso-endnote-separator:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") es;
+	mso-endnote-continuation-separator:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") ecs;
+	mso-endnote-continuation-notice:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") ecn;}
 @page WordSection1
 	{size:595.35pt 842.0pt;
 	margin:1.0in 49.6pt 1.0in 89.85pt;
 	mso-header-margin:35.45pt;
 	mso-footer-margin:35.45pt;
 	mso-title-page:yes;
-	mso-header:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") h1;
-	mso-footer:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") f1;
-	mso-first-header:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") fh1;
-	mso-first-footer:url("file:///C:/Users/galle/Downloads/Metalpolis%20website-terms-of-use_files/header.htm") ff1;
+	mso-header:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") h1;
+	mso-footer:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") f1;
+	mso-first-header:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") fh1;
+	mso-first-footer:url("file:///D:/OneDrive_Personal/OneDrive/Documents/Business/Stylar%20Digital/03.Project/BudgetMetal/Budgetmetal%20website-terms-of-use%2020180407_files/header.htm") ff1;
 	mso-paper-source:0;}
 div.WordSection1
 	{page:WordSection1;}
@@ -1596,7 +1567,7 @@ div.WordSection1
 	text-indent:-9.0pt;}
 @list l6
 	{mso-list-id:1388263434;
-	mso-list-template-ids:398645518;}
+	mso-list-template-ids:-1896178674;}
 @list l6:level1
 	{mso-level-style-link:"Outline numbered Level 1";
 	mso-level-text:%1;
@@ -1608,7 +1579,9 @@ div.WordSection1
 	mso-bidi-font-size:10.0pt;
 	font-family:"Arial Black",sans-serif;
 	mso-bidi-font-family:Arial;
-	color:#C00000;
+	color:black;
+	mso-style-textfill-fill-color:black;
+	mso-style-textfill-fill-alpha:100.0%;
 	mso-hide:none;
 	text-transform:uppercase;
 	mso-ansi-font-weight:bold;
@@ -1623,7 +1596,7 @@ div.WordSection1
 	mso-level-text:"%1\.%2";
 	mso-level-tab-stop:none;
 	mso-level-number-position:left;
-	margin-left:28.35pt;
+	margin-left:311.85pt;
 	text-indent:-28.35pt;
 	mso-ansi-font-size:10.0pt;
 	mso-bidi-font-size:10.0pt;
@@ -1791,8 +1764,7 @@ ul
 	font-size:10.0pt;
 	font-family:"Times New Roman",serif;
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-NZ;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-NZ;}
 table.MsoTableGrid
 	{mso-style-name:"Table Grid";
 	mso-tstyle-rowband-size:0;
@@ -1809,8 +1781,7 @@ table.MsoTableGrid
 	font-size:10.0pt;
 	font-family:"Times New Roman",serif;
 	mso-ansi-language:EN-NZ;
-	mso-fareast-language:EN-NZ;
-	mso-bidi-language:AR-SA;}
+	mso-fareast-language:EN-NZ;}
 </style>
 <![endif]--><!--[if gte mso 9]><xml>
  <o:shapedefaults v:ext="edit" spidmax="2049"/>
@@ -1820,22 +1791,21 @@ table.MsoTableGrid
  </o:shapelayout></xml><![endif]-->
 </head>
 
-<body lang=EN-US link=blue vlink=purple style='tab-interval:28.35pt'>
+<body lang=EN-SG link=blue vlink=purple style='tab-interval:28.35pt'>
 
 <div class=WordSection1>
 
 <p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
-normal'><span lang=EN-NZ style='font-size:20.0pt;font-family:"Arial Black",sans-serif;
-mso-bidi-font-family:Arial;color:#C00000;text-transform:uppercase'>Website </span></b><b
-style='mso-bidi-font-weight:normal'><span lang=EN-NZ style='font-size:20.0pt;
-font-family:"Arial Black",sans-serif;mso-bidi-font-family:Arial;color:#595959;
-text-transform:uppercase'>terms of use</span></b></p>
+normal'><span lang=EN-NZ style='font-size:20.0pt;mso-bidi-font-family:Arial;
+font-variant:small-caps'>Website terms of use</span></b><span lang=EN-NZ
+style='mso-bidi-font-family:Arial'><o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:"Arial Black";mso-bidi-font-family:
-"Arial Black";text-transform:uppercase;mso-bidi-font-weight:bold'><span
-style='mso-list:Ignore'>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ>APPLICATION OF TERMS</span></p>
+"Arial Black";color:windowtext;text-transform:uppercase;mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'>APPLICATION OF TERMS<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;page-break-after:avoid;
 mso-list:l6 level2 lfo2'><![if !supportLists]><span lang=EN-NZ
@@ -1849,45 +1819,42 @@ lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>a<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold'>you agree to
-these Terms; and</span><span lang=EN-NZ> </span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-weight:
+bold'>you agree to these Terms; and</span><span lang=EN-NZ> </span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>b<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold'>where your
-access and use is on behalf of another person (e.g. a company), you confirm that
-you are authorised to, and do in fact, agree to these Terms on that persons
-behalf and that, by agreeing to these Terms on that persons behalf, that
-person is bound by these Terms.</span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-weight:
+bold'>where your access and use <span class=GramE>is</span> on behalf of
+another person (e.g. a company), you confirm that you are authorised to, and do
+in fact, agree to these Terms on that persons behalf and that, by agreeing to
+these Terms on that persons behalf, that person is bound by these Terms.</span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'>If you do not agree to these Terms, you are not authorised to access and
-use the Website, and you must immediately stop doing so.<span
-style='mso-spacerun:yes'> </span></span><span lang=EN-NZ style='mso-no-proof:
-no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-weight:
+bold;mso-no-proof:no'>If you do not agree to these Terms, you are not
+authorised to access and use the Website, and you must immediately stop doing
+so.<span style='mso-spacerun:yes'> </span></span><span lang=EN-NZ
+style='mso-no-proof:no'><o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:"Arial Black";mso-bidi-font-family:
-"Arial Black";text-transform:uppercase;mso-bidi-font-weight:bold'><span
-style='mso-list:Ignore'>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ>CHANGES</span></p>
+"Arial Black";color:windowtext;text-transform:uppercase;mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'>CHANGES<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'>We may change these Terms at any time by updating them on the Website.<span
-style='mso-spacerun:yes'> </span>Unless stated otherwise, any change takes
-effect immediately.<span style='mso-spacerun:yes'> </span>You are responsible
-for ensuring you are familiar with the latest Terms.<span
+</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-weight:
+bold;mso-no-proof:no'>We may change these Terms at any time by updating them on
+the Website.<span style='mso-spacerun:yes'> </span>Unless stated otherwise,
+any change takes effect immediately.<span style='mso-spacerun:yes'> </span>You
+are responsible for ensuring you are familiar with the latest Terms.<span
 style='mso-spacerun:yes'> </span>By continuing to access and use the Website,
 you agree to be bound by the changed Terms. </span><span lang=EN-NZ
 style='mso-no-proof:no'><o:p></o:p></span></p>
@@ -1895,144 +1862,126 @@ style='mso-no-proof:no'><o:p></o:p></span></p>
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'>We may change, suspend, discontinue, or restrict access to, the Website
-without notice or liability.</span><span lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-weight:
+bold;mso-no-proof:no'>We may change, suspend, discontinue, or restrict access
+to, the Website without notice or liability.</span><span lang=EN-NZ
+style='mso-no-proof:no'><o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><b><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>These Terms were last
-updated on 18<sup>th</sup> Dec 2017. <span style='mso-spacerun:yes'></span></span></b><span
-lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><b><span lang=EN-NZ style='mso-no-proof:no'>These
+Terms were last updated on 1<sup>st</sup> Jan 2018. <span
+style='mso-spacerun:yes'></span></span></b><span lang=EN-NZ style='mso-no-proof:
+no'><o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:"Arial Black";mso-bidi-font-family:
-"Arial Black";text-transform:uppercase;mso-bidi-font-weight:bold'><span
-style='mso-list:Ignore'>3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ>DEFINITIONS</span></p>
+"Arial Black";color:windowtext;text-transform:uppercase;mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'>DEFINITIONS<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
-page-break-after:avoid;mso-list:none'><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'>In these Terms:<o:p></o:p></span></p>
-
-<p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
-mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'>including</span></i><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'> and similar words do not imply any limit<o:p></o:p></span></p>
+page-break-after:avoid;mso-list:none'><span lang=EN-NZ style='mso-bidi-font-weight:
+bold;mso-no-proof:no'>In these Terms:<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
 mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'>Loss</span></i><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'> includes loss of profits, savings, revenue or data, and any other claim,
-damage, loss, liability and cost, including legal costs on a solicitor and own
-client basis<o:p></o:p></span></p>
+style='mso-bidi-font-weight:bold;mso-no-proof:no'>including</span></i><span
+lang=EN-NZ style='mso-bidi-font-weight:bold;mso-no-proof:no'> and similar words
+do not imply any limit<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
 mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'>personal information</span></i><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'> means information about an identifiable, living person<o:p></o:p></span></p>
+style='mso-bidi-font-weight:bold;mso-no-proof:no'>Loss</span></i><span
+lang=EN-NZ style='mso-bidi-font-weight:bold;mso-no-proof:no'> includes loss of
+profits, savings, revenue or data, and any other claim, damage, loss, liability
+and cost, including legal costs on a solicitor and own client basis<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
 mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'>Terms </span></i><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'>means these terms and conditions titled <i style='mso-bidi-font-style:normal'>Website
-Terms of Use<o:p></o:p></i></span></p>
+style='mso-bidi-font-weight:bold;mso-no-proof:no'>personal information</span></i><span
+lang=EN-NZ style='mso-bidi-font-weight:bold;mso-no-proof:no'> means information
+about an identifiable, living person<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
 mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'>Underlying System</span></i><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'> means any network, system, software, data or material
-that underlies or is connected to the Website <o:p></o:p></span></p>
+style='mso-bidi-font-weight:bold;mso-no-proof:no'>Terms </span></i><span
+lang=EN-NZ style='mso-bidi-font-weight:bold;mso-no-proof:no'>means these terms
+and conditions titled <i style='mso-bidi-font-style:normal'>Website Terms of
+Use<o:p></o:p></i></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
 mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'>User ID </span></i><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'>means a unique name and/or password allocated to you to allow you to access
-certain parts of the Website<i style='mso-bidi-font-style:normal'> <o:p></o:p></i></span></p>
+style='mso-bidi-font-weight:bold;mso-no-proof:no'>Underlying System</span></i><span
+lang=EN-NZ style='mso-bidi-font-weight:bold;mso-no-proof:no'> means any
+network, system, software, data or material that underlies or is connected to
+the Website <o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
 mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'>We, us or our</span></i><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'> means <i style='mso-bidi-font-style:normal'>Metalpolis
-Pte. Ltd.</i><o:p></o:p></span></p>
+style='mso-bidi-font-weight:bold;mso-no-proof:no'>User ID </span></i><span
+lang=EN-NZ style='mso-bidi-font-weight:bold;mso-no-proof:no'>means a unique
+name and/or password allocated to you to allow you to access certain parts of
+the Website<i style='mso-bidi-font-style:normal'> <o:p></o:p></i></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
 mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'>Website </span></i><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'>means www.metalpolis.com<o:p></o:p></span></p>
+style='mso-bidi-font-weight:bold;mso-no-proof:no'>We, us or our</span></i><span
+lang=EN-NZ style='mso-bidi-font-weight:bold;mso-no-proof:no'> means <span
+class=SpellE><i style='mso-bidi-font-style:normal'>Stylar</i></span><i
+style='mso-bidi-font-style:normal'> Digital <span class=SpellE>Pte.</span> Ltd.</i><o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
 mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:
-bold;mso-no-proof:no'>You</span></i><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold;mso-no-proof:
-no'> means you or, if clause 1.1b applies, both you and the other person on
-whose behalf you are acting.<o:p></o:p></span></p>
+style='mso-bidi-font-weight:bold;mso-no-proof:no'>Website </span></i><span
+lang=EN-NZ style='mso-bidi-font-weight:bold;mso-no-proof:no'>means www.budgetmetal.com<o:p></o:p></span></p>
+
+<p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
+mso-list:none'><i style='mso-bidi-font-style:normal'><span lang=EN-NZ
+style='mso-bidi-font-weight:bold;mso-no-proof:no'>You</span></i><span
+lang=EN-NZ style='mso-bidi-font-weight:bold;mso-no-proof:no'> <span
+class=GramE>means</span> you or, if clause 1.1b applies, both you and the other
+person on whose behalf you are acting.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:"Arial Black";mso-bidi-font-family:
-"Arial Black";text-transform:uppercase;mso-bidi-font-weight:bold'><span
-style='mso-list:Ignore'>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-bidi-font-weight:bold'>YOUR OBLIGATIONS
-<o:p></o:p></span></p>
+"Arial Black";color:windowtext;text-transform:uppercase;mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext;mso-bidi-font-weight:bold'>YOUR OBLIGATIONS <o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>You must provide true,
-current and complete information in your dealings with us (including when
-setting up an account), and must promptly update that information as required
-so that the information remains true, current and complete.<span
-style='mso-bidi-font-weight:bold'><o:p></o:p></span></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>You
+must provide true, current and complete information in your dealings with us
+(including when setting up an account), and must promptly update that
+information as required so that the information remains true, current and
+complete.<span style='mso-bidi-font-weight:bold'><o:p></o:p></span></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;page-break-after:avoid;
 mso-list:l6 level2 lfo2'><![if !supportLists]><span lang=EN-NZ
 style='mso-fareast-font-family:Arial;mso-no-proof:no'><span style='mso-list:
 Ignore'>4.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>If you are given a
-User ID, you must keep your User ID secure and:<span style='mso-bidi-font-weight:
-bold'><o:p></o:p></span></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>If you
+are given a User ID, you must keep your User ID secure and:<span
+style='mso-bidi-font-weight:bold'><o:p></o:p></span></span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>a<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>not permit any other person to use
-your User ID, including not disclosing or providing it to any other person; and
-</span></p>
+</span></span></span><![endif]><span lang=EN-NZ>not permit any other person to
+use your User ID, including not disclosing or providing it to any other person;
+and </span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>b<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>immediately notify us if you become
-aware of any disclosure or unauthorised use of your User ID, by sending an
-email to </span><b style='mso-bidi-font-weight:normal'><span lang=EN-NZ>info@metalpolis.com</span></b><span
-lang=EN-NZ style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'>.
-</span></p>
+</span></span></span><![endif]><span lang=EN-NZ>immediately notify us if you
+become aware of any disclosure or unauthorised use of your User ID, by sending
+an email to <b style='mso-bidi-font-weight:normal'>info@budgetmetal.com</b>. </span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;page-break-after:avoid;
 mso-list:l6 level2 lfo2'><![if !supportLists]><span lang=EN-NZ
@@ -2044,20 +1993,17 @@ must:<o:p></o:p></span></p>
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>a<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>not act in a way, or use or introduce
-anything (including any virus, worm, Trojan horse, timebomb, keystroke logger,
-spyware or other similar feature) that in any way compromises, or may
-compromise, the Website or any Underlying System, or otherwise attempt to
-damage or interfere with the Website or any Underlying System; and</span><span
-lang=EN-NZ> </span></p>
+</span></span></span><![endif]><span lang=EN-NZ>not act in a way, or use or
+introduce anything (including any virus, worm, Trojan horse, timebomb,
+keystroke logger, spyware or other similar feature) that in any way compromises,
+or may compromise, the Website or any Underlying System, or otherwise attempt
+to damage or interfere with the Website or any Underlying System; and </span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>b<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>unless with our agreement, access the Website
-via standard web browsers only and not by any other method. <span
+</span></span></span><![endif]><span lang=EN-NZ>unless with our agreement, access
+the Website via standard web browsers only and not by any other method. <span
 style='mso-spacerun:yes'></span>Other methods include scraping, deep-linking,
 harvesting, data mining, use of a robot or spider, automation, or any similar
 data gathering, extraction or monitoring method.</span></p>
@@ -2068,7 +2014,7 @@ style='mso-list:Ignore'>4.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbs
 </span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>You
 must obtain our written permission to establish a link to our Website.<span
 style='mso-spacerun:yes'> </span>If you wish to do so, email your request to <b
-style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>info@metalpolis.com</i></b>.<o:p></o:p></span></p>
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>info@budgetmetal.com</i></b>.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><a
 name="_Ref411424637"><![if !supportLists]><span lang=EN-NZ style='mso-fareast-font-family:
@@ -2080,46 +2026,40 @@ who accesses and uses our Website by using your User ID.</span></a><span
 lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
-lang=EN-NZ style='mso-fareast-font-family:Arial;;mso-highlight:
-yellow;mso-no-proof:no'><span style='mso-list:Ignore'>4.6<span
-style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ>Fee Structure:<o:p></o:p></span></p>
+lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
+style='mso-list:Ignore'>4.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>Fee
+Structure:<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel3 style='mso-list:l6 level3 lfo2'><![if !supportLists]><span
-lang=EN-NZ style='mso-fareast-font-family:Arial;;mso-highlight:
-yellow'><span style='mso-list:Ignore'>a<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ >Buyers use the website for free, or until when we decide
-to charge an administrative fee <span style='mso-spacerun:yes'></span>for
-account management which will be updated on the terms of use.<o:p></o:p></span></p>
+lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>a<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ>Buyers use the website for
+free, or until when we decide to charge an administrative <span class=GramE>fee
+<span style='mso-spacerun:yes'></span>for</span> account management which will
+be updated on the terms of use.</span></p>
 
 <p class=OutlinenumberedLevel3 style='mso-list:l6 level3 lfo2'><![if !supportLists]><span
-lang=EN-NZ style='mso-fareast-font-family:Arial;;mso-highlight:
-yellow'><span style='mso-list:Ignore'>b<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style=';
-mso-highlight:yellow'>Suppliers who want to get a listing and become searchable
-on our website will pay the following fees:<o:p></o:p></span></p>
+lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>b<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ>Suppliers who want to get a
+listing and become searchable on our website will pay the following fee:</span></p>
 
 <p class=OutlinenumberedLevel4 style='mso-list:l6 level4 lfo2'><![if !supportLists]><span
-lang=EN-NZ style='mso-fareast-font-family:Arial;;mso-highlight:
-yellow'><span style='mso-list:Ignore'>i<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style=';
-mso-highlight:yellow'>Listing fee of 125 Singapore dollars per month upfront
-for each month of listing;<o:p></o:p></span></p>
-
-<p class=OutlinenumberedLevel4 style='mso-list:l6 level4 lfo2'><![if !supportLists]><span
-lang=EN-NZ style='mso-fareast-font-family:Arial;;mso-highlight:
-yellow'><span style='mso-list:Ignore'>ii<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style=';
-mso-highlight:yellow'>Transaction fee of 2.5% of the deal value which was
-concluded on our website with buyers on our website.<o:p></o:p></span></p>
+lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>i<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ>Transaction fee of 1.5% of the
+deal (Purchase Order) value which was concluded on our website with buyers on
+our website.</span></p>
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><a
 name="_Ref411424646"><![if !supportLists]><span lang=EN-NZ style='mso-fareast-font-family:
-"Arial Black";mso-bidi-font-family:"Arial Black";text-transform:uppercase;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>5<span
+"Arial Black";mso-bidi-font-family:"Arial Black";color:windowtext;text-transform:
+uppercase;mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>5<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ>INTELLECTUAL PROPERTY</span></a><span
-lang=EN-NZ> </span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'>INTELLECTUAL PROPERTY</span></a><span lang=EN-NZ
+style='font-family:"Arial",sans-serif;color:windowtext'> <o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;text-indent:0in;
 mso-list:none'><span lang=EN-NZ style='mso-no-proof:no'>We (and our licensors)
@@ -2130,26 +2070,25 @@ feel</i>), and the Underlying Systems.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><a
 name="_Ref411424662"><![if !supportLists]><span lang=EN-NZ style='mso-fareast-font-family:
-"Arial Black";mso-bidi-font-family:"Arial Black";text-transform:uppercase;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>6<span
+"Arial Black";mso-bidi-font-family:"Arial Black";color:windowtext;text-transform:
+uppercase;mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>6<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ>DISCLAIMERS</span></a></p>
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'>DISCLAIMERS</span></a><span lang=EN-NZ style='font-family:
+"Arial",sans-serif;color:windowtext'><o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>6.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>To the extent
-permitted by law, we and our licensors have no liability or responsibility to
-you or any other person for any Loss in connection with:</span><span
-lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>To the
+extent permitted by law, we and our licensors have no liability or
+responsibility to you or any other person for any Loss in connection with:<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>a<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>the Website being unavailable (in
-whole or in part) or performing slowly;</span></p>
+</span></span></span><![endif]><span lang=EN-NZ>the Website being unavailable
+(in whole or in part) or performing slowly;</span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>b<span
@@ -2160,22 +2099,20 @@ any information made available through the Website;</span></p>
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>c<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>any exposure to viruses or other forms
-of interference which may damage your computer system or expose you to fraud
-when you access or use the Website.<span style='mso-spacerun:yes'> </span>To
-avoid doubt, you are responsible for ensuring the process by which you access
-and use the Website protects you from this; and</span></p>
+</span></span></span><![endif]><span lang=EN-NZ>any exposure to viruses or
+other forms of interference which may damage your computer system or expose you
+to fraud when you access or use the Website.<span style='mso-spacerun:yes'>
+</span>To avoid doubt, you are responsible for ensuring the process by which you
+access and use the Website protects you from this; and</span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>d<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>any site linked from the Website.<span
-style='mso-spacerun:yes'> </span>Any link on the Website to other sites does
-not imply any endorsement, approval or recommendation of, or responsibility
-for, those sites or their contents, operations, products or operators.</span><span
-lang=EN-NZ> </span></p>
+</span></span></span><![endif]><span lang=EN-NZ>any site linked from the
+Website.<span style='mso-spacerun:yes'> </span>Any link on the Website to
+other sites does not imply any endorsement, approval or recommendation of, or
+responsibility for, those sites or their contents, operations, products or
+operators. </span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
@@ -2189,119 +2126,108 @@ prohibited, and for your own compliance with applicable local laws. <o:p></o:p><
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><a
 name="_Ref411424673"><![if !supportLists]><span lang=EN-NZ style='mso-fareast-font-family:
-"Arial Black";mso-bidi-font-family:"Arial Black";text-transform:uppercase;
-mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>7<span
+"Arial Black";mso-bidi-font-family:"Arial Black";color:windowtext;text-transform:
+uppercase;mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>7<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ>LIABILITY</span></a><span
-lang=EN-NZ> </span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'>LIABILITY</span></a><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'> <o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>7.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>To the maximum extent
-permitted by law:</span><span lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>To the
+maximum extent permitted by law:<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>a<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>you access and use the Website at your
-own risk; and</span><span lang=EN-NZ> </span></p>
+</span></span></span><![endif]><span lang=EN-NZ>you access and use the Website
+at your own risk; and </span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>b<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>we are not liable or responsible to
-you or any other person for any Loss under or in connection with these Terms,
-the Website, or your access and use of (or inability to access or use) the Website.<span
-style='mso-spacerun:yes'> </span>This exclusion applies regardless of whether
-our liability or responsibility arises in contract, tort (including
-negligence), equity, breach of statutory duty, or otherwise.</span><span
-lang=EN-NZ> </span></p>
+</span></span></span><![endif]><span lang=EN-NZ>we are not liable or
+responsible to you or any other person for any Loss under or in connection with
+these Terms, the Website, or your access and use of (or inability to access or
+use) the Website.<span style='mso-spacerun:yes'> </span>This exclusion applies
+regardless of whether our liability or responsibility arises in contract, tort
+(including negligence), equity, breach of statutory duty, or otherwise. </span></p>
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:"Arial Black";mso-bidi-font-family:
-"Arial Black";text-transform:uppercase;mso-bidi-font-weight:bold'><span
-style='mso-list:Ignore'>8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>PRIVACY POLICY<span
-style='mso-spacerun:yes'> </span></span></p>
+"Arial Black";color:windowtext;text-transform:uppercase;mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>8<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'>PRIVACY POLICY<span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>8.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>You are not required
-to provide personal information to us, although in some cases if you choose not
-to do so then we will be unable to make certain sections of the Website
-available to you.<span style='mso-spacerun:yes'> </span>For example, we may
-need to have your contact information in order to provide you with updates from
-our Website.<span style='mso-spacerun:yes'> </span></span><span lang=EN-NZ
-style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>You are
+not required to provide personal information to us, although in some cases if
+you choose not to do so then we will be unable to make certain sections of the
+Website available to you.<span style='mso-spacerun:yes'> </span>For example,
+we may need to have your contact information in order to provide you with
+updates from our Website.<span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>8.2<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-NZ>When you provide personal
 information to us, we will comply with the Singapore </span><span lang=EN-NZ
-style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:
-no'>Personal Data Protection Act 2012 (PDPA)</span><span lang=EN-NZ>.</span></p>
+style='mso-no-proof:no'>Personal Data Protection Act 2012 (PDPA)</span><span
+lang=EN-NZ>.</span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>8.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>The personal
-information you provide to us (including any information provided if you
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>The
+personal information you provide to us (including any information provided if you
 register for an account) is collected and may be used for communicating with
 you, statistical analysis, the marketing by us of products and services to you,
-credit checks (if necessary), and research and development.</span><span
-lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+credit checks (if necessary), and research and development.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>8.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>We may also collect technical
-information whenever you log on to, or visit the public version of, our
-Website.<span style='mso-spacerun:yes'> </span>This may include information
-about the way users arrive at, browse through and interact with our
-Website.<span style='mso-spacerun:yes'> </span>We may collect this type of
-technical information through the use of <i style='mso-bidi-font-style:normal'>cookies</i>
-and other means.<span style='mso-spacerun:yes'> </span><i style='mso-bidi-font-style:
-normal'>Cookies</i> are alphanumeric identifiers that we transfer to your
-computers hard drive to enable our systems to recognise your browser.<span
-style='mso-spacerun:yes'> </span>If you want to disable <i style='mso-bidi-font-style:
-normal'>cookies</i>, you may do so by changing the settings on your
-browser.<span style='mso-spacerun:yes'> </span>However, if you do so, you may
-not be able to use all of the functions on the Website.<span
-style='mso-spacerun:yes'> </span>We use the technical information we collect
-to have a better understanding of the way people use our Website, to improve
-the way it works and to personalise it to be more relevant and useful to your
-particular needs.<span style='mso-spacerun:yes'> </span>We may also use this
-information to assist in making any advertising we display on the Website more
-personalised and applicable to your interests.</span><span lang=EN-NZ
-style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>We may also
+collect technical information whenever you log on to, or visit the public
+version of, our Website.<span style='mso-spacerun:yes'> </span>This may
+include information about the way users arrive at, browse through and interact
+with our Website.<span style='mso-spacerun:yes'> </span>We may collect this
+type of technical information through the use of <i style='mso-bidi-font-style:
+normal'>cookies</i> and other means.<span style='mso-spacerun:yes'> </span><i
+style='mso-bidi-font-style:normal'>Cookies</i> are alphanumeric identifiers
+that we transfer to your computers hard drive to enable our systems to
+recognise your browser.<span style='mso-spacerun:yes'> </span>If you want to
+disable <i style='mso-bidi-font-style:normal'>cookies</i>, you may do so by
+changing the settings on your browser.<span style='mso-spacerun:yes'>
+</span>However, if you do so, you may not be able to use all of the functions
+on the Website.<span style='mso-spacerun:yes'> </span>We use the technical
+information we collect to have a better understanding of the way people use our
+Website, to improve the way it works and to personalise it to be more relevant
+and useful to your particular needs.<span style='mso-spacerun:yes'> </span>We
+may also use this information to assist in making any advertising we display on
+the Website more personalised and applicable to your interests.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;page-break-after:avoid;
 mso-list:l6 level2 lfo2'><![if !supportLists]><span lang=EN-NZ
 style='mso-fareast-font-family:Arial;mso-no-proof:no'><span style='mso-list:
 Ignore'>8.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>Generally, we do not
-disclose personal information to third parties for them to use for their own
-purposes.<span style='mso-spacerun:yes'> </span>However, some of the
-circumstances in which we may do this are:</span><span lang=EN-NZ
-style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>Generally,
+we do not disclose personal information to third parties for them to use for
+their own purposes.<span style='mso-spacerun:yes'> </span>However, some of the
+circumstances in which we may do this are:<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>a<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-NZ>to service providers and other
 persons working with us to make the Website available or improve or develop its
-functionality (e.g. we may use a third party supplier to host the Website);</span></p>
+functionality (e.g. we may use a <span class=GramE>third party</span> supplier
+to host the Website);</span></p>
 
 <p class=OutlinenumberedLevel3 style='margin-top:0in;mso-list:l6 level3 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>b<span
@@ -2319,75 +2245,68 @@ agency.</span></p>
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>8.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>Any personal
-information you provide to us may be stored on the secure servers of our
-trusted service providers, which may be located outside Singapore.<span
-style='mso-spacerun:yes'> </span>This may involve the transfer of your
-personal information to countries which have less legal protection for personal
-information than Singapore.</span><span lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>Any
+personal information you provide to us may be stored on the secure servers of
+our trusted service providers, which may be located outside Singapore.<span
+style='mso-spacerun:yes'> </span>This may involve the transfer of your personal
+information to countries which have less legal protection for personal
+information than Singapore.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>8.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>You have the right to
-request access to and correction of any of the personal information we hold
-about you.<span style='mso-spacerun:yes'> </span>If you would like to exercise
-these rights, please email us at <b style='mso-bidi-font-weight:normal'>info@metalpolis.com</b>.</span><span
-lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>You
+have the right to request access to and correction of any of the personal
+information we hold about you.<span style='mso-spacerun:yes'> </span>If you
+would like to exercise these rights, please email us at <b style='mso-bidi-font-weight:
+normal'>info@budgetmetal.com</b>.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:"Arial Black";mso-bidi-font-family:
-"Arial Black";text-transform:uppercase;mso-bidi-font-weight:bold'><span
-style='mso-list:Ignore'>9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ>SUSPENSION AND TERMINATION</span></p>
+"Arial Black";color:windowtext;text-transform:uppercase;mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'>SUSPENSION AND TERMINATION<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>9.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>Without prejudice to
-any other right or remedy available to us, if we consider that you have
-breached these Terms or we otherwise consider it appropriate, we may
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>Without
+prejudice to any other right or remedy available to us, if we consider that you
+have breached these Terms or we otherwise consider it appropriate, we may
 immediately, and without notice, suspend or terminate your access to the Website
-(or any part of it).</span><span lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+(or any part of it).<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>9.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>On suspension or
-termination, you must immediately cease using the Website and must not attempt
-to gain further access.</span><span lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>On
+suspension or termination, you must immediately cease using the Website and
+must not attempt to gain further access.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:"Arial Black";mso-bidi-font-family:
-"Arial Black";text-transform:uppercase;mso-bidi-font-weight:bold'><span
-style='mso-list:Ignore'>10<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin'>GENERAL</span></p>
+"Arial Black";color:windowtext;text-transform:uppercase;mso-bidi-font-weight:
+bold'><span style='mso-list:Ignore'>10<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN-NZ style='font-family:"Arial",sans-serif;
+color:windowtext'>GENERAL<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><a
 name="_Ref411424700"><![if !supportLists]><span lang=EN-NZ style='mso-fareast-font-family:
 Arial;mso-no-proof:no'><span style='mso-list:Ignore'>10.1<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
-lang=EN-NZ style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
-mso-no-proof:no'>If we need to contact you, we may do so by email or by posting
-a notice on the Website.<span style='mso-spacerun:yes'> </span>You agree that
-this satisfies all legal requirements in relation to written communications.</span></a><span
-lang=EN-NZ style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
-mso-no-proof:no'> </span><span lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+lang=EN-NZ style='mso-no-proof:no'>If we need to contact you, we may do so by
+email or by posting a notice on the Website.<span style='mso-spacerun:yes'>
+</span>You agree that this satisfies all legal requirements in relation to
+written communications.</span></a><span lang=EN-NZ style='mso-no-proof:no'> <o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>10.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>These Terms, and any dispute
-relating to these Terms or the Website, are governed by the law of the Republic
-of Singapore and the courts of the Republic of Singapore will have exclusive
-jurisdiction in case of any dispute.</span><span lang=EN-NZ style='mso-no-proof:
-no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>These
+Terms, and any dispute relating to these Terms or the Website, are governed by the
+law of the Republic of Singapore and the courts of the Republic of Singapore
+will have exclusive jurisdiction in case of any dispute.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
@@ -2397,40 +2316,40 @@ which, by their nature, are intended to survive termination of these Terms,
 including clauses </span><!--[if supportFields]><span lang=EN-NZ
 style='mso-no-proof:no'><span style='mso-element:field-begin'></span><span
 style='mso-spacerun:yes'></span>REF _Ref411424637 \r \h <span
-style='mso-element:field-separator'></span></span><![endif]--><span lang=EN-NZ
-style='mso-no-proof:no'>4.5<!--[if gte mso 9]><xml>
+style='mso-spacerun:yes'></span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span
+lang=EN-NZ style='mso-no-proof:no'>4.5<!--[if gte mso 9]><xml>
  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003400310031003400320034003600330037000000</w:data>
 </xml><![endif]--></span><!--[if supportFields]><span lang=EN-NZ
 style='mso-no-proof:no'><span style='mso-element:field-end'></span></span><![endif]--><span
 lang=EN-NZ style='mso-no-proof:no'>, </span><!--[if supportFields]><span
 lang=EN-NZ style='mso-no-proof:no'><span style='mso-element:field-begin'></span><span
 style='mso-spacerun:yes'></span>REF _Ref411424646 \r \h <span
-style='mso-element:field-separator'></span></span><![endif]--><span lang=EN-NZ
-style='mso-no-proof:no'>5<!--[if gte mso 9]><xml>
+style='mso-spacerun:yes'></span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span
+lang=EN-NZ style='mso-no-proof:no'>5<!--[if gte mso 9]><xml>
  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003400310031003400320034003600340036000000</w:data>
 </xml><![endif]--></span><!--[if supportFields]><span lang=EN-NZ
 style='mso-no-proof:no'><span style='mso-element:field-end'></span></span><![endif]--><span
 lang=EN-NZ style='mso-no-proof:no'>, </span><!--[if supportFields]><span
 lang=EN-NZ style='mso-no-proof:no'><span style='mso-element:field-begin'></span><span
 style='mso-spacerun:yes'></span>REF _Ref411424662 \r \h <span
-style='mso-element:field-separator'></span></span><![endif]--><span lang=EN-NZ
-style='mso-no-proof:no'>6<!--[if gte mso 9]><xml>
+style='mso-spacerun:yes'></span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span
+lang=EN-NZ style='mso-no-proof:no'>6<!--[if gte mso 9]><xml>
  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003400310031003400320034003600360032000000</w:data>
 </xml><![endif]--></span><!--[if supportFields]><span lang=EN-NZ
 style='mso-no-proof:no'><span style='mso-element:field-end'></span></span><![endif]--><span
 lang=EN-NZ style='mso-no-proof:no'>, </span><!--[if supportFields]><span
 lang=EN-NZ style='mso-no-proof:no'><span style='mso-element:field-begin'></span><span
 style='mso-spacerun:yes'></span>REF _Ref411424673 \r \h <span
-style='mso-element:field-separator'></span></span><![endif]--><span lang=EN-NZ
-style='mso-no-proof:no'>7<!--[if gte mso 9]><xml>
+style='mso-spacerun:yes'></span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span
+lang=EN-NZ style='mso-no-proof:no'>7<!--[if gte mso 9]><xml>
  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003400310031003400320034003600370033000000</w:data>
 </xml><![endif]--></span><!--[if supportFields]><span lang=EN-NZ
 style='mso-no-proof:no'><span style='mso-element:field-end'></span></span><![endif]--><span
 lang=EN-NZ style='mso-no-proof:no'>, </span><!--[if supportFields]><span
 lang=EN-NZ style='mso-no-proof:no'><span style='mso-element:field-begin'></span><span
 style='mso-spacerun:yes'></span>REF _Ref411424700 \r \h <span
-style='mso-element:field-separator'></span></span><![endif]--><span lang=EN-NZ
-style='mso-no-proof:no'>10.1<!--[if gte mso 9]><xml>
+style='mso-spacerun:yes'></span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span
+lang=EN-NZ style='mso-no-proof:no'>10.1<!--[if gte mso 9]><xml>
  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F005200650066003400310031003400320034003700300030000000</w:data>
 </xml><![endif]--></span><!--[if supportFields]><span lang=EN-NZ
 style='mso-no-proof:no'><span style='mso-element:field-end'></span></span><![endif]--><span
@@ -2439,29 +2358,26 @@ lang=EN-NZ style='mso-no-proof:no'>, continue in force.<o:p></o:p></span></p>
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>10.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>If any part or
-provision of these Terms is or becomes illegal, unenforceable, or invalid, that
-part or provision is deemed to be modified to the extent required to remedy the
-illegality, unenforceability or invalidity.<span style='mso-spacerun:yes'>
-</span>If a modification is not possible, the part or provision must be treated
-for all purposes as severed from these Terms.<span style='mso-spacerun:yes'>
-</span>The remainder of these Terms will be binding on you.</span><span
-lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>If any
+part or provision of these Terms is or becomes illegal, unenforceable, or invalid,
+that part or provision is deemed to be modified to the extent required to
+remedy the illegality, unenforceability or invalidity.<span
+style='mso-spacerun:yes'> </span>If a modification is not possible, the part or
+provision must be treated for all purposes as severed from these Terms.<span
+style='mso-spacerun:yes'> </span>The remainder of these Terms will be binding
+on you.<o:p></o:p></span></p>
 
 <p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>10.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-NZ style='mso-bidi-font-family:
-Calibri;mso-bidi-theme-font:minor-latin;mso-no-proof:no'>These Terms set out
-everything agreed by the parties relating to your use of the Website and supersede
-and cancel anything discussed, exchanged or agreed prior to you agreeing to
-these Terms.<span style='mso-spacerun:yes'> </span></span><span lang=EN-NZ
-style='mso-no-proof:no'>The parties have not relied on any representation,
-warranty or agreement relating to the Website that is not expressly set out in
-the Terms, and no such representation, warranty or agreement has any effect
-from the date you agreed to these Terms.<span style='mso-spacerun:yes'>
-</span><o:p></o:p></span></p>
+</span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>These
+Terms set out everything agreed by the parties relating to your use of the
+Website and supersede and cancel anything discussed, exchanged or agreed prior
+to you agreeing to these Terms.<span style='mso-spacerun:yes'> </span>The
+parties have not relied on any representation, warranty or agreement relating
+to the Website that is not expressly set out in the Terms, and no such
+representation, warranty or agreement has any effect from the date you agreed
+to these Terms.<span style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
 
 </div>
 
