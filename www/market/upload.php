@@ -10,7 +10,7 @@ header('Content-Type: application/json');
 				//$target = $_SERVER['DOCUMENT_ROOT'] . '/metalpolis_git/www/market/attachment/';
 				$doc_root = $_SERVER['DOCUMENT_ROOT'];
 				$target = $doc_root . "/market/attachment/";
-				//$target = $doc_root . "/metalpolis_git/www/market/attachment/";
+				//$target = $doc_root . "/budgetmetal/www/market/attachment/";
 				//// Folder check logic - Return error if upload folder not exists
 				if (!file_exists($target)) {
 					echo json_encode(array('status' => 'Directory Error', 'doc root' => $doc_root, 'upload path' => $target, 'error' => 'Attachment folder not exists'));

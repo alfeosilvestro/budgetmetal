@@ -58,6 +58,7 @@ if (isset($result)){
       $q_userid = $row["M_User_Id"];
       $q_createddate = $row["CreatedDate"];
       $q_subject = $row["Title"];
+      $q_ref = $row["Q_Ref"];
       $FName = $row["ContactPersonFName"];
       $LName = $row["ContactPersonLName"];
     }
@@ -216,7 +217,7 @@ if (isset($result)){
                   <label>Quotation Ref: </label>
                 </div>
                 <div class="col-sm-6">
-                  <?php echo $id; ?>
+                  <?php echo $q_ref; ?>
                 </div>
               </div>
             </div>
@@ -406,7 +407,7 @@ if (isset($result)){
 
             if(($rfq_owner == "yes") && ($q_statusid == 16) ){
               ?>
-              <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#acceptpanel"><i class="fa fa-pencil-square-o"></i>Accept</button> 
+              <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#acceptpanel"><i class="fa fa-pencil-square-o"></i>Accept</button>
                <a href="#" id="btnreject" class="btn btn-info" onclick="reject_quotation(<?php echo $q_id;?>)">
                 <i class="fa fa-pencil-square-o"></i>
                 Reject

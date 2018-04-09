@@ -62,10 +62,6 @@ if (isset($result)){
         <div class="box box-primary">
           <div class="box-body">
             <h3><?php echo $company_name; ?></h3>
-            <p>
-              <?php echo $About; ?>
-              <br><br><br><br><br><br>
-            </p>
             <div class="pull-right">
               <?php
 
@@ -73,13 +69,15 @@ if (isset($result)){
                 ?>
                 <a href="#" id="btnEditAbout" class="btn btn-info"  onclick="EditAbout()">
                   <i class="fa fa-pencil-square-o"></i>
-                  Edit About
                 </a>
                 <?php
               }
 
               ?>
             </div>
+            <textarea rows="20" cols="150" readonly><?php echo $About; ?></textarea>
+            <br>
+
           </div>
         </div>
 
@@ -446,7 +444,9 @@ if($Is_supplier_company == "1"){
         <div class="modal-body">
           <div class="row">
             <div class="form-group col-md-9">
-              <textarea name="txt_about" id="txt_about"  class="form-control" rows="5" cols="50"><?php echo $About;?></textarea>
+            <form id="update_about" action="update_about" method="get">
+              <textarea name="about" id="txt_about"  class="form-control" rows="5" cols="50"><?php echo $About;?></textarea>
+            </form>
             </div>
           </div>
         </div>
@@ -648,8 +648,9 @@ if($Is_supplier_company == "1"){
     $('#btnSubmit').on('click', function(){
       var about = $('#txt_about').val();
       $.ajax({
-        type: "GET",
-        url: "market.php?function=EditAbout&companyid=<?php echo $companyid;?>&about=" + about,
+        type: 'GET',
+        url: "market.php?function=EditAbout&companyid=<?php echo $companyid;?>",
+        data: $("#update_about").serialize(),
         dataType: "json",
         success: function (response) {
           location.reload();

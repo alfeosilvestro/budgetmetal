@@ -273,7 +273,7 @@
 
 								                    <div class="box-body">
 								                         <h3>Terms & Condition</h3>
-																					 <iframe src="tnc.php"  width="800" height="400"></iframe>
+																					 <iframe src="tnc.php"  width="100%" height="400"></iframe>
 								                    </div>
 
 								                                </div>

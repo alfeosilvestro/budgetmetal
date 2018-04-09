@@ -11,9 +11,6 @@
 		echo "no userid";
 	}
 
-
-
-
    $sql = "SELECT t1.username, t1.EmailAddress, t3.Name, t3.Reg_No FROM `m_user` t1  INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$userid;
     $result = $conn->query($sql);
 	if (isset($result)){
@@ -36,6 +33,7 @@
 		$result = $conn->query($sql);
 		if (isset($result)){
 			if ($result->num_rows > 0) {
+
 				$T_Rfq_Id = 0;
 				while($row = $result->fetch_assoc()) {
 					$T_Rfq_Id = $row["Id"];
@@ -62,7 +60,37 @@
 				$ContactPersonFName = "";
 				$ContactPersonLName = "";
 
-				$dataArray = array('Id' => $Id, 'Title' => $title, 'C_DocumentType' => $C_DocumentType, 'ShortDescription' => $ShortDescription, 'LongDescription' => $LongDescription, 'C_QuotationStatus' => $C_QuotationStatus, 'C_RfqStatus' => $C_RfqStatus, 'CreatedDate' => $CreatedDate, 'CreatedBy' => $CreatedBy, 'Status' => $Status, 'M_User_Id' => $M_User_Id, 'DocumentNo' => $DocumentNo,'ContactPersonFName' => $ContactPersonFName,'ContactPersonLName' => $ContactPersonLName);
+
+        //get document number
+        $currentYear = date("Y");
+      	$current_UserId = $userid;
+
+        $q_ref = "";
+      	$sql = "SELECT * FROM `document_number` t1 where t1.Name='Q' and t1.Prefix = '$current_UserId' and t1.Suffix = '$currentYear' ORDER BY Running_Number DESC Limit 1";
+      	$result = $conn->query($sql);
+      	if (isset($result)){
+      		if ($result->num_rows > 0) {
+      			// output data of each row
+      			while($row = $result->fetch_assoc()) {
+      				$number = sprintf('%05d', $row["Running_Number"] + 1);
+      				$twoYearFormat = date("y");
+      				$q_ref = "Q-" . $current_UserId . "-" . $twoYearFormat . $number;
+      				//$rfq_ref = "RFQ_Draft_".($row["Running_Number"]+1);
+      				$doc_id = $row["Id"] + 1;
+      				$running_number = $row["Running_Number"] + 1;
+      			}
+      		}else{
+      			$twoYearFormat = date("y");
+      			$q_ref = "Q-" . $current_UserId . "-" . $twoYearFormat . "00001";
+      			$doc_id = 1;
+      			$running_number = 1;
+      		}
+      	}
+        $dataArray = array('Name' => "Q", 'Prefix' => "$current_UserId", 'Suffix' => "$currentYear",'Format' => " $q_ref", 'Running_Number' => $running_number);
+
+      	$dt = $db->insert('document_number', $dataArray);
+
+				$dataArray = array('Id' => $Id, 'Title' => $title, 'C_DocumentType' => $C_DocumentType, 'ShortDescription' => $ShortDescription, 'LongDescription' => $LongDescription, 'C_QuotationStatus' => $C_QuotationStatus, 'C_RfqStatus' => $C_RfqStatus, 'CreatedDate' => $CreatedDate, 'CreatedBy' => $CreatedBy, 'Status' => $Status, 'M_User_Id' => $M_User_Id, 'DocumentNo' => $DocumentNo,'ContactPersonFName' => $ContactPersonFName,'ContactPersonLName' => $ContactPersonLName,'Q_Ref' => $q_ref);
 
 				$db->insert('t_document', $dataArray);
 

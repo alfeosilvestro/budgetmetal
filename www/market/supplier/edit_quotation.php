@@ -26,6 +26,7 @@
 			   $q_userid = $row["M_User_Id"];
 			   $q_createddate = $row["CreatedDate"];
 			   $q_subject = $row["Title"];
+         $q_ref = $row["Q_Ref"];
 			   $FName = $row["ContactPersonFName"];
 			   $LName = $row["ContactPersonLName"];
 			}
@@ -79,7 +80,7 @@
 
     <div class="box box-default">
         <div class="box-header with-border">
-            <h3 class="box-title">Quotation Info</h3>
+            <h3 class="box-title">Quotation Info (<?php echo $q_ref;?>)</h3>
 
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -270,12 +271,12 @@
 </form>
 
 <script>
-	webshims.setOptions('forms-ext', {
-		replaceUI: 'auto',
-		types: 'number'
-	});
-
-	webshims.polyfill('forms forms-ext');
+	// webshims.setOptions('forms-ext', {
+	// 	replaceUI: 'auto',
+	// 	types: 'number'
+	// });
+  //
+	// webshims.polyfill('forms forms-ext');
 	$(function () {
 		//Date picker
 		$('#rfq_datepicker').datepicker({

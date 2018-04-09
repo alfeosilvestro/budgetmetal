@@ -108,8 +108,7 @@ if (isset($result)){
             <p class="text-muted"><?php echo $ContactNumbers;?></p>
             <hr>
 
-            <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#changeAccountType">Change to <?php echo $changeto;?></button>
-          </div>
+              </div>
           <!-- /.box-body -->
         </div>
         <!-- /.box -->
@@ -183,25 +182,7 @@ if (isset($result)){
 
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="changeAccountType" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Change Account Type</h4>
-        </div>
-        <div class="modal-body">
-          <p>Changing profile type will sign out of the system and user is required to sign in again to complete this process. Are you sure you want to change your profile type to <?php echo $changeto;?>? </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="yesbtn" >Yes</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <script>
   $('#btnUpdatePassword').on('click', function(){
     var newpass = $('#txt_password').val();
@@ -243,23 +224,5 @@ if (isset($result)){
     });
   });
 
-  $("#yesbtn").click(function (e) {
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        sessionStorage.clear();
-      }
-    };
-    xmlhttp.open("GET","market.php?user_id=<?php echo $userid;?>&function=changeaccounttype&type_id=<?php echo $changetypeid;?>",true);
-    xmlhttp.send();
-    <?php //session_destroy(); ?>
-    window.location.href="logout.php";
-    // location.reload();
-  });
+
 </script>

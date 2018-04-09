@@ -1117,7 +1117,18 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 			$dataArray = array( 'C_RfqStatus' => 12,'ModifiedDate' => $ModifiedDate,'ModifiedBy' => $ModifiedBy);
 			$db->update('t_document', $dataArray,$where);
 
-			$Message = "Your Quotation($Id) has been awarded to your company.";
+			$q_ref = "";
+			$sql = "SELECT * FROM `t_document` where Status = 1 and Id = $Id Limit 1";
+			$result = $conn->query($sql);
+			if (isset($result)){
+				if ($result->num_rows > 0) {
+					// output data of each row
+					while($row = $result->fetch_assoc()) {
+						$q_ref = $row["Q_Ref"];
+					}
+				}
+			}
+			$Message = "Your Quotation($q_ref) has been awarded to your company.";
 			$dataArray = array('Document' => $Id, 'First_Opened_User' => $ModifiedBy, 'Receiving_Company' => $selected_supplier_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $ModifiedDate, 'Created_By' => $ModifiedBy,'Status' => "1", 'Type' => 'Accepted');
 			$dt = $db->insert('company_notification', $dataArray);
 
