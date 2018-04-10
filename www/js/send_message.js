@@ -45,7 +45,7 @@ function sendMessage(obj) {
             }
             else
             {
-                  element = "<div id=\"contactFormContainer\" class=\"col-md-8 col-md-offset-2\"><h3>Successfully sent email to Metalpolis.</h3></div>"
+                  element = "<div id=\"contactFormContainer\" class=\"col-md-8 col-md-offset-2\"><h3>Successfully sent email to BudgetMetal.</h3></div>"
             }
 
             $('#contactFormContainer').replaceWith(element)
@@ -58,7 +58,7 @@ function sendMessage(obj) {
                 " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
             console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
 
-            var element = "<div id=\"contactFormContainer\" class=\"col-md-8 col-md-offset-2\"><h3>Successfully sent email to Metalpolis.</h3></div>";
+            var element = "<div id=\"contactFormContainer\" class=\"col-md-8 col-md-offset-2\"><h3>Successfully sent email to BudgetMetal.</h3></div>";
             $('#contactFormContainer').replaceWith(element)
         }
     });
