@@ -370,8 +370,9 @@ Width
               <div id="overlay">
                 <div class="text-center">
                   <br><br><br>
-                  <button class="btn btn-danger" type="button" name="button" OnClick="addMoreSelectedSupplier();" id="addMoreSupplier">Click Here to add more suppliers.</button>
-                </div>
+                  <span class="text-white" id="addMoreSupplier">You have reached the limit of 5 verified suppliers for this RFQ.
+                    <button class="btn btn-danger btn-sm" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow Budget Metal to suggest another 5 suppliers for you.  </span>
+                    </div>
 
               </div>
               <table class="table table-hover" id="search_suppliers">
@@ -865,10 +866,13 @@ function GetSelectedSupplierCount(){
   else{
     if(rowCount==5){
       document.getElementById("overlay").style.display = "block";
+      $("#addMoreSupplier").show();
     }else if(rowCount<5){
       document.getElementById("overlay").style.display = "none";
+      $("#addMoreSupplier").show();
     }else{
       document.getElementById("overlay").style.display = "block";
+      $("#addMoreSupplier").hide();
     }
     $("span").addClass("badge");
   }
@@ -998,6 +1002,7 @@ function addMoreSelectedSupplier(){
   var i = 1;
   var j = 0;
   var tr;
+  var objButton;
   if(rowCount > 0){
     if(rowCount < 5)
     {
@@ -1006,11 +1011,18 @@ function addMoreSelectedSupplier(){
       j=5;
     }
     for (i = 1; i <= j; i++) {
-        tr = document.getElementById("search_suppliers").rows[i];
-        $("#selected_suppliers tbody").append(tr);
+      tr = document.getElementById("search_suppliers").rows[1];
+      objButton = tr.getElementsByTagName("button")[1];
+      var trid = objButton.value;
+      //row = $('#' + trid);
+      //$("#selected_suppliers tbody").append(row);
+      $("#selected_suppliers tbody").append(tr);
+      objButton.innerHTML = "Remove from Selected Supplier List";
+      objButton.setAttribute( "onClick", "RemoveFromList(this);" );
+      $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
     }
   }
 
-   GetSelectedSupplierCount();
+  GetSelectedSupplierCount();
 }
 </script>
