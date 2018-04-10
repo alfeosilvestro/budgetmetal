@@ -792,7 +792,7 @@
             <p>Please feel free to contact us using the channels below.</p>
         </div>
         <div class="col-md-8 col-md-offset-2">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="contact-item"><i class="fa fa-map-marker fa-2x"></i>
                     <p>100 Jalan Sultan, Sultan Plaza, #03-02
                         <br>
@@ -800,12 +800,17 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="contact-item"><i class="fa fa-envelope-o fa-2x"></i>
-                    <p>info@stylardigital.com</p>
+                    <p>info@budgmetal.com</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
+                <div class="contact-item"><i class="fa fa-life-ring fa-2x"></i>
+                    <p>support@budgmetal.com</p>
+                </div>
+            </div>
+            <div class="col-md-3">
                 <div class="contact-item"><i class="fa fa-phone fa-2x"></i>
                     <p> +65 65190961</p>
                 </div>
