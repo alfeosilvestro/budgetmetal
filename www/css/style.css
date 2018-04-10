@@ -162,15 +162,20 @@ hr {
 	padding: 100px 0;
 	text-align: center;
 	color: #fff;
-	background: url(../img/intro-bg.jpg) no-repeat center center fixed;
+	/* background: url(../img/intro-bg.jpg) no-repeat center center fixed; */
 	background-color: #000;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
+
+	background-image:url('../img/intro-bg.jpg');
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
 }
 #intro .intro-body {
-	/*background: rgba(1,1,1,0.7);*/
+	background: rgba(1,1,1,0.7);
 	display: table-cell;
 	/*vertical-align: middle;*/
 }
