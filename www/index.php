@@ -15,7 +15,7 @@
 
     <!-- Stylesheet
         ================================================== -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v=20180410">
     <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
@@ -71,7 +71,7 @@
             <div class="row">&nbsp;</div>
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <h1><span class="brand-heading">BudgetMetal</span></h1>
+                    <h1><br/><span class="brand-heading">BudgetMetal</span></h1>
                     <p class="intro-text">Your Metalworks Marketplace</p>
                 </div>
             </div>
