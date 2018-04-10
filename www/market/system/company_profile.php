@@ -142,52 +142,66 @@ if (isset($result)){
           <div class="box-body">
 
             <strong><i class="glyphicon glyphicon-star"></i> Rating</strong>
+            <br>
             <table width="100%" class="table table-bordered table-striped">
               <tbody>
                 <?php
+                $tmpSOQ = "0.0";
+                $tmpSOD = "0.0";
+                $tmpSQ = "0.0";
+                $tmpPrice = "0.0";
                 $sql = "SELECT AVG(`SpeedOfQuotation`) as SOQ, AVG(`SpeedofDelivery`) as SOD, AVG( `ServiceQuality`) as SQ, AVG(`Price`) as Price, AVG(`Payment`) as Payment FROM `md_companyrating` WHERE `Company_Id` = ".$companyid. " GROUP BY Company_Id";
                 $result = $conn->query($sql);
                 if (isset($result)){
                   if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
-                      ?>
-                      <tr>
-                        <td>Overall Rating</td>
-                        <td><?php echo number_format($supplierRating); ?></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td><b>Speed of Quotation :</b></td>
-                        <td><?php echo number_format($row["SOQ"],2); ?></td>
-                      </tr>
-                      <tr>
-                        <td><b>Speed of Delivery :</b></td>
-                        <td><?php echo number_format($row["SOD"],2); ?></td>
-                      </tr>
-                      <tr>
-                        <td><b>Service Quality :</b></td>
-                        <td><?php echo number_format($row["SQ"],2); ?></td>
-                      </tr>
-                      <tr>
-                        <td><b>Price :</b></td>
-                        <td><?php echo number_format($row["Price"],2); ?></td>
-                      </tr>
-
-                      <?php
-                      echo "<br><b>Speed of Quotation :</b> ". number_format($row["SOQ"],2);
-                      echo "<br><b>Speed of Delivery :</b> ". number_format($row["SOD"],2);
-                      echo "<br><b>Service Quality :</b> ". number_format($row["SQ"],2) ;
-                      echo "<br><b>Price :</b> ". number_format($row["Price"],2);
+                      $tmpSOQ = number_format($row["SOQ"],2);
+                      $tmpSOD = number_format($row["SOD"],2);
+                      $tmpSQ = number_format($row["SQ"],2);
+                      $tmpPrice = number_format($row["Price"],2);
                     }
                   }else{
 
                   }
                 }
+                if($Is_supplier_company =="1"){
+                  ?>
+                  <tr>
+                    <td>Overall Rating</td>
+                    <td><?php echo number_format($supplierRating); ?></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><b>Speed of Quotation :</b></td>
+                    <td><?php echo $tmpSOQ; ?></td>
+                  </tr>
+                  <tr>
+                    <td><b>Speed of Delivery :</b></td>
+                    <td><?php echo $tmpSOD; ?></td>
+                  </tr>
+                  <tr>
+                    <td><b>Service Quality :</b></td>
+                    <td><?php echo $tmpSQ; ?></td>
+                  </tr>
+                  <tr>
+                    <td><b>Price :</b></td>
+                    <td><?php echo $tmpPrice; ?></td>
+                  </tr>
+                  <?php
+                }else{
+                  ?>
+                  <tr>
+                    <td>Overall Rating</td>
+                    <td><?php echo number_format(0,2); ?></td>
+                  </tr>
 
+                  <?php
+                }
                 ?>
+
               </tbody>
             </table>
           </div>
@@ -196,7 +210,23 @@ if (isset($result)){
       <div class="col-md-4">
         <div class="box box-primary content">
           <div class="box-body">
-            count <br><br><br>
+            <strong><i class="glyphicon glyphicon-bullhorn"></i> Feedback</strong>
+            <br>
+            <div class="text-center">
+                <br><br><br>
+                <?php
+                $query = "SELECT * FROM md_companyrating Where Company_Id = $companyid";
+                $count = 1;
+                $results = $db->pdoQuery($query)->results();
+                if (!empty($results)){
+                  foreach ($results as $row) {
+                    $count = $count+1;
+                  }
+                }
+                echo "<h1><a href='#fb'>".$count."</a></h1>";
+                ?>
+            </div>
+            <br><br><br>
           </div>
         </div>
       </div>
@@ -402,7 +432,7 @@ if($Is_supplier_company == "1"){
       <div class="col-md-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-              <h3 class="box-title">Feedback</h3>
+              <h3 class="box-title" id="fb">Feedback</h3>
 
               <div class="box-tools pull-right">
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
