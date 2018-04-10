@@ -181,24 +181,24 @@ hr {
 	text-transform: uppercase;
 }
 #intro .intro-body .brand-heading {
-	color: #09AEDD;
-	text-shadow: 0 4px #2D859E;
+	color: rgb(7, 48, 102);
+	text-shadow: 0 4px rgb(4, 47, 97);
 }
 #intro .intro-body .intro-text {
 	font-size: 18px;
 }
 
 @media(min-width:768px) {
-#intro {
-	height: 100%;
-	padding: 0;
-}
-#intro .intro-body .intro-text {
-	font-size: 18px;
-	letter-spacing: 1px;
-	margin-bottom: 100px;
-	color: rgba(255,255,255,0.9);
-}
+	#intro {
+		height: 100%;
+		padding: 0;
+	}
+	#intro .intro-body .intro-text {
+		font-size: 18px;
+		letter-spacing: 1px;
+		margin-bottom: 100px;
+		color: rgba(63, 63, 63, 0.938);
+	}
 }
 .btn-default {
 	color: #f6f6f6;
