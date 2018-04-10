@@ -175,7 +175,7 @@ hr {
 	background-repeat:no-repeat;
 }
 #intro .intro-body {
-	background: rgba(1,1,1,0.7);
+	/* background: rgba(1,1,1,0.7); */
 	display: table-cell;
 	/*vertical-align: middle;*/
 }
@@ -186,7 +186,7 @@ hr {
 	text-transform: uppercase;
 }
 #intro .intro-body .brand-heading {
-	color: #09AEDD;
+	color: rgb(6, 42, 88);
 	text-shadow: 0 4px #2D859E;
 }
 #intro .intro-body .intro-text {
