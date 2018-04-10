@@ -115,7 +115,7 @@
 							               <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                  <button class="btn btn-primary" type="submit"  onClick="parent.location='index.php?rdp=profile'"><i class="icon-off icon-white"></i>  &nbsp;Profile </button>
+                                  <button class="btn btn-primary" type="submit"  onClick="parent.location='index.php?rdp=profile'"><i class="icon-off icon-white"></i>  &nbsp;Account </button>
 
                                 </div>
                                 <div class="pull-right">
