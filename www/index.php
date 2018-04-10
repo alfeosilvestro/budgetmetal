@@ -15,7 +15,7 @@
 
     <!-- Stylesheet
         ================================================== -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css?v=20180410">
     <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
@@ -71,7 +71,7 @@
             <div class="row">&nbsp;</div>
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <h1><span class="brand-heading">BudgetMetal</span></h1>
+                    <h1><br/><span class="brand-heading">BudgetMetal</span></h1>
                     <p class="intro-text">Your Metalworks Marketplace</p>
                 </div>
             </div>
@@ -792,7 +792,7 @@
             <p>Please feel free to contact us using the channels below.</p>
         </div>
         <div class="col-md-8 col-md-offset-2">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="contact-item"><i class="fa fa-map-marker fa-2x"></i>
                     <p>100 Jalan Sultan, Sultan Plaza, #03-02
                         <br>
@@ -800,12 +800,17 @@
                     </p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="contact-item"><i class="fa fa-envelope-o fa-2x"></i>
-                    <p>info@stylardigital.com</p>
+                    <p>info@budgetmetal.com</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
+                <div class="contact-item"><i class="fa fa-life-ring fa-2x"></i>
+                    <p>support@budgetmetal.com</p>
+                </div>
+            </div>
+            <div class="col-md-3">
                 <div class="contact-item"><i class="fa fa-phone fa-2x"></i>
                     <p> +65 65190961</p>
                 </div>

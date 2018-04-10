@@ -10,9 +10,9 @@ if($_POST){
 
   $from_address = $_POST['email'];
   $from_name = $_POST['name'];
-  $to_address = "info@metalpolis.com";
+  $to_address = "info@budgetmetal.com";
   $to_name = "Info";
-  $subject = "Contact Us";
+  $subject = "Enquiry";
   $message = $_POST['message'];
   $smtp_host = "127.0.0.1";
   $smtp_port = 25;
