@@ -802,12 +802,12 @@
             </div>
             <div class="col-md-3">
                 <div class="contact-item"><i class="fa fa-envelope-o fa-2x"></i>
-                    <p>info@budgmetal.com</p>
+                    <p>info@budgetmetal.com</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="contact-item"><i class="fa fa-life-ring fa-2x"></i>
-                    <p>support@budgmetal.com</p>
+                    <p>support@budgetmetal.com</p>
                 </div>
             </div>
             <div class="col-md-3">
