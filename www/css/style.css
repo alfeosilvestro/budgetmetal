@@ -187,7 +187,7 @@ hr {
 }
 #intro .intro-body .brand-heading {
 	color: rgb(6, 42, 88);
-	text-shadow: 0 0 3px rgb(230, 230, 230);
+	text-shadow: 0 0 4px rgb(230, 230, 230);
 }
 #intro .intro-body .intro-text {
 	font-size: 18px;
@@ -203,6 +203,7 @@ hr {
 	letter-spacing: 1px;
 	margin-bottom: 100px;
 	color: rgba(139, 139, 139, 0.9);
+	text-shadow: 0 0 3px rgb(230, 230, 230);
 }
 }
 .btn-default {
