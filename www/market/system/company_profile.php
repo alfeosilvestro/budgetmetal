@@ -61,22 +61,33 @@ if (isset($result)){
       <div class="col-md-12">
         <div class="box box-primary">
           <div class="box-body">
-            <h3><?php echo $company_name; ?></h3>
-            <div class="pull-right">
-              <?php
 
-              if($company_admin == 1){
-                ?>
-                <a href="#" id="btnEditAbout" class="btn btn-info"  onclick="EditAbout()">
-                  <i class="fa fa-pencil-square-o"></i>
-                </a>
-                <?php
-              }
+            <div class="row">
+              <div class="col-md-6">
+                <b><?php echo $company_name; ?></b>
+              </div>
+              <div class="col-md-6">
+                <div class="pull-right">
+                  <?php
 
-              ?>
+                  if($company_admin == 1){
+                    ?>
+                    <a href="#" id="btnEditAbout" class="btn btn-info"  onclick="EditAbout()">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <?php
+                  }
+
+                  ?>
+                </div>
+              </div>
             </div>
-            <textarea rows="20" cols="150" readonly><?php echo $About; ?></textarea>
-            <br>
+            <br/>
+            <div class="row">
+              <div class="col-md-12">
+                <textarea rows="20" style="width:100%" readonly><?php echo $About; ?></textarea>
+              </div>
+            </div>
 
           </div>
         </div>
@@ -90,9 +101,9 @@ if (isset($result)){
 }
 
 
-.content {
+/* .content {
   height: 89%;
-}
+} */
     </style>
     <div class="row row-flex">
       <div class="col-md-4">
@@ -210,10 +221,10 @@ if (isset($result)){
       <div class="col-md-4">
         <div class="box box-primary content">
           <div class="box-body">
-            <strong><i class="glyphicon glyphicon-bullhorn"></i> Feedback</strong>
+            <strong><i class="glyphicon glyphicon-bullhorn"></i> Feedbacks</strong>
             <br>
             <div class="text-center">
-                <br><br><br>
+
                 <?php
                 $query = "SELECT * FROM md_companyrating Where Company_Id = $companyid";
                 $count = 1;
@@ -225,8 +236,9 @@ if (isset($result)){
                 }
                 echo "<h1><a href='#fb'>".$count."</a></h1>";
                 ?>
+                &nbsp; Feedbacks
             </div>
-            <br><br><br>
+
           </div>
         </div>
       </div>
@@ -473,9 +485,9 @@ if($Is_supplier_company == "1"){
         </div>
         <div class="modal-body">
           <div class="row">
-            <div class="form-group col-md-9">
+            <div class="form-group col-md-12">
             <form id="update_about" action="update_about" method="get">
-              <textarea name="about" id="txt_about"  class="form-control" rows="5" cols="50"><?php echo $About;?></textarea>
+              <textarea name="about" id="txt_about"   rows="5" style="width:100%"><?php echo $About;?></textarea>
             </form>
             </div>
           </div>
@@ -642,9 +654,9 @@ if($Is_supplier_company == "1"){
 
               	<input type="hidden" id="values" name="supported_service" value="">
 
-                <script src="dev/jquery.min.js"></script>
-                <script src="dev/bootstrap.min.js"></script>
-                <script src="dev/logger.js"></script>
+              <!--  <script src="dev/jquery.min.js"></script>
+                <script src="dev/bootstrap.min.js"></script>-->
+               <script src="dev/logger.js"></script>
                 <script src="dev/treeview.js"></script>
 
                 <script>

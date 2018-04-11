@@ -167,7 +167,7 @@ if ($function == "UpdatePassword"){
 	$selectedsuppliersid = $_GET["selected_suppliers_id"];
 	$c = 0;
 	$returntext = "";
-	$sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating Desc";
+	$sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating, IsVerified, Name Desc";
 	$result = $conn->query($sql);
 
 	if (isset($result)){
@@ -182,19 +182,24 @@ if ($function == "UpdatePassword"){
 						// output data of each row
 						while($row_tag = $result1->fetch_assoc()) {
 							if($tags == "" ){
-								$tags = $row_tag["TagName"];
+								$tags ="<span class='badge badge-sm bg-primary' style='margin: 2px;'>".$row_tag["TagName"]."</span>" ;
 							}else{
-								$tags = $tags . "," .  $row_tag["TagName"];
+								$tags = $tags . "<span class='badge badge-sm bg-primary' style='margin: 2px;'>".$row_tag["TagName"]."</span>";
 							}
 						}
 					}
 				}
-
+				$verified_status = "Verified";
+				$verified_status_class = "success";
+				if($row["IsVerified"] == "0"){
+					$verified_status = "Unverified";
+					$verified_status_class = "warning";
+				}
 				echo "<tr id='trsupplier_".$row["Id"]."'>
 				<td>".$row["Name"]."(Registration No. ".$row["Reg_No"].")<input type='hidden' value='0' name='selected_supplier_id[]'> <input type='hidden' value='".$row["Id"]."' name='search_supplier_id[]'></td>
 				<td>".$row["Address"]."</td>
 				<td>".$tags."</td>
-				<td><span class='label label-success'>Verified</span></td>
+				<td><span class='label label-".$verified_status_class."'>".$verified_status."</span></td>
 				<td>
 				<button type='button' value='".$row["Id"]."' class='btn btn-sm btn-info' Onclick='ViewProfile(this);'>              View Profile       </button>
 

@@ -32,7 +32,7 @@ if (isset($result)){
 }
 
 if(($_SESSION['usertype'] == 'Buyer')){
-  $sql = "SELECT t1.username, t1.EmailAddress,t1.ContactNumbers, t3.Name, t3.Reg_No, t3.Address FROM `m_user` t1 INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$userid;
+  $sql = "SELECT t1.username, t1.EmailAddress,t1.ContactNumbers, t3.Name, t3.Reg_No, t3.Address, t1.Title FROM `m_user` t1 INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$userid;
   $changeto = "Supplier";
   $changetypeid = "2";
 }elseif(($_SESSION['usertype'] == 'Supplier')){

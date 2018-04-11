@@ -473,679 +473,680 @@ if (isset($result)){
                     <div id="overlay">
                       <div class="text-center">
                         <br><br><br>
-                        <button class="btn btn-danger" type="button" name="button" OnClick="addMoreSelectedSupplier();" id="addMoreSupplier">Click Here to add more suppliers.</button>
+                        <span class="text-white" id="addMoreSupplier">You have reached the limit of 5 verified suppliers for this RFQ.
+                          <br><button class="btn btn-warning btn-xs" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow Budget Metal to suggest another 5 suppliers for you.  </span>
+                        </div>
+
                       </div>
 
+                      <table class="table table-hover" id="search_suppliers">
+                        <thead>
+                          <tr>
+                            <th>Company Name</th>
+                            <th>Address</th>
+                            <th>Tags</th>
+                            <th>Status</th>
+                            <th>&nbsp;</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
                     </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="tab_selectedsuppliers">
+                      <table class="table table-hover"  id="selected_suppliers">
+                        <thead>
+                          <tr>
+                            <th>Company Name</th>
+                            <th>Address</th>
+                            <th>Tags</th>
+                            <th>Verified</th>
+                            <th>&nbsp;</th>
+                          </tr>
 
-                    <table class="table table-hover" id="search_suppliers">
-                      <thead>
-                        <tr>
-                          <th>Company Name</th>
-                          <th>Address</th>
-                          <th>Tags</th>
-                          <th>Status</th>
-                          <th>&nbsp;</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+                        </thead>
+                        <tbody>
+                          <?php
+                          $sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT M_Company_Id FROM t_targetedsuppliers  Where T_Document_Id = ". $rfq_id.")";
+                          $result = $conn->query($sql);
 
-                      </tbody>
-                    </table>
-                  </div>
-                  <!-- /.tab-pane -->
-                  <div class="tab-pane" id="tab_selectedsuppliers">
-                    <table class="table table-hover"  id="selected_suppliers">
-                      <thead>
-                        <tr>
-                          <th>Company Name</th>
-                          <th>Address</th>
-                          <th>Tags</th>
-                          <th>Verified</th>
-                          <th>&nbsp;</th>
-                        </tr>
-
-                      </thead>
-                      <tbody>
-                        <?php
-                        $sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT M_Company_Id FROM t_targetedsuppliers  Where T_Document_Id = ". $rfq_id.")";
-                        $result = $conn->query($sql);
-
-                        if (isset($result)){
-                          if ($result->num_rows > 0) {
-                            // output data of each row
-                            while($row = $result->fetch_assoc()) {
-                              $tags = "";
-                              $sql1 = "SELECT * FROM `c_tags` WHERE `Id` IN (SELECT `C_Tags_Id` FROM `md_suppliertags` WHERE `M_User_Id` in (".$row["Id"] ."))";
-                              $result1 = $conn->query($sql1);
-                              if (isset($result1)){
-                                if ($result1->num_rows > 0) {
-                                  // output data of each row
-                                  while($row_tag = $result1->fetch_assoc()) {
-                                    if($tags == "" ){
-                                      $tags = $row_tag["TagName"];
-                                    }else{
-                                      $tags = $tags . "," .  $row_tag["TagName"];
+                          if (isset($result)){
+                            if ($result->num_rows > 0) {
+                              // output data of each row
+                              while($row = $result->fetch_assoc()) {
+                                $tags = "";
+                                $sql1 = "SELECT * FROM `c_tags` WHERE `Id` IN (SELECT `C_Tags_Id` FROM `md_suppliertags` WHERE `M_User_Id` in (".$row["Id"] ."))";
+                                $result1 = $conn->query($sql1);
+                                if (isset($result1)){
+                                  if ($result1->num_rows > 0) {
+                                    // output data of each row
+                                    while($row_tag = $result1->fetch_assoc()) {
+                                      if($tags == "" ){
+                                        $tags = $row_tag["TagName"];
+                                      }else{
+                                        $tags = $tags . "," .  $row_tag["TagName"];
+                                      }
                                     }
                                   }
                                 }
-                              }
-                              echo "<tr id='trsupplier_".$row["Id"]."'>
-                              <td>".$row["Name"]."(Registration No. ".$row["Reg_No"].")<input type='hidden' value='".$row["Id"]."' name='selected_supplier_id[]'> <input type='hidden' value='0' name='search_supplier_id[]'></td>
-                              <td>".$row["Address"]."</td>
-                              <td>".$tags."</td>
-                              <td><span class='label label-success'>Verified</span></td>
-                              <td>
-                              <button type='button' value='".$row["Id"]."' class='btn btn-sm btn-info' Onclick='ViewProfile(this);'>              View Profile       </button>
+                                echo "<tr id='trsupplier_".$row["Id"]."'>
+                                <td>".$row["Name"]."(Registration No. ".$row["Reg_No"].")<input type='hidden' value='".$row["Id"]."' name='selected_supplier_id[]'> <input type='hidden' value='0' name='search_supplier_id[]'></td>
+                                <td>".$row["Address"]."</td>
+                                <td>".$tags."</td>
+                                <td><span class='label label-success'>Verified</span></td>
+                                <td>
+                                <button type='button' value='".$row["Id"]."' class='btn btn-sm btn-info' Onclick='ViewProfile(this);'>              View Profile       </button>
 
-                              <button type='button' value='trsupplier_".$row["Id"]."' class='btn btn-sm btn-info' Onclick='RemoveFromList(this);'>Remove from Selected Supplier List       </button>
-                              </td>
-                              </tr>";
+                                <button type='button' value='trsupplier_".$row["Id"]."' class='btn btn-sm btn-info' Onclick='RemoveFromList(this);'>Remove from Selected Supplier List       </button>
+                                </td>
+                                </tr>";
+                              }
                             }
                           }
-                        }
-                        ?>
+                          ?>
 
 
 
-                      </tbody>
-                    </table>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.tab-pane -->
                   </div>
-                  <!-- /.tab-pane -->
+                  <!-- /.tab-content -->
                 </div>
-                <!-- /.tab-content -->
+                <!-- nav-tabs-custom -->
               </div>
-              <!-- nav-tabs-custom -->
-            </div>
 
 
-          </div>
-        </div>
-
-        <div class="row">
-
-          <div class="col-sm-12">
-            <div class="btn-group pull-right">
-              <button type="button" class="btn btn-success" id="btnsave_rfq_bot" >Save as Draft</button>
-
-              <button type="button" id="btnsubmit_rfq_bot" class="btn btn-warning">Submit</button>
-              <a href="index.php?rdp=list_rfq" class="btn btn-default">Cancel</a>
             </div>
           </div>
-        </div>
-      </form>
-      <?php
+
+          <div class="row">
+
+            <div class="col-sm-12">
+              <div class="btn-group pull-right">
+                <button type="button" class="btn btn-success" id="btnsave_rfq_bot" >Save as Draft</button>
+
+                <button type="button" id="btnsubmit_rfq_bot" class="btn btn-warning">Submit</button>
+                <a href="index.php?rdp=list_rfq" class="btn btn-default">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </form>
+        <?php
+      }
     }
-  }
-  ?>
-  <script>
+    ?>
+    <script>
 
-  $(function () {
-    //Date picker
-    $('#rfq_datepicker').datepicker({
-      format: "dd-mm-yyyy",
-      autoclose: true,
-      todayHighlight: true,
-      startDate: "today",
-    }).on('changeDate', function(selected) {
-      var minDate = new Date(selected.date.valueOf());
-      $('#due_datepicker').datepicker('setStartDate', minDate);
-    });
-
-    var rfq_date = $("#rfq_datepicker").val();
-    var res = rfq_date.split("-");
-    var tmp = res[1] + "-" + res[0] + "-" + res[2];
-
-    $('#due_datepicker').datepicker({
-      startDate : new Date(tmp),
-      format: "dd-mm-yyyy",
-      autoclose: true,
-      todayHighlight: true,
-    });
-
-    $('button[id=addfilelist]').click(function(){
-      var fileno = $("input[id=fileno]").val();
-      var file_data = $('#rfq_upload').prop('files')[0];
-      var form_data = new FormData();
-      form_data.append('file', file_data);
-      $.ajax({
-        url: 'upload.php', // point to server-side PHP script
-        dataType: 'text',  // what to expect back from the PHP script, if anything
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: form_data,
-        type: 'post',
-        dataType: 'json',
-        success: function(data){
-          fileno = parseInt(fileno)+1;
-          $("#fileList tbody").append('<tr id="tr_'+fileno+'" align="left"><td><input type="hidden" name="attachment[]" value="'+data.message+'" ><a href="attachment/'+data.message+'" target="_blank">'+data.message+'</a> <input type="hidden" name="attachment_subject[]" value="" > </td><td><textarea name="attachment_message[]" row="3" cols="50"></textarea></td><td><button type="button" OnClick="RemoveFile(this);" class="btn btn-sm btn-del" value="tr_'+fileno+'">Remove </button> <br></td></tr>');
-          $("input[id=fileno]").val(fileno);
-          $('#rfq_upload').val("");
-        }
+    $(function () {
+      //Date picker
+      $('#rfq_datepicker').datepicker({
+        format: "dd-mm-yyyy",
+        autoclose: true,
+        todayHighlight: true,
+        startDate: "today",
+      }).on('changeDate', function(selected) {
+        var minDate = new Date(selected.date.valueOf());
+        $('#due_datepicker').datepicker('setStartDate', minDate);
       });
+
+      var rfq_date = $("#rfq_datepicker").val();
+      var res = rfq_date.split("-");
+      var tmp = res[1] + "-" + res[0] + "-" + res[2];
+
+      $('#due_datepicker').datepicker({
+        startDate : new Date(tmp),
+        format: "dd-mm-yyyy",
+        autoclose: true,
+        todayHighlight: true,
+      });
+
+      $('button[id=addfilelist]').click(function(){
+        var fileno = $("input[id=fileno]").val();
+        var file_data = $('#rfq_upload').prop('files')[0];
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+        $.ajax({
+          url: 'upload.php', // point to server-side PHP script
+          dataType: 'text',  // what to expect back from the PHP script, if anything
+          cache: false,
+          contentType: false,
+          processData: false,
+          data: form_data,
+          type: 'post',
+          dataType: 'json',
+          success: function(data){
+            fileno = parseInt(fileno)+1;
+            $("#fileList tbody").append('<tr id="tr_'+fileno+'" align="left"><td><input type="hidden" name="attachment[]" value="'+data.message+'" ><a href="attachment/'+data.message+'" target="_blank">'+data.message+'</a> <input type="hidden" name="attachment_subject[]" value="" > </td><td><textarea name="attachment_message[]" row="3" cols="50"></textarea></td><td><button type="button" OnClick="RemoveFile(this);" class="btn btn-sm btn-del" value="tr_'+fileno+'">Remove </button> <br></td></tr>');
+            $("input[id=fileno]").val(fileno);
+            $('#rfq_upload').val("");
+          }
+        });
+      });
+
+      GetSelectedSupplierCount();
+
     });
 
-    GetSelectedSupplierCount();
-
-  });
-
-  function GetSelectedSupplierCount(){
-    var rowCount = $('#selected_suppliers tbody tr').length;
-    if(rowCount==0){
-      rowCount = "";
-      $("span").removeClass("badge");
-    }
-    else{
-      if(rowCount==5){
-        document.getElementById("overlay").style.display = "block";
-        $("#addMoreSupplier").show();
-      }else if(rowCount<5){
-        document.getElementById("overlay").style.display = "none";
-        $("#addMoreSupplier").show();
-      }else{
-        document.getElementById("overlay").style.display = "block";
-        $("#addMoreSupplier").hide();
+    function GetSelectedSupplierCount(){
+      var rowCount = $('#selected_suppliers tbody tr').length;
+      if(rowCount==0){
+        rowCount = "";
+        $("span").removeClass("badge");
       }
-      $("span").addClass("badge");
-    }
-    $("#selectedRCount").text(rowCount);
-  }
-
-  function RemoveFile(objButton){
-    var trid = objButton.value;
-    row = $('#' + trid);
-    row.remove();
-  }
-
-
-  $(document).ready(function () {
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-
-      if (this.readyState == 4 && this.status == 200) {
-        $("#servicecategory1").find('option').remove().end();
-        $("#servicecategory2").find('option').remove().end();
-        $("#servicecategory3").find('option').remove().end();
-        $("#servicecategory4").find('option').remove().end();
-        $("#services").find('option').remove().end();
-        $("#servicecategory1").append(this.responseText);
-
+      else{
+        if(rowCount==5){
+          document.getElementById("overlay").style.display = "block";
+          $("#addMoreSupplier").show();
+        }else if(rowCount<5){
+          document.getElementById("overlay").style.display = "none";
+          $("#addMoreSupplier").show();
+        }else{
+          document.getElementById("overlay").style.display = "block";
+          $("#addMoreSupplier").hide();
+        }
+        $("span").addClass("badge");
       }
-    };
-    xmlhttp.open("GET","market.php?function=servicecategory1",true);
-    xmlhttp.send();
-  });
-
-  $('select[id=servicecategory1]').change(function(e){
-    var id = $('select[id=servicecategory1]').val();
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      $("#selectedRCount").text(rowCount);
     }
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        $("#servicecategory2").find('option').remove().end();
-        $("#servicecategory3").find('option').remove().end();
-        $("#servicecategory4").find('option').remove().end();
-        $("#services").find('option').remove().end();
-        $("#servicecategory2").append(this.responseText);
 
-      }
-    };
-
-    xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=servicecategory2",true);
-    xmlhttp.send();
-
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    function RemoveFile(objButton){
+      var trid = objButton.value;
+      row = $('#' + trid);
+      row.remove();
     }
 
 
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var valueuom =  this.responseText;
-        var array = valueuom.split(',');
-        $("#metal_type").val(array[6]);
+    $(document).ready(function () {
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
       }
-    };
-    xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
-    xmlhttp.send();
-  });
+      xmlhttp.onreadystatechange = function() {
 
-  $('select[id=servicecategory2]').change(function(e){
-    var id = $('select[id=servicecategory2]').val();
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        $("#servicecategory3").find('option').remove().end();
-        $("#servicecategory4").find('option').remove().end();
-        $("#services").find('option').remove().end();
-        $("#servicecategory3").append(this.responseText);
+        if (this.readyState == 4 && this.status == 200) {
+          $("#servicecategory1").find('option').remove().end();
+          $("#servicecategory2").find('option').remove().end();
+          $("#servicecategory3").find('option').remove().end();
+          $("#servicecategory4").find('option').remove().end();
+          $("#services").find('option').remove().end();
+          $("#servicecategory1").append(this.responseText);
 
+        }
+      };
+      xmlhttp.open("GET","market.php?function=servicecategory1",true);
+      xmlhttp.send();
+    });
+
+    $('select[id=servicecategory1]').change(function(e){
+      var id = $('select[id=servicecategory1]').val();
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
       }
-    };
-    xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=servicecategory2",true);
-    xmlhttp.send();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          $("#servicecategory2").find('option').remove().end();
+          $("#servicecategory3").find('option').remove().end();
+          $("#servicecategory4").find('option').remove().end();
+          $("#services").find('option').remove().end();
+          $("#servicecategory2").append(this.responseText);
 
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
+        }
+      };
 
+      xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=servicecategory2",true);
+      xmlhttp.send();
 
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var valueuom =  this.responseText;
-        var array = valueuom.split(',');
-        $("#metal_type").val(array[6]);
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
       }
-    };
-    xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
-    xmlhttp.send();
 
-  });
 
-  $('select[id=servicecategory3]').change(function(e){
-    var id = $('select[id=servicecategory3]').val();
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        $("#servicecategory4").find('option').remove().end();
-        $("#services").find('option').remove().end();
-        $("#servicecategory4").append(this.responseText);
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var valueuom =  this.responseText;
+          var array = valueuom.split(',');
+          $("#metal_type").val(array[6]);
+        }
+      };
+      xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
+      xmlhttp.send();
+    });
 
+    $('select[id=servicecategory2]').change(function(e){
+      var id = $('select[id=servicecategory2]').val();
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
       }
-    };
-    xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=servicecategory2",true);
-    xmlhttp.send();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          $("#servicecategory3").find('option').remove().end();
+          $("#servicecategory4").find('option').remove().end();
+          $("#services").find('option').remove().end();
+          $("#servicecategory3").append(this.responseText);
 
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
+        }
+      };
+      xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=servicecategory2",true);
+      xmlhttp.send();
 
-
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var valueuom =  this.responseText;
-        var array = valueuom.split(',');
-        $("#metal_type").val(array[6]);
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
       }
-    };
-    xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
-    xmlhttp.send();
 
-  });
 
-  $('select[id=servicecategory4]').change(function(e){
-    var id = $('select[id=servicecategory4]').val();
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        $("#services").find('option').remove().end();
-        $("#services").append(this.responseText);
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var valueuom =  this.responseText;
+          var array = valueuom.split(',');
+          $("#metal_type").val(array[6]);
+        }
+      };
+      xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
+      xmlhttp.send();
 
+    });
+
+    $('select[id=servicecategory3]').change(function(e){
+      var id = $('select[id=servicecategory3]').val();
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
       }
-    };
-    xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=servicecategory2",true);
-    xmlhttp.send();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          $("#servicecategory4").find('option').remove().end();
+          $("#services").find('option').remove().end();
+          $("#servicecategory4").append(this.responseText);
 
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
+        }
+      };
+      xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=servicecategory2",true);
+      xmlhttp.send();
 
-
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var valueuom =  this.responseText;
-        var array = valueuom.split(',');
-        $("#metal_type").val(array[6]);
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
       }
-    };
-    xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
-    xmlhttp.send();
-
-  });
-
-  $('select[id=services]').change(function(e){
-    var id = $('select[id=services]').val();
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
 
 
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var valueuom =  this.responseText;
-        var array = valueuom.split(',');
-        $("#metal_type").val(array[6]);
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var valueuom =  this.responseText;
+          var array = valueuom.split(',');
+          $("#metal_type").val(array[6]);
+        }
+      };
+      xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
+      xmlhttp.send();
+
+    });
+
+    $('select[id=servicecategory4]').change(function(e){
+      var id = $('select[id=servicecategory4]').val();
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
       }
-    };
-    xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
-    xmlhttp.send();
-  });
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          $("#services").find('option').remove().end();
+          $("#services").append(this.responseText);
+
+        }
+      };
+      xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=servicecategory2",true);
+      xmlhttp.send();
+
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
 
 
-  $('button[id=add_service]').click(function(){
-    var servicecategory1id = $('select[id=servicecategory1]').val();
-    var servicecategory1value = $('select[id=servicecategory1] option:selected').text();
-    var servicecategory2id = $('select[id=servicecategory2]').val();
-    var servicecategory2value = $('select[id=servicecategory2] option:selected').text();
-    var servicecategory3id = $('select[id=servicecategory3]').val();
-    var servicecategory3value = $('select[id=servicecategory3] option:selected').text();
-    var servicecategory4id = $('select[id=servicecategory4]').val();
-    var servicecategory4value = $('select[id=servicecategory4] option:selected').text();
-    var serviceid = $('select[id=services]').val();
-    var servicevalue = $('select[id=services] option:selected').text();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var valueuom =  this.responseText;
+          var array = valueuom.split(',');
+          $("#metal_type").val(array[6]);
+        }
+      };
+      xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
+      xmlhttp.send();
 
-    var serviceno = $("input[id=serviceno]").val();
+    });
 
-    if(servicevalue == ""){
-      if(servicecategory4value == ""){
-        if(servicecategory3value == ""){
-          if(servicecategory2value == ""){
-            if(servicecategory1value == ""){
+    $('select[id=services]').change(function(e){
+      var id = $('select[id=services]').val();
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+
+
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var valueuom =  this.responseText;
+          var array = valueuom.split(',');
+          $("#metal_type").val(array[6]);
+        }
+      };
+      xmlhttp.open("GET","market.php?servicecategory1id="+id+"&function=services",true);
+      xmlhttp.send();
+    });
+
+
+    $('button[id=add_service]').click(function(){
+      var servicecategory1id = $('select[id=servicecategory1]').val();
+      var servicecategory1value = $('select[id=servicecategory1] option:selected').text();
+      var servicecategory2id = $('select[id=servicecategory2]').val();
+      var servicecategory2value = $('select[id=servicecategory2] option:selected').text();
+      var servicecategory3id = $('select[id=servicecategory3]').val();
+      var servicecategory3value = $('select[id=servicecategory3] option:selected').text();
+      var servicecategory4id = $('select[id=servicecategory4]').val();
+      var servicecategory4value = $('select[id=servicecategory4] option:selected').text();
+      var serviceid = $('select[id=services]').val();
+      var servicevalue = $('select[id=services] option:selected').text();
+
+      var serviceno = $("input[id=serviceno]").val();
+
+      if(servicevalue == ""){
+        if(servicecategory4value == ""){
+          if(servicecategory3value == ""){
+            if(servicecategory2value == ""){
+              if(servicecategory1value == ""){
+                serviceno = parseInt(serviceno)+1;
+                $("input[id=serviceno]").val(serviceno);
+
+                $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory1id+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory1id+'" readonly><input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
+              }else{
+                alert("Select service!");
+              }
+            }else{
               serviceno = parseInt(serviceno)+1;
               $("input[id=serviceno]").val(serviceno);
 
-              $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory1id+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory1id+'" readonly><input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
-            }else{
-              alert("Select service!");
+              $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory2id+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
             }
           }else{
             serviceno = parseInt(serviceno)+1;
             $("input[id=serviceno]").val(serviceno);
 
-            $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory2id+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
+            $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory3id+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
           }
         }else{
           serviceno = parseInt(serviceno)+1;
           $("input[id=serviceno]").val(serviceno);
 
-          $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory3id+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
+          $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory4id+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
         }
       }else{
         serviceno = parseInt(serviceno)+1;
         $("input[id=serviceno]").val(serviceno);
 
-        $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+servicecategory4id+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
+        $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+serviceid+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
+
+
       }
-    }else{
-      serviceno = parseInt(serviceno)+1;
-      $("input[id=serviceno]").val(serviceno);
 
-      $("#servicelist tbody").append('<tr id="trservice_'+serviceno+'" align="left"><td><input type="hidden" name="serviceid[]" class="serviceid" value="'+serviceid+'" readonly><input type="hidden" name="chk[]" value="'+serviceno+'" > </td>	<td>'+servicecategory1value+'<input type="hidden" name="cat1[]" value="'+servicecategory1value+'" readonly></td>			 <td>'+servicecategory2value+'<input type="hidden" name="cat2[]" value="'+servicecategory2value+'" readonly></td>		<td>'+servicecategory3value+'<input type="hidden" name="cat3[]" value="'+servicecategory3value+'" readonly></td>	<td>'+servicecategory4value+'<input type="hidden" name="cat4[]" value="'+servicecategory4value+'" readonly></td>	<td>'+servicevalue+'<input type="hidden" name="service[]" value="'+servicevalue+'" readonly></td>			<td>'+ $("input[id=metal_type]").val() +'<input type="hidden" name="metaltype[]" value="'+ $("input[id=metal_type]").val() +'" readonly></td>	<td><button type="button" OnClick="RemoveService(this);" class="btn btn-sm btn-del" value="trservice_'+serviceno+'">Remove </button></td></tr>');
+      searchsupplier();
+    });
+
+    function RemoveService(objButton){
+      var trid = objButton.value;
+      row = $('#' + trid);
+      row.remove();
 
 
+      searchsupplier();
     }
 
-    searchsupplier();
-  });
+    $('button[id=btn_search_suppliers]').click(function(){
+      var table_suppliers = document.getElementById('selected_suppliers');
 
-  function RemoveService(objButton){
-    var trid = objButton.value;
-    row = $('#' + trid);
-    row.remove();
+      var rowLength_supplier = table_suppliers.rows.length;
+      var selected_suppliers_id = "0";
 
+      for(var i=1; i<rowLength_supplier; i+=1){
+        var row = table_suppliers.rows[i];
+        var selected_suppliers = row.getElementsByTagName("input")[0];
 
-    searchsupplier();
-  }
-
-  $('button[id=btn_search_suppliers]').click(function(){
-    var table_suppliers = document.getElementById('selected_suppliers');
-
-    var rowLength_supplier = table_suppliers.rows.length;
-    var selected_suppliers_id = "0";
-
-    for(var i=1; i<rowLength_supplier; i+=1){
-      var row = table_suppliers.rows[i];
-      var selected_suppliers = row.getElementsByTagName("input")[0];
-
-      selected_suppliers_id = selected_suppliers_id + "," +selected_suppliers.value;
-    }
-
-    var table = document.getElementById('servicelist');
-
-    var rowLength = table.rows.length;
-    var servicesid= "0";
-    for(var i=1; i<rowLength; i+=1){
-      var row = table.rows[i];
-      var serviceid = row.getElementsByTagName("input")[5];
-
-      servicesid = servicesid + "," +serviceid.value;
-    }
-
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp = new XMLHttpRequest();
-    } else {
-      // code for IE6, IE5
-      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        $("#search_suppliers tbody").find('tr').remove().end();
-        $("#search_suppliers tbody").append(this.responseText);
+        selected_suppliers_id = selected_suppliers_id + "," +selected_suppliers.value;
       }
-    };
-    xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id,true);
-    xmlhttp.send();
 
-  });
+      var table = document.getElementById('servicelist');
 
-  function searchsupplier(){
+      var rowLength = table.rows.length;
+      var servicesid= "0";
+      for(var i=1; i<rowLength; i+=1){
+        var row = table.rows[i];
+        var serviceid = row.getElementsByTagName("input")[5];
 
-
-  }
-
-  function AddtoRequestList(objButton){
-    var trid = objButton.value;
-    row = $('#' + trid);
-    $("#selected_suppliers tbody").append(row);
-    objButton.innerHTML = "Remove from Selected Supplier List";
-    objButton.setAttribute( "onClick", "RemoveFromList(this);" );
-    $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
-
-    GetSelectedSupplierCount();
-  }
-
-  function RemoveFromList(objButton){
-    var trid = objButton.value;
-    row = $('#' + trid);
-    $("#search_suppliers tbody").append(row);
-    objButton.innerHTML = "Add to Selected Supplier List";
-    objButton.setAttribute( "onClick", "AddtoRequestList(this);" );
-    $('#' + trid + ' input[name="selected_supplier_id[]"]').val("0");
-
-    GetSelectedSupplierCount();
-  }
-
-  function ViewProfile(objButton){
-    var company_id = objButton.value;
-    window.open(
-      'index.php?rdp=company_profile&companyid='+company_id,
-      '_blank'
-    );
-  }
-
-  $("#btnsave_rfq_top").click(function (e) {
-
-    e.preventDefault();
-    var rowCount = $('#selected_suppliers tbody tr').length;
-    if(rowCount==0){
-      alert("Please invite at least one supplier");
-    }
-    else{
-      SaveRFQ();
-    }
-    //  SaveRFQ();
-
-  });
-
-  $("#btnsubmit_rfq_top").click(function (e) {
-
-    e.preventDefault();
-    var rowCount = $('#selected_suppliers tbody tr').length;
-    if(rowCount==0){
-      alert("Please invite at least one supplier");
-    }
-    else{
-      SubmitRFQ();
-    }
-    //SubmitRFQ();
-
-  });
-
-  $("#btnsave_rfq_bot").click(function (e) {
-
-    e.preventDefault();
-    var rowCount = $('#selected_suppliers tbody tr').length;
-    if(rowCount==0){
-      alert("Please invite at least one supplier");
-    }
-    else{
-      SaveRFQ();
-    }
-    //SaveRFQ();
-
-  });
-
-  $("#btnsubmit_rfq_bot").click(function (e) {
-
-    e.preventDefault();
-    var rowCount = $('#selected_suppliers tbody tr').length;
-    if(rowCount==0){
-      alert("Please invite at least one supplier");
-    }
-    else{
-      SubmitRFQ();
-    }
-    //SubmitRFQ();
-
-  });
-
-  function SaveRFQ() {
-    $.ajax({
-      url: 'market.php?function=editrfq&act=draft',
-      type: 'GET',
-      data: $("#create_rfq").serialize(),
-      dataType: 'json',
-      success: function (data) {
-        $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
-        $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
-        $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
-        $("#create_rfq").remove();
-        $btn.button("reset");
-      },
-      error: function (data) {
-        $("#notify .message").html("<strong>100000" + data.status + "</strong>: " + data.message);
-        $("#notify").removeClass("alert-success").addClass("alert-warning").fadeIn();
-        $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
-        $btn.button("reset");
+        servicesid = servicesid + "," +serviceid.value;
       }
+
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          $("#search_suppliers tbody").find('tr').remove().end();
+          $("#search_suppliers tbody").append(this.responseText);
+        }
+      };
+      xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id,true);
+      xmlhttp.send();
 
     });
 
-  }
+    function searchsupplier(){
 
-  function SubmitRFQ() {
 
-    $.ajax({
-
-      url: 'market.php?function=editrfq&act=submit',
-      type: 'GET',
-      data: $("#create_rfq").serialize(),
-      dataType: 'json',
-      success: function (data) {
-        window.location.href = "index.php?rdp=list_rfq";
-        // $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
-        // $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
-        // $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
-        // $("#create_rfq").remove();
-        // $btn.button("reset");
-      },
-      error: function (data) {
-        $("#notify .message").html("<strong>100000" + data.status + "</strong>: " + data.message);
-        $("#notify").removeClass("alert-success").addClass("alert-warning").fadeIn();
-        $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
-        $btn.button("reset");
-      }
-
-    });
-  }
-
-  function addMoreSelectedSupplier(){
-    var rowCount = $('#search_suppliers tbody tr').length;
-    var i = 1;
-    var j = 0;
-    var tr;
-    var objButton;
-    if(rowCount > 0){
-      if(rowCount < 5)
-      {
-        j = rowCount;
-      }else{
-        j=5;
-      }
-      for (i = 1; i <= j; i++) {
-        tr = document.getElementById("search_suppliers").rows[1];
-        objButton = tr.getElementsByTagName("button")[1];
-        var trid = objButton.value;
-        //row = $('#' + trid);
-        //$("#selected_suppliers tbody").append(row);
-        $("#selected_suppliers tbody").append(tr);
-        objButton.innerHTML = "Remove from Selected Supplier List";
-        objButton.setAttribute( "onClick", "RemoveFromList(this);" );
-        $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
-      }
     }
 
-    GetSelectedSupplierCount();
-  }
-</script>
+    function AddtoRequestList(objButton){
+      var trid = objButton.value;
+      row = $('#' + trid);
+      $("#selected_suppliers tbody").append(row);
+      objButton.innerHTML = "Remove from Selected Supplier List";
+      objButton.setAttribute( "onClick", "RemoveFromList(this);" );
+      $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
+
+      GetSelectedSupplierCount();
+    }
+
+    function RemoveFromList(objButton){
+      var trid = objButton.value;
+      row = $('#' + trid);
+      $("#search_suppliers tbody").append(row);
+      objButton.innerHTML = "Add to Selected Supplier List";
+      objButton.setAttribute( "onClick", "AddtoRequestList(this);" );
+      $('#' + trid + ' input[name="selected_supplier_id[]"]').val("0");
+
+      GetSelectedSupplierCount();
+    }
+
+    function ViewProfile(objButton){
+      var company_id = objButton.value;
+      window.open(
+        'index.php?rdp=company_profile&companyid='+company_id,
+        '_blank'
+      );
+    }
+
+    $("#btnsave_rfq_top").click(function (e) {
+
+      e.preventDefault();
+      var rowCount = $('#selected_suppliers tbody tr').length;
+      if(rowCount==0){
+        alert("Please invite at least one supplier");
+      }
+      else{
+        SaveRFQ();
+      }
+      //  SaveRFQ();
+
+    });
+
+    $("#btnsubmit_rfq_top").click(function (e) {
+
+      e.preventDefault();
+      var rowCount = $('#selected_suppliers tbody tr').length;
+      if(rowCount==0){
+        alert("Please invite at least one supplier");
+      }
+      else{
+        SubmitRFQ();
+      }
+      //SubmitRFQ();
+
+    });
+
+    $("#btnsave_rfq_bot").click(function (e) {
+
+      e.preventDefault();
+      var rowCount = $('#selected_suppliers tbody tr').length;
+      if(rowCount==0){
+        alert("Please invite at least one supplier");
+      }
+      else{
+        SaveRFQ();
+      }
+      //SaveRFQ();
+
+    });
+
+    $("#btnsubmit_rfq_bot").click(function (e) {
+
+      e.preventDefault();
+      var rowCount = $('#selected_suppliers tbody tr').length;
+      if(rowCount==0){
+        alert("Please invite at least one supplier");
+      }
+      else{
+        SubmitRFQ();
+      }
+      //SubmitRFQ();
+
+    });
+
+    function SaveRFQ() {
+      $.ajax({
+        url: 'market.php?function=editrfq&act=draft',
+        type: 'GET',
+        data: $("#create_rfq").serialize(),
+        dataType: 'json',
+        success: function (data) {
+          $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
+          $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
+          $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+          $("#create_rfq").remove();
+          $btn.button("reset");
+        },
+        error: function (data) {
+          $("#notify .message").html("<strong>100000" + data.status + "</strong>: " + data.message);
+          $("#notify").removeClass("alert-success").addClass("alert-warning").fadeIn();
+          $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+          $btn.button("reset");
+        }
+
+      });
+
+    }
+
+    function SubmitRFQ() {
+
+      $.ajax({
+
+        url: 'market.php?function=editrfq&act=submit',
+        type: 'GET',
+        data: $("#create_rfq").serialize(),
+        dataType: 'json',
+        success: function (data) {
+          window.location.href = "index.php?rdp=list_rfq";
+          // $("#notify .message").html("<strong>" + data.status + "</strong>: " + data.message);
+          // $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
+          // $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+          // $("#create_rfq").remove();
+          // $btn.button("reset");
+        },
+        error: function (data) {
+          $("#notify .message").html("<strong>100000" + data.status + "</strong>: " + data.message);
+          $("#notify").removeClass("alert-success").addClass("alert-warning").fadeIn();
+          $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+          $btn.button("reset");
+        }
+
+      });
+    }
+
+    function addMoreSelectedSupplier(){
+      var rowCount = $('#search_suppliers tbody tr').length;
+      var i = 1;
+      var j = 0;
+      var tr;
+      var objButton;
+      if(rowCount > 0){
+        if(rowCount < 5)
+        {
+          j = rowCount;
+        }else{
+          j=5;
+        }
+        for (i = 1; i <= j; i++) {
+          tr = document.getElementById("search_suppliers").rows[1];
+          objButton = tr.getElementsByTagName("button")[1];
+          var trid = objButton.value;
+          //row = $('#' + trid);
+          //$("#selected_suppliers tbody").append(row);
+          $("#selected_suppliers tbody").append(tr);
+          objButton.innerHTML = "Remove from Selected Supplier List";
+          objButton.setAttribute( "onClick", "RemoveFromList(this);" );
+          $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
+        }
+      }
+
+      GetSelectedSupplierCount();
+    }
+  </script>

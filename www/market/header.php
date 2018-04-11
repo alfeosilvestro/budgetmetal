@@ -114,15 +114,9 @@
                             <!-- Menu Body -->
 							               <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
-                                  <button class="btn btn-primary" type="submit"  onClick="parent.location='index.php?rdp=profile'"><i class="icon-off icon-white"></i>  &nbsp;Account </button>
-
-                                </div>
-                                <div class="pull-right">
-                                   <button class="btn btn-primary" type="submit"  onClick="parent.location='logout.php'"><i class="icon-off icon-white"></i>  &nbsp;Logout </button>
-                                </div>
-                                <div  class="col-xs-12 text-center">
-                                  <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#changeAccountType">Change to <?php
+                                <div class="">
+                                  <button class="btn btn-primary btn-sm" type="submit"  onClick="parent.location='index.php?rdp=profile'"><i class="icon-off icon-white"></i> Account</button>
+                                  <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#changeAccountType">Change to <?php
                                   if(($_SESSION['usertype'] == 'Buyer')){
                                     echo "Supplier";
                                     $changetypeid = "2";
@@ -131,7 +125,11 @@
                                      $changetypeid = "3";
                                   }
                                   ?></button>
+                                  <button class="btn btn-danger btn-sm" type="submit"  onClick="parent.location='logout.php'"><i class="icon-off icon-white"></i>Logout</button>
+
                                 </div>
+
+
                             </li>
                         </ul>
                     </li>

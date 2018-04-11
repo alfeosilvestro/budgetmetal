@@ -8867,6 +8867,7 @@ ALTER TABLE `m_buyer`
 ALTER TABLE `m_company`
   ADD PRIMARY KEY (`Id`);
 
+ALTER TABLE `m_company` ADD `IsVerified` BIT(1) NOT NULL DEFAULT b'0' ;
 --
 -- Indexes for table `m_services`
 --
