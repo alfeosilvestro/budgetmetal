@@ -402,7 +402,7 @@ Width
                     <th>Company Name</th>
                     <th>Address</th>
                     <th>Tags</th>
-                    <th>Verified</th>
+                    <th>Status</th>
                     <th>&nbsp;</th>
                   </tr>
 
@@ -1004,22 +1004,28 @@ function addMoreSelectedSupplier(){
   var tr;
   var objButton;
   if(rowCount > 0){
-    if(rowCount < 5)
-    {
-      j = rowCount;
-    }else{
-      j=5;
-    }
+    j = rowCount;
+    var rowid = 1;
     for (i = 1; i <= j; i++) {
-      tr = document.getElementById("search_suppliers").rows[1];
-      objButton = tr.getElementsByTagName("button")[1];
-      var trid = objButton.value;
-      //row = $('#' + trid);
-      //$("#selected_suppliers tbody").append(row);
-      $("#selected_suppliers tbody").append(tr);
-      objButton.innerHTML = "Remove from Selected Supplier List";
-      objButton.setAttribute( "onClick", "RemoveFromList(this);" );
-      $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
+      tr = document.getElementById("search_suppliers").rows[rowid];
+      if(i<=5){
+        var tdStatus = tr.getElementsByTagName("td")[3].innerText;
+        if(tdStatus == "Unverified"){
+          objButton = tr.getElementsByTagName("button")[1];
+          var trid = objButton.value;
+          //row = $('#' + trid);
+          //$("#selected_suppliers tbody").append(row);
+          $("#selected_suppliers tbody").append(tr);
+          objButton.innerHTML = "Remove from Selected Supplier List";
+          objButton.setAttribute( "onClick", "RemoveFromList(this);" );
+          $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
+
+        }
+        else{
+          rowid = rowid + 1;
+        }
+      }
+
     }
   }
 

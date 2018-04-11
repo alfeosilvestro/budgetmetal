@@ -43,8 +43,8 @@
     <script src="js/knockout-3.4.2.js"></script>
     <!-- <script src="js/js-webshim/minified/polyfiller.js"></script> -->
     <link rel="stylesheet" href="typeahead/typeaheadStyle.css" >
-
-
+<script src="js/raphael.js"></script>
+  <script src="js/flowchart.js"></script>
 
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->

@@ -524,11 +524,15 @@ if($Is_supplier_company == "1"){
                   style="width: 100%;"
                   data-bind="value: tags, valueUpdate: 'blur'" name="tagList[]">
                   <?php
-                  $sql2 = "SELECT * FROM `c_tags` where Status = 1";
+                  $sql2 = "SELECT * FROM `c_tags` where Status = 1 Order by Seq";
                   $result2 = $conn->query($sql2);
                   if (isset($result2)){
                     if ($result2->num_rows > 0) {
                       while($row2 = $result2->fetch_assoc()) {
+                        $status = "";
+                        if($row2["Selectable"] == "0"){
+                          $status = "disabled";
+                        }
                         $selected = "";
                           $sql = "SELECT C_Tags_Id FROM `md_suppliertags` WHERE `M_User_Id` = ".$companyid;
                           $result = $conn->query($sql);
@@ -539,7 +543,7 @@ if($Is_supplier_company == "1"){
                               }
                             }
                           }
-                        echo "<option value='". $row2["Id"] ."' ".$selected.">" . $row2["TagName"] ;
+                        echo "<option value='". $row2["Id"] ."' ".$selected." ".$status.">" . $row2["TagName"] ;
                         echo "</option>";
                       }
                     }

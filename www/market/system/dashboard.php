@@ -198,7 +198,138 @@ if(($_SESSION['usertype'] == 'Buyer')){
         </div>
         <!-- ./col -->
       </div>
+      <div class="row">
+        <br><br>
+        <?php
+          if(($_SESSION['usertype'] == 'Buyer')){
+            ?>
+            <div id="diagram"></div>
 
+            <script>
+            var diagram = flowchart.parse('st=>start: Start\n' +
+                                            'e=>end\n' +
+                                            'op1=>operation: Create RFQ:> index.php?rdp=create_rfq \n' +
+                                            'op2=>operation: Submit RFQ:> index.php?rdp=list_rfq \n' +
+                                            'op3=>operation: Go Evaluate RFQ:> index.php?rdp=list_rfq \n' +
+                                            'op4=>operation: Award RFQ:> index.php?rdp=list_rfq \n' +
+
+                                            '\n' +
+
+
+                                            'st(right)->op1(right)->op2(right)->op3(right)->op4(right)->e(left)'+
+
+                                            ''
+                                            );
+            diagram.drawSVG('diagram');
+
+            // you can also try to pass options:
+
+            diagram.drawSVG('diagram', {
+                                            'x': 0,
+                                            'y': 0,
+                                            'line-width': 2,
+                                            'line-length': 30,
+                                            'text-margin': 10,
+                                            'font-size': 14,
+                                            'font-color': 'black',
+                                            'line-color': '#002080',
+                                            'element-color': '#99ccff',
+                                            'fill': '#99ccff',
+                                            'yes-text': 'yes',
+                                            'no-text': 'no',
+                                            'arrow-end': 'block',
+                                            'scale': 1.2,
+                                            // style symbol types
+                                            'symbols': {
+                                                'start': {
+                                                'font-color': 'white',
+                                                'element-color': '#00e6ac',
+                                                'fill': '#00e6ac'
+                                                },
+                                                'end':{
+                                                    'font-color': 'white',
+                                                    'element-color': '#e6005c',
+                                                    'fill': '#e6005c'
+                                                }
+                                            },
+                                            // even flowstate support ;-)
+                                            'flowstate' : {
+                                                //'past' : { 'fill' : '#CCCCCC', 'font-size' : 12},
+                                                // 'current' : {'fill' : 'yellow', 'font-color' : 'red', 'font-weight' : 'bold'},
+                                                //'future' : { 'fill' : '#FFFF99'},
+                                                'request' : { 'fill' : 'blue'}//,
+                                                // 'invalid': {'fill' : '#444444'},
+                                                // 'approved' : { 'fill' : '#58C4A3', 'font-size' : 12, 'yes-text' : 'APPROVED', 'no-text' : 'n/a' },
+                                                // 'rejected' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'n/a', 'no-text' : 'REJECTED' }
+                                            }
+                                        });
+                </script>
+            <?php
+          }else{
+            ?>
+            <div id="diagram"></div>
+            <script>
+            var diagram = flowchart.parse('st=>start: Start\n' +
+                                            'e=>end\n' +
+                                            'op1=>operation: Receive RFQ:> index.php?rdp=list_rfq \n' +
+                                            'op2=>operation: Register Interest:> index.php?rdp=list_rfq \n' +
+                                            'op3=>operation: View Quote:> index.php?rdp=list_quotation \n' +
+                                            'op4=>operation: Submit Quote:> index.php?rdp=list_quotation \n' +
+
+                                            '\n' +
+
+                                            'st(right)->op1(right)->op2(right)->op3(right)->op4(right)->e(left)'+
+
+                                            ''
+                                            );
+            diagram.drawSVG('diagram');
+
+            // you can also try to pass options:
+
+            diagram.drawSVG('diagram', {
+                                            'x': 0,
+                                            'y': 0,
+                                            'line-width': 2,
+                                            'line-length': 30,
+                                            'text-margin': 10,
+                                            'font-size': 14,
+                                            'font-color': 'black',
+                                            'line-color': '#002080',
+                                            'element-color': '#99ccff',
+                                            'fill': '#99ccff',
+                                            'yes-text': 'yes',
+                                            'no-text': 'no',
+                                            'arrow-end': 'block',
+                                            'scale': 1.2,
+                                            // style symbol types
+                                            'symbols': {
+                                                'start': {
+                                                'font-color': 'white',
+                                                'element-color': '#00e6ac',
+                                                'fill': '#00e6ac'
+                                                },
+                                                'end':{
+                                                    'font-color': 'white',
+                                                    'element-color': '#e6005c',
+                                                    'fill': '#e6005c'
+                                                }
+                                            },
+                                            // even flowstate support ;-)
+                                            'flowstate' : {
+                                                //'past' : { 'fill' : '#CCCCCC', 'font-size' : 12},
+                                                // 'current' : {'fill' : 'yellow', 'font-color' : 'red', 'font-weight' : 'bold'},
+                                                //'future' : { 'fill' : '#FFFF99'},
+                                                'request' : { 'fill' : 'blue'}//,
+                                                // 'invalid': {'fill' : '#444444'},
+                                                // 'approved' : { 'fill' : '#58C4A3', 'font-size' : 12, 'yes-text' : 'APPROVED', 'no-text' : 'n/a' },
+                                                // 'rejected' : { 'fill' : '#C45879', 'font-size' : 12, 'yes-text' : 'n/a', 'no-text' : 'REJECTED' }
+                                            }
+                                        });
+                </script>
+            <?php
+          }
+        ?>
+      </div>
     </section>
 
 
