@@ -53,7 +53,7 @@
                 <li><a class="page-scroll" href="#services">How it works?</a></li>
 				 <li><a class="page-scroll" href="#works">Services</a></li>
                 <li><a class="page-scroll" href="#contact">Contact</a></li>
-                <li><a class="page-scroll" href="market/register.php">Sign-up</a></li>
+                <li><a class="page-scroll" href="market/register.php">Sign Up for Free</a></li>
 
 
             </ul>
@@ -147,7 +147,7 @@
                             <br/><br/>
                             <a href="market/register.php" class="btn btn-info btn-sm"
                                style="color: white !important; width: 100%">
-                                SIGN-UP
+                                Sign Up for Free
                             </a>
 
                         </form>

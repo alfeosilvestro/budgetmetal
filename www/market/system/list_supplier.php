@@ -27,10 +27,10 @@ if(isset($_SESSION['userid'])){
   <div class="row">
     <div class="col-md-3">
       <div class="box box-info">
-        <div class="row" style="padding-left:10px;">
+        <div class="row" style="padding:5px;">
           <div class="col-md-12">
             <h4>Name</h4>
-            <input type="form-control" name="sName" value="" id="sName">
+            <input type="text" name="sName" value="" id="sName" class="form-control">
           </div>
           <div class="col-md-12">
             <h4>Tags</h4>

@@ -101,9 +101,9 @@ if (isset($result)){
 }
 
 
-/* .content {
-  height: 89%;
-} */
+ .content {
+  height: 85%;
+}
     </style>
     <div class="row row-flex">
       <div class="col-md-4">
@@ -151,10 +151,21 @@ if (isset($result)){
       <div class="col-md-4">
         <div class="box box-primary content">
           <div class="box-body">
+            <style media="screen">
+              span.stars, span.stars span {
+                display: block;
+                background: url(img/stars.png) 0 -16px repeat-x;
+                width: 80px;
+                height: 16px;
+              }
 
+              span.stars span {
+                background-position: 0 0;
+              }
+            </style>
             <strong><i class="glyphicon glyphicon-star"></i> Rating</strong>
-            <br>
-            <table width="100%" class="table table-bordered table-striped">
+            <br><br>
+            <table width="100%" class="table ">
               <tbody>
                 <?php
                 $tmpSOQ = "0.0";
@@ -178,8 +189,8 @@ if (isset($result)){
                 if($Is_supplier_company =="1"){
                   ?>
                   <tr>
-                    <td>Overall Rating</td>
-                    <td><?php echo number_format($supplierRating); ?></td>
+                    <td><b>Overall Rating :</b></td>
+                    <td><span class="stars"><?php echo  number_format($supplierRating); ?></span></td>
                   </tr>
                   <tr>
                     <td></td>
@@ -187,19 +198,19 @@ if (isset($result)){
                   </tr>
                   <tr>
                     <td><b>Speed of Quotation :</b></td>
-                    <td><?php echo $tmpSOQ; ?></td>
+                    <td><span class="stars"><?php echo $tmpSOQ; ?></span></td>
                   </tr>
                   <tr>
                     <td><b>Speed of Delivery :</b></td>
-                    <td><?php echo $tmpSOD; ?></td>
+                    <td><span class="stars"><?php echo $tmpSOD; ?></span></td>
                   </tr>
                   <tr>
                     <td><b>Service Quality :</b></td>
-                    <td><?php echo $tmpSQ; ?></td>
+                    <td><span class="stars"><?php echo $tmpSQ; ?></span></td>
                   </tr>
                   <tr>
                     <td><b>Price :</b></td>
-                    <td><?php echo $tmpPrice; ?></td>
+                    <td><span class="stars"><?php echo $tmpPrice; ?></span></td>
                   </tr>
                   <?php
                 }else{
@@ -823,7 +834,25 @@ if($Is_supplier_company == "1"){
 
   $(document).ready(function() {
 		$('.select2').select2();
+
+
 	});
+  $(function() {
+      $('span.stars').stars();
+  });
+
+  $.fn.stars = function() {
+      return $(this).each(function() {
+          // Get the value
+          var val = parseFloat($(this).html());
+          // Make sure that the value is in 0 - 5 range, multiply to get width
+          var size = Math.max(0, (Math.min(5, val))) * 16;
+          // Create stars holder
+          var $span = $('<span />').width(size);
+          // Replace the numerical value with stars
+          $(this).html($span);
+      });
+  }
 
   $("[id*=treeview-checkbox-demo] input[type=checkbox]").bind("click", function () {
 

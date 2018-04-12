@@ -628,7 +628,7 @@ $(document).ready(function () {
 				xmlhttp.onreadystatechange = function() {
 					if (this.readyState == 4 && this.status == 200) {
 						if(this.responseText != ""){
-							message = message + "Please drop email to info@metalpolis.com with photo id and business card to help create user account in our system!";
+							message = message + "Please use your corporate email, public email domain like gmail, yahoo, etc are restricted to prevent fraudulent user on the platform. If your company uses public email domain as corporate email, please email us at info@budgetmetal.com with attached scans or photos of your business card AND photo ID (driver license or NRIC) for us to help you create an account within 24-hour.";
 							$("input[id='txt_email_addr']").select();
 							$("#notify .message").html("<strong>" + message + "</strong>");
 							$("#notify").show();

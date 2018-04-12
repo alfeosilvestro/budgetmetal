@@ -125,14 +125,27 @@ if (isset($result)){
 
             <div class="active tab-pane" id="updatePassword">
               <div style="height:300px;">
-                <div class="col-md-3">
-                  New Password :
+                <div class="row">
+                  <div class="col-md-3">
+                    New Password :
+                  </div>
+                  <div class="col-md-9">
+                    <input type="password" name="password" value="" class="form-control" id="txt_password">
+                  </div>
                 </div>
-                <div class="col-md-5">
-                  <input type="password" name="password" value="" class="form-control" id="txt_password">
+                <br/>
+                <div class="row">
+                  <div class="col-md-3">
+                    Confirm Password :
+                  </div>
+                  <div class="col-md-9">
+                    <input type="password" name="cfpassword" value="" class="form-control" id="txt_cfpassword">
+                    <span class="text-danger" id="error_password"></span>
+                  </div>
                 </div>
+                <br>
                 <div class="col-md-12">
-                  <button type="button" name="button" id="btnUpdatePassword" class="btn btn-info">Update</button>
+                  <button type="button" name="button" id="btnUpdatePassword" class="btn btn-info pull-right">Update</button>
                 </div>
               </div>
 
@@ -143,7 +156,7 @@ if (isset($result)){
               <div class="col-md-3">
                 Name :
               </div>
-              <div class="col-md-5">
+              <div class="col-md-9">
                 <input type="text" name="Name" value="<?php echo $username?>" class="form-control" id="txtName">
               </div>
               <div class="col-md-12">
@@ -152,7 +165,7 @@ if (isset($result)){
               <div class="col-md-3">
                 Job Title :
               </div>
-              <div class="col-md-5">
+              <div class="col-md-9">
                 <input type="text" name="jobtitle" value="<?php echo $jobtitle?>" class="form-control" id="txtJobTitle">
               </div>
               <div class="col-md-12">
@@ -161,11 +174,14 @@ if (isset($result)){
               <div class="col-md-3">
                 Contact No. :
               </div>
-              <div class="col-md-5">
+              <div class="col-md-9">
                 <input type="text" name="contactno" value="<?php echo $ContactNumbers?>" class="form-control" id="txtContactNo">
               </div>
               <div class="col-md-12">
-                <button type="button" name="button" id="btnUpdateUserProfile" class="btn btn-info">Update</button>
+                <br>
+              </div>
+              <div class="col-md-12">
+                <button type="button" name="button" id="btnUpdateUserProfile" class="btn btn-info pull-right">Update</button>
               </div>
             </div>
             </div>
@@ -186,21 +202,28 @@ if (isset($result)){
   <script>
   $('#btnUpdatePassword').on('click', function(){
     var newpass = $('#txt_password').val();
-    $.ajax({
-      type: "GET",
-      url: "market.php?function=UpdatePassword&user_id=<?php echo $userid;?>&newpass=" + newpass,
-      dataType: "json",
-      success: function (response) {
-        alert("Password has been updated successfully.")
-        location.reload();
-      },
-      failure: function (response) {
-        alert(response);
-      },
-      error: function (response) {
-        alert(response);
-      }
-    });
+    var cfpass = $('#txt_cfpassword').val();
+
+    if(newpass == cfpass){
+      $.ajax({
+        type: "GET",
+        url: "market.php?function=UpdatePassword&user_id=<?php echo $userid;?>&newpass=" + newpass,
+        dataType: "json",
+        success: function (response) {
+          alert("Password has been updated successfully.")
+          location.reload();
+        },
+        failure: function (response) {
+          alert(response);
+        },
+        error: function (response) {
+          alert(response);
+        }
+      });
+    }else{
+      $("#error_password").text("Password and Confirm Password does not match.");
+    }
+
   });
 
   $('#btnUpdateUserProfile').on('click', function(){
