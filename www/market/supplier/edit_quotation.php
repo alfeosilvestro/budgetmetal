@@ -175,7 +175,26 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <div class="row">
+          <div class="row">
+            <div class="col-lg-8">
+                <button type="button" class="btn btn-success" aria-label="Add file" id="add-file-btn">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add file
+                </button>
+
+            </div>
+
+
+            <div class="col-lg-8">
+                <p>
+                    <div class="progress hide" id="upload-progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"   style="width: 0%">
+                            <span class="sr-only"></span>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </div>
+            <!-- <div class="row">
                 <div class="col-sm-6">
 
 					<input id="rfq_upload" type="file" name="rfq_upload" />
@@ -185,7 +204,7 @@
                     </button>
 
                 </div>
-            </div>
+            </div> -->
 			<br>
 			<div class="row">
                 <div class="col-sm-9">
@@ -290,28 +309,28 @@
 
 
 
-	$('button[id=addfilelist]').click(function(){
-		var fileno = $("input[id=fileno]").val();
-		var file_data = $('#rfq_upload').prop('files')[0];
-		var form_data = new FormData();
-		form_data.append('file', file_data);
-			$.ajax({
-					url: 'upload.php', // point to server-side PHP script
-					dataType: 'text',  // what to expect back from the PHP script, if anything
-					cache: false,
-					contentType: false,
-					processData: false,
-					data: form_data,
-					type: 'post',
-						dataType: 'json',
-					success: function(data){
-						fileno = parseInt(fileno)+1;
-							$("#fileList tbody").append('<tr id="tr_'+fileno+'" align="left"><td><input type="hidden" name="attachment[]" value="'+data.message+'" ><a href="attachment/'+data.message+'" target="_blank">'+data.message+'</a> <input type="hidden" name="attachment_subject[]" value="" > </td><td><textarea name="attachment_message[]" row="3" cols="50"></textarea></td><td><button type="button" OnClick="RemoveFile(this);" class="btn btn-sm btn-del" value="tr_'+fileno+'">Remove </button> <br></td></tr>');
-						$("input[id=fileno]").val(fileno);
-						$('#rfq_upload').val("");
-					}
-			});
-	});
+	// $('button[id=addfilelist]').click(function(){
+	// 	var fileno = $("input[id=fileno]").val();
+	// 	var file_data = $('#rfq_upload').prop('files')[0];
+	// 	var form_data = new FormData();
+	// 	form_data.append('file', file_data);
+	// 		$.ajax({
+	// 				url: 'upload.php', // point to server-side PHP script
+	// 				dataType: 'text',  // what to expect back from the PHP script, if anything
+	// 				cache: false,
+	// 				contentType: false,
+	// 				processData: false,
+	// 				data: form_data,
+	// 				type: 'post',
+	// 					dataType: 'json',
+	// 				success: function(data){
+	// 					fileno = parseInt(fileno)+1;
+	// 						$("#fileList tbody").append('<tr id="tr_'+fileno+'" align="left"><td><input type="hidden" name="attachment[]" value="'+data.message+'" ><a href="attachment/'+data.message+'" target="_blank">'+data.message+'</a> <input type="hidden" name="attachment_subject[]" value="" > </td><td><textarea name="attachment_message[]" row="3" cols="50"></textarea></td><td><button type="button" OnClick="RemoveFile(this);" class="btn btn-sm btn-del" value="tr_'+fileno+'">Remove </button> <br></td></tr>');
+	// 					$("input[id=fileno]").val(fileno);
+	// 					$('#rfq_upload').val("");
+	// 				}
+	// 		});
+	// });
 
 	function RemoveFile(objButton){
 		var trid = objButton.value;
@@ -392,6 +411,79 @@
             });
 
     }
+    var r = new Resumable({
+            target: 'upload.php',
+            testChunks: true,
+            maxFiles :1
+        });
+
+        r.assignBrowse(document.getElementById('add-file-btn'));
+
+        // $('#start-upload-btn').click(function(){
+        //     r.upload();
+        // });
+
+        // $('#pause-upload-btn').click(function(){
+        //     if (r.files.length>0) {
+        //         if (r.isUploading()) {
+        //           return  r.pause();
+        //         }
+        //         return r.upload();
+        //     }
+        // });
+
+        var progressBar = new ProgressBar($('#upload-progress'));
+
+        r.on('fileAdded', function(file, event){
+            progressBar.fileAdded();
+            var d = new Date();
+            var yyyy =  d.getFullYear();
+            var mm =  d.getMonth()+1;
+            var dd =  d.getDate();
+            var hh =  d.getHours();
+            var mins =  d.getMinutes();
+            var ss =  d.getSeconds();
+            var template_date = yyyy.toString() + mm.toString() + dd.toString() + hh.toString() + mins.toString() + ss.toString();
+            //alert(template_date);
+            r.files[0].fileName = template_date + "_" + r.files[0].fileName;
+            r.upload();
+
+        });
+
+        r.on('fileSuccess', function(file, message){
+            progressBar.finish();
+            //alert(r.files[0].fileName);
+            var fileno = $("input[id=fileno]").val();
+            var filename = r.files[0].fileName;
+            fileno = parseInt(fileno)+1;
+            $("#fileList tbody").append('<tr id="tr_'+fileno+'" align="left"><td><input type="hidden" name="attachment[]" value="'+filename+'" ><a href="attachment/'+filename+'" target="_blank">'+filename+'</a> <input type="hidden" name="attachment_subject[]" value="" > </td><td><textarea name="attachment_message[]" row="3" cols="50"></textarea></td><td><button type="button" OnClick="RemoveFile(this);" class="btn btn-sm btn-del" value="tr_'+fileno+'">Remove </button> <br></td></tr>');
+            $("input[id=fileno]").val(fileno);
+        });
+
+        r.on('progress', function(){
+            progressBar.uploading(r.progress()*100);
+            //$('#pause-upload-btn').find('.glyphicon').removeClass('glyphicon-play').addClass('glyphicon-pause');
+        });
+
+        // r.on('pause', function(){
+        //     $('#pause-upload-btn').find('.glyphicon').removeClass('glyphicon-pause').addClass('glyphicon-play');
+        // });
+
+        function ProgressBar(ele) {
+            this.thisEle = $(ele);
+
+            this.fileAdded = function() {
+                (this.thisEle).removeClass('hide').find('.progress-bar').css('width','0%');
+            },
+
+            this.uploading = function(progress) {
+                (this.thisEle).find('.progress-bar').attr('style', "width:"+progress+'%');
+            },
+
+            this.finish = function() {
+                (this.thisEle).addClass('hide').find('.progress-bar').css('width','0%');
+            }
+        }
 </script>
 
 	<?php

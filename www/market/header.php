@@ -20,6 +20,11 @@
 
  <!-- DataTables -->
   <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+
+   <!-- Upload -->
+   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+   <script src="bower_components/resumablejs/resumable.js" type="application/javascript"></script>
+  <!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="application/javascript"></script> -->
   <!-- Theme style -->
   <link rel="stylesheet" href="css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -39,7 +44,7 @@
 
 
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
     <script src="js/knockout-3.4.2.js"></script>
     <!-- <script src="js/js-webshim/minified/polyfiller.js"></script> -->
     <link rel="stylesheet" href="typeahead/typeaheadStyle.css" >
