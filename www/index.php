@@ -72,7 +72,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <h1><br/><span class="brand-heading">BudgetMetal</span></h1>
-                    <p class="intro-text">Your Metalworks Marketplace</p>
+                    <p class="intro-text">B2B Metal Services Marketplace</p>
                 </div>
             </div>
             <div class="row">
