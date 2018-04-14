@@ -184,12 +184,13 @@ $("#yesbtn_changeaccounttype").click(function (e) {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       sessionStorage.clear();
+      window.location.href="logout.php";
     }
   };
   xmlhttp.open("GET","market.php?user_id=<?php echo $userid;?>&function=changeaccounttype&type_id=<?php echo $changetypeid;?>",true);
   xmlhttp.send();
-  <?php //session_destroy(); ?>
-  window.location.href="logout.php";
+
+
   // location.reload();
 });
 </script>

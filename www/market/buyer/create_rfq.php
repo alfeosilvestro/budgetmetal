@@ -180,7 +180,7 @@ $status = "Draft";
       </div> -->
       <br>
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-12">
           <table class="table table-hover" id="fileList">
             <thead>
               <tr>
@@ -381,7 +381,7 @@ Width
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background-color: rgba(0,0,0,0.5);
+                background-color: rgba(0,0,0,0.9);
                 z-index: 2;
                 cursor: pointer;
               }
@@ -389,8 +389,8 @@ Width
               <div id="overlay">
                 <div class="text-center">
                   <br><br><br>
-                  <span class="text-white" id="addMoreSupplier">You have reached the limit of 5 verified suppliers for this RFQ.
-                    <br><button class="btn btn-warning btn-xs" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow Budget Metal to suggest another 5 suppliers for you.  </span>
+                  <span style="color:white;" id="addMoreSupplier"><b>You have reached the limit of 5 verified suppliers for this RFQ.
+                    <br><button class="btn btn-warning btn-xs" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow Budget Metal to suggest another 5 suppliers for you. </b> </span>
                     </div>
 
               </div>

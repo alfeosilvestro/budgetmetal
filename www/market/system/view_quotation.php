@@ -296,7 +296,7 @@ if (isset($result)){
       <div class="box-body">
 
         <div class="row">
-          <div class="col-sm-9">
+          <div class="col-sm-12">
             <table class="table table-hover" id="fileList">
               <thead>
                 <tr>

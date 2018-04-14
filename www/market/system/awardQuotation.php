@@ -112,7 +112,7 @@ $email = $selected_buyer_EmailAddress;
 sendEmailforNotification($email,$Message, $Message,"Quotation",$Id, $target.$po_letter_filename);
 
 
-header("location:index.php?rdp=view_quotation&id=".$Id);
+header("location:../index.php?rdp=view_quotation&id=".$Id);
 }else{
   echo $error;
 }

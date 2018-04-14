@@ -189,7 +189,7 @@ $db = new PdoWrapper($dbConfig);
 																		<input id="chkRegisterAsSupplier" name="register_as_supplier"
 																		data-bind="checked: register_as_supplier"
 																		type="checkbox">
-																		&nbsp;Please register me as a supplier
+																		&nbsp;Register as Supplier and List My Services
 																	</label>
 																</div>
 															</div>

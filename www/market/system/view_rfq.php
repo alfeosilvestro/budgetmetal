@@ -310,7 +310,7 @@ if (isset($result)){
       <div class="box-body">
 
         <div class="row">
-          <div class="col-sm-9">
+          <div class="col-sm-12">
             <table class="table table-hover" id="fileList">
               <thead>
                 <tr>
@@ -622,7 +622,7 @@ if (isset($result)){
         }
       }
 
-      $query4 = "SELECT * FROM `t_document` WHERE Status =  1 and C_DocumentType = 7 and `DocumentNo` = '".$rfq_ref."' and `M_User_Id` = ". $userid ."  Limit 1";
+      $query4 = "SELECT * FROM `t_document` WHERE 	C_QuotationStatus in (15,16) and Status =  1 and C_DocumentType = 7 and `DocumentNo` = '".$rfq_ref."' and `M_User_Id` = ". $userid ."  Limit 1";
       $results4 = $db->pdoQuery($query4)->results();
       if (!empty($results4)){
         foreach ($results4 as $row4) {

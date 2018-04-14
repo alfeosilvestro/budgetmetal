@@ -85,7 +85,7 @@ if (isset($result)){
             <br/>
             <div class="row">
               <div class="col-md-12">
-                <textarea rows="20" style="width:100%" readonly><?php echo $About; ?></textarea>
+                <textarea rows="20" style="width:100%; resize: none;" readonly ><?php echo $About; ?></textarea>
               </div>
             </div>
 
@@ -192,10 +192,7 @@ if (isset($result)){
                     <td><b>Overall Rating :</b></td>
                     <td><span class="stars"><?php echo  number_format($supplierRating); ?></span></td>
                   </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                  </tr>
+                
                   <tr>
                     <td><b>Speed of Quotation :</b></td>
                     <td><span class="stars"><?php echo $tmpSOQ; ?></span></td>
@@ -498,7 +495,7 @@ if($Is_supplier_company == "1"){
           <div class="row">
             <div class="form-group col-md-12">
             <form id="update_about" action="update_about" method="get">
-              <textarea name="about" id="txt_about"   rows="5" style="width:100%"><?php echo $About;?></textarea>
+              <textarea name="about" id="txt_about"   rows="5" style="width:100%; resize: none;"><?php echo $About;?></textarea>
             </form>
             </div>
           </div>

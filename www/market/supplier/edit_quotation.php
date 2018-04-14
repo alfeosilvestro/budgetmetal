@@ -207,7 +207,7 @@
             </div> -->
 			<br>
 			<div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-12">
 				  <table class="table table-hover" id="fileList">
 					<thead>
 						<tr>
@@ -347,14 +347,24 @@
 
 		e.preventDefault();
 
-			SaveQuotation();
+    var bid_price = $("input[id='bid_price']").val();
+    if(parseInt(bid_price) > 0){
+        SaveQuotation();
+    }else{
+      alert("Bid Price must be greater than 0");
+    }
 
 	});
 
 	$("#btnsubmit_quotation_top").click(function (e) {
 		e.preventDefault();
+    var bid_price = $("input[id='bid_price']").val();
+    if(parseInt(bid_price) > 0){
+      	SubmitQuotation();
+    }else{
+      alert("Bid Price must be greater than 0");
+    }
 
-			SubmitQuotation();
 
 	});
 

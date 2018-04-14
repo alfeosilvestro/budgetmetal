@@ -3,7 +3,7 @@
   <div class="pull-right hidden-xs">
 
   </div>
-  <strong>Copyright © 2017 <a href="https://adminlte.io">BudgetMetal</a>.</strong> All rights
+  <strong>Copyright © 2017 <a href="https://budgetmetal.com">BudgetMetal</a>.</strong> All rights
   reserved.
 </div>
     <!-- /.container -->
