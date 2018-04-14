@@ -192,7 +192,7 @@ if (isset($result)){
                     <td><b>Overall Rating :</b></td>
                     <td><span class="stars"><?php echo  number_format($supplierRating); ?></span></td>
                   </tr>
-                
+
                   <tr>
                     <td><b>Speed of Quotation :</b></td>
                     <td><span class="stars"><?php echo $tmpSOQ; ?></span></td>
@@ -235,7 +235,7 @@ if (isset($result)){
 
                 <?php
                 $query = "SELECT * FROM md_companyrating Where Company_Id = $companyid";
-                $count = 1;
+                $count = 0;
                 $results = $db->pdoQuery($query)->results();
                 if (!empty($results)){
                   foreach ($results as $row) {
