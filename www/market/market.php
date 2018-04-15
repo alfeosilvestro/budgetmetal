@@ -7,7 +7,21 @@ date_default_timezone_set("Asia/Singapore");
 $db = new PdoWrapper($dbConfig);
 $function = $_GET["function"];
 
-if ($function == "UpdatePassword"){
+if ($function == "InviteSupplier"){
+	$email = $_GET["email"];
+	$buyer = $_GET["buyer"];
+	$sql = "SELECT * FROM `m_user` WHERE `EmailAddress` = '$email' and Confirmed = 1 and 	C_UserType = 2";
+	$result = $conn->query($sql);
+	if (isset($result)){
+		if ($result->num_rows > 0) {
+			$message['success'] = false;
+		}else{
+			$message['success'] = true;
+			sendInvitation($email,$buyer);
+		}
+	}
+	echo json_encode($message);
+}elseif ($function == "UpdatePassword"){
 	$newpass = $_GET["newpass"];
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);
@@ -1499,6 +1513,73 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 			$mail->AddCC($emails[$i]);
 		}
 	}
+
+	try {
+
+		if(!$mail->Send()) {
+
+		} else {
+
+		}
+	}
+	catch(Exception $e) {
+
+	}
+}
+
+function sendInvitation($email,$buyer){
+	$mail_to = $email;
+	//error_reporting(E_STRICT);
+	error_reporting(E_ERROR);
+	date_default_timezone_set('Asia/Singapore');
+
+	require_once('../class.phpmailer.php');
+	//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
+
+	$host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+	$actual_link = $host;
+
+	$sitelink = "<br><a href='".$actual_link."'>Go to Site</a>";
+	$from_mail = "info@metalpolis.com";
+	$from_name = "BudgetMetal";
+	//$to_address = $email;
+	$to_name = "Info";
+	//$subject = "Verification for registeration at Metalpolis";
+	$message = "You have been invited by $buyer to BudgetMetal";
+	$smtp_host = "127.0.0.1";
+	$smtp_port = 25;
+	// $smtp_username = "info@metalpolis.com";
+	// $smtp_password = "12345678";
+	$smtp_username = "";
+	$smtp_password = "";
+	//$smtp_debug = 2;
+
+	$mail = new PHPMailer();
+	$mail->IsHTML(true);
+	//$message  = file_get_contents('contents.html');
+	//$message  = eregi_replace("[\]",'',$message);
+
+	$mail->IsSMTP(); // telling the class to use SMTP
+	$mail->Host       = $smtp_host; // SMTP server
+	//$mail->SMTPDebug  = $smtp_debug;                     // enables SMTP debug information (for testing)
+	// 1 = errors and messages
+	// 2 = messages only
+	$mail->SMTPAuth   = false;                  // enable SMTP authentication
+	$mail->Port       = $smtp_port;                    // set the SMTP port for the GMAIL server
+	//$mail->Username   = $smtp_username;       // SMTP account username
+	//$mail->Password   = $smtp_password;        // SMTP account password
+
+	$mail->SetFrom($from_mail);
+
+	$mail->AddReplyTo($from_mail);
+
+	$mail->Subject    = "BudgetMetal Invitation";
+
+	$mail->AltBody    = $message . $sitelink; // optional, comment out and test
+
+	$mail->MsgHTML($message.$sitelink);
+
+	$mail->AddAddress($email);
 
 	try {
 

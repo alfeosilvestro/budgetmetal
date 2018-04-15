@@ -127,335 +127,373 @@ if (isset($result)){
       font-weight: bolder;
       margin-right: 5px;
     }
-  </Style>
-  <div class="row">
-    <div class="col-sm-12">
-      <h3>
-        View Quotation
-      </h3>
-      <div id="notify" class="alert alert-success" style="display:none;">
-        <a href="#" class="close" data-dismiss="alert">&times;</a>
+    </Style>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>
+          View Quotation
+        </h3>
+        <div id="notify" class="alert alert-success" style="display:none;">
+          <a href="#" class="close" data-dismiss="alert">&times;</a>
 
-        <div class="message"></div>
-      </div>
-    </div>
-  </div>
-
-  <form action="#" method="post" id="view_rfq" >
-
-    <div class="box box-default">
-      <div class="box-header with-border">
-        <h3 class="box-title">Quotation Info</h3>
-
-        <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-          </button>
+          <div class="message"></div>
         </div>
       </div>
-      <!-- /.box-header -->
-      <div class="box-body">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>RFQ Ref: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $rfq_ref; ?>
-                  <input name="rfq_ref" type="hidden" readonly class="form-control" value="<?php echo $rfq_ref; ?>" >
-                  <input name="user_id" type="hidden" readonly class="form-control" value="<?php echo $userid; ?>" >
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Company Name: </label>
-                </div>
-                <div class="col-sm-6">
-                  <a href="index.php?rdp=company_profile&companyid=<?php echo $companyid; ?>" target="_blank"> <?php echo $company_name; ?> </a>
+    </div>
 
+    <form action="#" method="post" id="view_rfq" >
+
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Quotation Info</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>RFQ Ref: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php echo $rfq_ref; ?>
+                    <input name="rfq_ref" type="hidden" readonly class="form-control" value="<?php echo $rfq_ref; ?>" >
+                    <input name="user_id" type="hidden" readonly class="form-control" value="<?php echo $userid; ?>" >
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Company Name: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <a href="index.php?rdp=company_profile&companyid=<?php echo $companyid; ?>" target="_blank"> <?php echo $company_name; ?> </a>
+
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Contact Person First Name: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php echo $FName; ?>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Quotation Date: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php 	 echo date('d-m-Y', strtotime($q_createddate));?>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Bid Price: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    $<?php echo $QuotedFigure;?>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Contact Person First Name: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $FName; ?>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Quotation Date: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php 	 echo date('d-m-Y', strtotime($q_createddate));?>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Quotation Ref: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php echo $q_ref; ?>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Bid Price: </label>
-                </div>
-                <div class="col-sm-6">
-                  $<?php echo $QuotedFigure;?>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Status: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php
+                    $sql = "SELECT t1.Name FROM `c_codetable` t1 where t1.id = ".$q_statusid;
+                    $result = $conn->query($sql);
+                    if (isset($result)){
+                      if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                          $q_status = $row["Name"];
+                          echo $q_status;
+                        }
+                      }
+                    }
+
+
+                    ?>
+                  </div>
                 </div>
               </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Business Registration No.: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php echo $reg_no; ?>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Contact Person Last Name: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php echo $LName; ?>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Valid Date: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php echo date('d-m-Y', strtotime($ValidToDate)); ?>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
           </div>
-          <div class="col-sm-6">
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Quotation Ref: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $q_ref; ?>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Status: </label>
-                </div>
-                <div class="col-sm-6">
+        </div>
+        <!-- /.box-body -->
+      </div>
+
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">File Attachments</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+          </div>
+
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table table-hover" id="fileList">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th style="width:40%">File</th>
+                    <th>Description</th>
+
+                  </tr>
+                </thead>
+                <tbody>
                   <?php
-                  $sql = "SELECT t1.Name FROM `c_codetable` t1 where t1.id = ".$q_statusid;
-                  $result = $conn->query($sql);
-                  if (isset($result)){
-                    if ($result->num_rows > 0) {
-                      // output data of each row
-                      while($row = $result->fetch_assoc()) {
-                        $q_status = $row["Name"];
-                        echo $q_status;
-                      }
+                  $query = "SELECT t2.* FROM t_document t1 Inner Join t_fileattachments t2 on t2.T_Document_Id = t1.Id Where t2.Status = 1 and C_DocumentType = 7 and t1.Id = ". $q_id;
+                  $results = $db->pdoQuery($query)->results();
+                  if (!empty($results)){
+                    $count = 0;
+                    foreach ($results as $row) {
+                      $count = $count+1;
+                      ?>
+                      <tr>
+                        <td><?php echo $count; ?></td>
+
+                        <td><?php
+                        $out = '<a href="attachment/' . $row["FileName"] .'" target="_blank">'.$row["FileName"].'</a>';
+                        echo $out;
+                        ?></td>
+
+                        <td><?php
+                        $out = $row["Message"];
+                        echo $out;
+                        ?></td>
+                      </tr>
+
+                      <?php
+                    }
+                  }
+                  ?>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Note/Comment to Buyer</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <?php echo $Comments;?>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <?php
+      if($q_statusid == 18){
+        ?>
+        <div class="box box-default">
+          <div class="box-header with-border">
+            <h3 class="box-title">Award Document</h3>
+
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+            </div>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <?php
+                  $query4 = "SELECT * FROM `t_supplierquotation` WHERE Document_Id = ".$q_id."  Limit 1";
+
+                  $results4 = $db->pdoQuery($query4)->results();
+                  if (!empty($results4)){
+
+                    foreach ($results4 as $row4) {
+                      $poletter = $row4["PO_Letter"];
+                      echo '<a href="attachment/'.$poletter.'" target="_blank">'.$poletter.'</a>' ;
                     }
                   }
 
-
                   ?>
-                </div>
+
               </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Business Registration No.: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $reg_no; ?>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Contact Person Last Name: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $LName; ?>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Valid Date: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo date('d-m-Y', strtotime($ValidToDate)); ?>
-                </div>
-              </div>
-            </div>
 
 
+            </div>
           </div>
         </div>
-      </div>
-      <!-- /.box-body -->
-    </div>
+        <?php
+      }
+      ?>
+      <div class="row">
 
-    <div class="box box-default">
-      <div class="box-header with-border">
-        <h3 class="box-title">File Attachments</h3>
-        <div class="box-tools pull-right">
-          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-          </button>
-        </div>
+        <div class="col-sm-6">
 
-      </div>
-      <!-- /.box-header -->
-      <div class="box-body">
+          <div class="btn-group pull-left">
+            <?php if(($_SESSION['usertype'] == 'Supplier') && ($_SESSION['userid'] == $q_userid) && (($q_statusid == 15) || ($q_statusid == 16)) ){
+              $query4 = "SELECT * FROM `t_document` WHERE Status = 1 and C_DocumentType = 6 and `DocumentNo` = '".$rfq_ref."'  Limit 1";
 
-        <div class="row">
-          <div class="col-sm-12">
-            <table class="table table-hover" id="fileList">
-              <thead>
-                <tr>
-                  <th>No.</th>
-                  <th style="width:40%">File</th>
-                  <th>Description</th>
+              $results4 = $db->pdoQuery($query4)->results();
+              if (!empty($results4)){
 
-                </tr>
-              </thead>
-              <tbody>
+                foreach ($results4 as $row4) {
+                  $rfq_owner = "yes";
+                  $rfq_id = $row4["Id"];
+
+                }
+              }
+
+              ?>
+              <a href="index.php?rdp=edit_quotation&id=<?php echo $q_id;?>" class="btn btn-warning">
+                <i class="fa fa-pencil-square-o"></i>
+                Edit Quotation
+              </a>
+              <a href="#" class="btn btn-danger" onclick="withdrawn_quotation(<?php echo $q_id;?>)">
+                <i class="fa fa-pencil-square-o"></i>
+                Withdrawn Quotation
+              </a>
+            <?php }elseif(($_SESSION['usertype'] == 'Buyer' )){
+              $query4 = "SELECT * FROM `t_document` WHERE Status = 1 and C_DocumentType = 6 and `DocumentNo` = '".$rfq_ref."' and `M_User_Id` = ". $userid ."  Limit 1";
+
+              $results4 = $db->pdoQuery($query4)->results();
+              if (!empty($results4)){
+                foreach ($results4 as $row4) {
+                  $rfq_owner = "yes";
+                  $rfq_id = $row4["Id"];
+                }
+              }
+
+              if(($rfq_owner == "yes") && ($q_statusid == 16) ){
+                ?>
+                <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#acceptpanel"><i class="fa fa-pencil-square-o"></i>Accept</button>
+                <a href="#" id="btnreject" class="btn btn-info" onclick="reject_quotation(<?php echo $q_id;?>)">
+                  <i class="fa fa-pencil-square-o"></i>
+                  Reject
+                </a>
                 <?php
-                $query = "SELECT t2.* FROM t_document t1 Inner Join t_fileattachments t2 on t2.T_Document_Id = t1.Id Where t2.Status = 1 and C_DocumentType = 7 and t1.Id = ". $q_id;
-                $results = $db->pdoQuery($query)->results();
-                if (!empty($results)){
-                  $count = 0;
-                  foreach ($results as $row) {
-                    $count = $count+1;
+              }elseif(($rfq_owner == "yes") && ($q_statusid == 18) ){
+                $sql5 = "SELECT * FROM `md_companyrating` t1 where t1.Ref_Document_Id = ".$q_id;
+                $result5 = $conn->query($sql5);
+                if (isset($result5)){
+                  if ($result5->num_rows > 0) {
+                  }else{
                     ?>
-                    <tr>
-                      <td><?php echo $count; ?></td>
-
-                      <td><?php
-                      $out = '<a href="attachment/' . $row["FileName"] .'" target="_blank">'.$row["FileName"].'</a>';
-                      echo $out;
-                      ?></td>
-
-                      <td><?php
-                      $out = $row["Message"];
-                      echo $out;
-                      ?></td>
-                    </tr>
-
+                    <a href="#" id="btnrate" class="btn btn-info"  onclick="rateSupplier()">
+                      <i class="fa fa-pencil-square-o"></i>
+                      Rate this Company
+                    </a>
                     <?php
                   }
                 }
-                ?>
-              </tbody>
-            </table>
+
+              }
+            }?>
+
           </div>
 
         </div>
+
       </div>
-    </div>
+    </form>
+    <script>
 
-
-
-
+    </script>
+    <?php
+  }else{
+    ?>
     <div class="box box-default">
       <div class="box-header with-border">
-        <h3 class="box-title">Note/Comment to Buyer</h3>
-
+        <h3 class="box-title">This is invalid ID</h3>
         <div class="box-tools pull-right">
           <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
           </button>
         </div>
-      </div>
-      <!-- /.box-header -->
-      <div class="box-body">
-        <div class="row">
-          <div class="col-sm-12">
-            <?php echo $Comments;?>
 
-          </div>
-
-
-        </div>
       </div>
     </div>
 
-
-    <div class="row">
-
-      <div class="col-sm-6">
-
-        <div class="btn-group pull-left">
-          <?php if(($_SESSION['usertype'] == 'Supplier') && ($_SESSION['userid'] == $q_userid) && (($q_statusid == 15) || ($q_statusid == 16)) ){
-            $query4 = "SELECT * FROM `t_document` WHERE Status = 1 and C_DocumentType = 6 and `DocumentNo` = '".$rfq_ref."'  Limit 1";
-
-            $results4 = $db->pdoQuery($query4)->results();
-            if (!empty($results4)){
-
-              foreach ($results4 as $row4) {
-                $rfq_owner = "yes";
-                $rfq_id = $row4["Id"];
-
-              }
-            }
-
-            ?>
-            <a href="index.php?rdp=edit_quotation&id=<?php echo $q_id;?>" class="btn btn-warning">
-              <i class="fa fa-pencil-square-o"></i>
-              Edit Quotation
-            </a>
-            <a href="#" class="btn btn-danger" onclick="withdrawn_quotation(<?php echo $q_id;?>)">
-              <i class="fa fa-pencil-square-o"></i>
-              Withdrawn Quotation
-            </a>
-          <?php }elseif(($_SESSION['usertype'] == 'Buyer' )){
-            $query4 = "SELECT * FROM `t_document` WHERE Status = 1 and C_DocumentType = 6 and `DocumentNo` = '".$rfq_ref."' and `M_User_Id` = ". $userid ."  Limit 1";
-
-            $results4 = $db->pdoQuery($query4)->results();
-            if (!empty($results4)){
-              foreach ($results4 as $row4) {
-                $rfq_owner = "yes";
-                $rfq_id = $row4["Id"];
-              }
-            }
-
-            if(($rfq_owner == "yes") && ($q_statusid == 16) ){
-              ?>
-              <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#acceptpanel"><i class="fa fa-pencil-square-o"></i>Accept</button>
-               <a href="#" id="btnreject" class="btn btn-info" onclick="reject_quotation(<?php echo $q_id;?>)">
-                <i class="fa fa-pencil-square-o"></i>
-                Reject
-              </a>
-              <?php
-            }elseif(($rfq_owner == "yes") && ($q_statusid == 18) ){
-              $sql5 = "SELECT * FROM `md_companyrating` t1 where t1.Ref_Document_Id = ".$q_id;
-              $result5 = $conn->query($sql5);
-              if (isset($result5)){
-                if ($result5->num_rows > 0) {
-                }else{
-                  ?>
-                  <a href="#" id="btnrate" class="btn btn-info"  onclick="rateSupplier()">
-                    <i class="fa fa-pencil-square-o"></i>
-                    Rate this Company
-                  </a>
-                  <?php
-                }
-              }
-
-            }
-          }?>
-
-        </div>
-
-      </div>
-
-    </div>
-  </form>
-  <script>
-
-  </script>
-  <?php
-}else{
-  ?>
-  <div class="box box-default">
-    <div class="box-header with-border">
-      <h3 class="box-title">This is invalid ID</h3>
-      <div class="box-tools pull-right">
-        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <?php
-}
+    <?php
+  }
 }?>
 <br />
 <div class="box box-default">
@@ -557,7 +595,7 @@ if (isset($result)){
                             if(($_SESSION['usertype'] == 'Supplier') ){
                               if($row["M_Asking_Person_Id"] == $userid){}else{
                                 ?>
-                                <span><a class="" role="button" data-toggle="collapse" href="#replyComment<?php echo $row["Id"];?>" aria-expanded="false" aria-controls="collapseExample">Reply</a>      </span>
+                                <span><a class="" style="font-size:15px;"  role="button" data-toggle="collapse" href="#replyComment<?php echo $row["Id"];?>" aria-expanded="false" aria-controls="collapseExample"><b>Reply</b></a>      </span>
                                 <?php
                               }
                             }
@@ -566,14 +604,20 @@ if (isset($result)){
                           <div class="collapse" id="replyComment<?php echo $row["Id"];?>">
                             <form id="RFQReply<?php echo $row["Id"];?>">
                               <div class="form-group">
-                                <label for="comment">Reply</label>
+                                <!-- <label for="comment">Reply</label> -->
                                 <input type="hidden" name="comment_id" value="<?php echo $row["Id"];?>">
                                 <input type="hidden" name="askinguser_id" value="<?php echo $row["M_Asking_Person_Id"];?>">
                                 <input type="hidden" name="document_id" value="<?php echo $q_id;?>">
                                 <input type="hidden" name="replyuser_id" value="<?php echo $userid;?>">
-                                <textarea name="replyComment" class="" rows="3" cols="50"></textarea>
+                                <div class="col-md-12">
+                                  <!-- <label for="comment">Reply</label> -->
+                                  <input type="text" name="replyComment" value="" class="form-control">
+                                  <br>
+                                  <button type="button" id="Send_Reply" class="btn btn-default" onclick="reply_Comment(<?php echo $row["Id"];?>)">Send</button>
+                                </div>
+                                <!-- <textarea name="replyComment" class="" rows="3" cols="50"></textarea> -->
                               </div>
-                              <button type="button" id="Send_Reply" class="btn btn-default" onclick="reply_Comment(<?php echo $row["Id"];?>)">Send</button>
+
                             </form>
                           </div>
                         </div>
@@ -800,9 +844,9 @@ if (isset($result)){
               <input type="hidden" name="ModifiedBy" value="<?php echo $userid;?>">
               <input type="hidden" name="doc_id" value="<?php echo $q_id;?>">
               <input type="hidden" name="rfq_id" value="<?php echo $rfq_id;?>">
-            <input type="file" name="file" class="form-control" required>
-            <br>
-            <input type="submit" name="submit" value="Award" class="btn btn-info">
+              <input type="file" name="file" class="form-control" required>
+              <br>
+              <input type="submit" name="submit" value="Award" class="btn btn-info">
             </form>
 
           </div>
@@ -1111,10 +1155,10 @@ if (isset($result)){
         type: 'GET',
         dataType: 'json',
         success: function (data) {
-          //location.reload();
+          location.reload();
         },
         error: function (data) {
-          //  location.reload();
+           location.reload();
         }
 
       });

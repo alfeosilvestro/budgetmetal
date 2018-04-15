@@ -338,7 +338,7 @@ if($Is_supplier_company == "1"){
     </div>
     <?php
 }
-  if($company_admin == 1){
+  if($_SESSION['M_Company_Id'] == $companyid){
     ?>
 
     <div class="row">
@@ -419,13 +419,15 @@ if($Is_supplier_company == "1"){
                       echo $out;
                       ?></td>
                       <td><?php
-                      if($userid != $u_id){
-                        if($btnAdminFun != ""){
-                          $out = '<button class="btn btn-success btn-sm" onclick="'.$btnAdminFun.'('.$u_id.');">'.$btnAdminText.'</button>';
+                      if($company_admin == 1){
+                        if($userid != $u_id){
+                          if($btnAdminFun != ""){
+                            $out = '<button class="btn btn-success btn-sm" onclick="'.$btnAdminFun.'('.$u_id.');">'.$btnAdminText.'</button>';
+                            echo $out;
+                          }
+                          $out = '<button class="btn btn-danger btn-sm" onclick="'.$btnDisableFun.'('.$u_id.');">'.$btnDisableText.'</button>';
                           echo $out;
                         }
-                        $out = '<button class="btn btn-danger btn-sm" onclick="'.$btnDisableFun.'('.$u_id.');">'.$btnDisableText.'</button>';
-                        echo $out;
                       }
                       ?></td>
                     </tr>

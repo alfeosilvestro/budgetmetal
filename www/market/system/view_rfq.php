@@ -784,7 +784,7 @@ if (isset($result)){
                             if(($_SESSION['usertype'] == 'Buyer') ){
                               if($row["M_Asking_Person_Id"] == $userid){}else{
                                 ?>
-                                <span><a class="" role="button" data-toggle="collapse" href="#replyComment<?php echo $row["Id"];?>" aria-expanded="false" aria-controls="collapseExample">Reply</a>      </span>
+                                <span><a style="font-size:15px;" class="" role="button" data-toggle="collapse" href="#replyComment<?php echo $row["Id"];?>" aria-expanded="false" aria-controls="collapseExample"><b>Reply</b></a>      </span>
                                 <?php
                               }
                             }
@@ -793,14 +793,21 @@ if (isset($result)){
                           <div class="collapse" id="replyComment<?php echo $row["Id"];?>">
                             <form id="RFQReply<?php echo $row["Id"];?>">
                               <div class="form-group">
-                                <label for="comment">Reply</label>
+
                                 <input type="hidden" name="comment_id" value="<?php echo $row["Id"];?>">
                                 <input type="hidden" name="askinguser_id" value="<?php echo $row["M_Asking_Person_Id"];?>">
                                 <input type="hidden" name="document_id" value="<?php echo $rfq_id;?>">
                                 <input type="hidden" name="replyuser_id" value="<?php echo $userid;?>">
-                                <textarea name="replyComment" class="" rows="3" cols="50"></textarea>
+                                <div class="col-md-12">
+                                  <!-- <label for="comment">Reply</label> -->
+                                  <input type="text" name="replyComment" value="" class="form-control">
+                                  <br>
+                                  <button type="button" id="Send_Reply" class="btn btn-default" onclick="reply_Comment(<?php echo $row["Id"];?>)">Send</button>
+                                </div>
+
+                                <!-- <textarea name="replyComment" class="" rows="3" cols="50"></textarea> -->
                               </div>
-                              <button type="button" id="Send_Reply" class="btn btn-default" onclick="reply_Comment(<?php echo $row["Id"];?>)">Send</button>
+
                             </form>
                           </div>
                         </div>
@@ -931,7 +938,7 @@ if (isset($result)){
         <h4 class="modal-title">Due Date</h4>
       </div>
       <div class="modal-body">
-        <div class="row">
+        <div class="row" style="padding:10px;">
           <div class="input-group date col-sm-5">
             <div class="input-group-addon">
               <i class="fa fa-calendar"></i>
@@ -956,15 +963,17 @@ if (isset($result)){
 
 
 $(function () {
-  var rfq_date = $("#rfq_datepicker").val();
+  var rfq_date = $("#due_datepicker").val();
   var res = rfq_date.split("-");
   var tmp = res[1] + "-" + res[0] + "-" + res[2];
+  //alert(tmp);
   $('#due_datepicker').datepicker({
     startDate : new Date(tmp),
     format: "dd-mm-yyyy",
     autoclose: true,
     todayHighlight: true
   });
+
 
   $('[data-toggle="collapse"]').on('click', function() {
     var $this = $(this),

@@ -152,6 +152,18 @@ if(isset($_SESSION['userid'])){
               </script>
             </div>
           </div>
+          <div class="col-md-12">
+            <hr>
+            <div id="notify" class="alert alert-success" style="display:none;">
+              <a href="#" class="close" data-dismiss="alert">&times;</a>
+
+              <div class="message"></div>
+            </div>
+            <h4>Invite supplier to Buddgetmetal</h4>
+            <input type="email" name="inviteEmail" value="" id="inviteEmail" class="form-control">
+            <br>
+            <button type="button" class="btn btn-info" name="button" id="btnInvite" >Invite</button>
+          </div>
         </div>
 
 
@@ -276,5 +288,47 @@ var tagList = $('#tagList').val();
 $(document).ready(function() {
   $('.select2').select2();
 });
+$("#btnInvite").click(function (e) {
 
+  e.preventDefault();
+  var email = $("#inviteEmail").val();
+  if(email == ""){
+    $("#notify .message").html("Email must not be blank");
+    $("#notify").removeClass("alert-success").addClass("alert-danger").fadeIn();
+    $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+  }else{
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(re.test(email)){
+      $.ajax({
+        url: 'market.php?function=InviteSupplier&email='+email+'&buyer=<?php echo $_SESSION['user'];?>',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+          if(data.success == true){
+            $("#notify .message").html("BudgetMetal has sent invitation to your prefer supplier.");
+            $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
+            $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+            $("#inviteEmail").val("");
+          }else{
+            $("#notify .message").html("Supplier already have in BudgetMetal.");
+            $("#notify").removeClass("alert-success").addClass("alert-warning").fadeIn();
+            $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+          }
+        },
+        error: function (data) {
+          $("#notify .message").html("<strong>100000" + data.status + "</strong>: " + data.message);
+          $("#notify").removeClass("alert-success").addClass("alert-danger").fadeIn();
+          $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+        }
+      });
+    }else{
+      $("#notify .message").html("Email field is invalid format!");
+      $("#notify").removeClass("alert-success").addClass("alert-warning").fadeIn();
+      $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+    }
+
+  }
+
+
+});
 </script>

@@ -469,7 +469,7 @@ $(document).ready(function () {
 		var company_uen = $("input[id='txt_company_uen']").val();
 		var message = "";
 		if(company_uen == ""){
-			message = message + "Company UEN field is required!";
+			message = message + "Singapore UEN format is 9 numeric digits followed by an alphabet (eg. 123456789A), if your company registration is not in this format, please email us at info@budgetmetal.com with attached scans or photos of your business card AND photo ID (driver license or NRIC) for us to help you create an account within 24-hour.";
 		}else{
 			var regex = new RegExp(/^[0-9]{9}[a-z]{1}$/i);
 			if(regex.test(company_uen)){
@@ -634,6 +634,7 @@ $(document).ready(function () {
 							$("#notify").show();
 							$("#notify").removeClass("alert-success").addClass("alert-danger").fadeIn();
 							$("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+
 						}
 					}
 				};

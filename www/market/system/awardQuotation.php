@@ -11,8 +11,8 @@ if(isset($_FILES['file'])){
   else {
       //$target = $_SERVER['DOCUMENT_ROOT'] . '/metalpolis_git/www/market/attachment/';
       $doc_root = $_SERVER['DOCUMENT_ROOT'];
-      $target = $doc_root . "/market/attachment/";
-      //$target = $doc_root . "/budgetmetal/www/market/attachment/";
+      //$target = $doc_root . "/market/attachment/";
+      $target = $doc_root . "/budgetmetal/www/market/attachment/";
       //// Folder check logic - Return error if upload folder not exists
       if (!file_exists($target)) {
         $error = "Directory Error";
