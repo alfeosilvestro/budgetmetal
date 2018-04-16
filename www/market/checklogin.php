@@ -47,11 +47,18 @@
     if(isset($_POST["id"])){
       $id = $_POST["id"];
     }
+    $ref_div = "";
+    if(isset($_POST["ref_div"])){
+      if($_POST["ref_div"] != ""){
+        $ref_div = "#".$_POST["ref_div"];
+      }
+
+    }
     if(isset($_POST["doc_type"])){
       if($_POST["doc_type"] == "RFQ"){
-        header("location:index.php?rdp=view_rfq&rfq_ref=".$id);
+        header("location:index.php?rdp=view_rfq&rfq_ref=".$id.$ref_div);
       }elseif($_POST["doc_type"] == "Quotation"){
-          header("location:index.php?rdp=view_quotation&id=".$id);
+          header("location:index.php?rdp=view_quotation&id=".$id.$ref_div);
       }else{
         header("location:index.php?rdp=dashboard");
       }

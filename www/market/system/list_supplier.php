@@ -8,7 +8,21 @@ if(isset($_SESSION['userid'])){
 }else{
   echo "no userid";
 }
-
+$companyid = $_SESSION['M_Company_Id'];
+$sql = "SELECT * From m_company  where id = ".$companyid;
+$result = $conn->query($sql);
+if (isset($result)){
+  if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      $company_name = $row["Name"];
+      $reg_no = $row["Reg_No"];
+      $Address = $row["Address"];
+      $About = $row["About"];
+      $supplierRating= $row["SupplierAvgRating"];
+    }
+  }
+}
 ?>
 <div class="row">
   <div class="col-sm-12">
@@ -300,7 +314,7 @@ $("#btnInvite").click(function (e) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(re.test(email)){
       $.ajax({
-        url: 'market.php?function=InviteSupplier&email='+email+'&buyer=<?php echo $_SESSION['user'];?>',
+        url: 'market.php?function=InviteSupplier&email='+email+'&buyer=<?php echo $company_name;?>',
         type: 'GET',
         dataType: 'json',
         success: function (data) {

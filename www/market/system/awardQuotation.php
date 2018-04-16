@@ -99,7 +99,18 @@ $db->update('t_document', $dataArray,$where);
     }
   }
 
-$Message = "Your Quotation($Id) has been awarded to your company.";
+  $q_ref = "";
+  $sql = "SELECT * FROM `t_document` where Status = 1 and Id = $Id Limit 1";
+  $result = $conn->query($sql);
+  if (isset($result)){
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+        $q_ref = $row["Q_Ref"];
+      }
+    }
+  }
+$Message = "Your Quotation($q_ref) has been awarded to your company.";
 $dataArray = array('Document' => $Id, 'First_Opened_User' => $ModifiedBy, 'Receiving_Company' => $selected_supplier_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $ModifiedDate, 'Created_By' => $ModifiedBy,'Status' => "1", 'Type' => 'Accepted');
 $dt = $db->insert('company_notification', $dataArray);
 
@@ -172,9 +183,15 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id,$a
 
 	$mail->Subject    = $subject;
 
-	$mail->AltBody    = $message . $sitelink; // optional, comment out and test
+	// $mail->AltBody    = $message . $sitelink; // optional, comment out and test
+  //
+	// $mail->MsgHTML($message.$sitelink);
+  $content            = file_get_contents('../contents.html');
+  $content             = eregi_replace("[message]",'',$message);
+  $content             = eregi_replace("[actual_link]",'',$actual_link);
+  $mail->AltBody    = $content; // optional, comment out and test
 
-	$mail->MsgHTML($message.$sitelink);
+  $mail->MsgHTML($content);
 
 	$mail->AddAddress($email);
 

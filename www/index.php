@@ -104,10 +104,14 @@
                             $id = $_GET["rfq_ref"];
                             $doc_type = "RFQ";
                           }
+                          $ref_div="";
+                          if(isset($_GET["ref_div"])){
+                           $ref_div = $_GET["ref_div"];
+                         }
                             ?>
                             <input type="hidden" name="doc_type" value="<?php echo $doc_type;?>">
                             <input type="hidden" name="id" value="<?php echo $id;?>">
-
+                              <input type="hidden" name="ref_div" value="<?php echo $ref_div;?>">
                             <div class="remember-forgot">
                                 <div class="row">
                                     <div class="col-md-12">

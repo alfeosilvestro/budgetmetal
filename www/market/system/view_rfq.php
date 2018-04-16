@@ -681,7 +681,7 @@ if (isset($result)){
   <br />
 
 </form>
-<div class="box box-default">
+<div class="box box-default" id="clarification_div">
   <div class="box-header with-border">
     <h3 class="box-title">Clarification</h3>
 

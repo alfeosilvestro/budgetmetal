@@ -576,7 +576,7 @@ if(isset($_GET['selected_supplier_id'])){
 						while($row = $result->fetch_assoc()) {
 							$email = $email .  $row["EmailAddress"].";";
 						}
-						sendEmailforNotification($email,$Message, $Message);
+						sendEmailforNotification($email,$Message, $Message,"RFQ",$rfq_ref);
 					}
 				}
 			}
@@ -1248,7 +1248,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 			}
 		}
 	}
-	$Message = "$company_name has given on your company.";
+	$Message = "$company_name has provided a rating and feedback for your service.";
 	$dataArray = array('Document' => $document_id, 'First_Opened_User' => $user_id, 'Receiving_Company' => $companyid, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $user_id,'Status' => "1", 'Type' => 'Rating');
 	$dt = $db->insert('company_notification', $dataArray);
 
@@ -1454,11 +1454,15 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 
 	$host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 	$actual_link = $host;
+	$clarification = "";
+	if(strpos($message,"clarification")>=0){
+		$clarification = "&ref_div=clarification_div";
+	}
 	if($doc_id != ""){
 		if($doc_type == "RFQ"){
-			$actual_link = $host .  "/index.php?rfq_ref=". $doc_id;
+			$actual_link = $host .  "/index.php?rfq_ref=". $doc_id.$clarification;
 		}else{
-			$actual_link = $host .  "/index.php?id=". $doc_id;
+			$actual_link = $host .  "/index.php?id=". $doc_id.$clarification;
 		}
 	}
 
@@ -1498,9 +1502,12 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 
 	$mail->Subject    = $subject;
 
-	$mail->AltBody    = $message . $sitelink; // optional, comment out and test
+	$content            = file_get_contents('contents.html');
+	$content             = eregi_replace("[message]",'',$message);
+	$content             = eregi_replace("[actual_link]",'',$actual_link);
+	$mail->AltBody    = $content; // optional, comment out and test
 
-	$mail->MsgHTML($message.$sitelink);
+	$mail->MsgHTML($content);
 
 	$to_address = "info@metalpolis.com";
 	$emails = explode(";", $email);
@@ -1575,9 +1582,16 @@ function sendInvitation($email,$buyer){
 
 	$mail->Subject    = "BudgetMetal Invitation";
 
-	$mail->AltBody    = $message . $sitelink; // optional, comment out and test
+	// $mail->AltBody    = $message . $sitelink; // optional, comment out and test
+	//
+	// $mail->MsgHTML($message.$sitelink);
 
-	$mail->MsgHTML($message.$sitelink);
+	$content            = file_get_contents('contents.html');
+	$content             = eregi_replace("[message]",'',$message);
+	$content             = eregi_replace("[actual_link]",'',$actual_link);
+	$mail->AltBody    = $content; // optional, comment out and test
+
+	$mail->MsgHTML($content);
 
 	$mail->AddAddress($email);
 

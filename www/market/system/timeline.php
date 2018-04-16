@@ -67,6 +67,7 @@
 								// output data of each row
 									while($row1 = $result1->fetch_assoc()) {
 										$doc_id = $row1["Document"];
+                    	$noti_type = $row1["Type"];
 										$query4 = "SELECT * FROM `t_document` WHERE `Id` = $doc_id";
 										$typeid = "0";
 										$rfq_ref = "";
@@ -120,14 +121,17 @@
 												</div>
 												<div class="timeline-footer">
 													<?php
-													if($typeid == 6){
-														echo '<a href="index.php?rdp=view_rfq&rfq_ref='.$rfq_ref.'" class="btn btn-primary btn-xs">View Document</a>';
-													}elseif($typeid == 7){
-                            if($quotationStatus != 15){
-                              echo '<a href="index.php?rdp=view_quotation&id='.$doc_id.'" class="btn btn-primary btn-xs">View Document</a>';
-                            }
-													}
-
+                          if($noti_type == "Rating"){
+                            echo '<a href="index.php?rdp=company_profile&companyid='.$M_Company_Id.'" class="btn btn-primary btn-xs">View Profile</a>';
+                          }else{
+                            if($typeid == 6){
+  														echo '<a href="index.php?rdp=view_rfq&rfq_ref='.$rfq_ref.'" class="btn btn-primary btn-xs">View Document</a>';
+  													}elseif($typeid == 7){
+                              if($quotationStatus != 15){
+                                echo '<a href="index.php?rdp=view_quotation&id='.$doc_id.'" class="btn btn-primary btn-xs">View Document</a>';
+                              }
+  													}
+                          }
 													?>
 
 

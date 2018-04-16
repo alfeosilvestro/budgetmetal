@@ -580,9 +580,16 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 
   $mail->Subject    = $subject;
 
-  $mail->AltBody    = $message . $sitelink; // optional, comment out and test
+  // $mail->AltBody    = $message . $sitelink; // optional, comment out and test
+  //
+  // $mail->MsgHTML($message.$sitelink);
 
-  $mail->MsgHTML($message.$sitelink);
+  $content            = file_get_contents('../contents.html');
+  $content             = eregi_replace("[message]",'',$message);
+  $content             = eregi_replace("[actual_link]",'',$actual_link);
+  $mail->AltBody    = $content; // optional, comment out and test
+
+  $mail->MsgHTML($content);
 
   $to_address = "info@metalpolis.com";
   $emails = explode(";", $email);
