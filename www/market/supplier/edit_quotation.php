@@ -1,3 +1,5 @@
+// <!-- AMK - Severity 1 - 1 supplier company can submit 1 quotation only for 1 RFQ -->
+ 
  <?php
 	include("dbcon.php");
 	 include_once('lib/pdowrapper/class.pdowrapper.php');

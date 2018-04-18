@@ -61,7 +61,8 @@ if(isset($_GET["list"])){
           if($list == "draft"){
             echo 'class="active"';
           }
-          ?>><a href="#draftRFQ" data-toggle="tab">Draft RFQs</a></li>
+          ?>>
+            <a href="#draftRFQ" data-toggle="tab">Draft RFQs</a></li>
           <?php
         }
         ?>
