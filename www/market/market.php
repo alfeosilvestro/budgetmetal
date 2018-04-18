@@ -1503,8 +1503,10 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 	$mail->Subject    = $subject;
 
 	$content            = file_get_contents('contents.html');
-	$content             = eregi_replace("[message]",'',$message);
-	$content             = eregi_replace("[actual_link]",'',$actual_link);
+	$content = str_replace("[message]",$message,$content);
+	$content = str_replace("[actual_link]",$actual_link,$content);
+	// $content             = eregi_replace("[message]",'',$message);
+	// $content             = eregi_replace("[actual_link]",'',$actual_link);
 	$mail->AltBody    = $content; // optional, comment out and test
 
 	$mail->MsgHTML($content);
@@ -1587,8 +1589,10 @@ function sendInvitation($email,$buyer){
 	// $mail->MsgHTML($message.$sitelink);
 
 	$content            = file_get_contents('contents.html');
-	$content             = eregi_replace("[message]",'',$message);
-	$content             = eregi_replace("[actual_link]",'',$actual_link);
+	$content = str_replace("[message]",$message,$content);
+	$content = str_replace("[actual_link]",$actual_link,$content);
+	// $content             = eregi_replace("",'',$message);
+	// $content             = eregi_replace("[actual_link]",'',$actual_link);
 	$mail->AltBody    = $content; // optional, comment out and test
 
 	$mail->MsgHTML($content);
