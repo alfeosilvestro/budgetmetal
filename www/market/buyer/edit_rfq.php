@@ -480,8 +480,8 @@ if (isset($result)){
                       position: absolute;
                       display: none;
                       width: 100%;
-                      height: 90%;
-                      top: 10%;
+                      height: 99%;
+                      top: 1%;
                       left: 0;
                       right: 0;
                       bottom: 0;
