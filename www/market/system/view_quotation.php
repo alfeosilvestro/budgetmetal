@@ -44,7 +44,8 @@ $id = "";
 if(isset($_GET["id"])){
   $id = $_GET["id"];
 }
-
+$rfqowner_companyid = "0";
+$companyid = "0";
 
 $sql = "SELECT * FROM `t_document` t1 where C_DocumentType = 7 and t1.Id = '".$id."'";
 $result = $conn->query($sql);
@@ -432,7 +433,9 @@ if (isset($result)){
                 <i class="fa fa-pencil-square-o"></i>
                 Withdrawn Quotation
               </a>
-            <?php }elseif(($_SESSION['usertype'] == 'Buyer' )){
+            <?php
+
+          }elseif(($_SESSION['usertype'] == 'Buyer' )){
               $query4 = "SELECT * FROM `t_document` WHERE Status = 1 and C_DocumentType = 6 and `DocumentNo` = '".$rfq_ref."' and `M_User_Id` = ". $userid ."  Limit 1";
 
               $results4 = $db->pdoQuery($query4)->results();
@@ -452,7 +455,7 @@ if (isset($result)){
                 </a>
                 <?php
               }elseif(($rfq_owner == "yes") && ($q_statusid == 18) ){
-                $sql5 = "SELECT * FROM `md_companyrating` t1 where t1.Ref_Document_Id = ".$q_id;
+                $sql5 = "SELECT * FROM `md_companyrating` t1 where t1.Company_Id = ".$companyid." and t1.Ref_Document_Id = ".$q_id;
                 $result5 = $conn->query($sql5);
                 if (isset($result5)){
                   if ($result5->num_rows > 0) {
@@ -467,7 +470,32 @@ if (isset($result)){
                 }
 
               }
-            }?>
+            }
+            if(($_SESSION['usertype'] == 'Supplier') && ($q_statusid == 18)){
+              $query4 = "Select * From m_user Where ID in (SELECT M_User_Id FROM `t_document` WHERE Status = 1 and C_DocumentType = 6 and `DocumentNo` = '".$rfq_ref."') Limit 1";
+
+              $results4 = $db->pdoQuery($query4)->results();
+              if (!empty($results4)){
+
+                foreach ($results4 as $row4) {
+                  $rfqowner_companyid = $row4["M_Company_Id"];
+                }
+              }
+              $sql5 = "SELECT * FROM `md_companyrating` t1 where t1.Company_Id = ".$rfqowner_companyid." and t1.Ref_Document_Id = ".$q_id;
+              $result5 = $conn->query($sql5);
+              if (isset($result5)){
+                if ($result5->num_rows > 0) {
+                }else{
+              ?>
+              <a href="#" id="btnrate" class="btn btn-info"  onclick="rateSupplier()">
+                <i class="fa fa-pencil-square-o"></i>
+                Rate this Company
+              </a>
+              <?php
+            }
+          }
+            }
+            ?>
 
           </div>
 
@@ -1100,7 +1128,7 @@ if (isset($result)){
 
         $.ajax({
           type: "GET",
-          url: "market.php?user_id=<?php echo $userid;?>&function=SaveRatingforSupplier&companyid=<?php echo $companyid;?>&serviceRating=" + serviceRating + "&quotationRating=" + quotationRating + "&deliveryRating=" + deliveryRating + "&priceRating="+ priceRating +"&title="+ title +"&description="+ description +"&document_id=<?php echo $id;?>",
+          url: "market.php?user_id=<?php echo $userid;?>&function=SaveRatingforSupplier&companyid=<?php if($_SESSION['usertype'] == 'Supplier'){echo $rfqowner_companyid;}else{echo $companyid;} ?>&serviceRating=" + serviceRating + "&quotationRating=" + quotationRating + "&deliveryRating=" + deliveryRating + "&priceRating="+ priceRating +"&title="+ title +"&description="+ description +"&document_id=<?php echo $id;?>",
           dataType: "json",
           success: function (response) {
             location.reload();

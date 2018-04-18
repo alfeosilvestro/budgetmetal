@@ -1252,9 +1252,9 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 	$dataArray = array('Document' => $document_id, 'First_Opened_User' => $user_id, 'Receiving_Company' => $companyid, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $user_id,'Status' => "1", 'Type' => 'Rating');
 	$dt = $db->insert('company_notification', $dataArray);
 
-	$Message = "$company_name has sent you a clarification on your proposal as per following : <br> <br><b> ".$txt_comment ."</b><br>";
+	//$Message = "$company_name has sent you a clarification on your proposal as per following : <br> <br><b> ".$txt_comment ."</b><br>";
 	$email = "";
-	$sql = "SELECT * FROM `m_user` t1 where Status = 1 and Confirmed = 1 AND M_Company_Id = " . $document_owner_companyid;
+	$sql = "SELECT * FROM `m_user` t1 where Status = 1 and Confirmed = 1 AND M_Company_Id = " . $companyid;
 	$result = $conn->query($sql);
 	if (isset($result)){
 		if ($result->num_rows > 0) {
@@ -1602,13 +1602,13 @@ function sendInvitation($email,$buyer){
 	try {
 
 		if(!$mail->Send()) {
-
+				//echo "errora";
 		} else {
-
+			//echo "send";
 		}
 	}
 	catch(Exception $e) {
-
+//	echo "error1";
 	}
 }
 ?>

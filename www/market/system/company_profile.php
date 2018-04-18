@@ -186,7 +186,7 @@ if (isset($result)){
 
                   }
                 }
-                if($Is_supplier_company =="1"){
+                //if($Is_supplier_company =="1"){
                   ?>
                   <tr>
                     <td><b>Overall Rating :</b></td>
@@ -210,15 +210,15 @@ if (isset($result)){
                     <td><span class="stars"><?php echo $tmpPrice; ?></span></td>
                   </tr>
                   <?php
-                }else{
+                //}else{
                   ?>
-                  <tr>
+                  <!-- <tr>
                     <td>Overall Rating</td>
-                    <td><?php echo number_format(0,2); ?></td>
-                  </tr>
+                    <td><?php //echo number_format(0,2); ?></td>
+                  </tr> -->
 
                   <?php
-                }
+                //}
                 ?>
 
               </tbody>
@@ -464,16 +464,61 @@ if($Is_supplier_company == "1"){
           <div class="box-body">
             <?php
             $query = "SELECT * FROM md_companyrating Where Company_Id = $companyid";
-
-            $results = $db->pdoQuery($query)->results();
-            if (!empty($results)){
-              $count = 0;
-              foreach ($results as $row) {
-                echo $row["Description"];
-                echo "<hr>";
-              }
-            }
             ?>
+            <table id="list_fb" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                <th>No.</th>
+                <th>Rating</th>
+                <th>Company</th>
+                <th>Feedback</th>
+              </tr>
+              </thead>
+              <tbody>
+                <?php
+                $results = $db->pdoQuery($query)->results();
+                if (!empty($results)){
+                  $count = 0;
+                  foreach ($results as $row) {
+                    $count = $count + 1;
+                    ?>
+                    <tr>
+                      <td><?php echo $count;?></td>
+                      <td>
+                        <table width="100%" class="table ">
+                          <tbody>
+                            <tr>
+                              <td><b>Speed of Quotation :</b></td>
+                              <td><span class="stars"><?php echo $tmpSOQ; ?></span></td>
+                            </tr>
+                            <tr>
+                              <td><b>Speed of Delivery :</b></td>
+                              <td><span class="stars"><?php echo $tmpSOD; ?></span></td>
+                            </tr>
+                            <tr>
+                              <td><b>Service Quality :</b></td>
+                              <td><span class="stars"><?php echo $tmpSQ; ?></span></td>
+                            </tr>
+                            <tr>
+                              <td><b>Price :</b></td>
+                              <td><span class="stars"><?php echo $tmpPrice; ?></span></td>
+                            </tr>
+                          </tbody>
+
+                        </table>
+                      </td>
+                      <td><?php echo $count;?></td>
+                      <td> <h5> <?php echo $row["Title"];?></h5> <p><?php echo $row["Description"];?></p> </td>
+                    </tr>
+                    <?php
+                    //echo $row["Description"];
+                    //echo "<hr>";
+                  }
+                }
+                ?>
+              </tbody>
+            </table>
+
           </div>
         </div>
 
@@ -866,5 +911,15 @@ if($Is_supplier_company == "1"){
           });
 
   });
+  $(function () {
+    $('#list_fb').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    });
 
+	})
   </script>
