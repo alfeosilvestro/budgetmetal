@@ -78,7 +78,9 @@
                                     <td><?php echo $count; ?></td>
                                     <td><?php echo $row["CompanyName"];?></td>
                                     <td>
-                                        $_current_document_no = $row["DocumentNo"];
+                                        <?php 
+                                            $_current_document_no = $row["DocumentNo"];
+                                        ?>
                                         <a href="/market/index.php?rdp=view_rfq&rfq_ref=" <?php echo $_current_document_no?>>
                                             <?php echo $_current_document_no;?>
                                         </a>
