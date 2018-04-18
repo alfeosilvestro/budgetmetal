@@ -868,7 +868,7 @@ if (isset($result)){
           </div>
           <div class="modal-body">
             <form action="system/awardQuotation.php" method="POST" enctype="multipart/form-data">
-              <label>Please attach PO Letter</label>
+              <label>Please attached Purchase Order (PO) or Letter of Award (LOA)</label>
               <input type="hidden" name="ModifiedBy" value="<?php echo $userid;?>">
               <input type="hidden" name="doc_id" value="<?php echo $q_id;?>">
               <input type="hidden" name="rfq_id" value="<?php echo $rfq_id;?>">

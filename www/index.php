@@ -8,7 +8,7 @@
     <title>BudgetMetal</title>
     <meta name="description" content="BudgetMetal">
     <meta name="author" content="">
-
+<link rel="shortcut icon" type="image/png" href="fav.ico"/>
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">

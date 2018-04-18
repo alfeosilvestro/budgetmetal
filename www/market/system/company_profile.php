@@ -86,7 +86,7 @@ if (isset($result)){
             <div class="row">
               <div class="col-md-12">
                   <!--AMK- Added for Tags-->
-                <?php 
+                <?php
                   if($About == null || $About == "")
                   {
                     echo "<textarea style='width:100%; resize: none; border: 0px solid white;' readonly='' placeholder='About company. (Your company description here)'></textarea>";
@@ -138,9 +138,10 @@ if (isset($result)){
             <?php echo $Address; ?>
             <br>
             <br>
-            <strong>Tags:</strong> <br>
+
             <?php
             if($Is_supplier_company == "1"){
+              echo '<strong>Tags:</strong> <br>';
               $sql = "SELECT t2.TagName FROM `md_suppliertags` t1 INNER JOIN c_tags t2 on t2.Id = t1.`C_Tags_Id` WHERE t2.Status = 1 AND t1.`M_User_Id` = ".$companyid;
               $result = $conn->query($sql);
               if (isset($result)){
@@ -409,7 +410,7 @@ if($Is_supplier_company == "1"){
                         if($row["Confirmed"] == 1){
                           if($row["Company_Admin"] == 1){
                             $out = "Admin";
-                            $btnAdminText = "Remove from Admin";
+                            $btnAdminText = "Revoke Admin Rights";
                             $btnAdminFun = "RemoveFromAdmin";
                           }else{
                             $out = "Normal User";
@@ -432,10 +433,10 @@ if($Is_supplier_company == "1"){
                       if($company_admin == 1){
                         if($userid != $u_id){
                           if($btnAdminFun != ""){
-                            $out = '<button class="btn btn-success btn-sm" onclick="'.$btnAdminFun.'('.$u_id.');">'.$btnAdminText.'</button>';
+                            $out = '<button class="btn btn-success btn-sm" onclick="'.$btnAdminFun.'('.$u_id.');">'.$btnAdminText.'</button> &nbsp;&nbsp;&nbsp;';
                             echo $out;
                           }
-                          $out = '<button class="btn btn-danger btn-sm" onclick="'.$btnDisableFun.'('.$u_id.');">'.$btnDisableText.'</button>';
+                          $out = '<button class="btn btn-danger btn-sm" onclick="'.$btnDisableFun.'('.$u_id.');">'.$btnDisableText.'</button> &nbsp;&nbsp;&nbsp;';
                           echo $out;
                         }
                       }
@@ -473,15 +474,15 @@ if($Is_supplier_company == "1"){
           </div>
           <div class="box-body">
             <?php
-            $query = "SELECT * FROM md_companyrating Where Company_Id = $companyid";
+            $query = "SELECT t1.*, t2.UserName, t3.Name FROM md_companyrating t1 inner join m_user t2 on t2.ID = t1.User_Id inner join m_company t3 on t3.ID = t2.M_Company_Id Where Company_Id =  $companyid";
             ?>
             <table id="list_fb" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                <th>No.</th>
-                <th>Rating</th>
-                <th>Company</th>
-                <th>Feedback</th>
+                <th style="width:5%;">No.</th>
+                <th style="width:30%;">Rating</th>
+                <th  style="width:10%;">User</th>
+                <th  style="width:55%;">Feedback</th>
               </tr>
               </thead>
               <tbody>
@@ -489,13 +490,21 @@ if($Is_supplier_company == "1"){
                 $results = $db->pdoQuery($query)->results();
                 if (!empty($results)){
                   $count = 0;
+                  $tmpSOQ = "0.0";
+                    $tmpSOD = "0.0";
+                    $tmpSQ = "0.0";
+                    $tmpPrice = "0.0";
                   foreach ($results as $row) {
                     $count = $count + 1;
+                    $tmpSOQ = number_format($row["SpeedOfQuotation"],2);
+                    $tmpSOD = number_format($row["SpeedofDelivery"],2);
+                    $tmpSQ = number_format($row["ServiceQuality"],2);
+                    $tmpPrice = number_format($row["Price"],2);
                     ?>
                     <tr>
                       <td><?php echo $count;?></td>
                       <td>
-                        <table width="100%" class="table ">
+                        <table width="200px" class="table ">
                           <tbody>
                             <tr>
                               <td><b>Speed of Quotation :</b></td>
@@ -517,8 +526,8 @@ if($Is_supplier_company == "1"){
 
                         </table>
                       </td>
-                      <td><?php echo $count;?></td>
-                      <td> <h5> <?php echo $row["Title"];?></h5> <p><?php echo $row["Description"];?></p> </td>
+                      <td><?php  echo $row["UserName"] ."<br> (".$row["Name"].")";?></td>
+                      <td> <b> <?php echo $row["Title"];?></b> <p><?php echo $row["Description"];?></p> </td>
                     </tr>
                     <?php
                     //echo $row["Description"];
@@ -584,31 +593,31 @@ if($Is_supplier_company == "1"){
             </div>
 
             <!--AMK- Added for Tags-->
-            <div class="form-group col-md-12">
+            <!-- <div class="form-group col-md-12">
               <strong>Tags</strong>
               <select class="form-control select2" multiple="multiple"
                   style="width: 100%;"
                   data-bind="value: tags, valueUpdate: 'blur'" name="tagList[]">
                   <?php
-                  $sql2 = "SELECT * FROM `c_tags` where Status = 1 Order by Seq";
-                  $result2 = $conn->query($sql2);
-                  if (isset($result2)){
-                    if ($result2->num_rows > 0) {
-                      while($row2 = $result2->fetch_assoc()) {
-                        $status = "";
-                        if($row2["Selectable"] == "0"){
-                          $status = "disabled";
-                        }
-                        echo "<option value='". $row2["Id"] ."' ".$status.">" . $row2["TagName"] ;
-                        echo "</option>";
-                      }
-                    }
-                  }
+                  // $sql2 = "SELECT * FROM `c_tags` where Status = 1 Order by Seq";
+                  // $result2 = $conn->query($sql2);
+                  // if (isset($result2)){
+                  //   if ($result2->num_rows > 0) {
+                  //     while($row2 = $result2->fetch_assoc()) {
+                  //       $status = "";
+                  //       if($row2["Selectable"] == "0"){
+                  //         $status = "disabled";
+                  //       }
+                  //       echo "<option value='". $row2["Id"] ."' ".$status.">" . $row2["TagName"] ;
+                  //       echo "</option>";
+                  //     }
+                  //   }
+                  // }
                   ?>
 
 
                 </select>
-            </div>
+            </div> -->
 
 
             <?php if($Is_supplier_company == "1"){ ?>

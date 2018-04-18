@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>BudgetMetal Marketplace</title>
+  <link rel="shortcut icon" type="image/png" href="../fav.ico"/>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -50,7 +51,11 @@
     <link rel="stylesheet" href="typeahead/typeaheadStyle.css" >
 <script src="js/raphael.js"></script>
   <script src="js/flowchart.js"></script>
-
+<style media="screen">
+  .nav-tabs-custom>.nav-tabs>li.active{
+    font-weight: bolder;
+  }
+</style>
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="skin-black-light layout-top-nav" style="height: auto; min-height: 100%;">

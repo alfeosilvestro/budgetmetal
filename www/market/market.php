@@ -181,11 +181,12 @@ if ($function == "InviteSupplier"){
 	$selectedsuppliersid = $_GET["selected_suppliers_id"];
 	$c = 0;
 	$returntext = "";
-	$searchsupplierwithservicesid_currentUserId = $_SESSION['userid'];
+	$searchsupplierwithservicesid_currentUserId = $_GET["user_id"];
 	//$sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, Name ASC";
-	$sql = "SELECT * FROM `m_company` c INNER JOIN m_user u on u.M_Company_Id = c.Id  WHERE u.Id <> ". $searchsupplierwithservicesid_currentUserId ." c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC";
+	$sql = "SELECT * FROM `m_company` c  WHERE c.Id <> ". $searchsupplierwithservicesid_currentUserId ." and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND c.`Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC";
+	//$sql = "SELECT * FROM `m_company` c INNER JOIN m_user u on u.M_Company_Id = c.Id WHERE c.Id <> 47 and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (0,789)) AND c.`Id` Not IN (0) Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC"
 	$result = $conn->query($sql);
-
+//echo $sql;
 	if (isset($result)){
 		if ($result->num_rows > 0) {
 			// output data of each row
@@ -1504,9 +1505,11 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 
 	$mail->Subject    = $subject;
 
-	$content            = file_get_contents('contents.html');
+	$content  = file_get_contents('template.html');
 	$content = str_replace("[message]",$message,$content);
 	$content = str_replace("[actual_link]",$actual_link,$content);
+
+	//$content = $message . $sitelink;
 	// $content             = eregi_replace("[message]",'',$message);
 	// $content             = eregi_replace("[actual_link]",'',$actual_link);
 	$mail->AltBody    = $content; // optional, comment out and test
@@ -1590,9 +1593,12 @@ function sendInvitation($email,$buyer){
 	//
 	// $mail->MsgHTML($message.$sitelink);
 
-	$content            = file_get_contents('contents.html');
-	$content = str_replace("[message]",$message,$content);
-	$content = str_replace("[actual_link]",$actual_link,$content);
+	 $content = file_get_contents('template.html');
+	 $content = str_replace("[message]",$message,$content);
+	 $content = str_replace("[actual_link]",$actual_link,$content);
+
+	//$content = $message . $sitelink;
+
 	// $content             = eregi_replace("",'',$message);
 	// $content             = eregi_replace("[actual_link]",'',$actual_link);
 	$mail->AltBody    = $content; // optional, comment out and test

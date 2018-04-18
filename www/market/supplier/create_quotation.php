@@ -1,5 +1,6 @@
 <!-- Severity 1 - 1 supplier company can create 1 quotation only for 1 RFQ -->
 <?php
+
 include("dbcon.php");
 include_once('lib/pdowrapper/class.pdowrapper.php');
 $dbConfig = array("host" => $server, "dbname" => $database, "username" => $db_user, "password" => $db_pass);
@@ -12,7 +13,7 @@ if(isset($_SESSION['userid'])){
   echo "no userid";
 }
 
-$sql = "SELECT t1.username, t1.EmailAddress, t3.Name, t3.Reg_No FROM `m_user` t1  INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$userid;
+$sql = "SELECT t1.username, t1.EmailAddress, t3.Name, t3.Reg_No,t3.Id FROM `m_user` t1  INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$userid;
 $result = $conn->query($sql);
 if (isset($result)){
   if ($result->num_rows > 0) {
@@ -22,7 +23,9 @@ if (isset($result)){
       $email =  $row["EmailAddress"];
       //$rfq_count = $row["RfqCount"];
       $company_name = $row["Name"];
+      $company_Id = $row["Id"];
       $reg_no = $row["Reg_No"];
+
     }
   }
 }
@@ -30,18 +33,29 @@ if (isset($result)){
 
 if(isset($_GET['rfq_ref'])){
   $rfq_ref =$_GET['rfq_ref'];
-
-  // <!-- AMK - Severity 1 - 1 supplier company can create 1 quotation only for 1 RFQ -->
-  $quotation_check_sql = "SELECT t1.Id, Concat(t1.DocumentNo, ' / ', t1.Q_Ref) as DocumentNo, t1.Title, t1.CreatedDate, t2.Name as Status, t4.Name as CompanyName, t5.QuotedFigure FROM t_document t1 Inner Join t_document t12 on t12.DocumentNo = t1.DocumentNo and t12.Q_Ref Is null Inner Join c_codetable t2 on t2.Id = t1.C_QuotationStatus Inner Join m_user t3 on t3.Id = t12.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Inner Join t_supplierquotation t5 on t5.Document_Id = t1.Id Where t1.Status = 1 and t1.C_DocumentType = 7 and t1.C_QuotationStatus in (15,16,17,18,19,20) and t1.M_User_Id = ". $userid ." and t1.DocumentNo = '". $_GET['rfq_ref'] ."'";
-  $result = $conn->query($quotation_check_sql);
+  $sql = "SELECT * FROM `t_document`  where Status = 1 and M_User_Id in (Select Id From m_user Where M_Company_Id = $company_Id) and DocumentNo Like '". $rfq_ref . "' and C_DocumentType = 7 Limit 1";
+  $result = $conn->query($sql);
+//  echo $sql;
+$q_id = 0;
   if (isset($result)){
     if ($result->num_rows > 0) {
-      
-      echo "Quotation for RFQ, " . $rfq_ref . ", has been registered by another user. Please check Quoation List Page.";
-      exit;
-
+      while($row = $result->fetch_assoc()) {
+        $q_id = $row["Id"];
+      }
     }
   }
+
+  // <!-- AMK - Severity 1 - 1 supplier company can create 1 quotation only for 1 RFQ -->
+  // $quotation_check_sql = "SELECT t1.Id, Concat(t1.DocumentNo, ' / ', t1.Q_Ref) as DocumentNo, t1.Title, t1.CreatedDate, t2.Name as Status, t4.Name as CompanyName, t5.QuotedFigure FROM t_document t1 Inner Join t_document t12 on t12.DocumentNo = t1.DocumentNo and t12.Q_Ref Is null Inner Join c_codetable t2 on t2.Id = t1.C_QuotationStatus Inner Join m_user t3 on t3.Id = t12.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Inner Join t_supplierquotation t5 on t5.Document_Id = t1.Id Where t1.Status = 1 and t1.C_DocumentType = 7 and t1.C_QuotationStatus in (15,16,17,18,19,20) and t1.M_User_Id = ". $userid ." and t1.DocumentNo = '". $_GET['rfq_ref'] ."'";
+  // $result = $conn->query($quotation_check_sql);
+  // if (isset($result)){
+  //   if ($result->num_rows > 0) {
+  //
+  //     echo "Quotation for RFQ, " . $rfq_ref . ", has been registered by another user. Please check Quoation List Page.";
+  //     exit;
+  //
+  //   }
+  // }
 
   $sql = "SELECT * FROM `t_document`  where Status = 1 and DocumentNo = '". $rfq_ref . "' and C_DocumentType = 6";
   $result = $conn->query($sql);
@@ -52,6 +66,8 @@ if(isset($_GET['rfq_ref'])){
       while($row = $result->fetch_assoc()) {
         $T_Rfq_Id = $row["Id"];
       }
+
+      if($q_id == 0){
       $doc_id = 0;
       $row = $db->select('t_document', null, null, 'ORDER BY Id DESC')->results();
       if ($row) {
@@ -78,6 +94,8 @@ if(isset($_GET['rfq_ref'])){
       //get document number
       $currentYear = date("Y");
       $current_UserId = $userid;
+
+
 
       $q_ref = "";
       $sql = "SELECT * FROM `document_number` t1 where t1.Name='Q' and t1.Prefix = '$current_UserId' and t1.Suffix = '$currentYear' ORDER BY Running_Number DESC Limit 1";
@@ -140,6 +158,13 @@ if(isset($_GET['rfq_ref'])){
           sendEmailforNotification($email,$Message, $Message,"RFQ",$rfq_ref);
         }
       }
+    }else{
+      $Id = $q_id;
+    }
+
+
+
+
 
       $status = "Draft";
       ?>
@@ -598,9 +623,11 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
   //
   // $mail->MsgHTML($message.$sitelink);
 
-  $content            = file_get_contents('contents.html');
-  $content = str_replace("[message]",$message,$content);
+  $content            = file_get_contents('template.html');
+   str_replace("[message]",$message,$content);
   $content = str_replace("[actual_link]",$actual_link,$content);
+
+  //$content = $message. $sitelink;
   // $content             = eregi_replace("[message]",'',$message);
   // $content             = eregi_replace("[actual_link]",'',$actual_link);
   $mail->AltBody    = $content; // optional, comment out and test

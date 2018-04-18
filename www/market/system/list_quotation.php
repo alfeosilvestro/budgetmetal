@@ -57,8 +57,8 @@
                         </tr>
 						</thead>
 						<tbody>
-                        <!-- AMK - 
-                            Updated to use variable instead of types 
+                        <!-- AMK -
+                            Updated to use variable instead of types
                             Updated supplier script to show actual RFQ inviting company
                         -->
 						<?php
@@ -78,11 +78,11 @@
                                     <td><?php echo $count; ?></td>
                                     <td><?php echo $row["CompanyName"];?></td>
                                     <td>
-                                        <?php 
+                                        <?php
                                             $_current_document_no = $row["DocumentNo"];
                                             $_rfq_no = $row["Rfq_Doc_No"];
                                         ?>
-                                        <a href="/market/index.php?rdp=view_rfq&rfq_ref=<?php echo $_rfq_no?>" title="Click here to view RFQ">
+                                        <a href="index.php?rdp=view_rfq&rfq_ref=<?php echo $_rfq_no?>" title="Click here to view RFQ">
                                             <?php echo $_current_document_no;?>
                                         </a>
                                     </td>
@@ -93,7 +93,7 @@
                                         <?php
                                             $_current_doc_status = "";
                                             $_current_doc_status = $row["Status"];
-                                        
+
                                             if($current_user_type == $_buyer_type && $_current_doc_status == $_doc_status_submitted)
                                             {
                                                 echo $_received_doc_status;
