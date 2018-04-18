@@ -9,6 +9,7 @@ services:
     volumes:
       - "./www:/var/www/site:rw"
       - "/home/metalpolis/metal/www/market/attachment:/var/www/site/market/attachment:rw"
+      - "/home/metalpolis/metal/www/market/attachment/tmps:/var/www/site/market/tmps:rw"
       - "./php.ini:/etc/php/7.0/cli/php.ini"
     hostname: "metalpolis-prod-web"
     network_mode: "host"
