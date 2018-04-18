@@ -85,7 +85,17 @@ if (isset($result)){
             <br/>
             <div class="row">
               <div class="col-md-12">
-                <textarea rows="20" style="width:100%; resize: none;" readonly ><?php echo $About; ?></textarea>
+                  <!--AMK- Added for Tags-->
+                <?php 
+                  if($About == null || $About == "")
+                  {
+                    echo "<textarea style='width:100%; resize: none; border: 0px solid white;' readonly='' placeholder='About company. (Your company description here)'></textarea>";
+                  }
+                  else
+                  {
+                    echo "<textarea row='20' style='width:100%; resize: none; border: 0px solid white;' readonly='' placeholder='About company. (Your company description here)'>". $About ."</textarea>";
+                  }
+                ?>
               </div>
             </div>
 
@@ -523,10 +533,39 @@ if($Is_supplier_company == "1"){
             <form id="update_profile" action="update_profile" method="get">
               <input type="hidden" name="companyid" value="<?php echo $companyid; ?>">
 
-            <div class="form-group col-md-9">
+            <div class="form-group col-md-12">
               <strong>Address</strong>
               <textarea name="address" id="txt_address"  class="form-control" rows="5" cols="50"><?php echo $Address;?></textarea>
             </div>
+
+            <!--AMK- Added for Tags-->
+            <div class="form-group col-md-12">
+              <strong>Tags</strong>
+              <select class="form-control select2" multiple="multiple"
+                  style="width: 100%;"
+                  data-bind="value: tags, valueUpdate: 'blur'" name="tagList[]">
+                  <?php
+                  $sql2 = "SELECT * FROM `c_tags` where Status = 1 Order by Seq";
+                  $result2 = $conn->query($sql2);
+                  if (isset($result2)){
+                    if ($result2->num_rows > 0) {
+                      while($row2 = $result2->fetch_assoc()) {
+                        $status = "";
+                        if($row2["Selectable"] == "0"){
+                          $status = "disabled";
+                        }
+                        echo "<option value='". $row2["Id"] ."' ".$status.">" . $row2["TagName"] ;
+                        echo "</option>";
+                      }
+                    }
+                  }
+                  ?>
+
+
+                </select>
+            </div>
+
+
             <?php if($Is_supplier_company == "1"){ ?>
             <div class="form-group col-md-9">
               <strong>Tags</strong>
