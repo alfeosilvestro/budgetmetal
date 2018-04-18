@@ -72,7 +72,7 @@ if ($function == "InviteSupplier"){
 					}
 				}
 			}
-			$returntext = $company_name. " profile is already in our system. The company services profile can be change only by user with administrative rights. Please contact your company administrator for more details. If you are not able to identify the administrator, please contact our support team at '+65 87456321' or 'info@budgetmetal.com'.";
+			$returntext = $company_name. " (UEN ". $company_uen .") profile is already in our system. The company services profile can be change only by user with administrative rights. Please contact your company administrator for more details. If you are not able to identify the administrator, please contact our support team at '+65 6519 0961' or 'info@budgetmetal.com'.";
 		}
 	}
 	echo $returntext;
@@ -181,7 +181,9 @@ if ($function == "InviteSupplier"){
 	$selectedsuppliersid = $_GET["selected_suppliers_id"];
 	$c = 0;
 	$returntext = "";
-	$sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating, IsVerified, Name Desc";
+	$searchsupplierwithservicesid_currentUserId = $_SESSION['userid'];
+	//$sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, Name ASC";
+	$sql = "SELECT * FROM `m_company` c INNER JOIN m_user u on u.M_Company_Id = c.Id  WHERE u.Id <> ". $searchsupplierwithservicesid_currentUserId ." c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC";
 	$result = $conn->query($sql);
 
 	if (isset($result)){

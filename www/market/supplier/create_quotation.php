@@ -1,3 +1,4 @@
+<!-- Severity 1 - 1 supplier company can create 1 quotation only for 1 RFQ -->
 <?php
 include("dbcon.php");
 include_once('lib/pdowrapper/class.pdowrapper.php');
@@ -29,7 +30,20 @@ if (isset($result)){
 
 if(isset($_GET['rfq_ref'])){
   $rfq_ref =$_GET['rfq_ref'];
-  $sql = "SELECT * FROM `t_document`  where Status = 1 and DocumentNo = '".$rfq_ref . "' and C_DocumentType = 6";
+
+  // <!-- AMK - Severity 1 - 1 supplier company can create 1 quotation only for 1 RFQ -->
+  $quotation_check_sql = "SELECT t1.Id, Concat(t1.DocumentNo, ' / ', t1.Q_Ref) as DocumentNo, t1.Title, t1.CreatedDate, t2.Name as Status, t4.Name as CompanyName, t5.QuotedFigure FROM t_document t1 Inner Join t_document t12 on t12.DocumentNo = t1.DocumentNo and t12.Q_Ref Is null Inner Join c_codetable t2 on t2.Id = t1.C_QuotationStatus Inner Join m_user t3 on t3.Id = t12.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Inner Join t_supplierquotation t5 on t5.Document_Id = t1.Id Where t1.Status = 1 and t1.C_DocumentType = 7 and t1.C_QuotationStatus in (15,16,17,18,19,20) and t1.M_User_Id = ". $userid ." and t1.DocumentNo = '". $_GET['rfq_ref'] ."'";
+  $result = $conn->query($quotation_check_sql);
+  if (isset($result)){
+    if ($result->num_rows > 0) {
+      
+      echo "Quotation for RFQ, " . $rfq_ref . ", has been registered by another user. Please check Quoation List Page.";
+      exit;
+
+    }
+  }
+
+  $sql = "SELECT * FROM `t_document`  where Status = 1 and DocumentNo = '". $rfq_ref . "' and C_DocumentType = 6";
   $result = $conn->query($sql);
   if (isset($result)){
     if ($result->num_rows > 0) {
