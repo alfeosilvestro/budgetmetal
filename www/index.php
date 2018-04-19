@@ -265,7 +265,7 @@
                         <li><a href="#" data-filter=".testing">Testing</a></li>
                         <li><a href="#" data-filter=".finishing">Finishing</a></li>
                         <li><a href="#" data-filter=".logistics">Logistics</a></li>
-                        <li><a href="#" data-filter=".2d3d">2D / 3D Modelling</a></li>
+                        <li><a href="#" data-filter=".2d3d">CAD/CAM Design Service</a></li>
                         <li><a href="#" data-filter=".3dmetalprinting">3D Metal Printing</a></li>
                     </ol>
                 </li>
