@@ -37,6 +37,7 @@ if (isset($result)){
       $Address = $row["Address"];
       $About = $row["About"];
       $supplierRating= $row["SupplierAvgRating"];
+      $IsVerified = $row["IsVerified"];
     }
   }
 }
@@ -63,10 +64,24 @@ if (isset($result)){
           <div class="box-body">
 
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-8">
                 <b><?php echo $company_name; ?></b>
+                <span class='text-sm text-primary'>
+                <?php
+
+                  if($IsVerified)
+                  {
+                      echo "(This company has been verified by BudgetMetal.)";
+                  }
+                  else
+                  {
+                      echo "(This company has not been verified by BudgetMetal yet.)";
+                  }
+
+                ?>
+                </span>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="pull-right">
                   <?php
 
@@ -93,8 +108,10 @@ if (isset($result)){
                   }
                   else
                   {
-                    echo "<textarea row='20' style='width:100%; resize: none; border: 0px solid white;' readonly='' placeholder='About company. (Your company description here)'>". $About ."</textarea>";
+                    echo "<textarea style='width:100%; height: 250px; border: 0px solid white;' readonly='' placeholder='About company. (Your company description here)'>". $About ."</textarea>";
                   }
+
+                  //echo nl2br($About);
                 ?>
               </div>
             </div>
@@ -115,8 +132,8 @@ if (isset($result)){
   height: 85%;
 }
     </style>
-    <div class="row row-flex">
-      <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="box box-primary">
           <div class="box-body">
             <strong><i class="fa fa-book margin-r-5"></i> UEN No.</strong> : <?php echo $reg_no; ?>
@@ -167,8 +184,8 @@ if (isset($result)){
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="box box-primary content">
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="box box-primary">
           <div class="box-body">
             <style media="screen">
               span.stars, span.stars span {
@@ -245,8 +262,8 @@ if (isset($result)){
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="box box-primary content">
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="box box-primary">
           <div class="box-body">
             <strong><i class="glyphicon glyphicon-bullhorn"></i> Feedbacks</strong>
             <br>
@@ -287,7 +304,7 @@ if($Is_supplier_company == "1"){
                   </button>
               </div>
           </div>
-          <div class="box-body">
+          <div class="box-body" style="height: 250px; overflow-y: auto;">
             <div class="pull-right">
               <?php
 

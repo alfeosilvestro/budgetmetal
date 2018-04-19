@@ -265,7 +265,7 @@
                         <li><a href="#" data-filter=".testing">Testing</a></li>
                         <li><a href="#" data-filter=".finishing">Finishing</a></li>
                         <li><a href="#" data-filter=".logistics">Logistics</a></li>
-                        <li><a href="#" data-filter=".2d3d">2D / 3D Modelling</a></li>
+                        <li><a href="#" data-filter=".2d3d">CAD/CAM Design Service</a></li>
                         <li><a href="#" data-filter=".3dmetalprinting">3D Metal Printing</a></li>
                     </ol>
                 </li>
@@ -749,19 +749,110 @@
                                      alt="Logistics"> </a></div>
                     </div>
                 </div>
+
                 <!--2D/3D -->
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 2d3d isotope-item"
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/CustomFabrication_Ducting_Sauna.jpg"
+                            <a href="img/services/2D_01.png"
+                               title="2D Modelling"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>2D /3D</h4>
+                                    <p>2D Modelling</p>
+                                </div>
+                                <img src="img/services/2D_01.png"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 2d3d isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/2D_02.png"
+                               title="2D Modelling"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>2D /3D</h4>
+                                    <p>2D Modelling</p>
+                                </div>
+                                <img src="img/services/2D_02.png"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 2d3d isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/CAD01.png"
+                               title="3D Modelling"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>2D /3D</h4>
+                                    <p>3D Modelling</p>
+                                </div>
+                                <img src="img/services/CAD01.png"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 2d3d isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/CAD02.png"
+                               title="3D Modelling"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>2D /3D</h4>
+                                    <p>3D Modelling</p>
+                                </div>
+                                <img src="img/services/CAD02.png"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 2d3d isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/CAD03.png"
+                               title="3D Modelling"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>2D /3D</h4>
+                                    <p>3D Modelling</p>
+                                </div>
+                                <img src="img/services/CAD03.png"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 2d3d isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/Render01A.png"
                                title="Printing"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>Modelling and Simulation</p>
                                 </div>
-                                <img src="img/services/CustomFabrication_Ducting_Sauna.jpg"
+                                <img src="img/services/Render01A.png"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 2d3d isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/Render02A.png"
+                               title="3D Modelling"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>2D /3D</h4>
+                                    <p>3D Modelling</p>
+                                </div>
+                                <img src="img/services/Render02A.png"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
                     </div>
                 </div>
