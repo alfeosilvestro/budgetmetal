@@ -151,7 +151,7 @@ if (isset($result)){
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
                     //echo '<li class="list-group-item"><span class="label label-info">'.$TagName.'</span> </li>';
-                    echo $TagName;
+                    echo '<li class="list-group-item">'.$TagName.'</li>';
                   }
                   echo '</ul><br/>';
                 }
