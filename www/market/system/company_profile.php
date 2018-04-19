@@ -147,13 +147,19 @@ if (isset($result)){
               if (isset($result)){
                 if ($result->num_rows > 0) {
                   // output data of each row
-                  echo '<br/><ul class="list-group">';
+                  // echo '<br/><ul class="list-group">';
+                  // while($row = $result->fetch_assoc()) {
+                  //   $TagName = $row["TagName"];
+                  //   //echo '<li class="list-group-item"><span class="label label-info">'.$TagName.'</span> </li>';
+                  //   echo '<li class="list-group-item">'.$TagName.'</li>';
+                  // }
+                  // echo '</ul>';
+                  echo '<br/><div class="row">';
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    //echo '<li class="list-group-item"><span class="label label-info">'.$TagName.'</span> </li>';
-                    echo '<li class="list-group-item">'.$TagName.'</li>';
+                    echo '<div class="col-md-4">'.$TagName.'</div>';
                   }
-                  echo '</ul>';
+                  echo '</div>';
                 }
               }
             }
