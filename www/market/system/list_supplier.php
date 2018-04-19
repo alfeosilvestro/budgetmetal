@@ -173,7 +173,7 @@ if (isset($result)){
 
               <div class="message"></div>
             </div>
-            <h4>Invite supplier to Buddgetmetal</h4>
+            <h4>Invite your preferred Supplier to BudgetMetal</h4>
             <input type="email" name="inviteEmail" value="" id="inviteEmail" class="form-control">
             <br>
             <button type="button" class="btn btn-info" name="button" id="btnInvite" >Invite</button>

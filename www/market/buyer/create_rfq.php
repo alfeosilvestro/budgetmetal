@@ -11,7 +11,7 @@ if(isset($_SESSION['userid'])){
 }
 
 
-$sql = "SELECT t1.username, t1.EmailAddress, t3.Name, t3.Reg_No FROM `m_user` t1 INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$userid;
+$sql = "SELECT t1.username, t1.EmailAddress, t3.Name, t3.Reg_No,t3.Id FROM `m_user` t1 INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$userid;
 $result = $conn->query($sql);
 if (isset($result)){
   if ($result->num_rows > 0) {
@@ -21,6 +21,7 @@ if (isset($result)){
       $email =  $row["EmailAddress"];
       $company_name = $row["Name"];
       $reg_no = $row["Reg_No"];
+        $company_id = $row["Id"];
     }
   }
 }
@@ -844,7 +845,7 @@ function searchsupplier(){
       $("#search_suppliers tbody").append(this.responseText);
     }
   };
-  xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id,true);
+  xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>",true);
   xmlhttp.send();
 }
 

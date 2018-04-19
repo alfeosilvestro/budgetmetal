@@ -29,9 +29,6 @@ if (isset($result)){
 }
 
 $list = "bidding";
-if(($_SESSION['usertype'] == 'Buyer')){
-  $list = "draft";
-}
 if(isset($_GET["list"])){
   $list = $_GET["list"];
 }

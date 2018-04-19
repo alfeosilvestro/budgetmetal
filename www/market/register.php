@@ -11,6 +11,7 @@ $db = new PdoWrapper($dbConfig);
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>BudgetMetal Marketplace</title>
+	<link rel="shortcut icon" type="image/png" href="../fav.ico"/>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -65,7 +66,7 @@ $db = new PdoWrapper($dbConfig);
 			<nav class="navbar navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="" class="navbar-brand"><b>BudgetMetal</b>&nbsp;marketplace</a>
+						<a href="../index.php" class="navbar-brand"><b>BudgetMetal</b>&nbsp;marketplace</a>
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
 							<i class="fa fa-bars"></i>
 						</button>
