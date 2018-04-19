@@ -289,7 +289,7 @@ if($Is_supplier_company == "1"){
                   </button>
               </div>
           </div>
-          <div class="box-body" style="height: 250px; scroll: auto;">
+          <div class="box-body" style="height: 250px; overflow-y: auto;">
             <div class="pull-right">
               <?php
 
