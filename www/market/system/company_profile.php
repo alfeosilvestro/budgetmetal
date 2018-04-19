@@ -156,7 +156,7 @@ if (isset($result)){
                   echo '<br/><div class="row">';
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    echo '<div class="col-md-4"><div class="d-inline p-2 bg-primary text-white" style="margin-bottom:15px; padding: 5px;">'.$TagName.'</div></div>';
+                    echo '<div class="col-md-4" style="padding: 0px important;"><div class="d-inline p-2 bg-primary text-white text-sm" style="width: 100%; margin-bottom:8px; padding: 5px;">'.$TagName.'</div></div>';
                   }
                   echo '</div>';
                 }
