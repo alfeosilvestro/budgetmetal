@@ -132,7 +132,7 @@ if (isset($result)){
   height: 85%;
 }
     </style>
-    <div class="row row-flex">
+    <div class="row">
       <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="box box-primary">
           <div class="box-body">
