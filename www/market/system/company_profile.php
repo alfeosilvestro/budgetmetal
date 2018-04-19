@@ -133,7 +133,7 @@ if (isset($result)){
 }
     </style>
     <div class="row row-flex">
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="box box-primary">
           <div class="box-body">
             <strong><i class="fa fa-book margin-r-5"></i> UEN No.</strong> : <?php echo $reg_no; ?>
@@ -184,7 +184,7 @@ if (isset($result)){
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="box box-primary">
           <div class="box-body">
             <style media="screen">
@@ -262,7 +262,7 @@ if (isset($result)){
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="box box-primary">
           <div class="box-body">
             <strong><i class="glyphicon glyphicon-bullhorn"></i> Feedbacks</strong>
