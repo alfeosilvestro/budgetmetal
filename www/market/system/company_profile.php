@@ -117,7 +117,7 @@ if (isset($result)){
     </style>
     <div class="row row-flex">
       <div class="col-md-4">
-        <div class="box box-primary content">
+        <div class="box box-primary">
           <div class="box-body">
             <strong><i class="fa fa-book margin-r-5"></i> UEN No.</strong> : <?php echo $reg_no; ?>
             <div class="pull-right">
@@ -153,7 +153,7 @@ if (isset($result)){
                     //echo '<li class="list-group-item"><span class="label label-info">'.$TagName.'</span> </li>';
                     echo '<li class="list-group-item">'.$TagName.'</li>';
                   }
-                  echo '</ul><br/><br/><br/>';
+                  echo '</ul><br/>';
                 }
               }
             }
