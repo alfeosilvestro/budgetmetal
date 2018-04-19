@@ -67,17 +67,17 @@ if(isset($_GET["list"])){
         if($list == "bidding"){
           echo 'class="active"';
         }
-        ?>><a href="#biddingRFQ" data-toggle="tab">Bidding RFQs</a></li>
+        ?>><a href="#biddingRFQ" data-toggle="tab">RFQ in Progress</a></li>
         <li  <?php
         if($list == "closed"){
           echo 'class="active"';
         }
-        ?>><a href="#closedRFQ" data-toggle="tab">Closed RFQs</a></li>
+        ?>><a href="#closedRFQ" data-toggle="tab">Closed RFQs (No Award)</a></li>
         <li <?php
         if($list == "award"){
           echo 'class="active"';
         }
-        ?>><a href="#awardRFQ" data-toggle="tab">Awards or No Awards RFQs</a></li>
+        ?>><a href="#awardRFQ" data-toggle="tab">Awarded RFQs</a></li>
         <?php
         if(($_SESSION['usertype'] == 'Buyer')){
           ?>
