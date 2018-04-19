@@ -185,7 +185,7 @@ if (isset($result)){
         </div>
       </div>
       <div class="col-md-4">
-        <div class="box box-primary content">
+        <div class="box box-primary">
           <div class="box-body">
             <style media="screen">
               span.stars, span.stars span {
@@ -263,7 +263,7 @@ if (isset($result)){
         </div>
       </div>
       <div class="col-md-4">
-        <div class="box box-primary content">
+        <div class="box box-primary">
           <div class="box-body">
             <strong><i class="glyphicon glyphicon-bullhorn"></i> Feedbacks</strong>
             <br>
