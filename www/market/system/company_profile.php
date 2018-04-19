@@ -141,18 +141,18 @@ if (isset($result)){
 
             <?php
             if($Is_supplier_company == "1"){
-              echo '<strong>Tags:</strong> <br>';
+              echo '<strong>Tags:</strong> <br/>';
               $sql = "SELECT t2.TagName FROM `md_suppliertags` t1 INNER JOIN c_tags t2 on t2.Id = t1.`C_Tags_Id` WHERE t2.Status = 1 AND t1.`M_User_Id` = ".$companyid;
               $result = $conn->query($sql);
               if (isset($result)){
                 if ($result->num_rows > 0) {
                   // output data of each row
-                  echo '<div class="row">';
+                  echo '<br/><ul class="list-group">';
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    echo '<div class="col-sm-4"><span class="label label-info">'.$TagName.'</span> </div>';
+                    echo '<li class="list-group-item"><span class="label label-info">'.$TagName.'</span> </li>';
                   }
-                  echo '</div>';
+                  echo '</ul>';
                 }
               }
             }
