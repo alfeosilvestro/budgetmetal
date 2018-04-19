@@ -87,14 +87,16 @@ if (isset($result)){
               <div class="col-md-12">
                   <!--AMK- Added for Tags-->
                 <?php
-                  if($About == null || $About == "")
-                  {
-                    echo "<textarea style='width:100%; resize: none; border: 0px solid white;' readonly='' placeholder='About company. (Your company description here)'></textarea>";
-                  }
-                  else
-                  {
-                    echo "<textarea row='20' style='width:100%; resize: none; border: 0px solid white;' readonly='' placeholder='About company. (Your company description here)'>". $About ."</textarea>";
-                  }
+                  // if($About == null || $About == "")
+                  // {
+                  //   echo "<textarea style='width:100%; resize: none; border: 0px solid white;' readonly='' placeholder='About company. (Your company description here)'></textarea>";
+                  // }
+                  // else
+                  // {
+                  //   echo "<textarea row='20' style='width:100%; resize: none; border: 0px solid white;' readonly='' placeholder='About company. (Your company description here)'>". $About ."</textarea>";
+                  // }
+
+                  echo nl2br($About);
                 ?>
               </div>
             </div>
