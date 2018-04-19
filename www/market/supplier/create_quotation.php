@@ -143,6 +143,7 @@ $q_id = 0;
       }
 
       $Message = "$company_name has registered interest in your $rfq_ref.  You should expect a proposal by due date.";
+      $Subject = "$company_name has registered interest in your $rfq_ref";
       $dataArray = array('Document' => $Id, 'First_Opened_User' => $CreatedBy, 'Receiving_Company' => $buyer_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $CreatedBy,'Status' => "1", 'Type' => 'Interest_RFQ');
       $dt = $db->insert('company_notification', $dataArray);
 
@@ -155,7 +156,7 @@ $q_id = 0;
           while($row = $result->fetch_assoc()) {
             $email = $email .  $row["EmailAddress"].";";
           }
-          sendEmailforNotification($email,$Message, $Message,"RFQ",$rfq_ref);
+          sendEmailforNotification($email,$Subject, $Message,"RFQ",$rfq_ref);
         }
       }
     }else{
@@ -564,9 +565,6 @@ $q_id = 0;
 
 
 
-function sendEmailforNotification1($email,$subject, $message,$doc_type,$doc_id){
-
-}
 
 
 function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){

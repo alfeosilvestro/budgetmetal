@@ -177,13 +177,14 @@ if ($function == "InviteSupplier"){
 	$returntext=  $thickness."," . $length."," . $width."," . $metal_type;
 	echo $returntext;
 }elseif ($function == "searchsupplierwithservicesid"){
+		$rowcount = $_GET["rowCount"];
 	$servicesid = $_GET["servicesid"];
 	$selectedsuppliersid = $_GET["selected_suppliers_id"];
 	$c = 0;
 	$returntext = "";
 	$searchsupplierwithservicesid_currentUserId = $_GET["user_id"];
 	//$sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, Name ASC";
-	$sql = "SELECT * FROM `m_company` c  WHERE c.Id <> ". $searchsupplierwithservicesid_currentUserId ." and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND c.`Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC";
+	$sql = "SELECT * FROM `m_company` c  WHERE c.Id <> ". $searchsupplierwithservicesid_currentUserId ." and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND c.`Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC Limit $rowcount,20";
 	//$sql = "SELECT * FROM `m_company` c INNER JOIN m_user u on u.M_Company_Id = c.Id WHERE c.Id <> 47 and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (0,789)) AND c.`Id` Not IN (0) Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC"
 	$result = $conn->query($sql);
 //echo $sql;
@@ -378,6 +379,7 @@ elseif ($function == "saverfq"){
 
 				if($act != 'draft'){
 					$Message = "$company_name has invited you to participate in RFQ, $rfq_ref";
+					$Subject ="$company_name has invited you to participate in RFQ, $rfq_ref";
 					$dataArray = array('Document' => $doc_id, 'First_Opened_User' => $M_User_Id, 'Receiving_Company' => $selected_supplier_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $CreatedBy,'Status' => "1", 'Type' => 'Invited');
 					$dt = $db->insert('company_notification', $dataArray);
 
@@ -390,7 +392,7 @@ elseif ($function == "saverfq"){
 							while($row = $result->fetch_assoc()) {
 								$email = $email .  $row["EmailAddress"].";";
 							}
-							sendEmailforNotification($email,$Message, $Message,"RFQ",$rfq_ref);
+							sendEmailforNotification($email,$Subject, $Message,"RFQ",$rfq_ref);
 						}
 					}
 
@@ -567,6 +569,7 @@ if(isset($_GET['selected_supplier_id'])){
 
 			if($act != 'draft'){
 				$Message = "$company_name has invited you to participate in RFQ, $rfq_ref";
+				$Subject = "$company_name has invited you to participate in RFQ, $rfq_ref";
 				$dataArray = array('Document' => $doc_id, 'First_Opened_User' => $M_User_Id, 'Receiving_Company' => $selected_supplier_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $CreatedBy,'Status' => "1", 'Type' => 'Invited');
 				$dt = $db->insert('company_notification', $dataArray);
 
@@ -579,7 +582,7 @@ if(isset($_GET['selected_supplier_id'])){
 						while($row = $result->fetch_assoc()) {
 							$email = $email .  $row["EmailAddress"].";";
 						}
-						sendEmailforNotification($email,$Message, $Message,"RFQ",$rfq_ref);
+						sendEmailforNotification($email,$Subject, $Message,"RFQ",$rfq_ref);
 					}
 				}
 			}
@@ -665,6 +668,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 			}
 		}
 		$Message = "$company_name has submitted a proposal in respond to your $rfq_ref. Awaiting your review and feedback.";
+		$Subject = "$company_name has submitted a proposal in respond to your $rfq_ref";
 		$dataArray = array('Document' => $Id, 'First_Opened_User' => $CreatedBy, 'Receiving_Company' => $buyer_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $CreatedBy,'Status' => "1", 'Type' => 'Create_Quotation');
 		$dt = $db->insert('company_notification', $dataArray);
 
@@ -677,7 +681,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 				while($row = $result->fetch_assoc()) {
 					$email = $email .  $row["EmailAddress"].";";
 				}
-				sendEmailforNotification($email,$Message, $Message,"Quotation",$Id);
+				sendEmailforNotification($email,$Subject, $Message,"Quotation",$Id);
 			}
 		}
 
@@ -927,6 +931,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 				$dt = $db->insert('company_notification', $dataArray);
 
 				$Message = "$company_name has sent you a clarification on your proposal as per following : <br> <br><b> ".$txt_comment ."</b><br>";
+				$Subject = "$company_name has sent you a clarification on your proposal.";
 				$email = "";
 				$sql = "SELECT * FROM `m_user` t1 where Status = 1 and Confirmed = 1 AND M_Company_Id = " . $document_owner_companyid;
 				$result = $conn->query($sql);
@@ -937,9 +942,9 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 							$email = $email .  $row["EmailAddress"].";";
 						}
 						if($doc_type == "RFQ"){
-							sendEmailforNotification($email,$Message, $Message,"RFQ",$rfq_ref);
+							sendEmailforNotification($email,$Subject, $Message,"RFQ",$rfq_ref);
 						}else{
-							sendEmailforNotification($email,$Message, $Message,"Quotation",$rfq_id);
+							sendEmailforNotification($email,$Subject, $Message,"Quotation",$rfq_id);
 						}
 					}
 				}
@@ -1016,8 +1021,8 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 				}
 			}
 		}
-
-		$Message = "$company_name has replied on your comment as per following : <br> <br>Clarification : <b> ".$txt_comment ."</b><br><br> Reply : <b> ".$reply_message ."</b><br><br>";
+$Subject = "$company_name has replied on your comment.";
+		$Message = "$company_name has replied on your comment as per following : <br> <br>clarification : <b> ".$txt_comment ."</b><br><br> Reply : <b> ".$reply_message ."</b><br><br>";
 		$email = "";
 		$sql = "SELECT * FROM `m_user` t1 where Status = 1 and Confirmed = 1 AND M_Company_Id = " . $commentowner_companyid;
 		$result = $conn->query($sql);
@@ -1028,9 +1033,9 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 					$email = $email .  $row["EmailAddress"].";";
 				}
 				if($doc_type == "RFQ"){
-					sendEmailforNotification($email,$Message, $Message,"RFQ",$rfq_ref);
+					sendEmailforNotification($email,$Subject, $Message,"RFQ",$rfq_ref);
 				}else{
-					sendEmailforNotification($email,$Message, $Message,"Quotation",$rfq_id);
+					sendEmailforNotification($email,$Subject, $Message,"Quotation",$rfq_id);
 				}
 			}
 		}
@@ -1097,7 +1102,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 						$Message = $company_name." has withdrawn in RFQ, $rfq_ref. All Quotation will be automatically locked.";
 						$dataArray = array('Document' => $Id, 'First_Opened_User' => $ModifiedBy, 'Receiving_Company' => $selected_supplier_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $ModifiedDate, 'Created_By' => $ModifiedBy,'Status' => "1", 'Type' => 'Withdrawn');
 						$dt = $db->insert('company_notification', $dataArray);
-
+						$Subject = $company_name." has withdrawn in RFQ, $rfq_ref";
 						$email = "";
 						$sql1 = "SELECT * FROM `m_user` t1 where Status = 1 and Confirmed = 1 AND M_Company_Id = " . $selected_supplier_id;
 						$result1 = $conn->query($sql1);
@@ -1107,7 +1112,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 								while($row1 = $result1->fetch_assoc()) {
 									$email = $email .  $row1["EmailAddress"].";";
 								}
-								sendEmailforNotification($email,$Message, $Message,"RFQ",$rfq_ref);
+								sendEmailforNotification($email,$Subject, $Message,"RFQ",$rfq_ref);
 							}
 						}
 					}
@@ -1151,6 +1156,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 				}
 			}
 			$Message = "Your Quotation($q_ref) has been awarded to your company.";
+			$Subject= "Your Quotation($q_ref) has been awarded to your company.";
 			$dataArray = array('Document' => $Id, 'First_Opened_User' => $ModifiedBy, 'Receiving_Company' => $selected_supplier_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $ModifiedDate, 'Created_By' => $ModifiedBy,'Status' => "1", 'Type' => 'Accepted');
 			$dt = $db->insert('company_notification', $dataArray);
 
@@ -1163,7 +1169,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 					while($row = $result->fetch_assoc()) {
 						$email = $email .  $row["EmailAddress"].";";
 					}
-					sendEmailforNotification($email,$Message, $Message,"Quotation",$Id);
+					sendEmailforNotification($email,$Subject, $Message,"Quotation",$Id);
 				}
 			}
 
@@ -1172,6 +1178,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 			$db->update('t_document', $dataArray,$where);
 
 			$Message = "After careful consideration, Quotation no. $Id has been rejected.";
+			$Subject = "After careful consideration, Quotation no. $Id has been rejected.";
 			$dataArray = array('Document' => $Id, 'First_Opened_User' => $ModifiedBy, 'Receiving_Company' => $selected_supplier_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $ModifiedDate, 'Created_By' => $ModifiedBy,'Status' => "1", 'Type' => 'Rejected');
 			$dt = $db->insert('company_notification', $dataArray);
 
@@ -1184,7 +1191,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 					while($row = $result->fetch_assoc()) {
 						$email = $email .  $row["EmailAddress"].";";
 					}
-					sendEmailforNotification($email,$Message, $Message,"Quotation",$Id);
+					sendEmailforNotification($email,$Subject, $Message,"Quotation",$Id);
 				}
 			}
 
@@ -1203,6 +1210,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 				}
 			}
 			$Message = "$company_name has withdrawn quotation.";
+			$Subject = "$company_name has withdrawn quotation.";
 			$dataArray = array('Document' => $Id, 'First_Opened_User' => $ModifiedBy, 'Receiving_Company' => $buyer_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $ModifiedDate, 'Created_By' => $ModifiedBy,'Status' => "1", 'Type' => 'Withdrawn');
 			$dt = $db->insert('company_notification', $dataArray);
 
@@ -1215,7 +1223,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 					while($row = $result->fetch_assoc()) {
 						$email = $email .  $row["EmailAddress"].";";
 					}
-					sendEmailforNotification($email,$Message, $Message,"Quotation",$Id);
+					sendEmailforNotification($email,$Subject, $Message,"Quotation",$Id);
 				}
 			}
 		}
@@ -1252,6 +1260,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 		}
 	}
 	$Message = "$company_name has provided a rating and feedback for your service.";
+	$Subject = "$company_name has provided a rating and feedback for your service.";
 	$dataArray = array('Document' => $document_id, 'First_Opened_User' => $user_id, 'Receiving_Company' => $companyid, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $user_id,'Status' => "1", 'Type' => 'Rating');
 	$dt = $db->insert('company_notification', $dataArray);
 
@@ -1265,7 +1274,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 			while($row = $result->fetch_assoc()) {
 				$email = $email .  $row["EmailAddress"].";";
 			}
-			sendEmailforNotification($email,$Message, $Message,"Rating","");
+			sendEmailforNotification($email,$Subject, $Message,"Rating","");
 
 		}
 	}
@@ -1369,7 +1378,7 @@ function sendEmailtoverify($email){
 
 	$verify_link = $actual_link."/market/verify.php?a=".$email_encode. "&b=".$date_encode;
 
-	$sitelink = "<br><a href='".$verify_link."'>Click Here</a>";
+	$sitelink = "<br><br><a href='".$verify_link."'>Click Here</a>";
 	$message1 .= $sitelink;
 
 	//error_reporting(E_STRICT);
@@ -1414,6 +1423,9 @@ function sendEmailtoverify($email){
 
 	$mail->Subject    = $subject;
 
+	$content  = file_get_contents('template.html');
+	$content = str_replace("[message]",$message,$content);
+	$content = str_replace("[actual_link]",$actual_link,$content);
 	$mail->AltBody    = $message; // optional, comment out and test
 
 	$mail->MsgHTML($message);
@@ -1441,9 +1453,7 @@ function sendEmailtoverify($email){
 }
 
 
-function sendEmailforNotification1($email,$subject, $message,$doc_type,$doc_id){
 
-}
 
 
 function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
@@ -1458,9 +1468,10 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 	$host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 	$actual_link = $host;
 	$clarification = "";
-	if(strpos($message,"clarification")>=0){
-		$clarification = "&ref_div=clarification_div";
+	if( strpos( $message, "clarification" ) !== false ) {
+	   	$clarification = "&ref_div=clarification_div";
 	}
+
 	if($doc_id != ""){
 		if($doc_type == "RFQ"){
 			$actual_link = $host .  "/index.php?rfq_ref=". $doc_id.$clarification;

@@ -774,12 +774,7 @@ if($Is_supplier_company == "1"){
                <script src="dev/logger.js"></script>
                 <script src="dev/treeview.js"></script>
 
-                <script>
-                  $('#treeview-checkbox-demo').treeview({
-                    debug : true,
-                    data : ['links', 'Do WHile loop']
-                  });
-                </script>
+
             </div>
 
 
@@ -792,8 +787,29 @@ if($Is_supplier_company == "1"){
       </div>
     </div>
   </div>
+  <?php
+  $sql = "SELECT t1.`M_Services_Id`, t2.ServiceName FROM `md_supplierservices` t1 INNER JOIN m_services t2 ON t1.`M_Services_Id` = t2.Id Where t2.Status = 1 and t1.`M_Company_Id` = ".$companyid;
+  $result = $conn->query($sql);
+  $supplier_service = "'0'";
+  if (isset($result)){
+    if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+        $service_id = $row["M_Services_Id"];
+        $supplier_service = $supplier_service. ", '" . $service_id . "'";
+      }
+    }
+  }
+
+
+   ?>
   <script>
+
   $(function () {
+    $('#treeview-checkbox-demo').treeview({
+      debug : true,
+      data : [<?php echo $supplier_service; ?>]
+    });
     $('#rfq').DataTable({
       'paging'      : true,
       'lengthChange': false,
@@ -858,6 +874,20 @@ if($Is_supplier_company == "1"){
         alert(response);
       }
     });
+  });
+
+  $("[id*=treeview-checkbox-demo] input[type=checkbox]").bind("click", function () {
+
+  	//Is Parent CheckBox
+  	var isChecked = $(this).is(":checked");
+  	$(this).parent().find("input[type=checkbox]").each(function () {
+  		if (isChecked) {
+  			$(this).prop( "checked", true );
+  		} else {
+  			$(this).removeAttr("checked");
+  		}
+  	});
+
   });
 
   function MakeAdmin(id){
@@ -926,9 +956,7 @@ if($Is_supplier_company == "1"){
   }
 
   function EditService(){
-    $("[id*=treeview-checkbox-demo]").parent().find("input[type=checkbox]").each(function (){
-      //alert($(this).val());
-    })
+
     $('#servicebox').modal('show');
   }
 
@@ -954,19 +982,7 @@ if($Is_supplier_company == "1"){
       });
   }
 
-  $("[id*=treeview-checkbox-demo] input[type=checkbox]").bind("click", function () {
 
-          //Is Parent CheckBox
-          var isChecked = $(this).is(":checked");
-            $(this).parent().find("input[type=checkbox]").each(function () {
-              if (isChecked) {
-                  $(this).prop( "checked", true );
-              } else {
-                  $(this).removeAttr("checked");
-              }
-          });
-
-  });
   $(function () {
     $('#list_fb').DataTable({
       'paging'      : true,
@@ -976,6 +992,6 @@ if($Is_supplier_company == "1"){
       'info'        : true,
       'autoWidth'   : false
     });
+	});
 
-	})
   </script>

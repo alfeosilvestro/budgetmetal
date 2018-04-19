@@ -115,12 +115,14 @@ $dataArray = array('Document' => $Id, 'First_Opened_User' => $ModifiedBy, 'Recei
 $dt = $db->insert('company_notification', $dataArray);
 
 $Message = $Message . "<br> Please contact to buyer ($selected_buyer_UserName ,Contact No.- $selected_buyer_contactNo)<br>";
+$Subject = "Your Quotation($q_ref) has been awarded to your company.";
 $email = $selected_supplier_EmailAddress;
-sendEmailforNotification($email,$Message, $Message,"Quotation",$Id, $target.$po_letter_filename);
+sendEmailforNotification($email,$Subject, $Message,"Quotation",$Id, $target.$po_letter_filename);
 
 $Message = "You awarded quotation - $Id for your RFQ.<br> Please contact to supplier ($selected_supplier_UserName ,Contact No.- $selected_supplier_contactNo)<br>";
+$Subject = "You awarded quotation - $Id for your RFQ.";
 $email = $selected_buyer_EmailAddress;
-sendEmailforNotification($email,$Message, $Message,"Quotation",$Id, $target.$po_letter_filename);
+sendEmailforNotification($email,$Subject, $Message,"Quotation",$Id, $target.$po_letter_filename);
 
 
 header("location:../index.php?rdp=view_quotation&id=".$Id);

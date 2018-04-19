@@ -125,10 +125,10 @@
                             echo '<a href="index.php?rdp=company_profile&companyid='.$M_Company_Id.'" class="btn btn-primary btn-xs">View Profile</a>';
                           }else{
                             if($typeid == 6){
-  														echo '<a href="index.php?rdp=view_rfq&rfq_ref='.$rfq_ref.'" class="btn btn-primary btn-xs">View Document</a>';
+  														echo '<a href="index.php?rdp=view_rfq&rfq_ref='.$rfq_ref.'#clarification_div" class="btn btn-primary btn-xs">View Document</a>';
   													}elseif($typeid == 7){
                               if($quotationStatus != 15){
-                                echo '<a href="index.php?rdp=view_quotation&id='.$doc_id.'" class="btn btn-primary btn-xs">View Document</a>';
+                                echo '<a href="index.php?rdp=view_quotation&id='.$doc_id.'#clarification_div" class="btn btn-primary btn-xs">View Document</a>';
                               }
   													}
                           }

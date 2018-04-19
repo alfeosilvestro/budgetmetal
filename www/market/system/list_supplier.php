@@ -160,8 +160,7 @@ if (isset($result)){
 
               <script>
               $('#treeview-checkbox-demo').treeview({
-                debug : true,
-                data : ['links', 'Do WHile loop']
+                debug : true
               });
               </script>
             </div>

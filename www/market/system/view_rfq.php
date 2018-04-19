@@ -633,13 +633,47 @@ if (isset($result)){
       ?>
       <div class="btn-group pull-left">
         <?php if(($_SESSION['usertype'] == 'Supplier') &&  ($rfq_statusid == '10') && ($invited == 'yes') && ($interested != 'yes' )){
-
-          ?>
-          <a href="index.php?rdp=create_quotation&rfq_ref=<?php echo $rfq_ref;?>" class="btn btn-info">
-            <i class="fa fa-pencil-square-o"></i>
-            Register Interest &amp; Draft Quotation
-          </a>
-        <?php }elseif(($_SESSION['usertype'] == 'Supplier') &&  ($rfq_statusid == '10') && ($invited == 'yes') && ($interested == 'yes' )){
+          if(isset($_GET["rfq_ref"])){
+            $rfq_ref =$_GET["rfq_ref"];
+            $company_Id = $_SESSION['M_Company_Id'] ;
+            $sql = "SELECT * FROM `t_document`  where Status = 1 and M_User_Id in (Select Id From m_user Where M_Company_Id = $company_Id) and DocumentNo Like '". $rfq_ref . "' and C_DocumentType = 7 Limit 1";
+            $result = $conn->query($sql);
+          //  echo $sql;
+          $q_id = 0;
+          $M_User_Id = 0;
+            if (isset($result)){
+              if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                  $q_id = $row["Id"];
+                  $M_User_Id = $row["M_User_Id"];
+                }
+                $sql1 = "Select * From m_user Where Id = $M_User_Id";
+                $result1 = $conn->query($sql1);
+                $M_User_Name = "";
+                if (isset($result1)){
+                  if ($result1->num_rows > 0) {
+                    while($row1 = $result1->fetch_assoc()) {
+                      $M_User_Name = $row1["UserName"];
+                    }
+                  }
+                }
+                ?>
+                <a href="index.php?rdp=view_quotation&id=<?php echo $q_id;?>" class="btn btn-info">
+                  <i class="fa fa-pencil-square-o"></i>
+                  <?php echo $M_User_Name;?> has registered interest to this RFQ.
+                </a>
+                <?php
+              }else{
+                ?>
+                <a href="index.php?rdp=create_quotation&rfq_ref=<?php echo $rfq_ref;?>" class="btn btn-info">
+                  <i class="fa fa-pencil-square-o"></i>
+                  Register Interest &amp; Draft Quotation
+                </a>
+                <?php
+              }
+            }
+          }
+           }elseif(($_SESSION['usertype'] == 'Supplier') &&  ($rfq_statusid == '10') && ($invited == 'yes') && ($interested == 'yes' )){
           ?>
           <a href="index.php?rdp=edit_quotation&id=<?php echo $qid;?>" class="btn btn-warning">
             <i class="fa fa-pencil-square-o"></i>

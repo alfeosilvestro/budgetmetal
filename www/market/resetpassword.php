@@ -192,9 +192,15 @@ include("piwik.php");
 
                 		$mail->Subject    = $subject;
 
-                		$mail->AltBody    = $message; // optional, comment out and test
+                    $host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+                  	$actual_link = $host;
+                    $content  = file_get_contents('template.html');
+                  	$content = str_replace("[message]",$message,$content);
+                  	$content = str_replace("[actual_link]",$actual_link,$content);
 
-                		$mail->MsgHTML($message);
+                		$mail->AltBody    = $content; // optional, comment out and test
+
+                		$mail->MsgHTML($content);
 
                 		$mail->AddAddress($to_address, $to_name);
 

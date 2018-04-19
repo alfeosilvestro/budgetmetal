@@ -1150,27 +1150,55 @@ if (isset($result)){
       if(rowCount > 0){
         j = rowCount;
         var rowid = 1;
-        for (i = 1; i <= j; i++) {
-          tr = document.getElementById("search_suppliers").rows[rowid];
-          if(i<=5){
-            var tdStatus = tr.getElementsByTagName("td")[3].innerText;
-            if(tdStatus == "Unverified"){
-              objButton = tr.getElementsByTagName("button")[1];
-              var trid = objButton.value;
-              //row = $('#' + trid);
-              //$("#selected_suppliers tbody").append(row);
-              $("#selected_suppliers tbody").append(tr);
-              objButton.innerHTML = "Remove from Selected Supplier List";
-              objButton.setAttribute( "onClick", "RemoveFromList(this);" );
-              $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
-
-            }
-            else{
-              rowid = rowid + 1;
-            }
+        var items = [];
+        for (i = 1 ; i <= j; i++) {
+          tr = document.getElementById("search_suppliers").rows[i];
+          var tdStatus = tr.getElementsByTagName("td")[3].innerText;
+          if(tdStatus == "Unverified"){
+            items.push(tr);
           }
 
+          // if(i<=5){
+          //   var tdStatus = tr.getElementsByTagName("td")[3].innerText;
+          //   if(tdStatus == "Unverified"){
+          //     objButton = tr.getElementsByTagName("button")[1];
+          //     var trid = objButton.value;
+          //     //row = $('#' + trid);
+          //     //$("#selected_suppliers tbody").append(row);
+          //     $("#selected_suppliers tbody").append(tr);
+          //     objButton.innerHTML = "Remove from Selected Supplier List";
+          //     objButton.setAttribute( "onClick", "RemoveFromList(this);" );
+          //     $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
+          //
+          //   }
+          //   else{
+          //     rowid = rowid + 1;
+          //   }
+          // }
+
         }
+        //alert(items.length);
+        var loop_num = 5;
+        if(items.length <  5){
+          loop_num = items.length;
+        }
+        var lopp_start = 0;
+        var rdm_index = 0;
+        var tr_rdm;
+          for (lopp_start = 1; lopp_start <= loop_num; lopp_start++) {
+            var rdm_index = Math.floor(Math.random()*items.length);
+            tr_rdm = items[rdm_index];
+            objButton = tr_rdm.getElementsByTagName("button")[1];
+            var trid = objButton.value;
+            //row = $('#' + trid);
+            //$("#selected_suppliers tbody").append(row);
+            $("#selected_suppliers tbody").append(tr_rdm);
+            objButton.innerHTML = "Remove from Selected Supplier List";
+            objButton.setAttribute( "onClick", "RemoveFromList(this);" );
+            $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
+            items.splice(rdm_index, 1);
+            //alert(items.length);
+          }
       }
 
       GetSelectedSupplierCount();

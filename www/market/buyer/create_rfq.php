@@ -407,12 +407,9 @@ Width
                 </thead>
                 <tbody>
 
-
-
-
-
                 </tbody>
               </table>
+              <span class="text-center"> <button id="btnShowMore" type="button" name="button" class="btn btn-info">Show More Supplier</button> </span>
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_selectedsuppliers">
@@ -434,6 +431,7 @@ Width
 
                 </tbody>
               </table>
+
             </div>
             <!-- /.tab-pane -->
           </div>
@@ -476,7 +474,7 @@ $(function () {
   var tmp = res[1] + "-" + res[0] + "-" + res[2];
 
   $('#due_datepicker').datepicker({
-    startDate : new Date(tmp),
+    startDate : "today",
     format: "dd-mm-yyyy",
     autoclose: true,
     todayHighlight: true,
@@ -527,6 +525,12 @@ function RemoveFile(objButton){
 
 
 $(document).ready(function () {
+  var search_suppliers_rowCount = $('#search_suppliers tbody tr').length;
+  if(search_suppliers_rowCount > 0){
+     $('#btnShowMore').show();
+  }else{
+     $('#btnShowMore').hide();
+  }
 
   if (window.XMLHttpRequest) {
     // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -807,6 +811,11 @@ $('button[id=btn_search_suppliers]').click(function(){
 
 });
 
+$('button[id=btnShowMore]').click(function(){
+  searchsupplier_loadmore();
+
+});
+
 function searchsupplier(){
 
 
@@ -821,6 +830,64 @@ function searchsupplier(){
     selected_suppliers_id = selected_suppliers_id + "," +selected_suppliers.value;
   }
 
+
+  var table = document.getElementById('servicelist');
+
+  var rowLength = table.rows.length;
+  var servicesid= "0";
+  for(var i=1; i<rowLength; i+=1){
+    var row = table.rows[i];
+    var serviceid = row.getElementsByTagName("input")[5];
+
+    servicesid = servicesid + "," +serviceid.value;
+  }
+$("#search_suppliers tbody").find('tr').remove().end();
+var rowCount = $('#search_suppliers tbody tr').length;
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    // code for IE6, IE5
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      $("#search_suppliers tbody").append(this.responseText);
+      rowCount = $('#search_suppliers tbody tr').length;
+      if(rowCount > 0){
+        var x = rowCount;
+        var y = 20;
+        var z = x % y;
+        if(z == 0){
+          $('#btnShowMore').show();
+        }else{
+          $('#btnShowMore').hide();
+        }
+      }else{
+         $('#btnShowMore').hide();
+      }
+      if(this.responseText == ""){
+        $('#btnShowMore').hide();
+      }
+    }
+  };
+  xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
+  xmlhttp.send();
+}
+
+function searchsupplier_loadmore(){
+  var table_suppliers = document.getElementById('selected_suppliers');
+
+  var rowLength_supplier = table_suppliers.rows.length;
+  var selected_suppliers_id = "0";
+  for(var i=1; i<rowLength_supplier; i+=1){
+    var row = table_suppliers.rows[i];
+    var selected_suppliers = row.getElementsByTagName("input")[0];
+
+    selected_suppliers_id = selected_suppliers_id + "," +selected_suppliers.value;
+  }
+
+  var rowCount = $('#search_suppliers tbody tr').length;
   var table = document.getElementById('servicelist');
 
   var rowLength = table.rows.length;
@@ -841,12 +908,32 @@ function searchsupplier(){
   }
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      $("#search_suppliers tbody").find('tr').remove().end();
+      //$("#search_suppliers tbody").find('tr').remove().end();
+      //rowCount = $('#search_suppliers tbody tr').length;
       $("#search_suppliers tbody").append(this.responseText);
+      rowCount = $('#search_suppliers tbody tr').length;
+      if(rowCount > 0){
+        var x = rowCount;
+        var y = 20;
+        var z = x % y;
+        if(z == 0){
+          $('#btnShowMore').show();
+        }else{
+          $('#btnShowMore').hide();
+        }
+
+      }else{
+         $('#btnShowMore').hide();
+      }
+      if(this.responseText == ""){
+        $('#btnShowMore').hide();
+      }
     }
   };
-  xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>",true);
+  xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
   xmlhttp.send();
+
+
 }
 
 function AddtoRequestList(objButton){
@@ -1020,27 +1107,55 @@ function addMoreSelectedSupplier(){
   if(rowCount > 0){
     j = rowCount;
     var rowid = 1;
-    for (i = 1; i <= j; i++) {
-      tr = document.getElementById("search_suppliers").rows[rowid];
-      if(i<=5){
-        var tdStatus = tr.getElementsByTagName("td")[3].innerText;
-        if(tdStatus == "Unverified"){
-          objButton = tr.getElementsByTagName("button")[1];
-          var trid = objButton.value;
-          //row = $('#' + trid);
-          //$("#selected_suppliers tbody").append(row);
-          $("#selected_suppliers tbody").append(tr);
-          objButton.innerHTML = "Remove from Selected Supplier List";
-          objButton.setAttribute( "onClick", "RemoveFromList(this);" );
-          $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
-
-        }
-        else{
-          rowid = rowid + 1;
-        }
+    var items = [];
+    for (i = 1 ; i <= j; i++) {
+      tr = document.getElementById("search_suppliers").rows[i];
+      var tdStatus = tr.getElementsByTagName("td")[3].innerText;
+      if(tdStatus == "Unverified"){
+        items.push(tr);
       }
 
+      // if(i<=5){
+      //   var tdStatus = tr.getElementsByTagName("td")[3].innerText;
+      //   if(tdStatus == "Unverified"){
+      //     objButton = tr.getElementsByTagName("button")[1];
+      //     var trid = objButton.value;
+      //     //row = $('#' + trid);
+      //     //$("#selected_suppliers tbody").append(row);
+      //     $("#selected_suppliers tbody").append(tr);
+      //     objButton.innerHTML = "Remove from Selected Supplier List";
+      //     objButton.setAttribute( "onClick", "RemoveFromList(this);" );
+      //     $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
+      //
+      //   }
+      //   else{
+      //     rowid = rowid + 1;
+      //   }
+      // }
+
     }
+    //alert(items.length);
+    var loop_num = 5;
+    if(items.length <  5){
+      loop_num = items.length;
+    }
+    var lopp_start = 0;
+    var rdm_index = 0;
+    var tr_rdm;
+      for (lopp_start = 1; lopp_start <= loop_num; lopp_start++) {
+        var rdm_index = Math.floor(Math.random()*items.length);
+        tr_rdm = items[rdm_index];
+        objButton = tr_rdm.getElementsByTagName("button")[1];
+        var trid = objButton.value;
+        //row = $('#' + trid);
+        //$("#selected_suppliers tbody").append(row);
+        $("#selected_suppliers tbody").append(tr_rdm);
+        objButton.innerHTML = "Remove from Selected Supplier List";
+        objButton.setAttribute( "onClick", "RemoveFromList(this);" );
+        $('#' + trid + ' input[name="selected_supplier_id[]"]').val($('#' + trid + ' input[name="search_supplier_id[]"]').val());
+        items.splice(rdm_index, 1);
+        //alert(items.length);
+      }
   }
 
   GetSelectedSupplierCount();
