@@ -664,7 +664,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 				}
 			}
 		}
-		$Message = "$company_name has submitted quotation on $rfq_ref.";
+		$Message = "$company_name has submitted a proposal in respond to your $rfq_ref. Awaiting your review and feedback.";
 		$dataArray = array('Document' => $Id, 'First_Opened_User' => $CreatedBy, 'Receiving_Company' => $buyer_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $CreatedBy,'Status' => "1", 'Type' => 'Create_Quotation');
 		$dt = $db->insert('company_notification', $dataArray);
 

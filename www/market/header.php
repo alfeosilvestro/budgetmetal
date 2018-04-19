@@ -85,7 +85,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documents <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="index.php?rdp=list_rfq">RFQ Lists</a></li>
+                            <li><a href="index.php?rdp=list_rfq">RFQ List</a></li>
                             <li><a href="index.php?rdp=list_quotation">Quotations</a></li>
                         </ul>
                     </li>

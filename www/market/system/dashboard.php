@@ -88,6 +88,9 @@ if (isset($result)){
   .content{
     min-height: 0px;
   }
+  .small-box .icon {
+    top: -4px;
+  }
 </style>
 <section class="content">
 
@@ -229,8 +232,8 @@ if (isset($result)){
         'e=>end\n' +
         'op1=>operation: Create RFQ:> index.php?rdp=create_rfq \n' +
         'op2=>operation: Submit RFQ:> index.php?rdp=list_rfq \n' +
-        'op3=>operation: Go Evaluate RFQ:> index.php?rdp=list_rfq \n' +
-        'op4=>operation: Award RFQ:> index.php?rdp=list_rfq \n' +
+        'op3=>operation: Go Evaluate Quotation:> index.php?rdp=list_quotation \n' +
+        'op4=>operation: Award RFQ:> index.php?rdp=list_quotation \n' +
 
         '\n' +
 

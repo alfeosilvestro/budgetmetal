@@ -142,7 +142,7 @@ $q_id = 0;
         }
       }
 
-      $Message = "$company_name has interested on your $rfq_ref.";
+      $Message = "$company_name has registered interest in your $rfq_ref.  You should expect a proposal by due date.";
       $dataArray = array('Document' => $Id, 'First_Opened_User' => $CreatedBy, 'Receiving_Company' => $buyer_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $CreatedDate, 'Created_By' => $CreatedBy,'Status' => "1", 'Type' => 'Interest_RFQ');
       $dt = $db->insert('company_notification', $dataArray);
 
