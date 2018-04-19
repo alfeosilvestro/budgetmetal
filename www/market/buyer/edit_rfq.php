@@ -995,7 +995,7 @@ if (isset($result)){
           $("#search_suppliers tbody").append(this.responseText);
         }
       };
-      xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id+ "&user_id=<?php echo $company_id; ?>",true);
+      xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id+ "&user_id=<?php echo $company_id; ?>&rowCount=0",true);
       xmlhttp.send();
 
     });
