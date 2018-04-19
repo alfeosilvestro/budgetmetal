@@ -1094,7 +1094,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 					// output data of each row
 					while($row = $result->fetch_assoc()) {
 						$selected_supplier_id = $row["M_Company_Id"];
-						$Message = $company_name." has withdrawn in RFQ, $rfq_ref. All Quotation will be automatically locked.";
+						$Message = $company_name." has withdrawn RFQ, $rfq_ref. All Quotations will not be awarded.";
 						$dataArray = array('Document' => $Id, 'First_Opened_User' => $ModifiedBy, 'Receiving_Company' => $selected_supplier_id, 'Message' => $Message ,'Open_Status' => '22', 'Created_Date' => $ModifiedDate, 'Created_By' => $ModifiedBy,'Status' => "1", 'Type' => 'Withdrawn');
 						$dt = $db->insert('company_notification', $dataArray);
 
