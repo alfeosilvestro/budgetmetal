@@ -153,7 +153,7 @@ if (isset($result)){
                     //echo '<li class="list-group-item"><span class="label label-info">'.$TagName.'</span> </li>';
                     echo '<li class="list-group-item">'.$TagName.'</li>';
                   }
-                  echo '</ul><br/>';
+                  echo '</ul><br/><br/><br/>';
                 }
               }
             }
