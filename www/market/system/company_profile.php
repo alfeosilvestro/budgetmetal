@@ -117,7 +117,7 @@ if (isset($result)){
     </style>
     <div class="row row-flex">
       <div class="col-md-4">
-        <div class="box box-primary content">
+        <div class="box box-primary">
           <div class="box-body">
             <strong><i class="fa fa-book margin-r-5"></i> UEN No.</strong> : <?php echo $reg_no; ?>
             <div class="pull-right">
@@ -141,16 +141,24 @@ if (isset($result)){
 
             <?php
             if($Is_supplier_company == "1"){
-              echo '<strong>Tags:</strong> <br>';
+              echo '<strong>Tags:</strong> <br/>';
               $sql = "SELECT t2.TagName FROM `md_suppliertags` t1 INNER JOIN c_tags t2 on t2.Id = t1.`C_Tags_Id` WHERE t2.Status = 1 AND t1.`M_User_Id` = ".$companyid;
               $result = $conn->query($sql);
               if (isset($result)){
                 if ($result->num_rows > 0) {
                   // output data of each row
+                  // echo '<br/><ul class="list-group">';
+                  // while($row = $result->fetch_assoc()) {
+                  //   $TagName = $row["TagName"];
+                  //   echo '<li class="list-group-item">'.$TagName.'</li>';
+                  // }
+                  // echo '</ul>';
+                  echo '<br/><div class="row">';
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    echo ' <span class="label label-info">'.$TagName.'</span> <br>';
+                    echo '<div class="col-md-4" style="padding: 0px important;"><div class="d-inline p-2 bg-primary text-white text-sm" style="width: 100%; margin-bottom:8px; padding: 5px;">'.$TagName.'</div></div>';
                   }
+                  echo '</div>';
                 }
               }
             }

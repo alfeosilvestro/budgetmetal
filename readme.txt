@@ -11,3 +11,4 @@ docker run --net=host -p 8080:80 --name metalpolis_web -d metalpolis
 
 
 
+sudo git pull https://github.com/alfeosilvestro/budgetmetal.git
