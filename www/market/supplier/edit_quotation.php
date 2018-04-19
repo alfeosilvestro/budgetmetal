@@ -269,9 +269,8 @@
         <div class="box-body">
             <div class="row">
                 <div class="col-sm-12">
-					<textarea rows="4" cols="100" name="comment"><?php echo $Comments;?>
+					<textarea rows="4" cols="100" name="comment"><?php echo trim($Comments);?>
 					</textarea>
-
                 </div>
             </div>
 
