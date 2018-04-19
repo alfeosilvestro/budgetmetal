@@ -66,7 +66,20 @@ if (isset($result)){
             <div class="row">
               <div class="col-md-6">
                 <b><?php echo $company_name; ?></b>
-                <span>(Is Verified : <?php echo $IsVerified; ?>)</span>
+                <span class='text-sm'>
+                <?php
+
+                  if($IsVerified)
+                  {
+                      echo "(this company has been verified by BudgetMetal.)";
+                  }
+                  else
+                  {
+                      echo "(This company was not verified by BudgetMetal yet.)";
+                  }
+
+                ?>
+                </span>
               </div>
               <div class="col-md-6">
                 <div class="pull-right">
