@@ -150,14 +150,13 @@ if (isset($result)){
                   // echo '<br/><ul class="list-group">';
                   // while($row = $result->fetch_assoc()) {
                   //   $TagName = $row["TagName"];
-                  //   //echo '<li class="list-group-item"><span class="label label-info">'.$TagName.'</span> </li>';
                   //   echo '<li class="list-group-item">'.$TagName.'</li>';
                   // }
                   // echo '</ul>';
                   echo '<br/><div class="row">';
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    echo '<div class="col-md-4"><span class="label label-info">'.$TagName.'</span></div>';
+                    echo '<div class="col-md-4"><div class="d-inline p-2 bg-primary text-white">'.$TagName.'</div></div>';
                   }
                   echo '</div>';
                 }
