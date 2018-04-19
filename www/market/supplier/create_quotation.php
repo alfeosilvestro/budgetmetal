@@ -623,10 +623,10 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
   //
   // $mail->MsgHTML($message.$sitelink);
 
-  $content            = file_get_contents('template.html');
-   str_replace("[message]",$message,$content);
+  $content = file_get_contents('template.html');
+  $content =  str_replace("[message]",$message,$content);
   $content = str_replace("[actual_link]",$actual_link,$content);
-
+//echo $content;
   //$content = $message. $sitelink;
   // $content             = eregi_replace("[message]",'',$message);
   // $content             = eregi_replace("[actual_link]",'',$actual_link);

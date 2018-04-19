@@ -186,7 +186,7 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id,$a
 	// $mail->AltBody    = $message . $sitelink; // optional, comment out and test
   //
 	// $mail->MsgHTML($message.$sitelink);
-  $content            = file_get_contents('../contents.html');
+  $content = file_get_contents('../contents.html');
   $content = str_replace("[message]",$message,$content);
   $content = str_replace("[actual_link]",$actual_link,$content);
   // $content             = eregi_replace("[message]",'',$message);
