@@ -64,7 +64,7 @@ if (isset($result)){
           <div class="box-body">
 
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-8">
                 <b><?php echo $company_name; ?></b>
                 <span class='text-sm text-primary'>
                 <?php
@@ -81,7 +81,7 @@ if (isset($result)){
                 ?>
                 </span>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <div class="pull-right">
                   <?php
 
