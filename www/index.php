@@ -749,17 +749,18 @@
                                      alt="Logistics"> </a></div>
                     </div>
                 </div>
+
                 <!--2D/3D -->
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 2d3d isotope-item"
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/2D_01.png"
-                               title="Printing"
+                               title="2D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
-                                    <p>Modelling and Simulation</p>
+                                    <p>2D Modelling</p>
                                 </div>
                                 <img src="img/services/2D_01.png"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
@@ -770,11 +771,11 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/2D_02.png"
-                               title="Printing"
+                               title="2D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
-                                    <p>Modelling and Simulation</p>
+                                    <p>2D Modelling</p>
                                 </div>
                                 <img src="img/services/2D_02.png"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
@@ -785,11 +786,11 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/CAD01.png"
-                               title="Printing"
+                               title="3D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
-                                    <p>Modelling and Simulation</p>
+                                    <p>3D Modelling</p>
                                 </div>
                                 <img src="img/services/CAD01.png"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
@@ -800,11 +801,11 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/CAD02.png"
-                               title="Printing"
+                               title="3D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
-                                    <p>Modelling and Simulation</p>
+                                    <p>3D Modelling</p>
                                 </div>
                                 <img src="img/services/CAD02.png"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
@@ -815,11 +816,11 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/CAD03.png"
-                               title="Printing"
+                               title="3D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
-                                    <p>Modelling and Simulation</p>
+                                    <p>3D Modelling</p>
                                 </div>
                                 <img src="img/services/CAD03.png"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
@@ -845,11 +846,11 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Render02A.png"
-                               title="Printing"
+                               title="3D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
-                                    <p>Modelling and Simulation</p>
+                                    <p>3D Modelling</p>
                                 </div>
                                 <img src="img/services/Render02A.png"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
