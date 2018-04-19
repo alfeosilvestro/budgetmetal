@@ -66,16 +66,16 @@ if (isset($result)){
             <div class="row">
               <div class="col-md-6">
                 <b><?php echo $company_name; ?></b>
-                <span class='text-sm'>
+                <span class='text-sm text-primary'>
                 <?php
 
                   if($IsVerified)
                   {
-                      echo "(this company has been verified by BudgetMetal.)";
+                      echo "(This company has been verified by BudgetMetal.)";
                   }
                   else
                   {
-                      echo "(This company was not verified by BudgetMetal yet.)";
+                      echo "(This company has not been verified by BudgetMetal yet.)";
                   }
 
                 ?>
