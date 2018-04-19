@@ -37,6 +37,7 @@ if (isset($result)){
       $Address = $row["Address"];
       $About = $row["About"];
       $supplierRating= $row["SupplierAvgRating"];
+      $IsVerified = $row["IsVerified"];
     }
   }
 }
@@ -65,6 +66,7 @@ if (isset($result)){
             <div class="row">
               <div class="col-md-6">
                 <b><?php echo $company_name; ?></b>
+                <span>(Is Verified : <?php echo $IsVerified; ?>)</span>
               </div>
               <div class="col-md-6">
                 <div class="pull-right">
