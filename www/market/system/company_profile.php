@@ -147,10 +147,12 @@ if (isset($result)){
               if (isset($result)){
                 if ($result->num_rows > 0) {
                   // output data of each row
+                  echo '<div class="row">';
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    echo ' <span class="label label-info">'.$TagName.'</span> <br>';
+                    echo '<div class="col-sm-4"><span class="label label-info">'.$TagName.'</span> </div>';
                   }
+                  echo '</div>';
                 }
               }
             }
