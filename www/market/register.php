@@ -453,7 +453,7 @@ $db = new PdoWrapper($dbConfig);
 			<div class="pull-right hidden-xs">
 
 			</div>
-			<strong>Copyright © 2017 <a href="#">Styler</a>.</strong> All rights
+			<strong>Copyright © 2017 <a href="#">Stylar Digital</a>.</strong> All rights
 			reserved.
 		</div>
 		<!-- /.container -->
