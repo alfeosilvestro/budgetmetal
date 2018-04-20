@@ -658,10 +658,14 @@ if (isset($result)){
                   }
                 }
                 ?>
-                <a href="index.php?rdp=view_quotation&id=<?php echo $q_id;?>" class="btn btn-info">
+                <div class="alert alert-warning alert-dismissible">
+                  <h4><i class="icon fa fa-warning"></i> Notice!</h4>
+                  <?php echo $M_User_Name;?> has registered interest to this RFQ.
+                </div>
+                <!-- <a href="index.php?rdp=view_quotation&id=<?php echo $q_id;?>" class="btn btn-info">
                   <i class="fa fa-pencil-square-o"></i>
                   <?php echo $M_User_Name;?> has registered interest to this RFQ.
-                </a>
+                </a> -->
                 <?php
               }else{
                 ?>
