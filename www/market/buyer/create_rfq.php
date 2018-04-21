@@ -50,13 +50,12 @@ $status = "Draft";
   <div class="row">
 
     <div class="col-sm-12">
-      <div class="btn-group pull-right">
-        <button type="button" class="btn btn-success" id="btnsave_rfq_top" >Save as Draft</button>
+      <button type="button" class="btn btn-info" id="btnsave_rfq_top" >Save as Draft</button>
 
-        <button type="button" id="btnsubmit_rfq_top" class="btn btn-warning">Submit</button>
-      </div>
+      <button type="button" id="btnsubmit_rfq_top" class="btn btn-success">Submit</button>
     </div>
   </div>
+  <br/>
   <div class="box box-default">
     <div class="box-header with-border">
       <h3 class="box-title">RFQ Info</h3>
