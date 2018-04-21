@@ -230,7 +230,7 @@ $db = new PdoWrapper($dbConfig);
 																</div>
 																<div id="selTags" class="form-group">
 																	<label title="Please select services and business segment.">
-																		My services and business segment
+																		Your Services and Business Segment
 																	</label>
 																	<select class="form-control select2" multiple="multiple"
 																	title="Please select services and business segment."
