@@ -280,7 +280,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_ArchitectureStructure.jpg"
                                title="Architecture Structure"
-                               rel="prettyPhoto">
+                               rel="prettyPhoto"> 
                                 <div class="hover-text">
                                     <h4>Custom Fabrication</h4>
                                     <p>Architecture Structure</p>

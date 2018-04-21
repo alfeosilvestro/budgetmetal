@@ -229,9 +229,7 @@ $db = new PdoWrapper($dbConfig);
 																	placeholder="Password to sign in later">
 																</div>
 																<div id="selTags" class="form-group">
-																	<label title="Please select services and business segment.">
-																		Your Services and Business Segment
-																	</label>
+																	<label>Your Services and Business Segments (Multiple Entry Supported)</label>
 																	<select class="form-control select2" multiple="multiple"
 																	title="Please select services and business segment."
 																	style="width: 100%;"
