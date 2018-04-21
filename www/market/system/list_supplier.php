@@ -185,7 +185,7 @@ if (isset($result)){
     </div>
     <div class="col-md-9">
       <div class="box box-info">
-        <table id="supplier_lists" class="table table-bordered table-striped">
+        <table id="supplier_lists" class="table table-bordered table-striped smaller_font_table">
           <thead>
             <tr>
               <!-- <th>No.</th> -->
@@ -195,7 +195,7 @@ if (isset($result)){
               <th></th>
             </tr>
           </thead>
-          <tbody  style="font-size: 14px; !important">
+          <tbody>
             <?php
             $query = "SELECT * FROM m_company Where Id in (SELECT `M_Company_Id`  FROM `m_user` WHERE `C_UserType` = 2 AND`Status` = 1)";
             $results = $db->pdoQuery($query)->results();
