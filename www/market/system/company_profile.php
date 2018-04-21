@@ -395,7 +395,7 @@ if($Is_supplier_company == "1"){
               </div>
           </div>
           <div class="box-body">
-            <table id="rfq" class="table table-bordered table-striped">
+            <table id="rfq" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
                   <th>No.</th>
@@ -507,7 +507,7 @@ if($Is_supplier_company == "1"){
             <?php
             $query = "SELECT t1.*, t2.UserName, t3.Name FROM md_companyrating t1 inner join m_user t2 on t2.ID = t1.User_Id inner join m_company t3 on t3.ID = t2.M_Company_Id Where Company_Id =  $companyid";
             ?>
-            <table id="list_fb" class="table table-bordered table-striped">
+            <table id="list_fb" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
                 <th style="width:5%;">No.</th>
@@ -535,22 +535,22 @@ if($Is_supplier_company == "1"){
                     <tr>
                       <td><?php echo $count;?></td>
                       <td>
-                        <table width="200px" class="table ">
+                        <table width="200px" class="table smaller_font_table">
                           <tbody>
                             <tr>
-                              <td><b>Speed of Quotation :</b></td>
+                              <td>Speed of Quotation :</td>
                               <td><span class="stars"><?php echo $tmpSOQ; ?></span></td>
                             </tr>
                             <tr>
-                              <td><b>Speed of Delivery :</b></td>
+                              <td>Speed of Delivery :</td>
                               <td><span class="stars"><?php echo $tmpSOD; ?></span></td>
                             </tr>
                             <tr>
-                              <td><b>Service Quality :</b></td>
+                              <td>Service Quality :</td>
                               <td><span class="stars"><?php echo $tmpSQ; ?></span></td>
                             </tr>
                             <tr>
-                              <td><b>Price :</b></td>
+                              <td>Price :</td>
                               <td><span class="stars"><?php echo $tmpPrice; ?></span></td>
                             </tr>
                           </tbody>
@@ -558,7 +558,7 @@ if($Is_supplier_company == "1"){
                         </table>
                       </td>
                       <td><?php  echo $row["UserName"] ."<br> (".$row["Name"].")";?></td>
-                      <td> <b> <?php echo $row["Title"];?></b> <p><?php echo $row["Description"];?></p> </td>
+                      <td> <?php echo $row["Title"];?></b> <p><?php echo $row["Description"];?> </td>
                     </tr>
                     <?php
                     //echo $row["Description"];
