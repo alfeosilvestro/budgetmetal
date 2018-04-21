@@ -229,9 +229,11 @@ $db = new PdoWrapper($dbConfig);
 																	placeholder="Password to sign in later">
 																</div>
 																<div id="selTags" class="form-group">
-																	<label title="Please select Capabilities, and Related Industry of your company.">Capabilities, and Related Industry</label>
+																	<label title="Please select services and business segment.">
+																		My services and business segment
+																	</label>
 																	<select class="form-control select2" multiple="multiple"
-																	title="Please select Capabilities, and Related Industry of your company."
+																	title="Please select services and business segment."
 																	style="width: 100%;"
 																	data-bind="value: tags, valueUpdate: 'blur'" name="tagList[]">
 																	<?php
