@@ -47,7 +47,7 @@ $status = "Draft";
 
     <div class="col-sm-6">
       <div  style="margin-top: 20px; margin-bottom: 10px;">
-        <button type="button" id="btnsubmit_rfq_top" class="btn btn-success pull-right">Submit</button>
+        <button type="button" id="btnsubmit_rfq_top" class="btn btn-success pull-right">Request for Quotation</button>
         <div class="pull-right">&nbsp;</div>
         <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_top" >Save as Draft</button>
       </div>
@@ -447,7 +447,7 @@ Width
 
     <div class="col-sm-12">
       <div style="margin-top: 20px; margin-bottom: 10px;">
-        <button type="button" id="btnsubmit_rfq_bot" class="btn btn-success pull-right">Submit</button>
+        <button type="button" id="btnsubmit_rfq_bot" class="btn btn-success pull-right">Request for Quotation</button>
         <div class="pull-right">&nbsp;</div>
         <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_bot" >Save as Draft</button>
       </div>
