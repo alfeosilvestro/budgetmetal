@@ -53,7 +53,7 @@ if (isset($result)){
 ?>
 <!-- Main content -->
 <section class="content">
-  <h1>
+  <h1 style="font-variant: small-caps; text-transform: uppercase;">
     <?php echo $company_name; ?>
   </h1>
 
