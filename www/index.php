@@ -16,7 +16,7 @@
     <!-- Stylesheet
         ================================================== -->
     <link rel="stylesheet" type="text/css" href="css/style.css?v=20180410">
-    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/budgetMetalServices.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
 
@@ -280,7 +280,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_ArchitectureStructure.jpg"
                                title="Architecture Structure"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Custom Fabrication</h4>
                                     <p>Architecture Structure</p>
@@ -297,7 +297,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_Ducting_Sauna.jpg"
                                title="Ducting"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Custom Fabrication</h4>
                                     <p>Ducting</p>
@@ -312,7 +312,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_OffshoreStructure_sauna.jpg"
                                title="Offshore Structure"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Custom Fabrication</h4>
                                     <p>Offshore Structure</p>
@@ -327,7 +327,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_Railing_sauna.jpg"
                                title="Railing"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Custom Fabrication</h4>
                                     <p>Railing</p>
@@ -342,7 +342,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_Skid_sauna.jpg"
                                title="Skid"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Custom Fabrication</h4>
                                     <p>Skid</p>
@@ -357,7 +357,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_Storage_Cage_sauna.jpg"
                                title="Storage Cage"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Custom Fabrication</h4>
                                     <p>Storage Cage</p>
@@ -372,7 +372,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_Tanks_sauna.jpg"
                                title="Tanks"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Custom Fabrication</h4>
                                     <p>Tanks</p>
@@ -387,7 +387,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_StructuralSteel.jpg"
                                title="Structural Steel"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Custom Fabrication</h4>
                                     <p>Structural Steel</p>
@@ -403,7 +403,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Materials_AngleBar.jpg" title="Angle Bar"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Materials</h4>
                                     <p>Angle Bar</p>
@@ -417,7 +417,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Materials_HollowSection.jpg" title="Hollow Section"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Materials</h4>
                                     <p>Hollow Section</p>
@@ -431,7 +431,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Materials_I_Beam.jpg" title="I Beam"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Materials</h4>
                                     <p>I Beam</p>
@@ -445,7 +445,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Materials_Pipe.jpg" title="Pipe"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Materials</h4>
                                     <p>Pipe</p>
@@ -459,7 +459,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Materials_Plate.jpg" title="Plate"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Materials</h4>
                                     <p>Plate</p>
@@ -473,7 +473,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Materials_Plate_2.jpg" title="Plate"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Materials</h4>
                                     <p>Plate</p>
@@ -487,7 +487,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Materials_Rod.jpg" title="Rod"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Materials</h4>
                                     <p>Rod</p>
@@ -501,7 +501,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Materials_SteelBar.jpg" title="Steel Bar"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Materials</h4>
                                     <p>Steel Bar</p>
@@ -518,7 +518,7 @@
                         <div class="hover-bg">
                             <a href="img/services/FabricationServices_Bending.jpg"
                                title="Bending"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Fabrication Services</h4>
                                     <p>Bending</p>
@@ -533,7 +533,7 @@
                         <div class="hover-bg">
                             <a href="img/services/FabricationServices_LaserCutting_neo.jpg"
                                title="Laser Cutting"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Fabrication Services</h4>
                                     <p>Laser Cutting</p>
@@ -548,7 +548,7 @@
                         <div class="hover-bg">
                             <a href="img/services/FabricationServices_Cutting_neo.jpg"
                                title="Cutting"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Fabrication Services</h4>
                                     <p>Cutting</p>
@@ -563,7 +563,7 @@
                         <div class="hover-bg">
                             <a href="img/services/FabricationServices_Machining_neo.jpg"
                                title="Machining"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Fabrication Services</h4>
                                     <p>Machining</p>
@@ -578,7 +578,7 @@
                         <div class="hover-bg">
                             <a href="img/services/FabricationServices_PlasmaCutting_neo.jpg"
                                title="Plasma Cutting"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Fabrication Services</h4>
                                     <p>Plasma Cutting</p>
@@ -593,7 +593,7 @@
                         <div class="hover-bg">
                             <a href="img/services/FabricationServices_Rolling_neo.png"
                                title="Rolling"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Fabrication Services</h4>
                                     <p>Rolling</p>
@@ -609,7 +609,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Testing_Destructive.jpg" title="Destructive"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Testing</h4>
                                     <p>Destructive</p>
@@ -623,7 +623,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Testing_NonDestructive.jpg" title="Non-destructive"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Testing</h4>
                                     <p>Non-destructive</p>
@@ -639,7 +639,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Finishing_Anodised.jpg" title="Anodised"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Finishing</h4>
                                     <p>Anodised</p>
@@ -653,7 +653,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Finishing_Galvanised.jpg" title="Galvanised"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Finishing</h4>
                                     <p>Galvanised</p>
@@ -667,7 +667,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Finishing_HotDip.jpg" title="Hot Dip"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Finishing</h4>
                                     <p>Hot Dip</p>
@@ -681,7 +681,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Finishing_Paint.jpg" title="Paint"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Finishing</h4>
                                     <p>Paint</p>
@@ -695,7 +695,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Finishing_Painting.jpg" title="Painting"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Finishing</h4>
                                     <p>Painting</p>
@@ -709,7 +709,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Finishing_PowderCoating.jpg" title="Power Coating"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Finishing</h4>
                                     <p>Power Coating</p>
@@ -726,7 +726,7 @@
                         <div class="hover-bg">
                             <a href="img/services/Logistics_Loading_Unloading.jpg"
                                title="Loading & Unloading"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Logistics</h4>
                                     <p>Loading &amp; Unloading</p>
@@ -740,7 +740,7 @@
                     <div class="portfolio-item">
                         <div class="hover-bg">
                             <a href="img/services/Logistics_Transport.jpg" title="Transport"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>Logistics</h4>
                                     <p>Transport</p>
@@ -757,7 +757,7 @@
                         <div class="hover-bg">
                             <a href="img/services/2D_01.png"
                                title="2D Modelling"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>2D Modelling</p>
@@ -772,7 +772,7 @@
                         <div class="hover-bg">
                             <a href="img/services/2D_02.png"
                                title="2D Modelling"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>2D Modelling</p>
@@ -787,7 +787,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CAD01.png"
                                title="3D Modelling"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>3D Modelling</p>
@@ -802,7 +802,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CAD02.png"
                                title="3D Modelling"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>3D Modelling</p>
@@ -817,7 +817,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CAD03.png"
                                title="3D Modelling"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>3D Modelling</p>
@@ -832,7 +832,7 @@
                         <div class="hover-bg">
                             <a href="img/services/Render01A.png"
                                title="Printing"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>Modelling and Simulation</p>
@@ -847,7 +847,7 @@
                         <div class="hover-bg">
                             <a href="img/services/Render02A.png"
                                title="3D Modelling"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>3D Modelling</p>
@@ -864,7 +864,7 @@
                         <div class="hover-bg">
                             <a href="img/services/CustomFabrication_Ducting_Sauna.jpg"
                                title="3D Metal Printing"
-                               rel="prettyPhoto">
+                               rel="budgetMetalServices">
                                 <div class="hover-text">
                                     <h4>3D Metal Printing</h4>
                                     <p>Professional metal printing</p>
@@ -961,7 +961,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/SmoothScroll.js"></script>
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.budgetMetalServices.js"></script>
 <script type="text/javascript" src="js/jquery.isotope.js"></script>
 <script type="text/javascript" src="js/jquery.parallax.js"></script>
 <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
