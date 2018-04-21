@@ -206,9 +206,9 @@ if (isset($result)){
                 ?>
                 <tr>
                   <!-- <td><?php echo $count; ?></td> -->
-                  <td><?php echo $row["Name"];?></td>
-                  <td><?php echo $row["Reg_No"];?></td>
-                  <td><?php echo $row["Address"];?></td>
+                  <td style="font-size: 14px; !important"><?php echo $row["Name"];?></td>
+                  <td style="font-size: 14px; !important"><?php echo $row["Reg_No"];?></td>
+                  <td style="font-size: 14px; !important"><?php echo $row["Address"];?></td>
                   <td><?php
 
                   $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a> ';
