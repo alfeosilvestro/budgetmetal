@@ -870,7 +870,7 @@
                                     <p>Professional metal printing</p>
                                 </div>
                                 <img src="img/services/3D_MetalPrint.png"
-                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                                     class="img-responsive" alt="3D Metal Printing"> </a></div>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 3dmetalprinting isotope-item"
@@ -885,7 +885,7 @@
                                     <p>Professional metal printing</p>
                                 </div>
                                 <img src="img/services/3D_MetalPrint02.png"
-                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                                     class="img-responsive" alt="3D Metal Printing"> </a></div>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 3dmetalprinting isotope-item"
@@ -900,7 +900,7 @@
                                     <p>Professional metal printing</p>
                                 </div>
                                 <img src="img/services/3D_MetalPrint03.png"
-                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                                     class="img-responsive" alt="3D Metal Printing"> </a></div>
                     </div>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 3dmetalprinting isotope-item"
@@ -915,7 +915,7 @@
                                     <p>Professional metal printing</p>
                                 </div>
                                 <img src="img/services/3D_MetalPrint04.png"
-                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                                     class="img-responsive" alt="3D Metal Printing"> </a></div>
                     </div>
                 </div>
                 
