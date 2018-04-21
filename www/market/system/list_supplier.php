@@ -188,7 +188,7 @@ if (isset($result)){
         <table id="supplier_lists" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th>No.</th>
+              <!-- <th>No.</th> -->
               <th>Company Name</th>
               <th>Registration No.</th>
               <th>Address</th>
@@ -205,7 +205,7 @@ if (isset($result)){
                 $count = $count+1;
                 ?>
                 <tr>
-                  <td><?php echo $count; ?></td>
+                  <!-- <td><?php echo $count; ?></td> -->
                   <td><?php echo $row["Name"];?></td>
                   <td><?php echo $row["Reg_No"];?></td>
                   <td><?php echo $row["Address"];?></td>
