@@ -54,7 +54,7 @@ if (isset($result)){
       }
     }
 
-    $sql = "SELECT t1.username, t1.EmailAddress, t3.Name, t3.Reg_No FROM `m_user` t1  INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$rfq_userid;
+    $sql = "SELECT t1.username, t1.EmailAddress, t3.Name, t3.Reg_No, t3.Id FROM `m_user` t1  INNER JOIN `m_company` t3 ON t3.id = t1.M_Company_Id  where t1.id = ".$rfq_userid;
     $result = $conn->query($sql);
     if (isset($result)){
       if ($result->num_rows > 0) {
@@ -64,6 +64,7 @@ if (isset($result)){
           $email =  $row["EmailAddress"];
           $company_name = $row["Name"];
           $reg_no = $row["Reg_No"];
+          $company_id = $row["Id"];
         }
       }
     }
@@ -513,6 +514,7 @@ if (isset($result)){
 
                         </tbody>
                       </table>
+                      <div class="text-center"> <button id="btnShowMore" type="button" name="button" class="btn btn-info">Show More Supplier</button> </div>
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tab_selectedsuppliers">
@@ -618,12 +620,12 @@ if (isset($result)){
       var tmp = res[1] + "-" + res[0] + "-" + res[2];
 
       $('#due_datepicker').datepicker({
-        startDate : new Date(tmp),
+        startDate : "today",
         format: "dd-mm-yyyy",
         autoclose: true,
         todayHighlight: true,
       });
-
+      searchsupplier();
       // $('button[id=addfilelist]').click(function(){
       //   var fileno = $("input[id=fileno]").val();
       //   var file_data = $('#rfq_upload').prop('files')[0];
@@ -977,8 +979,7 @@ if (isset($result)){
       var servicesid= "0";
       for(var i=1; i<rowLength; i+=1){
         var row = table.rows[i];
-        var serviceid = row.getElementsByTagName("input")[5];
-
+        var serviceid = row.getElementsByTagName("input")[0];
         servicesid = servicesid + "," +serviceid.value;
       }
 
@@ -1000,7 +1001,126 @@ if (isset($result)){
 
     });
 
+    $('button[id=btnShowMore]').click(function(){
+      searchsupplier_loadmore();
+
+    });
+
     function searchsupplier(){
+
+      var table_suppliers = document.getElementById('selected_suppliers');
+
+      var rowLength_supplier = table_suppliers.rows.length;
+      var selected_suppliers_id = "0";
+      for(var i=1; i<rowLength_supplier; i+=1){
+        var row = table_suppliers.rows[i];
+        var selected_suppliers = row.getElementsByTagName("input")[0];
+
+        selected_suppliers_id = selected_suppliers_id + "," +selected_suppliers.value;
+      }
+
+
+      var table = document.getElementById('servicelist');
+
+      var rowLength = table.rows.length;
+      var servicesid= "0";
+      for(var i=1; i<rowLength; i+=1){
+        var row = table.rows[i];
+        var serviceid = row.getElementsByTagName("input")[0];
+        servicesid = servicesid + "," +serviceid.value;
+      }
+    $("#search_suppliers tbody").find('tr').remove().end();
+    var rowCount = $('#search_suppliers tbody tr').length;
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          $("#search_suppliers tbody").append(this.responseText);
+          rowCount = $('#search_suppliers tbody tr').length;
+          // if(rowCount > 0){
+          //   var x = rowCount;
+          //   var y = 20;
+          //   var z = x % y;
+          //   if(z == 0){
+          //     $('#btnShowMore').show();
+          //   }else{
+          //     $('#btnShowMore').hide();
+          //   }
+          // }else{
+          //    $('#btnShowMore').hide();
+          // }
+          if(this.responseText == ""){
+            $('#btnShowMore').hide();
+          }else{
+            $('#btnShowMore').show();
+          }
+        }
+      };
+      xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount=0",true);
+      xmlhttp.send();
+    }
+
+    function searchsupplier_loadmore(){
+      var table_suppliers = document.getElementById('selected_suppliers');
+
+      var rowLength_supplier = table_suppliers.rows.length;
+      var selected_suppliers_id = "0";
+      for(var i=1; i<rowLength_supplier; i+=1){
+        var row = table_suppliers.rows[i];
+        var selected_suppliers = row.getElementsByTagName("input")[0];
+
+        selected_suppliers_id = selected_suppliers_id + "," +selected_suppliers.value;
+      }
+
+      var rowCount = $('#search_suppliers tbody tr').length;
+      var table = document.getElementById('servicelist');
+
+      var rowLength = table.rows.length;
+      var servicesid= "0";
+      for(var i=1; i<rowLength; i+=1){
+        var row = table.rows[i];
+        var serviceid = row.getElementsByTagName("input")[0];
+        servicesid = servicesid + "," +serviceid.value;
+      }
+
+      if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          //$("#search_suppliers tbody").find('tr').remove().end();
+          //rowCount = $('#search_suppliers tbody tr').length;
+          $("#search_suppliers tbody").append(this.responseText);
+          rowCount = $('#search_suppliers tbody tr').length;
+          if(rowCount > 0){
+            var x = rowCount;
+            var y = 20;
+            var z = x % y;
+            if(z == 0){
+              $('#btnShowMore').show();
+            }else{
+              $('#btnShowMore').hide();
+            }
+
+          }else{
+             $('#btnShowMore').hide();
+          }
+          if(this.responseText == ""){
+            $('#btnShowMore').hide();
+          }
+        }
+      };
+      xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
+      xmlhttp.send();
 
 
     }

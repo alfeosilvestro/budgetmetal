@@ -1,47 +1,12 @@
 <?php
 $date = date('YmdHis');
 $error = "";
+
 $po_letter_filename = "";
-if(isset($_FILES['file'])){
-  if ( 0 < $_FILES['file']['error'] ) {
-      //echo 'Error: ' . $_FILES['file']['error'] . '<br>';
-      //echo $_FILES['file']['error'];
-      $error = $_FILES['file']['error'];
-  }
-  else {
-      //$target = $_SERVER['DOCUMENT_ROOT'] . '/metalpolis_git/www/market/attachment/';
-      $doc_root = $_SERVER['DOCUMENT_ROOT'];
-      $target = $doc_root . "/market/attachment/";
-      //$target = $doc_root . "/budgetmetal/www/market/attachment/";
-      //// Folder check logic - Return error if upload folder not exists
-      if (!file_exists($target)) {
-        $error = "Directory Error";
-          return;
-      }
 
-      //// Catch error - return error if file upload has permission or other issues
-      try{
-        //// Logic - Upload file from memory to target file
-        move_uploaded_file($_FILES['file']['tmp_name'], $target.$date .'_'. $_FILES['file']['name']);
-
-      }catch(Exception $e){
-        //// Result - Fail
-          $error = $date .'_'. $_FILES['file']['name'];
-
-      }
-      $po_letter_filename = $date .'_'. $_FILES['file']['name'];
-
-
-      //  echo $date .'_'. $_FILES['file']['name'];
-      //// Result - Success
-      //echo json_encode(array('status' => 'Success', 'message' =>$date .'_'. $_FILES['file']['name'], 'doc root' => $doc_root, 'upload path' => $target));
-  }
-}else{
-  $error = "No file";
-}
 if($error == ""){
-  include("../dbcon.php");
-	 include_once('../lib/pdowrapper/class.pdowrapper.php');
+  include("dbcon.php");
+	 include_once('lib/pdowrapper/class.pdowrapper.php');
 	 $dbConfig = array("host" => $server, "dbname" => $database, "username" => $db_user, "password" => $db_pass);
    date_default_timezone_set("Asia/Singapore");
 	// get instance of PDO Wrapper object
@@ -54,6 +19,10 @@ if($error == ""){
   $dataArray = array( 'C_QuotationStatus' => "18",'ModifiedDate' => $ModifiedDate,'ModifiedBy' => $ModifiedBy);
   $db->update('t_document', $dataArray,$where);
 
+
+  $po_letter_filename =  $_POST['attachment'];
+  $target = $doc_root . "/market/attachment/";
+  
   $where = array('Document_Id' => $Id);
   $dataArray = array( 'PO_Letter' => $po_letter_filename);
   $db->update('t_supplierquotation', $dataArray,$where);
@@ -125,7 +94,7 @@ $email = $selected_buyer_EmailAddress;
 sendEmailforNotification($email,$Subject, $Message,"Quotation",$Id, $target.$po_letter_filename);
 
 
-header("location:../index.php?rdp=view_quotation&id=".$Id);
+header("location:index.php?rdp=view_quotation&id=".$Id);
 }else{
   echo $error;
 }
@@ -136,7 +105,7 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id,$a
 	error_reporting(E_ERROR);
 	date_default_timezone_set('Asia/Singapore');
 
-	require_once('../../class.phpmailer.php');
+	require_once('../class.phpmailer.php');
 	//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
 
 	$host = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
@@ -188,7 +157,7 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id,$a
 	// $mail->AltBody    = $message . $sitelink; // optional, comment out and test
   //
 	// $mail->MsgHTML($message.$sitelink);
-  $content = file_get_contents('../contents.html');
+  $content = file_get_contents('contents.html');
   $content = str_replace("[message]",$message,$content);
   $content = str_replace("[actual_link]",$actual_link,$content);
   // $content             = eregi_replace("[message]",'',$message);
