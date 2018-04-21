@@ -54,7 +54,7 @@ if (isset($result)){
 <!-- Main content -->
 <section class="content">
   <h1>
-    Company Profile
+    <?php echo $company_name; ?>
   </h1>
 
   <section class="content">
@@ -65,7 +65,6 @@ if (isset($result)){
 
             <div class="row">
               <div class="col-md-8">
-                <b><?php echo $company_name; ?></b>
                 <span class='text-sm text-primary'>
                 <?php
 
@@ -136,20 +135,27 @@ if (isset($result)){
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="box box-primary">
           <div class="box-header">
-            <h4><i class="fa fa-book margin-r-5"></i> Details</h4>
-            <div class="pull-right">
-              <?php
+          <div class="row">
+              <div class="col-md-6">
+                <h4><i class="fa fa-book margin-r-5"></i> Details</h4>
+              </div>
+              <div class="col-md-6">
+                <div class="pull-right">
+                  <?php
 
-              if($company_admin == 1){
-                ?>
-                <a href="#" id="btnEditProfile" class="btn btn-info"  onclick="EditProfile()">
-                  <i class="fa fa-pencil-square-o"></i>
-                </a>
-                <?php
-              }
+                  if($company_admin == 1){
+                    ?>
+                    <a href="#" id="btnEditProfile" class="btn btn-info"  onclick="EditProfile()">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <?php
+                  }
 
-              ?>
+                  ?>
+                </div>
+              </div>
             </div>
+            
           </div>
           <div class="box-body">
             <strong>UEN No.</strong> : <?php echo $reg_no; ?>
@@ -166,32 +172,14 @@ if (isset($result)){
               $result = $conn->query($sql);
               if (isset($result)){
                 if ($result->num_rows > 0) {
-                  // output data of each row
-                  // echo '<br/><ul class="list-group">';
-                  // while($row = $result->fetch_assoc()) {
-                  //   $TagName = $row["TagName"];
-                  //   echo '<li class="list-group-item">'.$TagName.'</li>';
-                  // }
-                  // echo '</ul>';
-                  $col_Count = 0;
+                  
                   echo '<br/><table class="smaller_font_table"><tr><td>';
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    //echo '<div class="col-md-4" style="padding: 0px important;"><div class="d-inline p-2 bg-primary text-white text-sm" style="width: 100%; margin-bottom:8px; padding: 5px;">'.$TagName.'</div></div>';
                     echo '<span class="badge badge-sm bg-primary" style="margin: 2px;">'. $TagName .'</span>';
-                    // $col_Count++;
-                    // if($col_Count / 3 == 0)
-                    // {
-                    //   $col_Count = 0;
-                    // }
                   }
                   echo '</td></tr></table>';
-                  // echo '<br/><div class="row">';
-                  // while($row = $result->fetch_assoc()) {
-                  //   $TagName = $row["TagName"];
-                  //   echo '<div class="col-md-4" style="padding: 0px important;"><div class="d-inline p-2 bg-primary text-white text-sm" style="width: 100%; margin-bottom:8px; padding: 5px;">'.$TagName.'</div></div>';
-                  // }
-                  // echo '</div>';
+                  
                 }
               }
             }
@@ -316,27 +304,30 @@ if($Is_supplier_company == "1"){
       <div class="col-md-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-              <h3 class="box-title">Services</h3>
 
-              <div class="box-tools pull-right">
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                  </button>
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="box-title">Services</h3>
               </div>
+              <div class="col-md-6">
+                <div class="pull-right">
+                  <?php
+
+                  if($company_admin == 1){
+                    ?>
+                    <a href="#" id="btnEditService" class="btn btn-info"  onclick="EditService()">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <?php
+                  }
+
+                  ?>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="box-body" style="height: 250px; overflow-y: auto;">
-            <div class="pull-right">
-              <?php
-
-              if($company_admin == 1){
-                ?>
-                <a href="#" id="btnEditService" class="btn btn-info"  onclick="EditService()">
-                  <i class="fa fa-pencil-square-o"></i>
-                </a>
-                <?php
-              }
-
-              ?>
-            </div>
+            
             <ul>
               <?php
               $sql = "SELECT t1.`M_Services_Id`, t2.ServiceName FROM `md_supplierservices` t1 INNER JOIN m_services t2 ON t1.`M_Services_Id` = t2.Id Where t2.Status = 1 and t2.M_Parent_Services_Id is null and t1.`M_Company_Id` = ".$companyid;

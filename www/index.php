@@ -862,17 +862,63 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/CustomFabrication_Ducting_Sauna.jpg"
+                            <a href="img/services/3D_MetalPrint.png"
                                title="3D Metal Printing"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>3D Metal Printing</h4>
                                     <p>Professional metal printing</p>
                                 </div>
-                                <img src="img/services/CustomFabrication_Ducting_Sauna.jpg"
+                                <img src="img/services/3D_MetalPrint.png"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
                     </div>
                 </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 3dmetalprinting isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/3D_MetalPrint02.png"
+                               title="3D Metal Printing"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>3D Metal Printing</h4>
+                                    <p>Professional metal printing</p>
+                                </div>
+                                <img src="img/services/3D_MetalPrint02.png"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 3dmetalprinting isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/3D_MetalPrint03.png"
+                               title="3D Metal Printing"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>3D Metal Printing</h4>
+                                    <p>Professional metal printing</p>
+                                </div>
+                                <img src="img/services/3D_MetalPrint03.png"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 3dmetalprinting isotope-item"
+                     style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="img/services/3D_MetalPrint04.png"
+                               title="3D Metal Printing"
+                               rel="prettyPhoto">
+                                <div class="hover-text">
+                                    <h4>3D Metal Printing</h4>
+                                    <p>Professional metal printing</p>
+                                </div>
+                                <img src="img/services/3D_MetalPrint04.png"
+                                     class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
+                    </div>
+                </div>
+                
 
             </div>
         </div>
