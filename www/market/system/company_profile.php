@@ -135,8 +135,11 @@ if (isset($result)){
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="box box-primary">
+          <div class="box-header">
+            <h4><i class="fa fa-book margin-r-5"></i> Details</h4>
+          </div>
           <div class="box-body">
-            <strong><i class="fa fa-book margin-r-5"></i> UEN No.</strong> : <?php echo $reg_no; ?>
+            <strong>UEN No.</strong> : <?php echo $reg_no; ?>
             <div class="pull-right">
               <?php
 
@@ -151,7 +154,7 @@ if (isset($result)){
               ?>
             </div>
             <br><br>
-            <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong> : <br>
+            <strong>Address</strong> : <br>
             <?php echo $Address; ?>
             <br>
             <br>
@@ -186,6 +189,9 @@ if (isset($result)){
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="box box-primary">
+          <div class="box-header">
+            <h4><i class="glyphicon glyphicon-star"></i> Rating</h4>
+          </div>
           <div class="box-body">
             <style media="screen">
               span.stars, span.stars span {
@@ -199,8 +205,7 @@ if (isset($result)){
                 background-position: 0 0;
               }
             </style>
-            <h4><i class="glyphicon glyphicon-star"></i> Rating</h4>
-            <br><br>
+            
             <table width="100%" class="table smaller_font_table">
               <tbody>
                 <?php
@@ -264,9 +269,10 @@ if (isset($result)){
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="box box-primary">
-          <div class="box-body">
+          <div class="box-header">
             <h4><i class="glyphicon glyphicon-bullhorn"></i> Feedbacks</h4>
-            <br>
+          </div>
+          <div class="box-body">
             <div class="text-center">
 
                 <?php
