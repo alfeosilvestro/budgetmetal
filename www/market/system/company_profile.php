@@ -64,8 +64,10 @@ if (isset($result)){
         <div class="box-header">
 
           <div class="row">
+            <div class="col-md-2">
+              <h3>About</h3>
+            </div>
               <div class="col-md-8">
-                <h3>About</h3>
                 <span class='text-sm text-primary'>
                 <?php
 
@@ -81,7 +83,7 @@ if (isset($result)){
                 ?>
                 </span>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-2">
                 <div class="pull-right">
                   <?php
 
