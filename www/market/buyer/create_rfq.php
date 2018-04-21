@@ -46,10 +46,11 @@ $status = "Draft";
   </div>
 
     <div class="col-sm-6">
-      <button type="button" id="btnsubmit_rfq_top" class="btn btn-success pull-right">Submit</button>
-      <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_top" >Save as Draft</button>
-
-      
+      <div  style="margin-top: 20px; margin-bottom: 10px;">
+        <button type="button" id="btnsubmit_rfq_top" class="btn btn-success pull-right">Submit</button>
+        &nbsp;
+        <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_top" >Save as Draft</button>
+      </div>
     </div>
   </div>
 
@@ -445,11 +446,12 @@ Width
   <div class="row">
 
     <div class="col-sm-12">
-      <div class="btn-group pull-right">
-        <button type="button" class="btn btn-success" id="btnsave_rfq_bot" >Save as Draft</button>
-
-        <button type="button" id="btnsubmit_rfq_bot" class="btn btn-warning">Submit</button>
+      <div style="margin-top: 20px; margin-bottom: 10px;">
+        <button type="button" id="btnsubmit_rfq_bot" class="btn btn-success pull-right">Submit</button>
+        &nbsp;
+        <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_bot" >Save as Draft</button>
       </div>
+      
     </div>
   </div>
 </form>
