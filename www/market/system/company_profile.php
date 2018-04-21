@@ -137,9 +137,6 @@ if (isset($result)){
         <div class="box box-primary">
           <div class="box-header">
             <h4><i class="fa fa-book margin-r-5"></i> Details</h4>
-          </div>
-          <div class="box-body">
-            <strong>UEN No.</strong> : <?php echo $reg_no; ?>
             <div class="pull-right">
               <?php
 
@@ -153,6 +150,9 @@ if (isset($result)){
 
               ?>
             </div>
+          </div>
+          <div class="box-body">
+            <strong>UEN No.</strong> : <?php echo $reg_no; ?>
             <br><br>
             <strong>Address</strong> : <br>
             <?php echo $Address; ?>

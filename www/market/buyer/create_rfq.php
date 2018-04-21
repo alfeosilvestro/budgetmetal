@@ -98,8 +98,8 @@ $status = "Draft";
             <input name="subject" type="text" class="form-control" placeholder="Please enter project name">
           </div>
           <div class="form-group">
-            <input type="checkbox" name="chk_material" > <label>Supplier Provide Materials </label><br>
-            <input type="checkbox" name="chk_transport"> <label>Supplier Provide Transport </label>
+            <input type="checkbox" name="chk_material" > <label>Supplier to Provide Materials </label><br>
+            <input type="checkbox" name="chk_transport"> <label>Supplier to Provide Transport </label>
           </div>
         </div>
         <div class="col-sm-6">

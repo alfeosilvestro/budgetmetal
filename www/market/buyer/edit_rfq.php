@@ -138,8 +138,8 @@ if (isset($result)){
                 <input name="subject" type="text" value="<?php echo $rfq_subject;?>" class="form-control" placeholder="Please enter project name">
               </div>
               <div class="form-group">
-                <input type="checkbox" name="chk_material" <?php echo $Supplier_Provide_Material;?>> <label>Supplier Provide Materials </label><br>
-                <input type="checkbox" name="chk_transport" <?php echo $Supplier_Provide_Transport;?>> <label>Supplier Provide Transport </label>
+                <input type="checkbox" name="chk_material" <?php echo $Supplier_Provide_Material;?>> <label>Supplier to Provide Materials </label><br>
+                <input type="checkbox" name="chk_transport" <?php echo $Supplier_Provide_Transport;?>> <label>Supplier to Provide Transport </label>
               </div>
             </div>
             <div class="col-sm-6">
