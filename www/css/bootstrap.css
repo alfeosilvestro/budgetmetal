@@ -6582,10 +6582,3 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-
-
-.smaller_font_table tbody tr td,
-.smaller_font_table tr td 
-{
-	font-size: 14px !important;
-}
