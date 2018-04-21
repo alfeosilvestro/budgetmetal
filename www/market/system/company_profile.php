@@ -61,10 +61,11 @@ if (isset($result)){
     <div class="row">
       <div class="col-md-12">
         <div class="box box-primary">
-          <div class="box-body">
+        <div class="box-header">
 
-            <div class="row">
+          <div class="row">
               <div class="col-md-8">
+                <h3>About</h3>
                 <span class='text-sm text-primary'>
                 <?php
 
@@ -96,7 +97,9 @@ if (isset($result)){
                 </div>
               </div>
             </div>
-            <br/>
+
+        </div>
+          <div class="box-body">
             <div class="row">
               <div class="col-md-12">
                   <!--AMK- Added for Tags-->
