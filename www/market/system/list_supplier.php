@@ -318,7 +318,7 @@ $("#btnInvite").click(function (e) {
         dataType: 'json',
         success: function (data) {
           if(data.success == true){
-            $("#notify .message").html("BudgetMetal has sent invitation to your prefer supplier.");
+            $("#notify .message").html("BudgetMetal has sent invitation to your prefered supplier.");
             $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
             $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
             $("#inviteEmail").val("");
