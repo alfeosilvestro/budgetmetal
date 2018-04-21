@@ -199,9 +199,9 @@ if (isset($result)){
                 background-position: 0 0;
               }
             </style>
-            <strong><i class="glyphicon glyphicon-star"></i> Rating</strong>
+            <h4><i class="glyphicon glyphicon-star"></i> Rating</h4>
             <br><br>
-            <table width="100%" class="table ">
+            <table width="100%" class="table smaller_font_table">
               <tbody>
                 <?php
                 $tmpSOQ = "0.0";
@@ -225,24 +225,24 @@ if (isset($result)){
                 //if($Is_supplier_company =="1"){
                   ?>
                   <tr>
-                    <td><b>Overall Rating :</b></td>
+                    <td>Overall Rating :</td>
                     <td><span class="stars"><?php echo  number_format($supplierRating); ?></span></td>
                   </tr>
 
                   <tr>
-                    <td><b>Speed of Quotation :</b></td>
+                    <td>Speed of Quotation :</td>
                     <td><span class="stars"><?php echo $tmpSOQ; ?></span></td>
                   </tr>
                   <tr>
-                    <td><b>Speed of Delivery :</b></td>
+                    <td>Speed of Delivery :</td>
                     <td><span class="stars"><?php echo $tmpSOD; ?></span></td>
                   </tr>
                   <tr>
-                    <td><b>Service Quality :</b></td>
+                    <td>Service Quality :</td>
                     <td><span class="stars"><?php echo $tmpSQ; ?></span></td>
                   </tr>
                   <tr>
-                    <td><b>Price :</b></td>
+                    <td>Price :</td>
                     <td><span class="stars"><?php echo $tmpPrice; ?></span></td>
                   </tr>
                   <?php
@@ -265,7 +265,7 @@ if (isset($result)){
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="box box-primary">
           <div class="box-body">
-            <strong><i class="glyphicon glyphicon-bullhorn"></i> Feedbacks</strong>
+            <h4><i class="glyphicon glyphicon-bullhorn"></i> Feedbacks</h4>
             <br>
             <div class="text-center">
 
