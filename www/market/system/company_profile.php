@@ -173,12 +173,25 @@ if (isset($result)){
                   //   echo '<li class="list-group-item">'.$TagName.'</li>';
                   // }
                   // echo '</ul>';
-                  echo '<br/><div class="row">';
+                  $col_Count = 0;
+                  echo '<br/><table class="smaller_font_table"><tr><td>';
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    echo '<div class="col-md-4" style="padding: 0px important;"><div class="d-inline p-2 bg-primary text-white text-sm" style="width: 100%; margin-bottom:8px; padding: 5px;">'.$TagName.'</div></div>';
+                    //echo '<div class="col-md-4" style="padding: 0px important;"><div class="d-inline p-2 bg-primary text-white text-sm" style="width: 100%; margin-bottom:8px; padding: 5px;">'.$TagName.'</div></div>';
+                    echo '<span class="badge badge-sm bg-primary" style="margin: 2px;">'. $TagName .'</span>';
+                    // $col_Count++;
+                    // if($col_Count / 3 == 0)
+                    // {
+                    //   $col_Count = 0;
+                    // }
                   }
-                  echo '</div>';
+                  echo '</td></tr></table>';
+                  // echo '<br/><div class="row">';
+                  // while($row = $result->fetch_assoc()) {
+                  //   $TagName = $row["TagName"];
+                  //   echo '<div class="col-md-4" style="padding: 0px important;"><div class="d-inline p-2 bg-primary text-white text-sm" style="width: 100%; margin-bottom:8px; padding: 5px;">'.$TagName.'</div></div>';
+                  // }
+                  // echo '</div>';
                 }
               }
             }
