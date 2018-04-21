@@ -43,11 +43,11 @@ if (isset($result)){
       <div class="box box-info">
         <div class="row" style="padding:5px;">
           <div class="col-md-12">
-            <h4>Name</h4>
+            <h5>Name</h5>
             <input type="text" name="sName" value="" id="sName" class="form-control">
           </div>
           <div class="col-md-12">
-            <h4>Tags</h4>
+            <h5>Tags</h5>
             <select class="form-control select2" multiple="multiple"
                 style="width: 100%;"
                 data-bind="value: tags, valueUpdate: 'blur'" name="tagList[]" id="tagList">
@@ -72,7 +72,7 @@ if (isset($result)){
             </select>
           </div>
           <div class="col-md-12">
-            <h4>Service</h4>
+            <h5>Service</h5>
             <div id="treeview-checkbox-demo">
               <ul>
                 <?php
@@ -172,7 +172,7 @@ if (isset($result)){
 
               <div class="message"></div>
             </div>
-            <h4>Invite your preferred Supplier to BudgetMetal</h4>
+            <h5>Invite your preferred Supplier to BudgetMetal</h5>
             <input type="email" name="inviteEmail" value="" id="inviteEmail" class="form-control">
             <br>
             <button type="button" class="btn btn-info" name="button" id="btnInvite" >Invite</button>
