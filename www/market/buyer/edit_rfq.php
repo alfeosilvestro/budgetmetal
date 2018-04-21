@@ -94,6 +94,9 @@ if (isset($result)){
           </div>
         </div>
       </div>
+    </div>
+      <br/>
+    <div class="row">
       <div class="box box-default">
         <div class="box-header with-border">
           <h3 class="box-title">RFQ Info</h3>

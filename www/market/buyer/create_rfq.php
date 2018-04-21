@@ -455,7 +455,9 @@ Width
     </div>
   </div>
 </form>
-
+</div>
+<br/>
+<div class="row">
 <script>
 $(function () {
   //Date picker
