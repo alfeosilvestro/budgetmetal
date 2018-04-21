@@ -245,7 +245,7 @@ $status = "Draft";
         <div class="col-sm-12">
           <div class="form-group">
             <label>Service Level 5</label>
-            <select id="services" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
+            <select id="services" class="form-control" size="5" style="word-wrap:break-word;width:100%;height:120px;">
 
             </select>
           </div>

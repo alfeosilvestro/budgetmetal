@@ -296,7 +296,7 @@ if (isset($result)){
         <!-- /.box-header -->
         <div class="box-body">
           <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label>Service Level 1</label>
                 <select id="servicecategory1" class="form-control" size="10" style="height:186px;" >
@@ -304,7 +304,7 @@ if (isset($result)){
                 </select>
               </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label>Service Level 2</label>
                 <select id="servicecategory2" class="form-control" size="10"  style="height:186px;" >
@@ -312,7 +312,7 @@ if (isset($result)){
                 </select>
               </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label>Service Level 3</label>
                 <select id="servicecategory3" class="form-control" size="10"  style="height:186px;" >
@@ -328,10 +328,10 @@ if (isset($result)){
                 </select>
               </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-12">
               <div class="form-group">
                 <label>Service Level 5</label>
-                <select id="services" class="form-control" size="10"  style="height:186px;" >
+                <select id="services" class="form-control" size="10"  style="height:120px;" >
 
                 </select>
               </div>
