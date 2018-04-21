@@ -71,7 +71,7 @@ if (isset($result)){
 
     ?>
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-6">
         <h3>
           Edit RFQ
         </h3>
@@ -81,21 +81,19 @@ if (isset($result)){
           <div class="message"></div>
         </div>
       </div>
+
+      <div class="col-sm-6">
+        <div class="btn-group pull-right">
+          <button type="button" class="btn btn-success" id="btnsave_rfq_top" >Save as Draft</button>
+
+          <button type="button" id="btnsubmit_rfq_top" class="btn btn-warning">Submit</button>
+        </div>
+      </div>
+
     </div>
 
     <form action="#" method="post" id="create_rfq" >
-      <div class="row">
-
-        <div class="col-sm-12">
-          <div class="btn-group pull-right">
-            <button type="button" class="btn btn-success" id="btnsave_rfq_top" >Save as Draft</button>
-
-            <button type="button" id="btnsubmit_rfq_top" class="btn btn-warning">Submit</button>
-          </div>
-        </div>
-      </div>
-    </div>
-      <br/>
+      
     <div class="row">
       <div class="box box-default">
         <div class="box-header with-border">
@@ -331,14 +329,14 @@ if (isset($result)){
                 </select>
               </div>
             </div>
-            <div class="col-sm-12">
+            <!-- <div class="col-sm-12">
               <div class="form-group">
                 <label>Service Level 5</label>
                 <select id="services" class="form-control" size="10"  style="height:120px;" >
 
                 </select>
               </div>
-            </div>
+            </div> -->
 
           </div>
           <div class="row">

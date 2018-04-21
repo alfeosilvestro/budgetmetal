@@ -34,7 +34,7 @@ $rfq_ref = "";
 $status = "Draft";
 ?>
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-sm-6">
     <h3>
       Create RFQ
     </h3>
@@ -44,18 +44,17 @@ $status = "Draft";
       <div class="message"></div>
     </div>
   </div>
-</div>
 
-<form action="#" method="post" id="create_rfq" >
-  <div class="row">
+    <div class="col-sm-6">
+      <button type="button" id="btnsubmit_rfq_top" class="btn btn-success pull-right">Submit</button>
+      <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_top" >Save as Draft</button>
 
-    <div class="col-sm-12">
-      <button type="button" class="btn btn-info" id="btnsave_rfq_top" >Save as Draft</button>
-
-      <button type="button" id="btnsubmit_rfq_top" class="btn btn-success">Submit</button>
+      
     </div>
   </div>
-  <br/>
+
+<form action="#" method="post" id="create_rfq" >
+  
   <div class="box box-default">
     <div class="box-header with-border">
       <h3 class="box-title">RFQ Info</h3>
@@ -241,14 +240,14 @@ $status = "Draft";
             </select>
           </div>
         </div>
-        <div class="col-sm-12">
+        <!-- <div class="col-sm-12">
           <div class="form-group">
             <label>Service Level 5</label>
             <select id="services" class="form-control" size="5" style="word-wrap:break-word;width:100%;height:120px;">
 
             </select>
           </div>
-        </div>
+        </div> -->
 
       </div>
       <div class="row">
