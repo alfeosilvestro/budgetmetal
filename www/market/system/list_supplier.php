@@ -43,11 +43,11 @@ if (isset($result)){
       <div class="box box-info">
         <div class="row" style="padding:5px;">
           <div class="col-md-12">
-            <h4>Name</h4>
+            <h5>Name</h5>
             <input type="text" name="sName" value="" id="sName" class="form-control">
           </div>
           <div class="col-md-12">
-            <h4>Tags</h4>
+            <h5>Tags</h5>
             <select class="form-control select2" multiple="multiple"
                 style="width: 100%;"
                 data-bind="value: tags, valueUpdate: 'blur'" name="tagList[]" id="tagList">
@@ -72,7 +72,7 @@ if (isset($result)){
             </select>
           </div>
           <div class="col-md-12">
-            <h4>Service</h4>
+            <h5>Service</h5>
             <div id="treeview-checkbox-demo">
               <ul>
                 <?php
@@ -82,7 +82,7 @@ if (isset($result)){
                   if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                      echo "<li data-value='". $row["Id"] ."'>" . $row["ServiceName"] ;
+                      echo "<li data-value='". $row["Id"] ."'>&nbsp;" . $row["ServiceName"] ;
                       $servicecategory1id = $row["Id"];
                       $sql1 = "SELECT * FROM `m_services` where Status = 1 and  M_Parent_Services_Id = ".$servicecategory1id ;
                       $result1 = $conn->query($sql1);
@@ -91,7 +91,7 @@ if (isset($result)){
                           echo "<ul>";
                           // output data of each row
                           while($row1 = $result1->fetch_assoc()) {
-                            echo "<li data-value='". $row1["Id"] ."'>" . $row1["ServiceName"] ;
+                            echo "<li data-value='". $row1["Id"] ."'>&nbsp;" . $row1["ServiceName"] ;
                             $servicecategory1id1 = $row1["Id"];
                             $sql2 = "SELECT * FROM `m_services` where Status = 1 and  M_Parent_Services_Id = ".$servicecategory1id1 ;
                             $result2 = $conn->query($sql2);
@@ -100,7 +100,7 @@ if (isset($result)){
                                 echo "<ul>";
                                 // output data of each row
                                 while($row2 = $result2->fetch_assoc()) {
-                                  echo "<li data-value='". $row2["Id"] ."'>" . $row2["ServiceName"] ;
+                                  echo "<li data-value='". $row2["Id"] ."'>&nbsp;" . $row2["ServiceName"] ;
                                   $servicecategory1id2 = $row2["Id"];
                                   $sql3 = "SELECT * FROM `m_services` where Status = 1 and  M_Parent_Services_Id = ".$servicecategory1id2 ;
                                   $result3 = $conn->query($sql3);
@@ -109,7 +109,7 @@ if (isset($result)){
                                       echo "<ul>";
                                       // output data of each row
                                       while($row3 = $result3->fetch_assoc()) {
-                                        echo "<li data-value='". $row3["Id"] ."'>" . $row3["ServiceName"] ;
+                                        echo "<li data-value='". $row3["Id"] ."'>&nbsp;" . $row3["ServiceName"] ;
                                         $servicecategory1id3 = $row3["Id"];
                                         $sql4 = "SELECT * FROM `m_services` where Status = 1 and  M_Parent_Services_Id = ".$servicecategory1id3 ;
                                         $result4 = $conn->query($sql4);
@@ -118,7 +118,7 @@ if (isset($result)){
                                             echo "<ul>";
                                             // output data of each row
                                             while($row4 = $result4->fetch_assoc()) {
-                                              echo "<li data-value='". $row4["Id"] ."'>" . $row4["ServiceName"] ;
+                                              echo "<li data-value='". $row4["Id"] ."'>&nbsp;" . $row4["ServiceName"] ;
 
                                               echo "</li>";
                                             }
@@ -172,7 +172,7 @@ if (isset($result)){
 
               <div class="message"></div>
             </div>
-            <h4>Invite your preferred Supplier to BudgetMetal</h4>
+            <h5>Invite your preferred Supplier to BudgetMetal</h5>
             <input type="email" name="inviteEmail" value="" id="inviteEmail" class="form-control">
             <br>
             <button type="button" class="btn btn-info" name="button" id="btnInvite" >Invite</button>
@@ -185,13 +185,13 @@ if (isset($result)){
     </div>
     <div class="col-md-9">
       <div class="box box-info">
-        <table id="supplier_lists" class="table table-bordered table-striped">
+        <table id="supplier_lists" class="table table-bordered table-striped smaller_font_table">
           <thead>
             <tr>
-              <th>No.</th>
-              <th>Company Name</th>
-              <th>Registration No.</th>
-              <th>Address</th>
+              <!-- <th>No.</th> -->
+              <th width="30%">Company Name</th>
+              <th width="12%">Reg. No.</th>
+              <th width="*">Address</th>
               <th></th>
             </tr>
           </thead>
@@ -205,7 +205,7 @@ if (isset($result)){
                 $count = $count+1;
                 ?>
                 <tr>
-                  <td><?php echo $count; ?></td>
+                  <!-- <td><?php echo $count; ?></td> -->
                   <td><?php echo $row["Name"];?></td>
                   <td><?php echo $row["Reg_No"];?></td>
                   <td><?php echo $row["Address"];?></td>
@@ -318,7 +318,7 @@ $("#btnInvite").click(function (e) {
         dataType: 'json',
         success: function (data) {
           if(data.success == true){
-            $("#notify .message").html("BudgetMetal has sent invitation to your prefer supplier.");
+            $("#notify .message").html("BudgetMetal has sent invitation to your prefered supplier.");
             $("#notify").removeClass("alert-warning").addClass("alert-success").fadeIn();
             $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
             $("#inviteEmail").val("");

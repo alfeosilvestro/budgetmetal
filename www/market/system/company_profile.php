@@ -53,19 +53,19 @@ if (isset($result)){
 ?>
 <!-- Main content -->
 <section class="content">
-  <h1>
-    Company Profile
+  <h1 style="font-variant: small-caps; text-transform: uppercase;">
+    <?php echo $company_name; ?>
   </h1>
 
   <section class="content">
     <div class="row">
       <div class="col-md-12">
         <div class="box box-primary">
-          <div class="box-body">
+        <div class="box-header">
 
-            <div class="row">
-              <div class="col-md-8">
-                <b><?php echo $company_name; ?></b>
+          <div class="row">
+            <div class="col-md-10">
+              <strong style="font-size: 16px;">About</strong>
                 <span class='text-sm text-primary'>
                 <?php
 
@@ -81,7 +81,7 @@ if (isset($result)){
                 ?>
                 </span>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-2">
                 <div class="pull-right">
                   <?php
 
@@ -97,7 +97,9 @@ if (isset($result)){
                 </div>
               </div>
             </div>
-            <br/>
+
+        </div>
+          <div class="box-body">
             <div class="row">
               <div class="col-md-12">
                   <!--AMK- Added for Tags-->
@@ -135,23 +137,33 @@ if (isset($result)){
     <div class="row">
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="box box-primary">
-          <div class="box-body">
-            <strong><i class="fa fa-book margin-r-5"></i> UEN No.</strong> : <?php echo $reg_no; ?>
-            <div class="pull-right">
-              <?php
+          <div class="box-header">
+          <div class="row">
+              <div class="col-md-6">
+                <h4><i class="fa fa-book margin-r-5"></i> Details</h4>
+              </div>
+              <div class="col-md-6">
+                <div class="pull-right">
+                  <?php
 
-              if($company_admin == 1){
-                ?>
-                <a href="#" id="btnEditProfile" class="btn btn-info"  onclick="EditProfile()">
-                  <i class="fa fa-pencil-square-o"></i>
-                </a>
-                <?php
-              }
+                  if($company_admin == 1){
+                    ?>
+                    <a href="#" id="btnEditProfile" class="btn btn-info"  onclick="EditProfile()">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <?php
+                  }
 
-              ?>
+                  ?>
+                </div>
+              </div>
             </div>
+            
+          </div>
+          <div class="box-body">
+            <strong>UEN No.</strong> : <?php echo $reg_no; ?>
             <br><br>
-            <strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong> : <br>
+            <strong>Address</strong> : <br>
             <?php echo $Address; ?>
             <br>
             <br>
@@ -163,19 +175,14 @@ if (isset($result)){
               $result = $conn->query($sql);
               if (isset($result)){
                 if ($result->num_rows > 0) {
-                  // output data of each row
-                  // echo '<br/><ul class="list-group">';
-                  // while($row = $result->fetch_assoc()) {
-                  //   $TagName = $row["TagName"];
-                  //   echo '<li class="list-group-item">'.$TagName.'</li>';
-                  // }
-                  // echo '</ul>';
-                  echo '<br/><div class="row">';
+                  
+                  echo '<br/><table class="smaller_font_table"><tr><td>';
                   while($row = $result->fetch_assoc()) {
                     $TagName = $row["TagName"];
-                    echo '<div class="col-md-4" style="padding: 0px important;"><div class="d-inline p-2 bg-primary text-white text-sm" style="width: 100%; margin-bottom:8px; padding: 5px;">'.$TagName.'</div></div>';
+                    echo '<span class="badge badge-sm bg-primary" style="margin: 2px;">'. $TagName .'</span>';
                   }
-                  echo '</div>';
+                  echo '</td></tr></table>';
+                  
                 }
               }
             }
@@ -186,6 +193,9 @@ if (isset($result)){
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="box box-primary">
+          <div class="box-header">
+            <h4><i class="glyphicon glyphicon-star"></i> Rating</h4>
+          </div>
           <div class="box-body">
             <style media="screen">
               span.stars, span.stars span {
@@ -199,9 +209,8 @@ if (isset($result)){
                 background-position: 0 0;
               }
             </style>
-            <strong><i class="glyphicon glyphicon-star"></i> Rating</strong>
-            <br><br>
-            <table width="100%" class="table ">
+            
+            <table width="100%" class="table smaller_font_table">
               <tbody>
                 <?php
                 $tmpSOQ = "0.0";
@@ -225,24 +234,24 @@ if (isset($result)){
                 //if($Is_supplier_company =="1"){
                   ?>
                   <tr>
-                    <td><b>Overall Rating :</b></td>
+                    <td>Overall Rating :</td>
                     <td><span class="stars"><?php echo  number_format($supplierRating); ?></span></td>
                   </tr>
 
                   <tr>
-                    <td><b>Speed of Quotation :</b></td>
+                    <td>Speed of Quotation :</td>
                     <td><span class="stars"><?php echo $tmpSOQ; ?></span></td>
                   </tr>
                   <tr>
-                    <td><b>Speed of Delivery :</b></td>
+                    <td>Speed of Delivery :</td>
                     <td><span class="stars"><?php echo $tmpSOD; ?></span></td>
                   </tr>
                   <tr>
-                    <td><b>Service Quality :</b></td>
+                    <td>Service Quality :</td>
                     <td><span class="stars"><?php echo $tmpSQ; ?></span></td>
                   </tr>
                   <tr>
-                    <td><b>Price :</b></td>
+                    <td>Price :</td>
                     <td><span class="stars"><?php echo $tmpPrice; ?></span></td>
                   </tr>
                   <?php
@@ -264,9 +273,10 @@ if (isset($result)){
       </div>
       <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="box box-primary">
+          <div class="box-header">
+            <h4><i class="glyphicon glyphicon-bullhorn"></i> Feedbacks</h4>
+          </div>
           <div class="box-body">
-            <strong><i class="glyphicon glyphicon-bullhorn"></i> Feedbacks</strong>
-            <br>
             <div class="text-center">
 
                 <?php
@@ -297,27 +307,30 @@ if($Is_supplier_company == "1"){
       <div class="col-md-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-              <h3 class="box-title">Services</h3>
 
-              <div class="box-tools pull-right">
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                  </button>
+            <div class="row">
+              <div class="col-md-6">
+                <h3 class="box-title">Services</h3>
               </div>
+              <div class="col-md-6">
+                <div class="pull-right">
+                  <?php
+
+                  if($company_admin == 1){
+                    ?>
+                    <a href="#" id="btnEditService" class="btn btn-info"  onclick="EditService()">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <?php
+                  }
+
+                  ?>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="box-body" style="height: 250px; overflow-y: auto;">
-            <div class="pull-right">
-              <?php
-
-              if($company_admin == 1){
-                ?>
-                <a href="#" id="btnEditService" class="btn btn-info"  onclick="EditService()">
-                  <i class="fa fa-pencil-square-o"></i>
-                </a>
-                <?php
-              }
-
-              ?>
-            </div>
+            
             <ul>
               <?php
               $sql = "SELECT t1.`M_Services_Id`, t2.ServiceName FROM `md_supplierservices` t1 INNER JOIN m_services t2 ON t1.`M_Services_Id` = t2.Id Where t2.Status = 1 and t2.M_Parent_Services_Id is null and t1.`M_Company_Id` = ".$companyid;
@@ -389,7 +402,7 @@ if($Is_supplier_company == "1"){
               </div>
           </div>
           <div class="box-body">
-            <table id="rfq" class="table table-bordered table-striped">
+            <table id="rfq" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
                   <th>No.</th>
@@ -501,7 +514,7 @@ if($Is_supplier_company == "1"){
             <?php
             $query = "SELECT t1.*, t2.UserName, t3.Name FROM md_companyrating t1 inner join m_user t2 on t2.ID = t1.User_Id inner join m_company t3 on t3.ID = t2.M_Company_Id Where Company_Id =  $companyid";
             ?>
-            <table id="list_fb" class="table table-bordered table-striped">
+            <table id="list_fb" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
                 <th style="width:5%;">No.</th>
@@ -529,22 +542,22 @@ if($Is_supplier_company == "1"){
                     <tr>
                       <td><?php echo $count;?></td>
                       <td>
-                        <table width="200px" class="table ">
+                        <table width="200px" class="table smaller_font_table">
                           <tbody>
                             <tr>
-                              <td><b>Speed of Quotation :</b></td>
+                              <td>Speed of Quotation :</td>
                               <td><span class="stars"><?php echo $tmpSOQ; ?></span></td>
                             </tr>
                             <tr>
-                              <td><b>Speed of Delivery :</b></td>
+                              <td>Speed of Delivery :</td>
                               <td><span class="stars"><?php echo $tmpSOD; ?></span></td>
                             </tr>
                             <tr>
-                              <td><b>Service Quality :</b></td>
+                              <td>Service Quality :</td>
                               <td><span class="stars"><?php echo $tmpSQ; ?></span></td>
                             </tr>
                             <tr>
-                              <td><b>Price :</b></td>
+                              <td>Price :</td>
                               <td><span class="stars"><?php echo $tmpPrice; ?></span></td>
                             </tr>
                           </tbody>
@@ -552,7 +565,7 @@ if($Is_supplier_company == "1"){
                         </table>
                       </td>
                       <td><?php  echo $row["UserName"] ."<br> (".$row["Name"].")";?></td>
-                      <td> <b> <?php echo $row["Title"];?></b> <p><?php echo $row["Description"];?></p> </td>
+                      <td> <?php echo $row["Title"];?></b> <p><?php echo $row["Description"];?> </td>
                     </tr>
                     <?php
                     //echo $row["Description"];

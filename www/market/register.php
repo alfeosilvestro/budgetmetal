@@ -229,8 +229,9 @@ $db = new PdoWrapper($dbConfig);
 																	placeholder="Password to sign in later">
 																</div>
 																<div id="selTags" class="form-group">
-																	<label>Tag</label>
+																	<label>Your Services and Business Segments (Multiple Entries Supported)</label>
 																	<select class="form-control select2" multiple="multiple"
+																	title="Please select services and business segment."
 																	style="width: 100%;"
 																	data-bind="value: tags, valueUpdate: 'blur'" name="tagList[]">
 																	<?php
@@ -453,7 +454,7 @@ $db = new PdoWrapper($dbConfig);
 			<div class="pull-right hidden-xs">
 
 			</div>
-			<strong>Copyright © 2017 <a href="#">Styler</a>.</strong> All rights
+			<strong>Copyright © 2017 <a href="#">BudgetMetal</a>.</strong> All rights
 			reserved.
 		</div>
 		<!-- /.container -->

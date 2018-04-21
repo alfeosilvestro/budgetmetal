@@ -34,7 +34,7 @@ $rfq_ref = "";
 $status = "Draft";
 ?>
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-sm-6">
     <h3>
       Create RFQ
     </h3>
@@ -44,19 +44,18 @@ $status = "Draft";
       <div class="message"></div>
     </div>
   </div>
-</div>
 
-<form action="#" method="post" id="create_rfq" >
-  <div class="row">
-
-    <div class="col-sm-12">
-      <div class="btn-group pull-right">
-        <button type="button" class="btn btn-success" id="btnsave_rfq_top" >Save as Draft</button>
-
-        <button type="button" id="btnsubmit_rfq_top" class="btn btn-warning">Submit</button>
+    <div class="col-sm-6">
+      <div  style="margin-top: 20px; margin-bottom: 10px;">
+        <button type="button" id="btnsubmit_rfq_top" class="btn btn-success pull-right">Request for Quotation</button>
+        <div class="pull-right">&nbsp;</div>
+        <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_top" >Save as Draft</button>
       </div>
     </div>
   </div>
+
+<form action="#" method="post" id="create_rfq" >
+  
   <div class="box box-default">
     <div class="box-header with-border">
       <h3 class="box-title">RFQ Info</h3>
@@ -99,8 +98,8 @@ $status = "Draft";
             <input name="subject" type="text" class="form-control" placeholder="Please enter project name">
           </div>
           <div class="form-group">
-            <input type="checkbox" name="chk_material" > <label>Supplier Provide Materials </label><br>
-            <input type="checkbox" name="chk_transport"> <label>Supplier Provide Transport </label>
+            <input type="checkbox" name="chk_material" > <label>Supplier to Provide Materials </label><br>
+            <input type="checkbox" name="chk_transport"> <label>Supplier to Provide Transport </label>
           </div>
         </div>
         <div class="col-sm-6">
@@ -173,9 +172,26 @@ $status = "Draft";
       <div id="progress-div"><div id="progress-bar"></div></div>
       <div id="loader-icon" style="display:none;"><img src="LoaderIcon.gif" /></div>
       <br>
+<<<<<<< HEAD
       <button type="button" id="addfilelist" class="btn btn-sm btn-info" value="+ Attach file">
       + Add File Attachment
     </button>
+=======
+      <div class="row">
+        <div class="col-sm-12">
+          <table class="table table-hover smaller_font_table" id="fileList">
+            <thead>
+              <tr>
+                <th style="width:40%">File</th>
+                <th>Description</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+>>>>>>> 211beb48c3f4a08bea35dcf2ba221f78256806ee
 
   </div>
 </div> -->
@@ -207,6 +223,7 @@ $status = "Draft";
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
       </button>
     </div>
+<<<<<<< HEAD
   </div>
   <!-- /.box-header -->
   <div class="box-body">
@@ -215,22 +232,45 @@ $status = "Draft";
         <div class="form-group">
           <label>Service Level 1</label>
           <select id="servicecategory1" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
+=======
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Service Level 1</label>
+            <select id="servicecategory1" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
+>>>>>>> 211beb48c3f4a08bea35dcf2ba221f78256806ee
 
           </select>
         </div>
+<<<<<<< HEAD
       </div>
       <div class="col-sm-2">
         <div class="form-group">
           <label>Service Level 2</label>
           <select id="servicecategory2" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
+=======
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Service Level 2</label>
+            <select id="servicecategory2" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
+>>>>>>> 211beb48c3f4a08bea35dcf2ba221f78256806ee
 
           </select>
         </div>
+<<<<<<< HEAD
       </div>
       <div class="col-sm-2">
         <div class="form-group">
           <label>Service Level 3</label>
           <select id="servicecategory3" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
+=======
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label>Service Level 3</label>
+            <select id="servicecategory3" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
+>>>>>>> 211beb48c3f4a08bea35dcf2ba221f78256806ee
 
           </select>
         </div>
@@ -241,6 +281,7 @@ $status = "Draft";
           <select id="servicecategory4" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
           </select>
         </div>
+<<<<<<< HEAD
       </div>
       <div class="col-sm-3">
         <div class="form-group">
@@ -249,6 +290,17 @@ $status = "Draft";
 
           </select>
         </div>
+=======
+        <!-- <div class="col-sm-12">
+          <div class="form-group">
+            <label>Service Level 5</label>
+            <select id="services" class="form-control" size="5" style="word-wrap:break-word;width:100%;height:120px;">
+
+            </select>
+          </div>
+        </div> -->
+
+>>>>>>> 211beb48c3f4a08bea35dcf2ba221f78256806ee
       </div>
 
     </div>
@@ -273,10 +325,39 @@ $status = "Draft";
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
       </button>
     </div>
+<<<<<<< HEAD
   </div>
   <!-- /.box-header -->
   <div class="box-body">
     <div class="row">
+=======
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="row">
+        <div class="col-sm-12">
+          <input type="hidden" id="serviceno" value="0">
+          <table class="table table-hover smaller_font_table" id="servicelist">
+            <thead>
+              <tr>
+                <th><input type="hidden"></th>
+                <th>Level 1</th>
+                <th>Level 2</th>
+                <th>Level 3</th>
+                <th>Level 4</th>
+                <th>Level 5</th>
+                <th width="10%">&nbsp;</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+        <!--<div class="col-sm-12">
+        <h4>Parameters</h4>
+      </div>
+>>>>>>> 211beb48c3f4a08bea35dcf2ba221f78256806ee
       <div class="col-sm-12">
         <input type="hidden" id="serviceno" value="0">
         <table class="table table-hover" id="servicelist">
@@ -411,6 +492,7 @@ Width
                 </table>
                 <div class="text-center"> <button id="btnShowMore" type="button" name="button" class="btn btn-info">Show More Supplier</button> </div>
               </div>
+<<<<<<< HEAD
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_selectedsuppliers">
                 <table class="table table-hover"  id="selected_suppliers">
@@ -422,6 +504,35 @@ Width
                       <th>Status</th>
                       <th>&nbsp;</th>
                     </tr>
+=======
+              <table class="table table-hover smaller_font_table" id="search_suppliers">
+                <thead>
+                  <tr>
+                    <th>Company Name</th>
+                    <th>Address</th>
+                    <th>Tags</th>
+                    <th>Status</th>
+                    <th>&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+              <span class="text-center"> <button id="btnShowMore" type="button" name="button" class="btn btn-info">Show More Supplier</button> </span>
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="tab_selectedsuppliers">
+              <table class="table table-hover smaller_font_table"  id="selected_suppliers">
+                <thead>
+                  <tr>
+                    <th>Company Name</th>
+                    <th>Address</th>
+                    <th>Tags</th>
+                    <th>Status</th>
+                    <th>&nbsp;</th>
+                  </tr>
+>>>>>>> 211beb48c3f4a08bea35dcf2ba221f78256806ee
 
                   </thead>
                   <tbody>
@@ -446,14 +557,24 @@ Width
 
     <div class="row">
 
+<<<<<<< HEAD
       <div class="col-sm-12">
         <div class="btn-group pull-right">
           <button type="button" class="btn btn-success" id="btnsave_rfq_bot" >Save as Draft</button>
 
           <button type="button" id="btnsubmit_rfq_bot" class="btn btn-warning">Submit</button>
         </div>
+=======
+    <div class="col-sm-12">
+      <div style="margin-top: 20px; margin-bottom: 10px;">
+        <button type="button" id="btnsubmit_rfq_bot" class="btn btn-success pull-right">Request for Quotation</button>
+        <div class="pull-right">&nbsp;</div>
+        <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_bot" >Save as Draft</button>
+>>>>>>> 211beb48c3f4a08bea35dcf2ba221f78256806ee
       </div>
+      
     </div>
+<<<<<<< HEAD
   </form>
 
   <script>
@@ -468,6 +589,29 @@ Width
       var minDate = new Date(selected.date.valueOf());
       $('#due_datepicker').datepicker('setStartDate', minDate);
     });
+=======
+  </div>
+</form>
+</div>
+<br/>
+<div class="row">
+<script>
+$(function () {
+  //Date picker
+  $('#rfq_datepicker').datepicker({
+    format: "dd-mm-yyyy",
+    autoclose: true,
+    todayHighlight: true,
+    startDate: "today",
+  }).on('changeDate', function(selected) {
+    var minDate = new Date(selected.date.valueOf());
+    $('#due_datepicker').datepicker('setStartDate', minDate);
+  });
+
+  var rfq_date = $("#rfq_datepicker").val();
+  var res = rfq_date.split("-");
+  var tmp = res[1] + "-" + res[0] + "-" + res[2];
+>>>>>>> 211beb48c3f4a08bea35dcf2ba221f78256806ee
 
     var rfq_date = $("#rfq_datepicker").val();
     var res = rfq_date.split("-");

@@ -72,7 +72,7 @@ if (isset($result)){
 
     ?>
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-6">
         <h3>
           Edit RFQ
         </h3>
@@ -82,19 +82,20 @@ if (isset($result)){
           <div class="message"></div>
         </div>
       </div>
+
+      <div class="col-sm-6">
+        <div  style="margin-top: 20px; margin-bottom: 10px;">
+          <button type="button" id="btnsubmit_rfq_top" class="btn btn-success pull-right">Request for Quotation</button>
+          <div class="pull-right">&nbsp;</div>
+          <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_top" >Save as Draft</button>
+        </div>
+      </div>
+
     </div>
 
     <form action="#" method="post" id="create_rfq" >
-      <div class="row">
-
-        <div class="col-sm-12">
-          <div class="btn-group pull-right">
-            <button type="button" class="btn btn-success" id="btnsave_rfq_top" >Save as Draft</button>
-
-            <button type="button" id="btnsubmit_rfq_top" class="btn btn-warning">Submit</button>
-          </div>
-        </div>
-      </div>
+      
+    <div class="row">
       <div class="box box-default">
         <div class="box-header with-border">
           <h3 class="box-title">RFQ Info</h3>
@@ -138,8 +139,8 @@ if (isset($result)){
                 <input name="subject" type="text" value="<?php echo $rfq_subject;?>" class="form-control" placeholder="Please enter project name">
               </div>
               <div class="form-group">
-                <input type="checkbox" name="chk_material" <?php echo $Supplier_Provide_Material;?>> <label>Supplier Provide Materials </label><br>
-                <input type="checkbox" name="chk_transport" <?php echo $Supplier_Provide_Transport;?>> <label>Supplier Provide Transport </label>
+                <input type="checkbox" name="chk_material" <?php echo $Supplier_Provide_Material;?>> <label>Supplier to Provide Materials </label><br>
+                <input type="checkbox" name="chk_transport" <?php echo $Supplier_Provide_Transport;?>> <label>Supplier to Provide Transport </label>
               </div>
             </div>
             <div class="col-sm-6">
@@ -237,7 +238,7 @@ if (isset($result)){
           <br>
           <div class="row">
             <div class="col-sm-12">
-              <table class="table table-hover" id="fileList">
+              <table class="table table-hover smaller_font_table" id="fileList">
                 <thead>
                   <tr>
                     <th style="width:40%">File</th>
@@ -297,7 +298,7 @@ if (isset($result)){
         <!-- /.box-header -->
         <div class="box-body">
           <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label>Service Level 1</label>
                 <select id="servicecategory1" class="form-control" size="10" style="height:186px;" >
@@ -305,7 +306,7 @@ if (isset($result)){
                 </select>
               </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label>Service Level 2</label>
                 <select id="servicecategory2" class="form-control" size="10"  style="height:186px;" >
@@ -313,7 +314,7 @@ if (isset($result)){
                 </select>
               </div>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label>Service Level 3</label>
                 <select id="servicecategory3" class="form-control" size="10"  style="height:186px;" >
@@ -329,14 +330,14 @@ if (isset($result)){
                 </select>
               </div>
             </div>
-            <div class="col-sm-3">
+            <!-- <div class="col-sm-12">
               <div class="form-group">
                 <label>Service Level 5</label>
-                <select id="services" class="form-control" size="10"  style="height:186px;" >
+                <select id="services" class="form-control" size="10"  style="height:120px;" >
 
                 </select>
               </div>
-            </div>
+            </div> -->
 
           </div>
           <div class="row">
@@ -366,7 +367,7 @@ if (isset($result)){
           <div class="row">
             <div class="col-sm-12">
               <input type="hidden" id="serviceno" value="0">
-              <table class="table table-hover" id="servicelist">
+              <table class="table table-hover smaller_font_table" id="servicelist">
                 <thead>
                   <tr>
                     <th><input type="hidden"></th>
@@ -375,7 +376,7 @@ if (isset($result)){
                     <th>Level 3</th>
                     <th>Level 4</th>
                     <th>Level 5</th>
-                    <th width="10%">Metal Type</th>
+                    <th width="10%">&nbsp;</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -500,7 +501,7 @@ if (isset($result)){
 
                       </div>
 
-                      <table class="table table-hover" id="search_suppliers">
+                      <table class="table table-hover smaller_font_table" id="search_suppliers">
                         <thead>
                           <tr>
                             <th>Company Name</th>
@@ -518,7 +519,7 @@ if (isset($result)){
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tab_selectedsuppliers">
-                      <table class="table table-hover"  id="selected_suppliers">
+                      <table class="table table-hover smaller_font_table"  id="selected_suppliers">
                         <thead>
                           <tr>
                             <th>Company Name</th>
@@ -588,12 +589,17 @@ if (isset($result)){
           <div class="row">
 
             <div class="col-sm-12">
-              <div class="btn-group pull-right">
+            <div  style="margin-top: 20px; margin-bottom: 10px;">
+              <button type="button" id="btnsubmit_rfq_bot" class="btn btn-success pull-right">Request for Quotation</button>
+              <div class="pull-right">&nbsp;</div>
+              <button type="button" class="btn btn-info pull-right" id="btnsave_rfq_bot" >Save as Draft</button>
+            </div>
+              <!-- <div class="btn-group pull-right">
                 <button type="button" class="btn btn-success" id="btnsave_rfq_bot" >Save as Draft</button>
 
                 <button type="button" id="btnsubmit_rfq_bot" class="btn btn-warning">Submit</button>
                 <a href="index.php?rdp=list_rfq" class="btn btn-default">Cancel</a>
-              </div>
+              </div> -->
             </div>
           </div>
         </form>
