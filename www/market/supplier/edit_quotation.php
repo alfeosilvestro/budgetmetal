@@ -210,7 +210,7 @@
 			<br>
 			<div class="row">
                 <div class="col-sm-12">
-				  <table class="table table-hover" id="fileList">
+				  <table class="table table-hover smaller_font_table" id="fileList">
 					<thead>
 						<tr>
 							<th style="width:40%">File</th>

@@ -182,7 +182,7 @@ $status = "Draft";
       <br>
       <div class="row">
         <div class="col-sm-12">
-          <table class="table table-hover" id="fileList">
+          <table class="table table-hover smaller_font_table" id="fileList">
             <thead>
               <tr>
                 <th style="width:40%">File</th>
@@ -279,7 +279,7 @@ $status = "Draft";
       <div class="row">
         <div class="col-sm-12">
           <input type="hidden" id="serviceno" value="0">
-          <table class="table table-hover" id="servicelist">
+          <table class="table table-hover smaller_font_table" id="servicelist">
             <thead>
               <tr>
                 <th><input type="hidden"></th>
@@ -395,7 +395,7 @@ Width
                     </div>
 
               </div>
-              <table class="table table-hover" id="search_suppliers">
+              <table class="table table-hover smaller_font_table" id="search_suppliers">
                 <thead>
                   <tr>
                     <th>Company Name</th>
@@ -413,7 +413,7 @@ Width
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_selectedsuppliers">
-              <table class="table table-hover"  id="selected_suppliers">
+              <table class="table table-hover smaller_font_table"  id="selected_suppliers">
                 <thead>
                   <tr>
                     <th>Company Name</th>

@@ -100,7 +100,7 @@ if(isset($_GET["list"])){
             echo 'active ';
           }
           ?>tab-pane" id="draftRFQ">
-            <table id="draft_rfqs" class="table table-bordered table-striped">
+            <table id="draft_rfqs" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
                   <th>No.</th>
@@ -150,7 +150,7 @@ if(isset($_GET["list"])){
           echo 'active ';
         }
         ?>tab-pane" id="biddingRFQ">
-          <table id="bidding_rfqs" class="table table-bordered table-striped">
+          <table id="bidding_rfqs" class="table table-bordered table-striped smaller_font_table">
             <thead>
               <tr>
                 <th>No.</th>
@@ -208,7 +208,7 @@ if(isset($_GET["list"])){
           echo 'active ';
         }
         ?>tab-pane" id="closedRFQ">
-          <table id="closed_rfqs" class="table table-bordered table-striped">
+          <table id="closed_rfqs" class="table table-bordered table-striped smaller_font_table">
             <thead>
               <tr>
                 <th>No.</th>
@@ -262,7 +262,7 @@ if(isset($_GET["list"])){
           echo 'active ';
         }
         ?>tab-pane" id="awardRFQ">
-          <table id="awards_rfqs" class="table table-bordered table-striped">
+          <table id="awards_rfqs" class="table table-bordered table-striped smaller_font_table">
             <thead>
               <tr>
                 <th>No.</th>
@@ -317,7 +317,7 @@ if(isset($_GET["list"])){
             echo 'active ';
           }
           ?>tab-pane" id="withdrawnRFQ">
-            <table id="witdrawn_rfqs" class="table table-bordered table-striped">
+            <table id="witdrawn_rfqs" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
                   <th>No.</th>

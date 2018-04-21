@@ -311,7 +311,7 @@ if (isset($result)){
 
         <div class="row">
           <div class="col-sm-12">
-            <table class="table table-hover" id="fileList">
+            <table class="table table-hover smaller_font_table" id="fileList">
               <thead>
                 <tr>
                   <th>No.</th>
@@ -371,7 +371,7 @@ if (isset($result)){
         <div class="row">
           <div class="col-sm-12">
             <input type="hidden" id="serviceno" value="0">
-            <table class="table table-hover" id="servicelist">
+            <table class="table table-hover smaller_font_table" id="servicelist">
               <thead>
                 <tr>
                   <th>No.</th>
@@ -474,7 +474,7 @@ if (isset($result)){
       <div class="box-body">
         <div class="row">
           <div class="box-body">
-            <table id="quotations" class="table table-bordered table-striped">
+            <table id="quotations" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
                   <th>No.</th>
@@ -542,7 +542,7 @@ if (isset($result)){
       <div class="box-body">
         <div class="row">
           <div class="box-body">
-            <table id="quotations" class="table table-bordered table-striped">
+            <table id="quotations" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
                   <th>No.</th>

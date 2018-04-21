@@ -44,7 +44,7 @@
         <div class="box-body">
             <div class="row">
                 <div class="box-body">
-              <table id="quotations" class="table table-bordered table-striped">
+              <table id="quotations" class="table table-bordered table-striped smaller_font_table">
 					<thead>
                         <tr>
                             <th>No.</th>
