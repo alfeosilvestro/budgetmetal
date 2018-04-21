@@ -31,7 +31,7 @@ if (!empty($results)){
       echo 'AEIOUTSA';
     }
     ?>
-    <?php echo $count; ?> ^^ <?php echo $row["Name"];?> ^^ <?php echo $row["Reg_No"];?> ^^ <?php echo $row["Address"];?> ^^ <?php
+    <?php echo $row["Name"];?> ^^ <?php echo $row["Reg_No"];?> ^^ <?php echo $row["Address"];?> ^^ <?php
 
       $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
 

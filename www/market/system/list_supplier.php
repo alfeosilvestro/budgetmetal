@@ -189,9 +189,9 @@ if (isset($result)){
           <thead>
             <tr>
               <!-- <th>No.</th> -->
-              <th>Company Name</th>
-              <th>Registration No.</th>
-              <th>Address</th>
+              <th width="30%">Company Name</th>
+              <th width="12%">Reg. No.</th>
+              <th width="*">Address</th>
               <th></th>
             </tr>
           </thead>
