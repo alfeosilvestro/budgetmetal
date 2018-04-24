@@ -230,9 +230,12 @@ if ($function == "InviteSupplier"){
 				<td>".$tags."</td>
 				<td><span class='label label-".$verified_status_class."'>".$verified_status."</span></td>
 				<td>
+				<div style='margin: 2px;'>
 				<button type='button' value='".$row["Id"]."' class='btn btn-sm btn-info' Onclick='ViewProfile(this);'>              View Profile       </button>
-				<br/><br/>
+				</div>
+				<div style='margin: 2px;'>
 				<button type='button' value='trsupplier_".$row["Id"]."' class='btn btn-sm btn-info' Onclick='AddtoRequestList(this);'>                Add to Selected Supplier List       </button>
+				</div>
 				</td>
 				</tr>";
 			}
