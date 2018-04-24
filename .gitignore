@@ -3,3 +3,4 @@ database/auto.cnf
 database/
 www/market/attachment/
 gCloudMetalPolisPrivateKey.ppk
+gCloudBudgetMetalPrivateKey_TestEnv.ppk
