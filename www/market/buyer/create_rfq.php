@@ -224,7 +224,7 @@ $status = "Draft";
   <!-- /.box-header -->
   <div class="box-body">
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <div class="form-group">
           <label>Service Level 1</label>
           <select id="servicecategory1" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
@@ -232,7 +232,7 @@ $status = "Draft";
           </select>
         </div>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <div class="form-group">
           <label>Service Level 2</label>
           <select id="servicecategory2" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
@@ -240,7 +240,7 @@ $status = "Draft";
           </select>
         </div>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <div class="form-group">
           <label>Service Level 3</label>
           <select id="servicecategory3" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
