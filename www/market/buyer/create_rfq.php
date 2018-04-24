@@ -433,10 +433,10 @@ Width
                 <table class="table table-hover" id="search_suppliers">
                   <thead>
                     <tr>
-                      <th>Company Name</th>
-                      <th>Address</th>
+                      <th>Supplier</th>
+                      <!-- <th>Address</th>
                       <th>Tags</th>
-                      <th>Status</th>
+                      <th>Status</th> -->
                       <th>&nbsp;</th>
                     </tr>
                   </thead>
@@ -451,10 +451,10 @@ Width
                 <table class="table table-hover"  id="selected_suppliers">
                   <thead>
                     <tr>
-                      <th>Company Name</th>
-                      <th>Address</th>
+                      <th>Supplier</th>
+                      <!-- <th>Address</th>
                       <th>Tags</th>
-                      <th>Status</th>
+                      <th>Status</th> -->
                       <th>&nbsp;</th>
                     </tr>
 

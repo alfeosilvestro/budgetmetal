@@ -504,10 +504,10 @@ if (isset($result)){
                       <table class="table table-hover smaller_font_table" id="search_suppliers">
                         <thead>
                           <tr>
-                            <th>Company Name</th>
-                            <th>Address</th>
+                            <th>Supplier</th>
+                            <!-- <th>Address</th>
                             <th>Tags</th>
-                            <th>Status</th>
+                            <th>Status</th> -->
                             <th>&nbsp;</th>
                           </tr>
                         </thead>
@@ -522,10 +522,10 @@ if (isset($result)){
                       <table class="table table-hover smaller_font_table"  id="selected_suppliers">
                         <thead>
                           <tr>
-                            <th>Company Name</th>
-                            <th>Address</th>
+                            <th>Supplier</th>
+                            <!-- <th>Address</th>
                             <th>Tags</th>
-                            <th>Status</th>
+                            <th>Status</th> -->
                             <th>&nbsp;</th>
                           </tr>
 
