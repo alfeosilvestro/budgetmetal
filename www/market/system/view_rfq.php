@@ -477,11 +477,10 @@ if (isset($result)){
             <table id="quotations" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
-                  <th>No.</th>
-                  <th>Ref No.</th>
-                  <th>Company</th>
+                  <th>Supplier</th>
+                  <!-- <th>Company</th>
                   <th>Address</th>
-                  <th>Tags</th>
+                  <th>Tags</th> -->
                 </tr>
               </thead>
               <tbody>
@@ -509,11 +508,22 @@ if (isset($result)){
                     }
                     ?>
                     <tr>
-                      <td><?php echo $count; ?></td>
-                      <td><?php echo $row["Reg_No"];?></td>
-                      <td><?php echo $row["Name"];?></td>
-                      <td><?php echo $row["Address"];?></td>
-                      <td><?php echo $tags;?></td>
+                      <!-- <td><?php //echo $count; ?></td>
+                      <td><?php //echo $row["Reg_No"];?></td>
+                      <td><?php //echo $row["Name"];?></td>
+                      <td><?php //echo $row["Address"];?></td>
+                      <td><?php //echo $tags;?></td> -->
+
+                      <td>
+                        <b style='font-variant: small-caps; text-transform: uppercase;'><?php echo $row["Name"];?></b>
+                        <span class='label label-".$verified_status_class."'><?php echo $row["IsVerified"];?></span>
+                        <div style='margin: 2px;'>
+                          <?php echo $row["Address"];?>
+                        </div>
+                        <div style='margin: 2px;'>
+                          <?php echo $tags;?>
+                        </div>
+                      </td>
                     </tr>
 
                     <?php
