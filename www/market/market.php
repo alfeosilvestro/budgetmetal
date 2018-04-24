@@ -1362,7 +1362,7 @@ elseif ($function == "EditProfile"){
 	echo json_encode($message);
 }
 
-function sendEmailtoverify($email){
+function sendEmailtoverifyverify($email){
 	$mail_to = $email;
 	//$mail_to = "galles.cs@gmail.com";
 	//$from_mail = "info@metalpolis.com";
@@ -1426,9 +1426,9 @@ function sendEmailtoverify($email){
 	$content  = file_get_contents('template.html');
 	$content = str_replace("[message]",$message,$content);
 	$content = str_replace("[actual_link]",$actual_link,$content);
-	$mail->AltBody    = $message; // optional, comment out and test
+	$mail->AltBody    = $content; // optional, comment out and test
 
-	$mail->MsgHTML($message);
+	$mail->MsgHTML($content);
 
 	$mail->AddAddress($to_address, $to_name);
 
@@ -1570,7 +1570,7 @@ function sendInvitation($email,$buyer){
 	//$to_address = $email;
 	$to_name = "Info";
 	//$subject = "Verification for registeration at Metalpolis";
-	$message = "You have been invited by $buyer to BudgetMetal";
+	$message = $buyer;
 	$smtp_host = "127.0.0.1";
 	$smtp_port = 25;
 	// $smtp_username = "info@metalpolis.com";
@@ -1604,7 +1604,7 @@ function sendInvitation($email,$buyer){
 	//
 	// $mail->MsgHTML($message.$sitelink);
 
-	 $content = file_get_contents('template.html');
+	 $content = file_get_contents('template_invitation.html');
 	 $content = str_replace("[message]",$message,$content);
 	 $content = str_replace("[actual_link]",$actual_link,$content);
 
