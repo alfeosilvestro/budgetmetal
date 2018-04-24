@@ -379,7 +379,7 @@ if (isset($result)){
                   <th>Service Level 2</th>
                   <th>Service Level 3</th>
                   <th>Service Level 4</th>
-                  <th>Service Level 5</th>
+                  <th width="5px">&nbsp;</th>
                   <th width="10%">Metal Type</th>
 
 

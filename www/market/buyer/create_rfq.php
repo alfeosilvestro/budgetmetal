@@ -299,7 +299,7 @@ $status = "Draft";
                 <th>Level 2</th>
                 <th>Level 3</th>
                 <th>Level 4</th>
-                <th>Level 5</th>
+                <th width="5px">&nbsp;</th>
                 <th width="10%">&nbsp;</th>
                 <th></th>
               </tr>
