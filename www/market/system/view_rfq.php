@@ -497,12 +497,15 @@ if (isset($result)){
                     if (isset($result1)){
                       if ($result1->num_rows > 0) {
                         // output data of each row
+                        $tags = "";
                         while($row_tag = $result1->fetch_assoc()) {
-                          if($tags == "" ){
-                            $tags = $row_tag["TagName"];
-                          }else{
-                            $tags = $tags . "," .  $row_tag["TagName"];
-                          }
+                          // if($tags == "" ){
+                          //   $tags = $row_tag["TagName"];
+                          // }else{
+                          //   $tags = $tags . "," .  $row_tag["TagName"];
+                          // }
+                          $tags = $tags . "<span class='badge badge-sm bg-primary' style='margin: 2px;'>".$row_tag["TagName"]."</span>";
+                          
                         }
                       }
                     }
