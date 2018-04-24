@@ -255,14 +255,14 @@ $status = "Draft";
           </select>
         </div>
       </div>
-      <div class="col-sm-3">
+      <!-- <div class="col-sm-3">
         <div class="form-group">
           <label>Service Level 5</label>
           <select id="services" class="form-control" size="10" style="word-wrap:break-word;width:100%;height:186px;">
 
           </select>
         </div>
-      </div>
+      </div> -->
 
     </div>
     <div class="row">
