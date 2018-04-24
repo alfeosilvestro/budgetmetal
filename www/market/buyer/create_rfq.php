@@ -451,7 +451,7 @@ Width
                 <table class="table table-hover"  id="selected_suppliers">
                   <thead>
                     <tr>
-                      <th>Supplier</th>
+                      <th>Supplier (Name / Address)</th>
                       <!-- <th>Address</th>
                       <th>Tags</th>
                       <th>Status</th> -->

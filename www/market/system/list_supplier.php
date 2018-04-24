@@ -189,7 +189,7 @@ if (isset($result)){
           <thead>
             <tr>
               <!-- <th>No.</th> -->
-              <th width="95%">Company Name</th>
+              <th width="95%">Suppliers (Name / Address)</th>
               <th></th>
             </tr>
           </thead>

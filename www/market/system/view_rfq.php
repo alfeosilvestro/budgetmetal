@@ -477,7 +477,7 @@ if (isset($result)){
             <table id="quotations" class="table table-bordered table-striped smaller_font_table">
               <thead>
                 <tr>
-                  <th>Supplier</th>
+                  <th>Supplier (Name / Address)</th>
                   <!-- <th>Company</th>
                   <th>Address</th>
                   <th>Tags</th> -->

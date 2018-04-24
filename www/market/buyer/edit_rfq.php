@@ -504,7 +504,7 @@ if (isset($result)){
                       <table class="table table-hover smaller_font_table" id="search_suppliers">
                         <thead>
                           <tr>
-                            <th>Supplier</th>
+                            <th>Supplier (Name / Address)</th>
                             <!-- <th>Address</th>
                             <th>Tags</th>
                             <th>Status</th> -->
