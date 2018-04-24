@@ -232,12 +232,13 @@ if ($function == "InviteSupplier"){
 				echo "<tr id='trsupplier_".$row["Id"]."'>
 				<td>
 					<b style='font-variant: small-caps; text-transform: uppercase;'>".$row["Name"]."</b>&nbsp;<input type='hidden' value='0' name='selected_supplier_id[]'> <input type='hidden' value='".$row["Id"]."' name='search_supplier_id[]'>
-					<br/><br/>
+					<span class='label label-".$verified_status_class."'>".$verified_status."</span>
+					<br/>
 					".$row["Address"]."
-					<br/><br/>
+					<br/>
 					".$tags."
 					<br/><br/>
-					<span class='label label-".$verified_status_class."'>".$verified_status."</span></td>
+				</td>
 				<td>
 					<div style='margin: 2px;'>
 					<button type='button' value='".$row["Id"]."' class='btn btn-sm btn-info' Onclick='ViewProfile(this);'>              View Profile       </button>
