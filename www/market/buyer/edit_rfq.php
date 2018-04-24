@@ -483,7 +483,7 @@ if (isset($result)){
                       display: none;
                       width: 100%;
                       height: 99%;
-                      top: 1%;
+                      top: 50px;
                       left: 0;
                       right: 0;
                       bottom: 0;
