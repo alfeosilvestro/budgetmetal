@@ -213,8 +213,19 @@ if ($function == "InviteSupplier"){
 					$verified_status = "Unverified";
 					$verified_status_class = "warning";
 				}
+				// echo "<tr id='trsupplier_".$row["Id"]."'>
+				// <td>".$row["Name"]."(Registration No. ".$row["Reg_No"].")<input type='hidden' value='0' name='selected_supplier_id[]'> <input type='hidden' value='".$row["Id"]."' name='search_supplier_id[]'></td>
+				// <td>".$row["Address"]."</td>
+				// <td>".$tags."</td>
+				// <td><span class='label label-".$verified_status_class."'>".$verified_status."</span></td>
+				// <td>
+				// <button type='button' value='".$row["Id"]."' class='btn btn-sm btn-info' Onclick='ViewProfile(this);'>              View Profile       </button>
+
+				// <button type='button' value='trsupplier_".$row["Id"]."' class='btn btn-sm btn-info' Onclick='AddtoRequestList(this);'>                Add to Selected Supplier List       </button>
+				// </td>
+				// </tr>";
 				echo "<tr id='trsupplier_".$row["Id"]."'>
-				<td>".$row["Name"]."(Registration No. ".$row["Reg_No"].")<input type='hidden' value='0' name='selected_supplier_id[]'> <input type='hidden' value='".$row["Id"]."' name='search_supplier_id[]'></td>
+				<td>".$row["Name"]."&nbsp;<input type='hidden' value='0' name='selected_supplier_id[]'> <input type='hidden' value='".$row["Id"]."' name='search_supplier_id[]'></td>
 				<td>".$row["Address"]."</td>
 				<td>".$tags."</td>
 				<td><span class='label label-".$verified_status_class."'>".$verified_status."</span></td>

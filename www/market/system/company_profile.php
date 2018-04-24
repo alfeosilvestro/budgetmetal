@@ -69,14 +69,14 @@ if (isset($result)){
                 <span class='text-sm text-primary'>
                 <?php
 
-                  if($IsVerified)
-                  {
-                      echo "(This company has been verified by BudgetMetal.)";
-                  }
-                  else
-                  {
-                      echo "(This company has not been verified by BudgetMetal yet.)";
-                  }
+                  // if($IsVerified)
+                  // {
+                  //     echo "(This company has been verified by BudgetMetal.)";
+                  // }
+                  // else
+                  // {
+                  //     echo "(This company has not been verified by BudgetMetal yet.)";
+                  // }
 
                 ?>
                 </span>
