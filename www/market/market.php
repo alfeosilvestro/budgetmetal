@@ -184,7 +184,7 @@ if ($function == "InviteSupplier"){
 	$returntext = "";
 	$searchsupplierwithservicesid_currentUserId = $_GET["user_id"];
 	//$sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, Name ASC";
-	$sql = "SELECT * FROM `m_company` c  WHERE c.Id <> ". $searchsupplierwithservicesid_currentUserId ." and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND c.`Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC Limit $rowcount,20";
+	$sql = "SELECT * FROM `m_company` c  WHERE c.Id <> ". $searchsupplierwithservicesid_currentUserId ." and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND c.`Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified DESC, c.Name ASC Limit $rowcount,20";
 	//$sql = "SELECT * FROM `m_company` c INNER JOIN m_user u on u.M_Company_Id = c.Id WHERE c.Id <> 47 and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (0,789)) AND c.`Id` Not IN (0) Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC"
 	$result = $conn->query($sql);
 //echo $sql;
