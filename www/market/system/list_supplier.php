@@ -189,31 +189,35 @@ if (isset($result)){
           <thead>
             <tr>
               <!-- <th>No.</th> -->
-              <th width="30%">Company Name</th>
-              <th width="12%">Reg. No.</th>
-              <th width="*">Address</th>
+              <th width="95%">Company Name</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <?php
-            $query = "SELECT * FROM m_company Where Id in (SELECT `M_Company_Id`  FROM `m_user` WHERE `C_UserType` = 2 AND`Status` = 1)";
-            $results = $db->pdoQuery($query)->results();
-            if (!empty($results)){
-              $count = 0;
+              $query = "SELECT * FROM m_company Where Id in (SELECT `M_Company_Id`  FROM `m_user` WHERE `C_UserType` = 2 AND`Status` = 1)";
+              $results = $db->pdoQuery($query)->results();
+              if (!empty($results)){
+              
               foreach ($results as $row) {
-                $count = $count+1;
                 ?>
-                <tr>
-                  <!-- <td><?php echo $count; ?></td> -->
-                  <td><?php echo $row["Name"];?></td>
-                  <td><?php echo $row["Reg_No"];?></td>
-                  <td><?php echo $row["Address"];?></td>
-                  <td><?php
 
-                  $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a> ';
-                  echo $out;
-                  ?></td>
+                <tr id='trsupplier_".$row["Id"]."'>
+                  <td>
+                    <b style='font-variant: small-caps; text-transform: uppercase;'>
+                      <?php echo $row["Name"];?>
+                    </b>
+                    
+                    <div style='margin: 2px;'>
+                      <?php echo $row["Address"];?>
+                    </div>
+                  </td>
+                  <td>
+                    <?php
+                    $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a> ';
+                    echo $out;
+                    ?>
+                  </td>
                 </tr>
 
                 <?php

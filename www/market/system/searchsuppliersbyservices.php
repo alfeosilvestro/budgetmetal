@@ -31,13 +31,30 @@ if (!empty($results)){
       echo 'AEIOUTSA';
     }
     ?>
-    <?php echo $row["Name"];?> ^^ <?php echo $row["Reg_No"];?> ^^ <?php echo $row["Address"];?> ^^ <?php
+      <?php 
+        echo "
+        <b style='font-variant: small-caps; text-transform: uppercase;'>
+        ". $row["Name"] . "
+        </b>
+        
+        <div style='margin: 2px;'>
+          ". $row["Address"] . "
+        </div>
+        ";
+      ?> ^^ <?php
 
-      $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
+        $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
 
-      $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
-      echo $out;
+        $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
+        echo $out;
       ?>
+      <!-- <?php //echo $row["Name"];?> ^^ <?php //echo $row["Reg_No"];?> ^^ <?php //echo $row["Address"];?> ^^ <?php
+
+        // $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
+
+        // $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
+        // echo $out;
+      ?> -->
     <?php
   }
 }
