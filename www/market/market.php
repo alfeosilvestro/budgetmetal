@@ -233,18 +233,19 @@ if ($function == "InviteSupplier"){
 				<td>
 					<b style='font-variant: small-caps; text-transform: uppercase;'>".$row["Name"]."</b>&nbsp;<input type='hidden' value='0' name='selected_supplier_id[]'> <input type='hidden' value='".$row["Id"]."' name='search_supplier_id[]'>
 					<span class='label label-".$verified_status_class."'>".$verified_status."</span>
-					<br/>
-					".$row["Address"]."
-					<br/>
-					".$tags."
-					<br/><br/>
+					<div style='margin: 2px;'>
+						".$row["Address"]."
+					</div>
+					<div style='margin: 2px;'>
+						".$tags."
+					</div>
 				</td>
 				<td>
 					<div style='margin: 2px;'>
-					<button type='button' value='".$row["Id"]."' class='btn btn-sm btn-info' Onclick='ViewProfile(this);'>              View Profile       </button>
+						<button type='button' value='".$row["Id"]."' class='btn btn-sm btn-info' Onclick='ViewProfile(this);'>              View Profile       </button>
 					</div>
 					<div style='margin: 2px;'>
-					<button type='button' value='trsupplier_".$row["Id"]."' class='btn btn-sm btn-info' Onclick='AddtoRequestList(this);'>                Add to Selected Supplier List       </button>
+						<button type='button' value='trsupplier_".$row["Id"]."' class='btn btn-sm btn-info' Onclick='AddtoRequestList(this);'>                Add to Selected Supplier List       </button>
 					</div>
 				</td>
 				</tr>";
