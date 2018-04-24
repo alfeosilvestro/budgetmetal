@@ -1387,7 +1387,7 @@ elseif ($function == "EditProfile"){
 	echo json_encode($message);
 }
 
-function sendEmailtoverifyverify($email){
+function sendEmailtoverify($email){
 	$mail_to = $email;
 	//$mail_to = "galles.cs@gmail.com";
 	//$from_mail = "info@metalpolis.com";
