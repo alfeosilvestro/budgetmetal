@@ -1279,7 +1279,7 @@ if (isset($result)){
         var items = [];
         for (i = 1 ; i <= j; i++) {
           tr = document.getElementById("search_suppliers").rows[i];
-          var tdStatus = tr.getElementsByTagName("td")[3].innerText;
+          var tdStatus = tr.getElementsByTagName("span")[0].innerText;
           if(tdStatus == "Unverified"){
             items.push(tr);
           }
