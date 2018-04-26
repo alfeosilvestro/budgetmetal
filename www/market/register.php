@@ -821,6 +821,9 @@ function validateForm(){
 }
 
 function CreateBuyer() {
+	var email = $("#txt_email_addr").val();
+	var name = $("#txt_user_name").val();
+	var company_name = $("#txt_company_name").val();
 	var validation = validateForm();
 	if(validation){
 		$.ajax({
@@ -830,10 +833,12 @@ function CreateBuyer() {
 			dataType: 'json',
 			success: function (data) {
 				if (data.success) {
-					showLastStep();
-					$("#notify .message").html("<strong>User Registration is successful.</strong>");
-					$("#notify").removeClass("alert-danger").addClass("alert-success").fadeIn();
-					$("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+					alert("b");
+					window.location.href = "completion.php?email="+ email + "&name=" + name + "&company_name=" + company_name;
+					// showLastStep();
+					// $("#notify .message").html("<strong>User Registration is successful.</strong>");
+					// $("#notify").removeClass("alert-danger").addClass("alert-success").fadeIn();
+					// $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
 				} else {
 					$("#notify .message").html("<strong>" + data.error + "</strong>");
 					$("#notify").removeClass("alert-success").addClass("alert-danger").fadeIn();
@@ -841,11 +846,12 @@ function CreateBuyer() {
 				}
 			},
 			error: function (data) {
+				window.location.href = "completion.php?email="+ email + "&name=" + name + "&company_name=" + company_name;
 				//alert("System Error : Please contact to admin.");
-				showLastStep();
-				$("#notify .message").html("<strong>User Registration is successful.</strong>");
-				$("#notify").removeClass("alert-danger").addClass("alert-success").fadeIn();
-				$("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+				// showLastStep();
+				// $("#notify .message").html("<strong>User Registration is successful.</strong>");
+				// $("#notify").removeClass("alert-danger").addClass("alert-success").fadeIn();
+				// $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
 			}
 		});
 	}else{
@@ -856,6 +862,9 @@ function CreateBuyer() {
 }
 
 function CreateSupplier() {
+	var email = $("#txt_email_addr").val();
+	var name = $("#txt_user_name").val();
+	var company_name = $("#txt_company_name").val();
 	var validation = validateForm();
 	if(validation){
 		$.ajax({
@@ -865,10 +874,12 @@ function CreateSupplier() {
 			dataType: 'json',
 			success: function (data) {
 				if (data.success) {
-					showLastStep();
-					$("#notify .message").html("<strong>User Registration is successful.</strong>");
-					$("#notify").removeClass("alert-danger").addClass("alert-success").fadeIn();
-					$("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+					//alert("a");
+					window.location.href = "completion.php?email="+ email + "&name=" + name + "&company_name=" + company_name;
+					// showLastStep();
+					// $("#notify .message").html("<strong>User Registration is successful.</strong>");
+					// $("#notify").removeClass("alert-danger").addClass("alert-success").fadeIn();
+					// $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
 				} else {
 					$("#notify .message").html("<strong>" + data.error + "</strong>");
 					$("#notify").removeClass("alert-success").addClass("alert-danger").fadeIn();
@@ -876,12 +887,12 @@ function CreateSupplier() {
 				}
 			},
 			error: function (data) {
-
+				window.location.href = "completion.php?email="+ email + "&name=" + name + "&company_name=" + company_name;
 				//alert("System Error : Please contact to admin.");
-				showLastStep();
-				$("#notify .message").html("<strong>User Registration is successful.</strong>");
-				$("#notify").removeClass("alert-danger").addClass("alert-success").fadeIn();
-				$("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
+				// showLastStep();
+				// $("#notify .message").html("<strong>User Registration is successful.</strong>");
+				// $("#notify").removeClass("alert-danger").addClass("alert-success").fadeIn();
+				// $("html, body").animate({scrollTop: $('#notify').offset().top}, 1000);
 			}
 		});
 	}
