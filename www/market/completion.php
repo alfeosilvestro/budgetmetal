@@ -126,17 +126,17 @@ session_start();
                             <div class="col-md-12">
                             <div class="col-md-1">Email</div>
                             <div class="col-md-1"> - </div>
-                            <div class="col-md-1"><?php echo $email;?></div>
+                            <div class="col-md-10"><?php echo $email;?></div>
                             </div>
                            <div class="col-md-12">
                            <div class="col-md-1">Name</div>
                             <div class="col-md-1"> - </div>
-                            <div class="col-md-1"><?php echo $name;?></div>
+                            <div class="col-md-10"><?php echo $name;?></div>
                             </div>
                             <div class="col-md-12">
                            <div class="col-md-1">Company</div>
                             <div class="col-md-1"> - </div>
-                            <div class="col-md-1"><?php echo $company_name;?></div>
+                            <div class="col-md-10"><?php echo $company_name;?></div>
                             </div>
                             <div class="col-md-12">
                             <br><span class="text-danger">We have sent the link to your registration email for verification.</span><br><br>
