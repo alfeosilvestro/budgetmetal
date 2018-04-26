@@ -833,7 +833,7 @@ function CreateBuyer() {
 			dataType: 'json',
 			success: function (data) {
 				if (data.success) {
-					alert("b");
+					//alert("b");
 					window.location.href = "completion.php?email="+ email + "&name=" + name + "&company_name=" + company_name;
 					// showLastStep();
 					// $("#notify .message").html("<strong>User Registration is successful.</strong>");
