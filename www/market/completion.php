@@ -1,9 +1,6 @@
 <?php
-include("dbcon.php");
-include_once('lib/pdowrapper/class.pdowrapper.php');
-$dbConfig = array("host" => $server, "dbname" => $database, "username" => $db_user, "password" => $db_pass);
-// get instance of PDO Wrapper object
-$db = new PdoWrapper($dbConfig);
+// Start the session
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -95,15 +92,35 @@ $db = new PdoWrapper($dbConfig);
                             $email = "";
                             $name = "";
                             $company_name = "";
-                            if(isset($_GET["email"])){
-                                $email = $_GET["email"];
+                            if(isset($_SESSION["email"])){
+                                if(isset($_SESSION["email"])){
+                                    $email = $_SESSION["email"];
+                                }
+                                if(isset($_SESSION["name"])){
+                                    $name = $_SESSION["name"];
+                                }
+                                if(isset($_SESSION["company_name"])){
+                                    $company_name = $_SESSION["company_name"];
+                                    session_destroy();
+                                }
+                            }else{
+                                if(isset($_GET["email"])){
+                                    $email = $_GET["email"];
+                                    $_SESSION["email"] = $email;
+                                }
+                                if(isset($_GET["name"])){
+                                    $name = $_GET["name"];
+                                    $_SESSION["name"] = $name;
+                                }
+                                if(isset($_GET["company_name"])){
+                                    $company_name = $_GET["company_name"];
+                                    $_SESSION["company_name"] = $company_name;
+                                    header("location:completion.php");
+                                }
                             }
-                            if(isset($_GET["name"])){
-                                $name = $_GET["name"];
-                            }
-                            if(isset($_GET["company_name"])){
-                                $company_name = $_GET["company_name"];
-                            }
+                            
+
+                            
                             ?>
                             <h1>User Registration is successful.</h1>
                             <div class="col-md-12">
