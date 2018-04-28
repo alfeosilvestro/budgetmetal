@@ -425,8 +425,8 @@ Width
               <div id="overlay">
                 <div class="text-center">
                   <br><br><br>
-                  <span style="color:white;" id="addMoreSupplier"><b>You have reached the limit of 5 verified suppliers for this RFQ.
-                    <br><button class="btn btn-warning btn-xs" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow Budget Metal to suggest another 5 suppliers for you. </b> </span>
+                  <span style="color:white;" id="addMoreSupplier"><h4>You have reached the limit of 5 chosen suppliers for this RFQ.
+                    <br><button class="btn btn-warning btn-md" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow BudgetMetal to suggest another 5 suppliers for you. </h4> </span>
                   </div>
 
                 </div>
