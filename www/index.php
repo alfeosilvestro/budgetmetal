@@ -937,7 +937,7 @@
                 <div class="contact-item"><i class="fa fa-map-marker fa-2x"></i>
                     <p>100 Jalan Sultan, Sultan Plaza, #03-02
                         <br>
-                        Singapore 19901
+                        Singapore 199001
                     </p>
                 </div>
             </div>
