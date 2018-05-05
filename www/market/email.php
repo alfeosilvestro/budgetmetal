@@ -7,7 +7,7 @@ if($_POST){
 
 /* Email Detials */
   $mail_to = "galles.cs@gmail.com";
-  $from_mail = "info@metalpolis.com";
+  $from_mail = "info@budgetmetal.com";
   $from_name = $name;
   $reply_to = $from_mail;
   $subject = "Contact";

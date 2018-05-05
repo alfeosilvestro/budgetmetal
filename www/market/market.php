@@ -1403,7 +1403,8 @@ function sendEmailtoverify($email){
 
 	$verify_link = $actual_link."/market/verify.php?a=".$email_encode. "&b=".$date_encode;
 
-	$sitelink = "<br><br><a href='".$verify_link."'>Click Here</a>";
+	$sitelink = "<br><br><div>Please activate your account through the link below.</div>";
+	$sitelink = "<br><br><a href='".$verify_link."'>" . $verify_link . "</a>";
 	$message1 .= $sitelink;
 
 	//error_reporting(E_STRICT);
@@ -1506,10 +1507,10 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 	}
 
 	$sitelink = "<br><a href='".$actual_link."'>Go to Site</a>";
-	$from_mail = "info@metalpolis.com";
+	$from_mail = "info@budgetmetal.com";
 	$from_name = "BudgetMetal";
 	//$to_address = $email;
-	$to_name = "Info";
+	$to_name = $email;
 	//$subject = "Verification for registeration at Metalpolis";
 	//$message = $message;
 	$smtp_host = "127.0.0.1";

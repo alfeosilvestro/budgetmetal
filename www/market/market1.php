@@ -1152,10 +1152,10 @@
 		require_once('../class.phpmailer.php');
 		//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
 
-		$from_mail = "info@metalpolis.com";
+		$from_mail = "info@budgetmetal.com";
 		$from_name = "BudgetMetal";
 		$to_address = $email;
-		$to_name = "Info";
+		$to_name = $email;
 		$subject = "Verification for registeration at BudgetMetal";
 		$message = $message1;
 		$smtp_host = "127.0.0.1";

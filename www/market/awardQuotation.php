@@ -119,10 +119,10 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id,$a
 	}
 
 	$sitelink = "<br><a href='".$actual_link."'>Go to Site</a>";
-	$from_mail = "info@metalpolis.com";
+	$from_mail = "info@budgetmetal.com";
 	$from_name = "BudgetMetal";
 	//$to_address = $email;
-	$to_name = "Info";
+	$to_name = $email;
 	//$subject = "Verification for registeration at Metalpolis";
 	//$message = $message;
 	$smtp_host = "127.0.0.1";
