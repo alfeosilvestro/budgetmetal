@@ -625,8 +625,13 @@ if (isset($result)){
       var res = rfq_date.split("-");
       var tmp = res[1] + "-" + res[0] + "-" + res[2];
 
+      // start date
+      var defaultDate = new Date();
+      var numberOfDaysToAdd = 1;
+      defaultDate.setDate(defaultDate.getDate() + numberOfDaysToAdd); 
+
       $('#due_datepicker').datepicker({
-        startDate : "today",
+        startDate : defaultDate,
         format: "dd-mm-yyyy",
         autoclose: true,
         todayHighlight: true,
