@@ -127,7 +127,7 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id,$a
 	//$message = $message;
 	$smtp_host = "127.0.0.1";
 	$smtp_port = 25;
-	// $smtp_username = "info@metalpolis.com";
+	// $smtp_username = "info@budgetmetal.com";
 	// $smtp_password = "12345678";
 	$smtp_username = "";
 	$smtp_password = "";

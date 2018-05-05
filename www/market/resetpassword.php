@@ -157,7 +157,7 @@ include("piwik.php");
 
                 		require_once('../class.phpmailer.php');
 
-                		$from_mail = "info@metalpolis.com";
+                		$from_mail = "info@budgetmetal.com";
                 		$from_name = "BudgetMetal";
                 		$to_address = $email;
                 		$to_name = "Info";
@@ -165,7 +165,7 @@ include("piwik.php");
                 		$message = $message1;
                 		$smtp_host = "127.0.0.1";
                 		$smtp_port = 25;
-                		// $smtp_username = "info@metalpolis.com";
+                		// $smtp_username = "info@budgetmetal.com";
                 		// $smtp_password = "12345678";
                 		$smtp_username = "";
                 		$smtp_password = "";

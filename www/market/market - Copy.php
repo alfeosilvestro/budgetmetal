@@ -1132,9 +1132,9 @@
 	function sendEmailtoverify($email){
 		$mail_to = $email;
 		//$mail_to = "galles.cs@gmail.com";
-		//$from_mail = "info@metalpolis.com";
+		//$from_mail = "info@budgetmetal.com";
 		// = "Metalpolis";
-		//$reply_to ="info@metalpolis.com";
+		//$reply_to ="info@budgetmetal.com";
 		//$subject = "Verification for registeration at BudgetMetal";
 		$message1 = "Click the following link to verify your account at BudgetMetal".PHP_EOL;
 		$date = date('Y-m-d', strtotime("+2 days"));
@@ -1159,7 +1159,7 @@
 		$message = $message1;
 		$smtp_host = "127.0.0.1";
 		$smtp_port = 25;
-		// $smtp_username = "info@metalpolis.com";
+		// $smtp_username = "info@budgetmetal.com";
 		// $smtp_password = "12345678";
 		$smtp_username = "";
 		$smtp_password = "";
@@ -1225,7 +1225,7 @@
 		require_once('../class.phpmailer.php');
 		//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
 
-		$from_mail = "info@metalpolis.com";
+		$from_mail = "info@budgetmetal.com";
 		$from_name = "Metalpolis";
 		$to_address = $email;
 		$to_name = "Info";
@@ -1233,7 +1233,7 @@
 		//$message = $message;
 		$smtp_host = "127.0.0.1";
 		$smtp_port = 25;
-		// $smtp_username = "info@metalpolis.com";
+		// $smtp_username = "info@budgetmetal.com";
 		// $smtp_password = "12345678";
 		$smtp_username = "";
 		$smtp_password = "";

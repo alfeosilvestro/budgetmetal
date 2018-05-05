@@ -590,7 +590,7 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
   //$message = $message;
   $smtp_host = "127.0.0.1";
   $smtp_port = 25;
-  // $smtp_username = "info@metalpolis.com";
+  // $smtp_username = "info@budgetmetal.com";
   // $smtp_password = "12345678";
   $smtp_username = "";
   $smtp_password = "";
@@ -632,7 +632,7 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 
   $mail->MsgHTML($content);
 
-  $to_address = "info@metalpolis.com";
+  $to_address = "info@budgetmetal.com";
   $emails = explode(";", $email);
   for($i = 0, $l = count($emails); $i < $l-1; ++$i) {
 

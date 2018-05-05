@@ -1133,9 +1133,9 @@
 	function sendEmailtoverify($email){
 		$mail_to = $email;
 		//$mail_to = "galles.cs@gmail.com";
-		//$from_mail = "info@metalpolis.com";
+		//$from_mail = "info@budgetmetal.com";
 		// = "Metalpolis";
-		//$reply_to ="info@metalpolis.com";
+		//$reply_to ="info@budgetmetal.com";
 		//$subject = "Verification for registeration at Metalpolis";
 		$message1 = "Click the following link to verify your account at Metalpolis".PHP_EOL;
 		$date = date('Y-m-d', strtotime("+2 days"));
@@ -1160,7 +1160,7 @@
 		$message = $message1;
 		$smtp_host = "127.0.0.1";
 		$smtp_port = 25;
-		// $smtp_username = "info@metalpolis.com";
+		// $smtp_username = "info@budgetmetal.com";
 		// $smtp_password = "12345678";
 		$smtp_username = "";
 		$smtp_password = "";

@@ -16,13 +16,13 @@ require_once('class.phpmailer.php');
 
 $from_address = "galles.cs@gmail.com";
 $from_name = "First Last";
-$to_address = "info@metalpolis.com";
+$to_address = "info@budgetmetal.com";
 $to_name = "John Doe";
 $subject = "Mail client test by php";
 $message = "hello from php mailer";
 $smtp_host = "dockermail.domain.com";
 $smtp_port = 25;
-// $smtp_username = "info@metalpolis.com";
+// $smtp_username = "info@budgetmetal.com";
 // $smtp_password = "12345678";
 $smtp_username = "";
 $smtp_password = "";
