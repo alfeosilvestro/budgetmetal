@@ -1403,8 +1403,8 @@ function sendEmailtoverify($email){
 
 	$verify_link = $actual_link."/market/verify.php?a=".$email_encode. "&b=".$date_encode;
 
-	$sitelink = "<br><div>Please activate your account through the link below.</div>";
-	$sitelink .= "<br><br><a href='".$verify_link."'>" . $verify_link . "</a>";
+	$sitelink = "<div>Please activate your account through the link below.</div>";
+	$sitelink .= "<br><a href='".$verify_link."'>" . $verify_link . "</a>";
 	$message1 .= $sitelink;
 
 	//error_reporting(E_STRICT);
