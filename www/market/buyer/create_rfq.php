@@ -504,6 +504,7 @@ $(function () {
     startDate: "today",
   }).on('changeDate', function(selected) {
     var minDate = new Date(selected.date.valueOf());
+    minDate.setDate(minDate.getDate() + 1); 
     $('#due_datepicker').datepicker('setStartDate', minDate);
   });
 
@@ -515,8 +516,13 @@ $(function () {
     var res = rfq_date.split("-");
     var tmp = res[1] + "-" + res[0] + "-" + res[2];
 
+    // start date
+    var defaultDate = new Date();
+    var numberOfDaysToAdd = 1;
+    defaultDate.setDate(defaultDate.getDate() + numberOfDaysToAdd); 
+
     $('#due_datepicker').datepicker({
-      startDate : "today",
+      startDate : defaultDate,
       format: "dd-mm-yyyy",
       autoclose: true,
       todayHighlight: true,
