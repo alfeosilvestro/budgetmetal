@@ -1394,7 +1394,7 @@ function sendEmailtoverify($email){
 	// = "Metalpolis";
 	//$reply_to ="info@metalpolis.com";
 	//$subject = "Verification for registeration at Metalpolis";
-	$message1 = "To verify your account at BudgetMetal".PHP_EOL;
+	$message1 = "".PHP_EOL;
 	$date = date('Y-m-d', strtotime("+2 days"));
 
 	$email_encode = base64_encode($email);
@@ -1414,34 +1414,26 @@ function sendEmailtoverify($email){
 	require_once('../class.phpmailer.php');
 	//include("class.smtp.php"); // optional, gets called from within class.phpmailer.php if not already loaded
 
-	$from_mail = "info@metalpolis.com";
+	$from_mail = "info@budgetmetal.com";
 	$from_name = "BudgetMetal";
 	$to_address = $email;
-	$to_name = "Info";
+	$to_name = $email;
 	$subject = "Verification for registeration at BudgetMetal";
 	$message = $message1;
 	$smtp_host = "127.0.0.1";
 	$smtp_port = 25;
-	// $smtp_username = "info@metalpolis.com";
-	// $smtp_password = "12345678";
+
 	$smtp_username = "";
 	$smtp_password = "";
-	//$smtp_debug = 2;
 
 	$mail             = new PHPMailer();
 	$mail->IsHTML(true);
-	//$message             = file_get_contents('contents.html');
-	//$message             = eregi_replace("[\]",'',$message);
-
+	
 	$mail->IsSMTP(); // telling the class to use SMTP
 	$mail->Host       = $smtp_host; // SMTP server
-	//$mail->SMTPDebug  = $smtp_debug;                     // enables SMTP debug information (for testing)
-	// 1 = errors and messages
-	// 2 = messages only
+	
 	$mail->SMTPAuth   = false;                  // enable SMTP authentication
-	$mail->Port       = $smtp_port;                    // set the SMTP port for the GMAIL server
-	//$mail->Username   = $smtp_username;       // SMTP account username
-	//$mail->Password   = $smtp_password;        // SMTP account password
+	$mail->Port       = $smtp_port;             // set the SMTP port for the GMAIL server
 
 	$mail->SetFrom($from_mail, $from_name);
 
@@ -1449,7 +1441,7 @@ function sendEmailtoverify($email){
 
 	$mail->Subject    = $subject;
 
-	$content  = file_get_contents('template.html');
+	$content  = file_get_contents('empty_template.html');
 	$content = str_replace("[message]",$message,$content);
 	$content = str_replace("[actual_link]",$actual_link,$content);
 	$mail->AltBody    = $content; // optional, comment out and test
@@ -1553,7 +1545,7 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 
 	$mail->MsgHTML($content);
 
-	$to_address = "info@metalpolis.com";
+	$to_address = "info@budgetmetal.com";
 	$emails = explode(";", $email);
 	for($i = 0, $l = count($emails); $i < $l-1; ++$i) {
 
@@ -1591,7 +1583,7 @@ function sendInvitation($email,$buyer){
 	$actual_link = $host;
 
 	$sitelink = "<br><a href='".$actual_link."'>Go to Site</a>";
-	$from_mail = "info@metalpolis.com";
+	$from_mail = "info@budgetmetal.com";
 	$from_name = "BudgetMetal";
 	//$to_address = $email;
 	$to_name = "Info";
