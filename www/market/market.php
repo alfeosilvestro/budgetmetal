@@ -1498,7 +1498,8 @@ function sendEmailforNotification($email,$subject, $message,$doc_type,$doc_id){
 		}
 	}
 
-	$sitelink = "<br><a href='".$actual_link."'>Go to Site</a>";
+	//$sitelink = "<br><a href='".$actual_link."'>Go to Site</a>";
+	$sitelink = "<br><a href='".$actual_link."'>". $actual_link ."</a>";
 	$from_mail = "info@budgetmetal.com";
 	$from_name = "BudgetMetal";
 	//$to_address = $email;
