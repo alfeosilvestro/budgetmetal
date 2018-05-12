@@ -1355,6 +1355,7 @@ elseif ($function == "EditProfile"){
 	$db->update('m_company', $dataArray,$where);
 
 	//tag
+	
 	if(isset($_GET['tagList'])){
 		$db->query("Delete From  `md_suppliertags` Where M_User_Id = ".$companyid);
 		foreach ($_GET['tagList'] as $index => $tag_id) {

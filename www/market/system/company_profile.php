@@ -663,7 +663,7 @@ if($Is_supplier_company == "1"){
               <strong>Tags</strong>
               <select class="form-control select2" multiple="multiple"
                   style="width: 100%;"
-                  data-bind="value: tags, valueUpdate: 'blur'" name="tagList[]">
+                  data-bind="value: tags, valueUpdate: 'blur'" name="tagList[]" id="tagselect">
                   <?php
                   $sql2 = "SELECT * FROM `c_tags` where Status = 1 Order by Seq";
                   $result2 = $conn->query($sql2);
@@ -871,6 +871,11 @@ if($Is_supplier_company == "1"){
   });
   $('#btnSubmit_Profile').on('click', function(){
     var address = $('#txt_address').val();
+    var x = $('#tagselect').find(":selected").text();
+    if(x == ""){
+      alert("Please maintain at least one tag.");
+    }
+   else{
     $.ajax({
       type: 'GET',
       url: "market.php?function=EditProfile",
@@ -886,6 +891,7 @@ if($Is_supplier_company == "1"){
         alert(response);
       }
     });
+   }
   });
 
   $('#btnSubmit_Service').on('click', function(){
