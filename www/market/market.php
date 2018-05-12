@@ -1265,8 +1265,8 @@ $Subject = "$company_name has replied on your comment.";
 	$quotationRating =$_GET['quotationRating'];
 	$deliveryRating =$_GET['deliveryRating'];
 	$priceRating =$_GET['priceRating'];
-	$title =$_GET['title'];
-	$description =$_GET['description'];
+	$title =$_POST['txt_title'];
+	$description =$_POST['txt_desc'];
 
 	$CreatedDate = date('Y-m-d H:i:s');
 

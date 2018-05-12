@@ -745,6 +745,7 @@ if (isset($result)){
           </div>
           <div class="modal-body">
             <div class="row">
+            <form id="frm_rating">
               <div class="form-group col-md-9">
                 <label for="">Speed of Quotation</label>
                 <input type="hidden" name = "hdCompanyID" id = "hdCompanyID" value="0" />
@@ -846,6 +847,7 @@ if (isset($result)){
                 <label for="">Description</label>
                 <textarea name="txt_desc" id="txt_desc"  class="form-control" rows="5" cols="50"></textarea>
               </div>
+              </form>
             </div>
 
           </div>
@@ -1157,9 +1159,10 @@ if (isset($result)){
         var description = $('#txt_desc').val();
 
         $.ajax({
-          type: "GET",
-          url: "market.php?user_id=<?php echo $userid;?>&function=SaveRatingforSupplier&companyid=<?php if($_SESSION['usertype'] == 'Supplier'){echo $rfqowner_companyid;}else{echo $companyid;} ?>&serviceRating=" + serviceRating + "&quotationRating=" + quotationRating + "&deliveryRating=" + deliveryRating + "&priceRating="+ priceRating +"&title="+ title +"&description="+ description +"&document_id=<?php echo $id;?>",
-          dataType: "json",
+          url: "market.php?user_id=<?php echo $userid;?>&function=SaveRatingforSupplier&companyid=<?php if($_SESSION['usertype'] == 'Supplier'){echo $rfqowner_companyid;}else{echo $companyid;} ?>&serviceRating=" + serviceRating + "&quotationRating=" + quotationRating + "&deliveryRating=" + deliveryRating + "&priceRating="+ priceRating  +"&document_id=<?php echo $id;?>",
+          type: 'POST',
+          data: $("#frm_rating").serialize(),
+          dataType: 'json',
           success: function (response) {
             location.reload();
           },
