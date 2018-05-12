@@ -1,4 +1,4 @@
-// <!-- AMK - Severity 1 - 1 supplier company can submit 1 quotation only for 1 RFQ -->
+ <!-- AMK - Severity 1 - 1 supplier company can submit 1 quotation only for 1 RFQ -->
  
  <?php
 	include("dbcon.php");
@@ -374,7 +374,7 @@
             $.ajax({
 
                 url: 'market.php?function=savequotation&act=draft',
-                type: 'GET',
+                type: 'POST',
                 data: $("#create_rfq").serialize(),
                 dataType: 'json',
                 success: function (data) {
@@ -401,7 +401,7 @@
             $.ajax({
 
                 url: 'market.php?function=savequotation&act=submit',
-                type: 'GET',
+                type: 'POST',
                 data: $("#create_rfq").serialize(),
                 dataType: 'json',
                 success: function (data) {

@@ -255,9 +255,9 @@ if ($function == "InviteSupplier"){
 }
 elseif ($function == "saverfq"){
 
-	$act = $_GET['act'];
+	$act = $_POST['act'];
 	$currentYear = date("Y");
-	$current_UserId = $_GET['user_id'];
+	$current_UserId = $_POST['user_id'];
 
 	$sql = "SELECT * FROM `document_number` t1 where t1.Name='RFQ' and t1.Prefix = '$current_UserId' and t1.Suffix = '$currentYear' ORDER BY Running_Number DESC Limit 1";
 	$result = $conn->query($sql);
@@ -294,7 +294,7 @@ elseif ($function == "saverfq"){
 		$doc_id = 1;
 	}
 	$Id = $doc_id;
-	$title = $_GET['subject'];
+	$title = $_POST['subject'];
 	$C_DocumentType = "6";
 	$ShortDescription = "";
 	$LongDescription ="";
@@ -305,21 +305,21 @@ elseif ($function == "saverfq"){
 		$C_RfqStatus = "10";
 	}
 	//$CreatedDate = date('Y-m-d H:i:s');
-	$RFQDate = date('Y-m-d', strtotime( $_GET['rfq_date']));
+	$RFQDate = date('Y-m-d', strtotime( $_POST['rfq_date']));
 	$CreatedDate = date("Y-m-d H:i:s");
-	$CreatedBy = $_GET['user_id'];
+	$CreatedBy = $_POST['user_id'];
 	$Status = "1";
-	$M_User_Id = $_GET['user_id'];
+	$M_User_Id = $_POST['user_id'];
 	$DocumentNo = $rfq_ref;
-	$company_name = $_GET['company_name'];
-	$ContactPersonFName = $_GET['first_name'];
-	$ContactPersonLName = $_GET['last_name'];
-	if(isset($_GET['chk_material'])){
+	$company_name = $_POST['company_name'];
+	$ContactPersonFName = $_POST['first_name'];
+	$ContactPersonLName = $_POST['last_name'];
+	if(isset($_POST['chk_material'])){
 		$Supplier_Provide_Material = 1;
 	}else{
 		$Supplier_Provide_Material = 0;
 	}
-	if(isset($_GET['chk_material'])){
+	if(isset($_POST['chk_material'])){
 		$Supplier_Provide_Transport = 1;
 	}else{
 		$Supplier_Provide_Transport = 0;
@@ -329,11 +329,11 @@ elseif ($function == "saverfq"){
 
 	$db->insert('t_document', $dataArray);
 
-	$FinalClosingDate = date('Y-m-d', strtotime( $_GET['due_date']));
-	$Remark = $_GET['remark'];
+	$FinalClosingDate = date('Y-m-d', strtotime( $_POST['due_date']));
+	$Remark = $_POST['remark'];
 	//t_requestforquotation
 
-	if($_GET['due_date'] == ""){
+	if($_POST['due_date'] == ""){
 		$dataArray = array('Document_Id' => $Id, 'Title' => $title, 'Supplier_Provide_Material' => $Supplier_Provide_Material, 'Supplier_Provide_Transport' => $Supplier_Provide_Transport, 'Remark' => $Remark);
 	}else{
 		$dataArray = array('Document_Id' => $Id, 'Title' => $title, 'FinalClosingDate' => $FinalClosingDate, 'FirstClosingDate' => $FinalClosingDate, 'Supplier_Provide_Material' => $Supplier_Provide_Material, 'Supplier_Provide_Transport' => $Supplier_Provide_Transport, 'Remark' => $Remark);
@@ -342,10 +342,10 @@ elseif ($function == "saverfq"){
 
 
 	//file upload
-	if(isset($_GET['attachment'] )){
+	if(isset($_POST['attachment'] )){
 		$count=0;
 
-		foreach ($_GET['attachment'] as $filename)
+		foreach ($_POST['attachment'] as $filename)
 		{
 			$file_id = 0;
 			$row = $db->select('t_fileattachments', null, null, 'ORDER BY Id DESC')->results();
@@ -354,9 +354,9 @@ elseif ($function == "saverfq"){
 			}else{
 				$file_id = 1;
 			}
-			$tmpfilename=$_GET['attachment'][$count];
-			$tmpfilesubject = $_GET['attachment_message'][$count];
-			$tmpfilemessage = $_GET['attachment_message'][$count];
+			$tmpfilename=$_POST['attachment'][$count];
+			$tmpfilesubject = $_POST['attachment_message'][$count];
+			$tmpfilemessage = $_POST['attachment_message'][$count];
 			$dataArray = array('Id' => $file_id, 'T_Document_Id' => $Id, 'FileName' => $tmpfilename, 'Subject' => $tmpfilesubject, 'Message' => $tmpfilemessage, 'FileBinary' => "", 'CreatedDate' => $CreatedDate, 'CreatedBy' => $CreatedBy, 'Status' => $Status);
 			$db->insert('t_fileattachments', $dataArray);
 
@@ -368,8 +368,8 @@ elseif ($function == "saverfq"){
 
 
 	//service
-	if(isset($_GET['serviceid'])){
-		foreach ($_GET['serviceid'] as $index => $serviceid) {
+	if(isset($_POST['serviceid'])){
+		foreach ($_POST['serviceid'] as $index => $serviceid) {
 
 			$requireService_id = 0;
 			$row = $db->select('td_requiredservices', null, null, 'ORDER BY Id DESC')->results();
@@ -378,7 +378,7 @@ elseif ($function == "saverfq"){
 			}else{
 				$requireService_id = 1;
 			}
-			$service_name = $_GET['service'][$index];
+			$service_name = $_POST['service'][$index];
 
 			$dataArray = array('Id' => $requireService_id, 'M_ServiceName' => $service_name, 'CreatedDate' => $CreatedDate, 'CreatedBy' => $CreatedBy, 'Status' => $Status, 'T_RFQ_Id' => $Id, 'M_Service_Id' => $serviceid);
 
@@ -387,8 +387,8 @@ elseif ($function == "saverfq"){
 		}
 	}
 	//selected supplier
-	if(isset($_GET['selected_supplier_id'])){
-		foreach ($_GET['selected_supplier_id'] as $index => $selected_supplier_id) {
+	if(isset($_POST['selected_supplier_id'])){
+		foreach ($_POST['selected_supplier_id'] as $index => $selected_supplier_id) {
 			if( $selected_supplier_id != 0){
 				$targetsupplier_id = 0;
 				$row = $db->select('t_targetedsuppliers', null, null, 'ORDER BY Id DESC')->results();
@@ -418,6 +418,7 @@ elseif ($function == "saverfq"){
 								$email = $email .  $row["EmailAddress"].";";
 							}
 							sendEmailforNotification($email,$Subject, $Message,"RFQ",$rfq_ref);
+							
 						}
 					}
 
@@ -429,9 +430,9 @@ elseif ($function == "saverfq"){
 	header('Content-Type: application/json');
 	echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been successfully created."));
 }elseif ($function == "editrfq"){
-	$act = $_GET['act'];
-	$rfq_id = $_GET['rfq_id'];
-	$rfq_ref = $_GET['rfq_ref'];
+	$act = $_POST['act'];
+	$rfq_id = $_POST['rfq_id'];
+	$rfq_ref = $_POST['rfq_ref'];
 	//if($act == 'draft'){
 
 		/* $sql = "SELECT * FROM `document_number` t1 where t1.Prefix = 'Draft' ORDER BY Running_Number DESC Limit 1";
@@ -476,7 +477,7 @@ $dt = $db->insert('document_number', $dataArray); */
 // }
 
 $Id = $rfq_id;
-$title = $_GET['subject'];
+$title = $_POST['subject'];
 $C_DocumentType = "6";
 $ShortDescription = "";
 $LongDescription ="";
@@ -487,19 +488,19 @@ if($act == 'draft'){
 	$C_RfqStatus = "10";
 }
 $CreatedDate = date('Y-m-d H:i:s');
-$CreatedBy = $_GET['user_id'];
+$CreatedBy = $_POST['user_id'];
 $Status = "1";
-$M_User_Id = $_GET['user_id'];
+$M_User_Id = $_POST['user_id'];
 $DocumentNo = $rfq_ref;
-$ContactPersonFName = $_GET['first_name'];
-$ContactPersonLName = $_GET['last_name'];
-$company_name = $_GET['company_name'];
-if(isset($_GET['chk_material'])){
+$ContactPersonFName = $_POST['first_name'];
+$ContactPersonLName = $_POST['last_name'];
+$company_name = $_POST['company_name'];
+if(isset($_POST['chk_material'])){
 	$Supplier_Provide_Material = 1;
 }else{
 	$Supplier_Provide_Material = 0;
 }
-if(isset($_GET['chk_material'])){
+if(isset($_POST['chk_material'])){
 	$Supplier_Provide_Transport = 1;
 }else{
 	$Supplier_Provide_Transport = 0;
@@ -510,12 +511,12 @@ $dataArray = array('Title' => $title, 'C_DocumentType' => $C_DocumentType, 'Shor
 $db->update('t_document', $dataArray,$where);
 //$db->insert('t_document', $dataArray);
 
-$FinalClosingDate = date('Y-m-d', strtotime( $_GET['due_date']));
-$FirstClosingDate =  date('Y-m-d', strtotime(  $_GET['due_date']));
-$Remark = $_GET['remark'];
+$FinalClosingDate = date('Y-m-d', strtotime( $_POST['due_date']));
+$FirstClosingDate =  date('Y-m-d', strtotime(  $_POST['due_date']));
+$Remark = $_POST['remark'];
 //t_requestforquotation
 
-if($_GET['due_date'] == ""){
+if($_POST['due_date'] == ""){
 	$dataArray = array('Title' => $title, 'Supplier_Provide_Material' => $Supplier_Provide_Material, 'Supplier_Provide_Transport' => $Supplier_Provide_Transport, 'Remark' => $Remark);
 }else{
 	$dataArray = array('Title' => $title, 'FinalClosingDate' => $FinalClosingDate, 'FirstClosingDate' => $FirstClosingDate, 'Supplier_Provide_Material' => $Supplier_Provide_Material, 'Supplier_Provide_Transport' => $Supplier_Provide_Transport, 'Remark' => $Remark);
@@ -526,12 +527,12 @@ $db->update('t_requestforquotation', $dataArray,$where);
 
 
 //file upload
-if(isset($_GET['attachment'] )){
+if(isset($_POST['attachment'] )){
 	$count=0;
 	$where = array('T_Document_Id' => $Id);
 	$dataArray = array( 'Status' => '0');
 	$db->update('t_fileattachments', $dataArray,$where);
-	foreach ($_GET['attachment'] as $filename)
+	foreach ($_POST['attachment'] as $filename)
 	{
 		$file_id = 0;
 		$row = $db->select('t_fileattachments', null, null, 'ORDER BY Id DESC')->results();
@@ -540,9 +541,9 @@ if(isset($_GET['attachment'] )){
 		}else{
 			$file_id = 1;
 		}
-		$tmpfilename=$_GET['attachment'][$count];
-		$tmpfilesubject = $_GET['attachment_message'][$count];
-		$tmpfilemessage = $_GET['attachment_message'][$count];
+		$tmpfilename=$_POST['attachment'][$count];
+		$tmpfilesubject = $_POST['attachment_message'][$count];
+		$tmpfilemessage = $_G_POSTET['attachment_message'][$count];
 		$dataArray = array('Id' => $file_id, 'T_Document_Id' => $Id, 'FileName' => $tmpfilename, 'Subject' => $tmpfilesubject, 'Message' => $tmpfilemessage, 'FileBinary' => "", 'CreatedDate' => $CreatedDate, 'CreatedBy' => $CreatedBy, 'Status' => $Status);
 		$db->insert('t_fileattachments', $dataArray);
 
@@ -554,12 +555,12 @@ if(isset($_GET['attachment'] )){
 
 
 //service
-if(isset($_GET['serviceid'])){
+if(isset($_POST['serviceid'])){
 	$where = array('T_RFQ_Id' => $Id);
 	$dataArray = array( 'Status' => '0');
 	$db->update('td_requiredservices', $dataArray,$where);
 
-	foreach ($_GET['serviceid'] as $index => $serviceid) {
+	foreach ($_POST['serviceid'] as $index => $serviceid) {
 
 		$requireService_id = 0;
 		$row = $db->select('td_requiredservices', null, null, 'ORDER BY Id DESC')->results();
@@ -568,7 +569,7 @@ if(isset($_GET['serviceid'])){
 		}else{
 			$requireService_id = 1;
 		}
-		$service_name = $_GET['service'][$index];
+		$service_name = $_POST['service'][$index];
 
 		$dataArray = array('Id' => $requireService_id, 'M_ServiceName' => $service_name, 'CreatedDate' => $CreatedDate, 'CreatedBy' => $CreatedBy, 'Status' => $Status, 'T_RFQ_Id' => $Id, 'M_Service_Id' => $serviceid);
 
@@ -576,9 +577,9 @@ if(isset($_GET['serviceid'])){
 	}
 }
 //selected supplier
-if(isset($_GET['selected_supplier_id'])){
+if(isset($_POST['selected_supplier_id'])){
 	$db->query("Delete From t_targetedsuppliers Where T_Document_Id = ".$Id);
-	foreach ($_GET['selected_supplier_id'] as $index => $selected_supplier_id) {
+	foreach ($_POST['selected_supplier_id'] as $index => $selected_supplier_id) {
 		if( $selected_supplier_id != 0){
 			$targetsupplier_id = 0;
 			$row = $db->select('t_targetedsuppliers', null, null, 'ORDER BY Id DESC')->results();
@@ -618,23 +619,23 @@ header('Content-Type: application/json');
 echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been successfully created."));
 }elseif ($function == "savequotation"){
 
-	$act = $_GET['act'];
+	$act = $_POST['act'];
 
 	if($act == 'draft'){
 		$C_QuotationStatus = "15";
 	}else{
 		$C_QuotationStatus = "16";
 	}
-	$q_id =$_GET['q_id'];
+	$q_id =$_POST['q_id'];
 	$Id = $q_id;
 	$ModifiedDate = date('Y-m-d H:i:s');
-	$ModifiedBy = $_GET['user_id'];
+	$ModifiedBy = $_POST['user_id'];
 	$CreatedDate = date('Y-m-d H:i:s');
-	$CreatedBy = $_GET['user_id'];
-	$rfq_ref = $_GET['rfq_ref'];
-	$company_name = $_GET['company_name'];
-	$ContactPersonFName = $_GET['first_name'];
-	$ContactPersonLName = $_GET['last_name'];
+	$CreatedBy = $_POST['user_id'];
+	$rfq_ref = $_POST['rfq_ref'];
+	$company_name = $_POST['company_name'];
+	$ContactPersonFName = $_POST['first_name'];
+	$ContactPersonLName = $_POST['last_name'];
 	$Status = "1";
 	$where = array('Id' => $Id);
 	$dataArray = array('C_QuotationStatus' => $C_QuotationStatus, 'ModifiedDate' => $ModifiedDate, 'ModifiedBy' => $ModifiedBy,'ContactPersonFName' => $ContactPersonFName,'ContactPersonLName' => $ContactPersonLName);
@@ -648,21 +649,21 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 	}else{
 		$RevisionNo = 1;
 	}
-	$ValidToDate = date('Y-m-d', strtotime( $_GET['valid_date']));
-	$QuotedFigure = $_GET['bid_price'];
-	$Comments = $_GET['comment'];
+	$ValidToDate = date('Y-m-d', strtotime( $_POST['valid_date']));
+	$QuotedFigure = $_POST['bid_price'];
+	$Comments = $_POST['comment'];
 	$where = array('Document_Id' => $Id);
 	$dataArray = array( 'QuotedFigure' => $QuotedFigure, 'ValidToDate' => $ValidToDate, 'RevisionNo' =>$RevisionNo, 'Comments' => $Comments);
 
 	$db->update('t_supplierquotation', $dataArray,$where);
 
 	//file upload
-	if(isset($_GET['attachment'] )){
+	if(isset($_POST['attachment'] )){
 		$count=0;
 		$where = array('T_Document_Id' => $Id);
 		$dataArray = array( 'Status' => '0');
 		$db->update('t_fileattachments', $dataArray,$where);
-		foreach ($_GET['attachment'] as $filename)
+		foreach ($_POST['attachment'] as $filename)
 		{
 			$file_id = 0;
 			$row = $db->select('t_fileattachments', null, null, 'ORDER BY Id DESC')->results();
@@ -671,9 +672,9 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 			}else{
 				$file_id = 1;
 			}
-			$tmpfilename=$_GET['attachment'][$count];
-			$tmpfilesubject = $_GET['attachment_message'][$count];
-			$tmpfilemessage = $_GET['attachment_message'][$count];
+			$tmpfilename=$_POST['attachment'][$count];
+			$tmpfilesubject = $_POST['attachment_message'][$count];
+			$tmpfilemessage = $_POST['attachment_message'][$count];
 			$dataArray = array('Id' => $file_id, 'T_Document_Id' => $Id, 'FileName' => $tmpfilename, 'Subject' => $tmpfilesubject, 'Message' => $tmpfilemessage, 'FileBinary' => "", 'CreatedDate' => $CreatedDate, 'CreatedBy' => $CreatedBy, 'Status' => $Status);
 			$db->insert('t_fileattachments', $dataArray);
 			$count=$count + 1;
@@ -894,9 +895,9 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 				$ownerrfq =1;
 			}
 		}
-		$rfq_id =$_GET['document_id'];
-		$askinguser_id =$_GET['askinguser_id'];
-		$txt_comment =$_GET['comment'];
+		$rfq_id =$_POST['document_id'];
+		$askinguser_id =$_POST['askinguser_id'];
+		$txt_comment =$_POST['comment'];
 		$CreatedDate = date('Y-m-d H:i:s');
 		$error = "0";
 		$msg = "";
@@ -980,14 +981,14 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 		}
 	}elseif($act == "reply"){
 		$id =$_GET['id'];
-		$reply_message =$_GET['replyComment'];
+		$reply_message =$_POST['replyComment'];
 		$where = array('Id' => $id);
 		$dataArray = array( 'ClarificationAnswer' => $reply_message);
 		$db->update('t_clarifications', $dataArray,$where);
 
-		$rfq_id = $_GET['document_id'];
-		$replyuser_id = $_GET['replyuser_id'];
-		$askinguser_id = $_GET['askinguser_id'];
+		$rfq_id = $_POST['document_id'];
+		$replyuser_id = $_POST['replyuser_id'];
+		$askinguser_id = $_POST['askinguser_id'];
 		$commentowner_companyid = "";
 		$company_name = "";
 		$doc_type = "";

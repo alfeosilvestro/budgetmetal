@@ -496,7 +496,7 @@ if (isset($result)){
                       <div class="text-center">
                         <br><br><br>
                         <span style="color:white;" id="addMoreSupplier"><h4>You have reached the limit of 5 chosen suppliers for this RFQ.
-                          <br><button class="btn btn-warning btn-md" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow BudgetMetal to suggest another 5 suppliers for you. </h4> </span>
+                          <br><button class="btn btn-warning btn-md" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow BudgetMetal to suggest another 8 suppliers for you. </h4> </span>
                           </div>
 
                       </div>
@@ -671,10 +671,10 @@ if (isset($result)){
         $("#selectedRCount").removeClass("badge");
       }
       else{
-        if(rowCount==5){
+        if(rowCount==8){
           document.getElementById("overlay").style.display = "block";
           $("#addMoreSupplier").show();
-        }else if(rowCount<5){
+        }else if(rowCount<8){
           document.getElementById("overlay").style.display = "none";
           $("#addMoreSupplier").show();
         }else{
@@ -1225,7 +1225,7 @@ if (isset($result)){
     function SaveRFQ() {
       $.ajax({
         url: 'market.php?function=editrfq&act=draft',
-        type: 'GET',
+        type: 'POST',
         data: $("#create_rfq").serialize(),
         dataType: 'json',
         success: function (data) {
@@ -1251,7 +1251,7 @@ if (isset($result)){
       $.ajax({
 
         url: 'market.php?function=editrfq&act=submit',
-        type: 'GET',
+        type: 'POST',
         data: $("#create_rfq").serialize(),
         dataType: 'json',
         success: function (data) {
@@ -1309,8 +1309,8 @@ if (isset($result)){
 
         }
         //alert(items.length);
-        var loop_num = 5;
-        if(items.length <  5){
+        var loop_num = 8;
+        if(items.length <  8){
           loop_num = items.length;
         }
         var lopp_start = 0;

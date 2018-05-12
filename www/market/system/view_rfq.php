@@ -569,7 +569,7 @@ if (isset($result)){
               </thead>
               <tbody>
                 <?php
-                $query = "SELECT t1.Id, t1.DocumentNo, t1.CreatedDate, t2.Name as Status, t4.Name As CompanyName, t1.ContactPersonFName, t1.ContactPersonLName FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_QuotationStatus INNER JOIN m_user t3 on t3.Id = t1.M_User_Id  Inner JOIN m_company t4 on t4.Id = t3.M_Company_Id Where t1.C_QuotationStatus IN (15,16,17,18,19) and t1.DocumentNo = '$rfq_ref'";
+                $query = "SELECT t1.Id, t1.DocumentNo, t1.CreatedDate, t2.Name as Status, t4.Name As CompanyName, t1.ContactPersonFName, t1.ContactPersonLName FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_QuotationStatus INNER JOIN m_user t3 on t3.Id = t1.M_User_Id  Inner JOIN m_company t4 on t4.Id = t3.M_Company_Id Where t1.C_QuotationStatus IN (16,17,18,19) and t1.DocumentNo = '$rfq_ref'";
                 $results = $db->pdoQuery($query)->results();
                 if (!empty($results)){
                   $count = 0;
@@ -1050,7 +1050,7 @@ $(function () {
       $.ajax({
 
         url: 'market.php?function=RFQComment&act=save&ownerrfq='+txt_ownerrfq,
-        type: 'GET',
+        type: 'POST',
         data: $("#frm_comment").serialize(),
         dataType: 'json',
         success: function (data) {
@@ -1134,7 +1134,7 @@ function reply_Comment(id){
   $.ajax({
 
     url: 'market.php?function=RFQComment&act=reply&id='+id,
-    type: 'GET',
+    type: 'POST',
     data: $("#RFQReply"+id).serialize(),
     dataType: 'json',
     success: function (data) {

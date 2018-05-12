@@ -940,7 +940,7 @@ if (isset($result)){
         }else{
           $.ajax({
             url: 'market.php?function=RFQComment&act=save',
-            type: 'GET',
+            type: 'POST',
             data: $("#frm_comment").serialize(),
             dataType: 'json',
             success: function (data) {
@@ -970,7 +970,7 @@ if (isset($result)){
         var id = obj.data("clarificationid");
         $.ajax({
           url: 'market.php?function=RFQComment&act=reply&id='+id,
-          type: 'GET',
+          type: 'POST',
           data: $("#RFQReply"+id).serialize(),
           dataType: 'json',
           success: function (data) {
@@ -1194,7 +1194,7 @@ if (isset($result)){
       $.ajax({
 
         url: 'market.php?function=RFQComment&act=reply&id='+id,
-        type: 'GET',
+        type: 'POST',
         data: $("#RFQReply"+id).serialize(),
         dataType: 'json',
         success: function (data) {
