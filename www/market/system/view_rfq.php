@@ -286,7 +286,7 @@ if (isset($result)){
                   <label>Remark: </label>
                 </div>
                 <div class="col-sm-6">
-                  <?php echo $Remark; ?>
+                  <?php echo nl2br($Remark); ?>
                 </div>
               </div>
             </div>
