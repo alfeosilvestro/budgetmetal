@@ -433,7 +433,7 @@ $q_id = 0;
     function SaveQuotation() {
       $.ajax({
         url: 'market.php?function=savequotation&act=draft',
-        type: 'GET',
+        type: 'POST',
         data: $("#create_rfq").serialize(),
         dataType: 'json',
         success: function (data) {
@@ -460,7 +460,7 @@ $q_id = 0;
       $.ajax({
 
         url: 'market.php?function=savequotation&act=submit',
-        type: 'GET',
+        type: 'POST',
         data: $("#create_rfq").serialize(),
         dataType: 'json',
         success: function (data) {

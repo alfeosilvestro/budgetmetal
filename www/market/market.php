@@ -22,7 +22,7 @@ if ($function == "InviteSupplier"){
 	}
 	echo json_encode($message);
 }elseif ($function == "UpdatePassword"){
-	$newpass = $_GET["newpass"];
+	$newpass = $_POST["newpass"];
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);
 	$dataArray = array( 'Password' => $newpass);
@@ -31,9 +31,9 @@ if ($function == "InviteSupplier"){
 	$message['success'] = true;
 	echo json_encode($message);
 }elseif ($function == "UpdateUserProfile"){
-	$name = $_GET["name"];
-	$jobtitle = $_GET["jobtitle"];
-	$contactno = $_GET["contactno"];
+	$name = $_POST["name"];
+	$jobtitle = $_POST["jobtitle"];
+	$contactno = $_POST["contactno"];
 
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);
@@ -44,7 +44,7 @@ if ($function == "InviteSupplier"){
 	$db->update('m_user', $dataArray,$where);
 
 	$dataArray = array( 'ContactNumbers' => $contactno);
-	$db->update('m_user', $dataArray,$where);
+	$db->update('m_user', $dataArray, $where);
 
 	$message['success'] = true;
 	echo json_encode($message);
@@ -53,7 +53,7 @@ if ($function == "InviteSupplier"){
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);
 	$dataArray = array( 'C_UserType' => $type_id);
-	$db->update('m_user', $dataArray,$where);
+	$db->update('m_user', $dataArray, $where);
 }elseif ($function == "checksupplierservice"){
 	$company_uen = $_GET["company_uen"];
 	$c = 0;
@@ -619,7 +619,7 @@ header('Content-Type: application/json');
 echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been successfully created."));
 }elseif ($function == "savequotation"){
 
-	$act = $_POST['act'];
+	$act = $_GET['act'];
 
 	if($act == 'draft'){
 		$C_QuotationStatus = "15";
@@ -1310,7 +1310,7 @@ $Subject = "$company_name has replied on your comment.";
 }elseif ($function == "EditAbout"){
 	$message = array();
 	$companyid =$_GET['companyid'];
-	$about =$_GET['about'];
+	$about =$_POST['about'];
 
 	$where = array('Id' => $companyid);
 	$dataArray = array( 'About' => $about);
@@ -1347,8 +1347,8 @@ $Subject = "$company_name has replied on your comment.";
 }
 elseif ($function == "EditProfile"){
 	$message = array();
-	$companyid =$_GET['companyid'];
-	$address =$_GET['address'];
+	$companyid =$_POST['companyid'];
+	$address =$_POST['address'];
 
 	$where = array('Id' => $companyid);
 	$dataArray = array( 'Address' => $address);
@@ -1356,9 +1356,9 @@ elseif ($function == "EditProfile"){
 
 	//tag
 	
-	if(isset($_GET['tagList'])){
+	if(isset($_POST['tagList'])){
 		$db->query("Delete From  `md_suppliertags` Where M_User_Id = ".$companyid);
-		foreach ($_GET['tagList'] as $index => $tag_id) {
+		foreach ($_POST['tagList'] as $index => $tag_id) {
 			$tagsupplier_id = 0;
 			$row = $db->select('md_suppliertags', null, null, 'ORDER BY Id DESC')->results();
 			if ($row) {

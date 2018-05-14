@@ -622,7 +622,7 @@ if($Is_supplier_company == "1"){
         </div>
         <div class="modal-body">
           <div class="row">
-            <form id="update_profile" action="update_profile" method="get">
+            <form id="update_profile" action="update_profile" method="post">
               <input type="hidden" name="companyid" value="<?php echo $companyid; ?>">
 
             <div class="form-group col-md-12">
@@ -851,7 +851,7 @@ if($Is_supplier_company == "1"){
     $('#btnSubmit').on('click', function(){
       var about = $('#txt_about').val();
       $.ajax({
-        type: 'GET',
+        type: 'POST',
         url: "market.php?function=EditAbout&companyid=<?php echo $companyid;?>",
         data: $("#update_about").serialize(),
         dataType: "json",
@@ -877,7 +877,7 @@ if($Is_supplier_company == "1"){
     }
    else{
     $.ajax({
-      type: 'GET',
+      type: 'POST',
       url: "market.php?function=EditProfile",
       data: $("#update_profile").serialize(),
       dataType: "json",
