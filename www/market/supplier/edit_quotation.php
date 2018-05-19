@@ -359,12 +359,30 @@
 
 	$("#btnsubmit_quotation_top").click(function (e) {
 		e.preventDefault();
-    var bid_price = $("input[id='bid_price']").val();
-    if(parseInt(bid_price) > 0){
-      	SubmitQuotation();
-    }else{
-      alert("Bid Price must be greater than 0");
-    }
+    
+        var bid_price = $("input[id='bid_price']").val();
+        var firstName = $("input[id='txtFirstName']").val();
+        
+        var error = "";
+
+        if(firstName.trim())
+        {
+            error = error + "First name must not be empty.";
+        }
+
+        if(parseInt(bid_price) <= 0)
+        {
+            error = error + "Quotation Price must be greater than 0.";
+        }
+
+        // check error
+        if(error === "") {
+            alert(error);
+            return false;
+        }
+
+        // submit quotation when there is no error
+        SubmitQuotation();
 
 
 	});

@@ -213,7 +213,7 @@ $q_id = 0;
                 </div>
                 <div class="form-group">
                   <label>Contact Person First Name</label>
-                  <input name="first_name" type="text" class="form-control" value="" placeholder="First Name">
+                  <input id="txtFirstName" name="first_name" type="text" class="form-control" value="" placeholder="First Name">
                 </div>
                 <div class="form-group">
                   <label>Valid Until</label>
@@ -421,12 +421,28 @@ $q_id = 0;
 
       e.preventDefault();
       var bid_price = $("input[id='bid_price']").val();
-      if(parseInt(bid_price) > 0){
-          SubmitQuotation();
-      }else{
-        alert("Bid Price must be greater than 0");
+      var firstName = $("input[id='txtFirstName']").val();
+      
+      var error = "";
+
+      if(firstName.trim())
+      {
+        error = error + "First name must not be empty.";
       }
 
+      if(parseInt(bid_price) <= 0)
+      {
+        error = error + "Quotation Price must be greater than 0.";
+      }
+
+      // check error
+      if(error === "") {
+        alert(error);
+        return false;
+      }
+
+      // submit quotation when there is no error
+      SubmitQuotation();
 
     });
 
