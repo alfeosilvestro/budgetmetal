@@ -175,16 +175,7 @@ if (isset($result)){
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Project Name/ No.: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $rfq_subject;?>
-                </div>
-              </div>
-            </div>
+            
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
@@ -287,11 +278,22 @@ if (isset($result)){
           <div class="col-md-12 col-sm-12 col-xs-12">
           
             <div class="form-group">
+              <div class="row">
+                <div class="col-sm-3">
+                  <label>Project Name/ No.: </label>
+                </div>
+                <div class="col-sm-9">
+                  <?php echo $rfq_subject;?>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
                 <div class="row">
-                  <div class="col-sm-6">
+                  <div class="col-sm-3">
                     <label>Remark: </label>
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-9">
                     <?php echo nl2br($Remark); ?>
                   </div>
                 </div>
