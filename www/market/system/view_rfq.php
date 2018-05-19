@@ -655,7 +655,9 @@ if (isset($result)){
       }
       ?>
       <div class="btn-group pull-left">
-        <?php if(($_SESSION['usertype'] == 'Supplier') &&  ($rfq_statusid == '10') && ($invited == 'yes') && ($interested != 'yes' )){
+        <?php 
+        // show button to register interst when rfq is closed
+        if(($_SESSION['usertype'] == 'Supplier') &&  ($rfq_statusid == '10' || $rfq_statusid == '11') && ($invited == 'yes') && ($interested != 'yes' )){
           if(isset($_GET["rfq_ref"])){
             $rfq_ref =$_GET["rfq_ref"];
             $company_Id = $_SESSION['M_Company_Id'] ;
