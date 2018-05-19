@@ -195,16 +195,7 @@ if (isset($result)){
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Supplier Provide Transport: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $Supplier_Provide_Transport;?>
-                </div>
-              </div>
-            </div>
+
           </div>
           <div class="col-sm-6">
             <div class="form-group">
@@ -280,19 +271,34 @@ if (isset($result)){
               </div>
             </div>
 
-            <div class="form-group">&nbsp;</div>
-
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
-                  <label>Remark: </label>
+                  <label>Supplier Provide Transport: </label>
                 </div>
                 <div class="col-sm-6">
-                  <?php echo nl2br($Remark); ?>
+                  <?php echo $Supplier_Provide_Transport;?>
                 </div>
               </div>
             </div>
+
           </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+          
+            <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label>Remark: </label>
+                  </div>
+                  <div class="col-sm-6">
+                    <?php echo nl2br($Remark); ?>
+                  </div>
+                </div>
+              </div>
+          
+          </div>
+
         </div>
       </div>
       <!-- /.box-body -->
