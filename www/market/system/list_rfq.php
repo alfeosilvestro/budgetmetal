@@ -107,7 +107,7 @@ if(isset($_GET["list"])){
                   <th>Company</th>
                   <th>Ref No.</th>
                   <th>Subject</th>
-                  <th>Created Date</th>
+                  <th>Due Date</th>
                   <th>Status</th>
                   <th></th>
                 </tr>
@@ -157,7 +157,7 @@ if(isset($_GET["list"])){
                 <th>Company</th>
                 <th>Ref No.</th>
                 <th>Subject</th>
-                <th>Created Date</th>
+                <th>Due Date</th>
                 <th>Status</th>
                 <th></th>
               </tr>
@@ -219,7 +219,7 @@ if(isset($_GET["list"])){
                 <th>Company</th>
                 <th>Ref No.</th>
                 <th>Subject</th>
-                <th>Created Date</th>
+                <th>Due Date</th>
                 <th>Status</th>
                 <th></th>
               </tr>
@@ -276,7 +276,7 @@ if(isset($_GET["list"])){
                 <th>Company</th>
                 <th>Ref No.</th>
                 <th>Subject</th>
-                <th>Created Date</th>
+                <th>Due Date</th>
                 <th>Status</th>
                 <th></th>
               </tr>
@@ -333,7 +333,7 @@ if(isset($_GET["list"])){
                   <th>Company</th>
                   <th>Ref No.</th>
                   <th>Subject</th>
-                  <th>Created Date</th>
+                  <th>Due Date</th>
                   <th>Status</th>
                   <th></th>
                 </tr>
