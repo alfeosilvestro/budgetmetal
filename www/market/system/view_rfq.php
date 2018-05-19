@@ -280,13 +280,15 @@ if (isset($result)){
               </div>
             </div>
 
+            <div class="form-group">&nbsp;</div>
+
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
                   <label>Remark: </label>
                 </div>
                 <div class="col-sm-6">
-                  <?php echo $Remark; ?>
+                  <?php echo nl2br($Remark); ?>
                 </div>
               </div>
             </div>

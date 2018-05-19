@@ -426,7 +426,7 @@ Width
                 <div class="text-center">
                   <br><br><br>
                   <span style="color:white;" id="addMoreSupplier"><h4>You have reached the limit of 8 chosen suppliers for this RFQ.
-                    <br><button class="btn btn-warning btn-md" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow BudgetMetal to suggest another 5 suppliers for you. </h4> </span>
+                    <br><button class="btn btn-warning btn-md" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow BudgetMetal to suggest another 8 suppliers for you. </h4> </span>
                   </div>
 
                 </div>
