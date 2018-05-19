@@ -164,14 +164,14 @@ if (isset($result)){
                 </div>
               </div>
             </div>
+            
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
-                  <label>RFQ Date: </label>
+                  <label>Supplier Provide Transport: </label>
                 </div>
                 <div class="col-sm-6">
-                  <input type="hidden" name="rfq_createddate" id="rfq_datepicker" value="<?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>">
-                  <?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>
+                  <?php echo $Supplier_Provide_Transport;?>
                 </div>
               </div>
             </div>
@@ -236,6 +236,17 @@ if (isset($result)){
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
+                  <label>RFQ Date: </label>
+                </div>
+                <div class="col-sm-6">
+                  <input type="hidden" name="rfq_createddate" id="rfq_datepicker" value="<?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>">
+                  <?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
                   <label>Due Date: </label>
                 </div>
                 <div class="col-sm-6">
@@ -258,17 +269,6 @@ if (isset($result)){
                   }
 
                   ?>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Supplier Provide Transport: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $Supplier_Provide_Transport;?>
                 </div>
               </div>
             </div>
