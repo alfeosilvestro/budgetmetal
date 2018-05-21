@@ -423,12 +423,15 @@ if (isset($result)){
 
                 }
               }
-
-              ?>
+              if($q_statusid == 15){
+                ?>
               <a href="index.php?rdp=edit_quotation&id=<?php echo $q_id;?>" class="btn btn-warning">
                 <i class="fa fa-pencil-square-o"></i>
                 Edit Quotation
               </a>
+              <?php
+              }
+              ?>
               <a href="#" class="btn btn-danger" onclick="withdrawn_quotation(<?php echo $q_id;?>)">
                 <i class="fa fa-pencil-square-o"></i>
                 Withdrawn Quotation
