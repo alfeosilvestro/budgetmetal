@@ -425,7 +425,7 @@ $q_id = 0;
       
       var error = "";
 
-      if(firstName.trim())
+      if(firstName.trim() == "")
       {
         error = error + "First name must not be empty.";
       }
@@ -436,13 +436,15 @@ $q_id = 0;
       }
 
       // check error
-      if(error === "") {
+      if(error != "") {
         alert(error);
         return false;
+      }else{
+        // submit quotation when there is no error
+        SubmitQuotation();
       }
 
-      // submit quotation when there is no error
-      SubmitQuotation();
+      
 
     });
 

@@ -109,7 +109,7 @@
                     </div>
                     <div class="form-group">
                         <label>Contact Person First Name</label>
-                        <input name="first_name" type="text" class="form-control" value="<?php echo $FName; ?>" placeholder="First Name">
+                        <input id="txtFirstName" name="first_name" type="text" class="form-control" value="<?php echo $FName; ?>" placeholder="First Name">
                     </div>
                     <div class="form-group">
                         <label>Valid Until</label>
@@ -150,7 +150,7 @@
                     </div>
                     <div class="form-group">
                         <label>Contact Person Last Name</label>
-                        <input name="last_name" type="text"  class="form-control" value="<?php echo $FName; ?>" placeholder="Last Name">
+                        <input name="last_name" type="text"  class="form-control" value="<?php echo $LName; ?>" placeholder="Last Name">
                     </div>
                     <div class="form-group">
                         <label>Bid Price</label>
@@ -364,8 +364,8 @@
         var firstName = $("input[id='txtFirstName']").val();
         
         var error = "";
-
-        if(firstName.trim())
+        //alert($.trim(firstName));
+        if(firstName.trim() == "")
         {
             error = error + "First name must not be empty.";
         }
@@ -376,13 +376,15 @@
         }
 
         // check error
-        if(error === "") {
+        if(error != "") {
             alert(error);
             return false;
+        }else{
+            // submit quotation when there is no error
+            SubmitQuotation();
         }
 
-        // submit quotation when there is no error
-        SubmitQuotation();
+        
 
 
 	});
