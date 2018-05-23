@@ -458,6 +458,7 @@ if (isset($result)){
           <h3 class="box-title">Search Suppliers</h3>
 
           <div class="box-tools pull-right">
+          <input type="text" placeholder="Search by Name" id="txt_search_name" style="display:initial; width: auto;" name="txt_search_name" value="" class="form-control">
             <button type="button" id="btn_search_suppliers" class="btn btn-sm btn-search" value="Search Suppliers">
               <i class="fa fa-refresh"></i>
             </button>
@@ -972,43 +973,7 @@ if (isset($result)){
     }
 
     $('button[id=btn_search_suppliers]').click(function(){
-      var table_suppliers = document.getElementById('selected_suppliers');
-
-      var rowLength_supplier = table_suppliers.rows.length;
-      var selected_suppliers_id = "0";
-
-      for(var i=1; i<rowLength_supplier; i+=1){
-        var row = table_suppliers.rows[i];
-        var selected_suppliers = row.getElementsByTagName("input")[0];
-
-        selected_suppliers_id = selected_suppliers_id + "," +selected_suppliers.value;
-      }
-
-      var table = document.getElementById('servicelist');
-
-      var rowLength = table.rows.length;
-      var servicesid= "0";
-      for(var i=1; i<rowLength; i+=1){
-        var row = table.rows[i];
-        var serviceid = row.getElementsByTagName("input")[0];
-        servicesid = servicesid + "," +serviceid.value;
-      }
-
-      if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-      } else {
-        // code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          $("#search_suppliers tbody").find('tr').remove().end();
-          $("#search_suppliers tbody").append(this.responseText);
-        }
-      };
-      xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id+ "&user_id=<?php echo $company_id; ?>&rowCount=0",true);
-      xmlhttp.send();
+      searchsupplier();
 
     });
 
@@ -1018,6 +983,8 @@ if (isset($result)){
     });
 
     function searchsupplier(){
+      var search_name =  $('#txt_search_name').val();
+    search_name = encodeURIComponent(search_name);
 
       var table_suppliers = document.getElementById('selected_suppliers');
 
@@ -1072,11 +1039,14 @@ if (isset($result)){
           }
         }
       };
-      xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount=0",true);
+      xmlhttp.open("GET","market.php?search_name="+search_name+"&servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount=0",true);
       xmlhttp.send();
     }
 
     function searchsupplier_loadmore(){
+      var search_name =  $('#txt_search_name').val();
+    search_name = encodeURIComponent(search_name);
+
       var table_suppliers = document.getElementById('selected_suppliers');
 
       var rowLength_supplier = table_suppliers.rows.length;
@@ -1130,7 +1100,7 @@ if (isset($result)){
           }
         }
       };
-      xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
+      xmlhttp.open("GET","market.php?search_name="+search_name+"&servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
       xmlhttp.send();
 
 

@@ -388,6 +388,7 @@ Width
     <h3 class="box-title">Search Suppliers</h3>
 
     <div class="box-tools pull-right">
+      <input type="text" placeholder="Search by Name" id="txt_search_name" style="display:initial; width: auto;" name="txt_search_name" value="" class="form-control">
       <button type="button" id="btn_search_suppliers" class="btn btn-sm btn-search" value="Search Suppliers">
         <i class="fa fa-refresh"></i>
       </button>
@@ -865,7 +866,8 @@ $(function () {
   });
 
   function searchsupplier(){
-
+    var search_name =  $('#txt_search_name').val();
+    search_name = encodeURIComponent(search_name);
     var table_suppliers = document.getElementById('selected_suppliers');
 
     var rowLength_supplier = table_suppliers.rows.length;
@@ -920,11 +922,14 @@ $(function () {
         }
       }
     };
-    xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
+    xmlhttp.open("GET","market.php?search_name="+search_name+"&servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
     xmlhttp.send();
   }
 
   function searchsupplier_loadmore(){
+    var search_name =  $('#txt_search_name').val();
+    search_name = encodeURIComponent(search_name);
+
     var table_suppliers = document.getElementById('selected_suppliers');
 
     var rowLength_supplier = table_suppliers.rows.length;
@@ -979,7 +984,7 @@ $(function () {
         }
       }
     };
-    xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
+    xmlhttp.open("GET","market.php?search_name="+search_name+"&servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
     xmlhttp.send();
 
 
