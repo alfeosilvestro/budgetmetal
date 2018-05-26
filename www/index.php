@@ -69,6 +69,10 @@
         <div class="container">
             <div class="row">&nbsp;</div>
             <div class="row">&nbsp;</div>
+            <div style="position:fixed; top:0px;width:20%;height:70px;">
+                Contact us at quote@budgetmetal.com
+            </div>
+            <!-- Get Quote floating ads -->
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <h1><br/><span class="brand-heading">BudgetMetal</span></h1>
