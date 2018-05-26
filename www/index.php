@@ -69,8 +69,14 @@
         <div class="container">
             <div class="row">&nbsp;</div>
             <div class="row">&nbsp;</div>
-            <div style="position:fixed; top:0px;width:20%;height:70px;">
-                Contact us at quote@budgetmetal.com
+            <div style="position:fixed;top:70px;width: 70%;height:70px;text-align: right;z-index:  10000;">
+                <div style="background-color:  rgba(1,1,1,0.5);width: 25%;float: right;padding: 5px;/* color: white; */">
+                    <h3 style="color:  white !important; line-height: 2;">
+                        Contact us at quote@budgetmetal.com
+                        <br>
+                        or Call +65 6519 0961
+                    </h3>
+                </div>
             </div>
             <!-- Get Quote floating ads -->
             <div class="row">
@@ -155,7 +161,7 @@
                             <br/><br/>
                             <a href="market/register.php" class="btn btn-info btn-sm"
                                style="color: white !important; width: 100%">
-                                Sign Up for Free
+                                SIGN UP FOR FREE
                             </a>
 
                         </form>
