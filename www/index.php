@@ -66,7 +66,7 @@
 <!-- Header -->
 <div id="intro">
     <div class="intro-body">
-            <div style="position:fixed;top:70px;width: 70%;height:70px;text-align: right;z-index:  10000;">
+            <div style="position:fixed;top:70px;width: 100%;height:70px;text-align: right;z-index:  10000;">
                 <div style="background-color:  rgba(1,1,1,0.5);width: 25%;float: right;padding: 5px;/* color: white; */">
                     <h3 style="color:  white !important; line-height: 2;">
                         Contact us at quote@budgetmetal.com
