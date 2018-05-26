@@ -66,9 +66,6 @@
 <!-- Header -->
 <div id="intro">
     <div class="intro-body">
-        <div class="container">
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
             <div style="position:fixed;top:70px;width: 70%;height:70px;text-align: right;z-index:  10000;">
                 <div style="background-color:  rgba(1,1,1,0.5);width: 25%;float: right;padding: 5px;/* color: white; */">
                     <h3 style="color:  white !important; line-height: 2;">
@@ -79,6 +76,10 @@
                 </div>
             </div>
             <!-- Get Quote floating ads -->
+        <div class="container">
+            <div class="row">&nbsp;</div>
+            <div class="row">&nbsp;</div>
+            
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <h1><br/><span class="brand-heading">BudgetMetal</span></h1>
