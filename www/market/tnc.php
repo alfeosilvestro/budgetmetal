@@ -2025,7 +2025,7 @@ of your failure to comply with these Terms, including any failure of a person
 who accesses and uses our Website by using your User ID.</span></a><span
 lang=EN-NZ style='mso-no-proof:no'><o:p></o:p></span></p>
 
-<p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
+<!--<p class=OutlinenumberedLevel2 style='margin-top:0in;mso-list:l6 level2 lfo2'><![if !supportLists]><span
 lang=EN-NZ style='mso-fareast-font-family:Arial;mso-no-proof:no'><span
 style='mso-list:Ignore'>4.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-NZ style='mso-no-proof:no'>Fee
@@ -2050,7 +2050,7 @@ lang=EN-NZ style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>i
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-NZ>Transaction fee of 1.5% of the
 deal (Purchase Order) value which was concluded on our website with buyers on
-our website.</span></p>
+our website.</span></p>-->
 
 <p class=OutlinenumberedLevel1 style='mso-list:l6 level1 lfo2'><a
 name="_Ref411424646"><![if !supportLists]><span lang=EN-NZ style='mso-fareast-font-family:
