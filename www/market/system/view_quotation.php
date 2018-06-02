@@ -358,7 +358,7 @@ if (isset($result)){
         <div class="box-body">
           <div class="row">
             <div class="col-sm-12">
-              <?php echo $Comments;?>
+              <?php echo nl2br($Comments);?>
 
             </div>
 
