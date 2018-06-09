@@ -212,8 +212,8 @@ $q_id = 0;
                   value="<?php echo $company_name; ?>">
                 </div>
                 <div class="form-group">
-                  <label>Contact Person First Name</label>
-                  <input id="txtFirstName" name="first_name" type="text" class="form-control" value="" placeholder="First Name">
+                  <label>Contact Person</label>
+                  <input id="txtFirstName" name="first_name" type="text" class="form-control" value="" placeholder="Full Name">
                 </div>
                 <div class="form-group">
                   <label>Valid Until</label>
@@ -238,10 +238,10 @@ $q_id = 0;
                   <input name="reg_no" type="text" readonly class="form-control"
                   value="<?php echo $reg_no; ?>">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Contact Person Last Name</label>
                   <input name="last_name" type="text"  class="form-control" value="" placeholder="Last Name">
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label>Bid Price</label>
                   <!--<input id="bid_price" name="bid_price" type="number" class="form-control pull-right" placeholder="Please enter bid price">
