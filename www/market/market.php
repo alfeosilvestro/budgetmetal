@@ -322,7 +322,7 @@ elseif ($function == "saverfq"){
 	$DocumentNo = $rfq_ref;
 	$company_name = $_POST['company_name'];
 	$ContactPersonFName = $_POST['first_name'];
-	$ContactPersonLName = $_POST['last_name'];
+	$ContactPersonLName = "";//$_POST['last_name'];
 	if(isset($_POST['chk_material'])){
 		$Supplier_Provide_Material = 1;
 	}else{
@@ -502,7 +502,7 @@ $Status = "1";
 $M_User_Id = $_POST['user_id'];
 $DocumentNo = $rfq_ref;
 $ContactPersonFName = $_POST['first_name'];
-$ContactPersonLName = $_POST['last_name'];
+$ContactPersonLName = "";//$_POST['last_name'];
 $company_name = $_POST['company_name'];
 if(isset($_POST['chk_material'])){
 	$Supplier_Provide_Material = 1;
@@ -644,7 +644,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 	$rfq_ref = $_POST['rfq_ref'];
 	$company_name = $_POST['company_name'];
 	$ContactPersonFName = $_POST['first_name'];
-	$ContactPersonLName = $_POST['last_name'];
+	$ContactPersonLName = "";//$_POST['last_name'];
 	$Status = "1";
 	$where = array('Id' => $Id);
 	$dataArray = array('C_QuotationStatus' => $C_QuotationStatus, 'ModifiedDate' => $ModifiedDate, 'ModifiedBy' => $ModifiedBy,'ContactPersonFName' => $ContactPersonFName,'ContactPersonLName' => $ContactPersonLName);
