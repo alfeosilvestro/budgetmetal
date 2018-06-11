@@ -122,15 +122,17 @@ if (isset($result)){
           </ul>
 
           <div class="tab-content">
-
+            
             <div class="active tab-pane" id="updatePassword">
+            
               <div style="height:300px;">
+              <form id="frm_updatePassword">
                 <div class="row">
                   <div class="col-md-3">
                     New Password :
                   </div>
                   <div class="col-md-9">
-                    <input type="password" name="password" value="" class="form-control" id="txt_password">
+                    <input type="password" name="newpass" value="" class="form-control" id="txt_password">
                   </div>
                 </div>
                 <br/>
@@ -148,41 +150,46 @@ if (isset($result)){
                   <button type="button" name="button" id="btnUpdatePassword" class="btn btn-info pull-right">Update</button>
                 </div>
               </div>
+              </form>
+                
 
             </div>
 
             <div class="tab-pane" id="updateProfile">
                 <div style="height:300px;">
-              <div class="col-md-3">
-                Name :
-              </div>
-              <div class="col-md-9">
-                <input type="text" name="Name" value="<?php echo $username?>" class="form-control" id="txtName">
-              </div>
-              <div class="col-md-12">
-                <br>
-              </div>
-              <div class="col-md-3">
-                Job Title :
-              </div>
-              <div class="col-md-9">
-                <input type="text" name="jobtitle" value="<?php echo $jobtitle?>" class="form-control" id="txtJobTitle">
-              </div>
-              <div class="col-md-12">
-                <br>
-              </div>
-              <div class="col-md-3">
-                Contact No. :
-              </div>
-              <div class="col-md-9">
-                <input type="text" name="contactno" value="<?php echo $ContactNumbers?>" class="form-control" id="txtContactNo">
-              </div>
-              <div class="col-md-12">
-                <br>
-              </div>
-              <div class="col-md-12">
-                <button type="button" name="button" id="btnUpdateUserProfile" class="btn btn-info pull-right">Update</button>
-              </div>
+                <form id="frm_UpdateUserProfile">
+                  <div class="col-md-3">
+                    Name :
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" name="name" value="<?php echo $username?>" class="form-control" id="txtName">
+                  </div>
+                  <div class="col-md-12">
+                    <br>
+                  </div>
+                  <div class="col-md-3">
+                    Job Title :
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" name="jobtitle" value="<?php echo $jobtitle?>" class="form-control" id="txtJobTitle">
+                  </div>
+                  <div class="col-md-12">
+                    <br>
+                  </div>
+                  <div class="col-md-3">
+                    Contact No. :
+                  </div>
+                  <div class="col-md-9">
+                    <input type="text" name="contactno" value="<?php echo $ContactNumbers?>" class="form-control" id="txtContactNo">
+                  </div>
+                  <div class="col-md-12">
+                    <br>
+                  </div>
+                
+                  <div class="col-md-12">
+                    <button type="button" name="button" id="btnUpdateUserProfile" class="btn btn-info pull-right">Update</button>
+                  </div>
+                  </form>
             </div>
             </div>
           </div>
@@ -206,8 +213,9 @@ if (isset($result)){
 
     if(newpass == cfpass){
       $.ajax({
-        type: "GET",
-        url: "market.php?function=UpdatePassword&user_id=<?php echo $userid;?>&newpass=" + newpass,
+        type: "POST",
+        url: "market.php?function=UpdatePassword&user_id=<?php echo $userid;?>",
+        data: $("#frm_updatePassword").serialize(),
         dataType: "json",
         success: function (response) {
           alert("Password has been updated successfully.")
@@ -231,8 +239,9 @@ if (isset($result)){
     var jobtitle = $('#txtJobTitle').val();
     var contactno = $('#txtContactNo').val();
     $.ajax({
-      type: "GET",
-      url: "market.php?function=UpdateUserProfile&user_id=<?php echo $userid;?>&name=" + name +"&jobtitle=" + jobtitle+"&contactno=" + contactno,
+      type: "POST",
+      url: "market.php?function=UpdateUserProfile&user_id=<?php echo $userid;?>",
+      data: $("#frm_UpdateUserProfile").serialize(),
       dataType: "json",
       success: function (response) {
         alert("Profile has been updated successfully.")

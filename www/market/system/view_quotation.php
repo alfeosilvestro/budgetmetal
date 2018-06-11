@@ -183,7 +183,7 @@ if (isset($result)){
               <div class="form-group">
                 <div class="row">
                   <div class="col-sm-6">
-                    <label>Contact Person First Name: </label>
+                    <label>Contact Person: </label>
                   </div>
                   <div class="col-sm-6">
                     <?php echo $FName; ?>
@@ -256,16 +256,16 @@ if (isset($result)){
                   </div>
                 </div>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <div class="row">
                   <div class="col-sm-6">
                     <label>Contact Person Last Name: </label>
                   </div>
                   <div class="col-sm-6">
-                    <?php echo $LName; ?>
+                    <?php //echo $LName; ?>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="form-group">
                 <div class="row">
                   <div class="col-sm-6">
@@ -358,7 +358,7 @@ if (isset($result)){
         <div class="box-body">
           <div class="row">
             <div class="col-sm-12">
-              <?php echo $Comments;?>
+              <?php echo nl2br($Comments);?>
 
             </div>
 
@@ -423,12 +423,15 @@ if (isset($result)){
 
                 }
               }
-
-              ?>
+              if($q_statusid == 15){
+                ?>
               <a href="index.php?rdp=edit_quotation&id=<?php echo $q_id;?>" class="btn btn-warning">
                 <i class="fa fa-pencil-square-o"></i>
                 Edit Quotation
               </a>
+              <?php
+              }
+              ?>
               <a href="#" class="btn btn-danger" onclick="withdrawn_quotation(<?php echo $q_id;?>)">
                 <i class="fa fa-pencil-square-o"></i>
                 Withdrawn Quotation

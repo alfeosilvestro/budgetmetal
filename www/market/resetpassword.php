@@ -144,12 +144,11 @@ include("piwik.php");
 
                   function sendEmailForNewPassword($email,$radompass){
                 		$mail_to = $email;
-                		$message1 = "<h1>BudgetMetal Marketplace</h1> <br> Dear, <br> Your password has been reset to: $radompass ".PHP_EOL;
+                		$message1 = "<br> Based on your request to reset your password, it has been reset to: $radompass " . PHP_EOL . "Click below to continue to our portal for awesome services.";
                 		$date = date('Y-m-d', strtotime("+2 days"));
 
                 		$email_encode = base64_encode($email);
                 		$date_encode = base64_encode($date);
-
 
                 		//error_reporting(E_STRICT);
                 		error_reporting(E_ERROR);
@@ -218,8 +217,6 @@ include("piwik.php");
                 		catch(Exception $e) {
 
                 		}
-
-
                 	}
 
                   ?>

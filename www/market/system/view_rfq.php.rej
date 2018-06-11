@@ -1,0 +1,10 @@
+diff a/www/market/system/view_rfq.php b/www/market/system/view_rfq.php	(rejected hunks)
+@@ -286,7 +286,7 @@
+                   <label>Remark: </label>
+                 </div>
+                 <div class="col-sm-6">
+-                  <?php echo $Remark; ?>
++                  <?php echo nl2br($Remark); ?>
+                 </div>
+               </div>
+             </div>

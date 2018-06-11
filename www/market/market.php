@@ -22,7 +22,7 @@ if ($function == "InviteSupplier"){
 	}
 	echo json_encode($message);
 }elseif ($function == "UpdatePassword"){
-	$newpass = $_GET["newpass"];
+	$newpass = $_POST["newpass"];
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);
 	$dataArray = array( 'Password' => $newpass);
@@ -31,9 +31,9 @@ if ($function == "InviteSupplier"){
 	$message['success'] = true;
 	echo json_encode($message);
 }elseif ($function == "UpdateUserProfile"){
-	$name = $_GET["name"];
-	$jobtitle = $_GET["jobtitle"];
-	$contactno = $_GET["contactno"];
+	$name = $_POST["name"];
+	$jobtitle = $_POST["jobtitle"];
+	$contactno = $_POST["contactno"];
 
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);
@@ -44,7 +44,7 @@ if ($function == "InviteSupplier"){
 	$db->update('m_user', $dataArray,$where);
 
 	$dataArray = array( 'ContactNumbers' => $contactno);
-	$db->update('m_user', $dataArray,$where);
+	$db->update('m_user', $dataArray, $where);
 
 	$message['success'] = true;
 	echo json_encode($message);
@@ -53,7 +53,7 @@ if ($function == "InviteSupplier"){
 	$user_id = $_GET["user_id"];
 	$where = array('Id' => $user_id);
 	$dataArray = array( 'C_UserType' => $type_id);
-	$db->update('m_user', $dataArray,$where);
+	$db->update('m_user', $dataArray, $where);
 }elseif ($function == "checksupplierservice"){
 	$company_uen = $_GET["company_uen"];
 	$c = 0;
@@ -180,11 +180,20 @@ if ($function == "InviteSupplier"){
 		$rowcount = $_GET["rowCount"];
 	$servicesid = $_GET["servicesid"];
 	$selectedsuppliersid = $_GET["selected_suppliers_id"];
+	$search_name = "";
+	if(isset($_GET["search_name"])){
+		$search_name = str_replace("'","",trim($_GET["search_name"]));
+	}
+
+	$filter_name = "";
+	if($search_name != ""){
+		$filter_name = " AND Name Like '%$search_name%' ";
+	}
 	$c = 0;
 	$returntext = "";
 	$searchsupplierwithservicesid_currentUserId = $_GET["user_id"];
 	//$sql = "SELECT * FROM `m_company`  WHERE `Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND `Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified ASC, Name ASC";
-	$sql = "SELECT * FROM `m_company` c  WHERE c.Id <> ". $searchsupplierwithservicesid_currentUserId ." and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND c.`Id` Not IN (".$selectedsuppliersid.") Order by SupplierAvgRating DESC, IsVerified DESC, c.Name ASC Limit $rowcount,20";
+	$sql = "SELECT * FROM `m_company` c  WHERE c.Id <> ". $searchsupplierwithservicesid_currentUserId ." and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (".$servicesid .")) AND c.`Id` Not IN (".$selectedsuppliersid.") $filter_name Order by IsVerified DESC, IFNULL(SupplierAvgRating, 0) DESC, c.Name ASC Limit $rowcount,20";
 	//$sql = "SELECT * FROM `m_company` c INNER JOIN m_user u on u.M_Company_Id = c.Id WHERE c.Id <> 47 and c.`Id` IN (SELECT `M_Company_Id` FROM `md_supplierservices` WHERE `M_Services_Id` in (0,789)) AND c.`Id` Not IN (0) Order by SupplierAvgRating DESC, IsVerified ASC, c.Name ASC"
 	$result = $conn->query($sql);
 //echo $sql;
@@ -313,7 +322,7 @@ elseif ($function == "saverfq"){
 	$DocumentNo = $rfq_ref;
 	$company_name = $_POST['company_name'];
 	$ContactPersonFName = $_POST['first_name'];
-	$ContactPersonLName = $_POST['last_name'];
+	$ContactPersonLName = "";//$_POST['last_name'];
 	if(isset($_POST['chk_material'])){
 		$Supplier_Provide_Material = 1;
 	}else{
@@ -493,7 +502,7 @@ $Status = "1";
 $M_User_Id = $_POST['user_id'];
 $DocumentNo = $rfq_ref;
 $ContactPersonFName = $_POST['first_name'];
-$ContactPersonLName = $_POST['last_name'];
+$ContactPersonLName = "";//$_POST['last_name'];
 $company_name = $_POST['company_name'];
 if(isset($_POST['chk_material'])){
 	$Supplier_Provide_Material = 1;
@@ -619,7 +628,7 @@ header('Content-Type: application/json');
 echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been successfully created."));
 }elseif ($function == "savequotation"){
 
-	$act = $_POST['act'];
+	$act = $_GET['act'];
 
 	if($act == 'draft'){
 		$C_QuotationStatus = "15";
@@ -635,7 +644,7 @@ echo json_encode(array('status' => 'Success', 'message' =>"$DocumentNo has been 
 	$rfq_ref = $_POST['rfq_ref'];
 	$company_name = $_POST['company_name'];
 	$ContactPersonFName = $_POST['first_name'];
-	$ContactPersonLName = $_POST['last_name'];
+	$ContactPersonLName = "";//$_POST['last_name'];
 	$Status = "1";
 	$where = array('Id' => $Id);
 	$dataArray = array('C_QuotationStatus' => $C_QuotationStatus, 'ModifiedDate' => $ModifiedDate, 'ModifiedBy' => $ModifiedBy,'ContactPersonFName' => $ContactPersonFName,'ContactPersonLName' => $ContactPersonLName);
@@ -1310,7 +1319,7 @@ $Subject = "$company_name has replied on your comment.";
 }elseif ($function == "EditAbout"){
 	$message = array();
 	$companyid =$_GET['companyid'];
-	$about =$_GET['about'];
+	$about =$_POST['about'];
 
 	$where = array('Id' => $companyid);
 	$dataArray = array( 'About' => $about);
@@ -1347,8 +1356,8 @@ $Subject = "$company_name has replied on your comment.";
 }
 elseif ($function == "EditProfile"){
 	$message = array();
-	$companyid =$_GET['companyid'];
-	$address =$_GET['address'];
+	$companyid =$_POST['companyid'];
+	$address =$_POST['address'];
 
 	$where = array('Id' => $companyid);
 	$dataArray = array( 'Address' => $address);
@@ -1356,9 +1365,9 @@ elseif ($function == "EditProfile"){
 
 	//tag
 	
-	if(isset($_GET['tagList'])){
+	if(isset($_POST['tagList'])){
 		$db->query("Delete From  `md_suppliertags` Where M_User_Id = ".$companyid);
-		foreach ($_GET['tagList'] as $index => $tag_id) {
+		foreach ($_POST['tagList'] as $index => $tag_id) {
 			$tagsupplier_id = 0;
 			$row = $db->select('md_suppliertags', null, null, 'ORDER BY Id DESC')->results();
 			if ($row) {

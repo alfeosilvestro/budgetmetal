@@ -212,8 +212,8 @@ $q_id = 0;
                   value="<?php echo $company_name; ?>">
                 </div>
                 <div class="form-group">
-                  <label>Contact Person First Name</label>
-                  <input name="first_name" type="text" class="form-control" value="" placeholder="First Name">
+                  <label>Contact Person</label>
+                  <input id="txtFirstName" name="first_name" type="text" class="form-control" value="" placeholder="Full Name">
                 </div>
                 <div class="form-group">
                   <label>Valid Until</label>
@@ -238,10 +238,10 @@ $q_id = 0;
                   <input name="reg_no" type="text" readonly class="form-control"
                   value="<?php echo $reg_no; ?>">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Contact Person Last Name</label>
                   <input name="last_name" type="text"  class="form-control" value="" placeholder="Last Name">
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label>Bid Price</label>
                   <!--<input id="bid_price" name="bid_price" type="number" class="form-control pull-right" placeholder="Please enter bid price">
@@ -421,19 +421,37 @@ $q_id = 0;
 
       e.preventDefault();
       var bid_price = $("input[id='bid_price']").val();
-      if(parseInt(bid_price) > 0){
-          SubmitQuotation();
-      }else{
-        alert("Bid Price must be greater than 0");
+      var firstName = $("input[id='txtFirstName']").val();
+      
+      var error = "";
+
+      if(firstName.trim() == "")
+      {
+        error = error + "First name must not be empty.";
       }
 
+      if(parseInt(bid_price) <= 0)
+      {
+        error = error + "Quotation Price must be greater than 0.";
+      }
+
+      // check error
+      if(error != "") {
+        alert(error);
+        return false;
+      }else{
+        // submit quotation when there is no error
+        SubmitQuotation();
+      }
+
+      
 
     });
 
     function SaveQuotation() {
       $.ajax({
         url: 'market.php?function=savequotation&act=draft',
-        type: 'GET',
+        type: 'POST',
         data: $("#create_rfq").serialize(),
         dataType: 'json',
         success: function (data) {
@@ -460,7 +478,7 @@ $q_id = 0;
       $.ajax({
 
         url: 'market.php?function=savequotation&act=submit',
-        type: 'GET',
+        type: 'POST',
         data: $("#create_rfq").serialize(),
         dataType: 'json',
         success: function (data) {

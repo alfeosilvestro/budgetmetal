@@ -80,18 +80,20 @@ $status = "Draft";
             value="<?php echo $company_name; ?>">
           </div>
           <div class="form-group">
-            <label>Contact Person First Name</label>
-            <input name="first_name" type="text" class="form-control" value="<?php echo $username; ?>" placeholder="First Name">
-          </div>
-          <div class="form-group">
-            <label>RFQ Date</label>
+          <label>RFQ Date</label>
 
-            <div class="input-group date col-sm-5">
-              <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-              </div>
-              <input type="text" name="rfq_date" class="form-control pull-right" id="rfq_datepicker" value="<?php echo date("d-m-Y");?>" required>
-            </div>
+<div class="input-group date col-sm-5">
+  <div class="input-group-addon">
+    <i class="fa fa-calendar"></i>
+  </div>
+  <input type="text" name="rfq_date" class="form-control pull-right" id="rfq_datepicker" value="<?php echo date("d-m-Y");?>" required>
+</div>
+        </div>
+          <div class="form-group">
+          <label>Contact Person</label>
+            <input name="first_name" type="text" class="form-control" value="<?php echo $username; ?>" placeholder="Full Name">
+          
+            
           </div>
           <div class="form-group">
             <label>Project Name/ No.</label>
@@ -114,8 +116,8 @@ $status = "Draft";
             value="<?php echo $reg_no; ?>">
           </div>
           <div class="form-group">
-            <label>Contact Person Last Name</label>
-            <input name="last_name" type="text"  class="form-control" value="" placeholder="Last Name">
+            <!-- <label>Contact Person Last Name</label>
+            <input name="last_name" type="text"  class="form-control" value="" placeholder="Last Name"> -->
           </div>
           <div class="form-group">
             <label>Due Date</label>
@@ -130,7 +132,7 @@ $status = "Draft";
 
           <div class="form-group">
             <label>Message to Supplier</label>
-            <textarea name="remark"  class="form-control" placeholder="Please enter Remark"></textarea>
+            <textarea name="remark"  class="form-control" placeholder="Please enter Remark" rows="4"></textarea>
           </div>
         </div>
       </div>
@@ -388,6 +390,7 @@ Width
     <h3 class="box-title">Search Suppliers</h3>
 
     <div class="box-tools pull-right">
+      <input type="text" placeholder="Search by Name" id="txt_search_name" style="display:initial; width: auto;" name="txt_search_name" value="" class="form-control">
       <button type="button" id="btn_search_suppliers" class="btn btn-sm btn-search" value="Search Suppliers">
         <i class="fa fa-refresh"></i>
       </button>
@@ -426,7 +429,7 @@ Width
                 <div class="text-center">
                   <br><br><br>
                   <span style="color:white;" id="addMoreSupplier"><h4>You have reached the limit of 8 chosen suppliers for this RFQ.
-                    <br><button class="btn btn-warning btn-md" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow BudgetMetal to suggest another 5 suppliers for you. </h4> </span>
+                    <br><button class="btn btn-warning btn-md" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow BudgetMetal to suggest another 8 suppliers for you. </h4> </span>
                   </div>
 
                 </div>
@@ -865,7 +868,8 @@ $(function () {
   });
 
   function searchsupplier(){
-
+    var search_name =  $('#txt_search_name').val();
+    search_name = encodeURIComponent(search_name);
     var table_suppliers = document.getElementById('selected_suppliers');
 
     var rowLength_supplier = table_suppliers.rows.length;
@@ -920,11 +924,14 @@ $(function () {
         }
       }
     };
-    xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
+    xmlhttp.open("GET","market.php?search_name="+search_name+"&servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
     xmlhttp.send();
   }
 
   function searchsupplier_loadmore(){
+    var search_name =  $('#txt_search_name').val();
+    search_name = encodeURIComponent(search_name);
+
     var table_suppliers = document.getElementById('selected_suppliers');
 
     var rowLength_supplier = table_suppliers.rows.length;
@@ -979,7 +986,7 @@ $(function () {
         }
       }
     };
-    xmlhttp.open("GET","market.php?servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
+    xmlhttp.open("GET","market.php?search_name="+search_name+"&servicesid="+servicesid+"&function=searchsupplierwithservicesid&selected_suppliers_id="+selected_suppliers_id + "&user_id=<?php echo $company_id; ?>&rowCount="+rowCount,true);
     xmlhttp.send();
 
 

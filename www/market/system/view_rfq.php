@@ -157,44 +157,14 @@ if (isset($result)){
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
-                  <label>Contact Person First Name: </label>
+                  <label>Contact Person: </label>
                 </div>
                 <div class="col-sm-6">
                   <?php echo $FName; ?>
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>RFQ Date: </label>
-                </div>
-                <div class="col-sm-6">
-                  <input type="hidden" name="rfq_createddate" id="rfq_datepicker" value="<?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>">
-                  <?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Project Name/ No.: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $rfq_subject;?>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="row">
-                <div class="col-sm-6">
-                  <label>Supplier Provide Material: </label>
-                </div>
-                <div class="col-sm-6">
-                  <?php echo $Supplier_Provide_Material;?>
-                </div>
-              </div>
-            </div>
+            
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
@@ -205,6 +175,18 @@ if (isset($result)){
                 </div>
               </div>
             </div>
+            
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>Supplier Provide Material: </label>
+                </div>
+                <div class="col-sm-6">
+                  <?php echo $Supplier_Provide_Material;?>
+                </div>
+              </div>
+            </div>
+
           </div>
           <div class="col-sm-6">
             <div class="form-group">
@@ -241,13 +223,24 @@ if (isset($result)){
                 </div>
               </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
                   <label>Contact Person Last Name: </label>
                 </div>
                 <div class="col-sm-6">
-                  <?php echo $LName; ?>
+                  <?php //echo $LName; ?>
+                </div>
+              </div>
+            </div> -->
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <label>RFQ Date: </label>
+                </div>
+                <div class="col-sm-6">
+                  <input type="hidden" name="rfq_createddate" id="rfq_datepicker" value="<?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>">
+                  <?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>
                 </div>
               </div>
             </div>
@@ -280,17 +273,39 @@ if (isset($result)){
               </div>
             </div>
 
+          </div>
+
+          <div class="col-md-12 col-sm-12 col-xs-12">
+          
             <div class="form-group">
               <div class="row">
-                <div class="col-sm-6">
-                  <label>Remark: </label>
+                <div class="col-sm-3">
+                  <label>Project Name/ No.: </label>
                 </div>
+<<<<<<< HEAD
                 <div class="col-sm-6">
                   <?php echo nl2br($Remark); ?>
+=======
+                <div class="col-sm-9">
+                  <?php echo $rfq_subject;?>
+>>>>>>> db6778c6255f37bfa0b930211f3165b36d2afffd
                 </div>
               </div>
             </div>
+
+            <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <label>Remark: </label>
+                  </div>
+                  <div class="col-sm-9">
+                    <?php echo nl2br($Remark); ?>
+                  </div>
+                </div>
+              </div>
+          
           </div>
+
         </div>
       </div>
       <!-- /.box-body -->
@@ -645,7 +660,9 @@ if (isset($result)){
       }
       ?>
       <div class="btn-group pull-left">
-        <?php if(($_SESSION['usertype'] == 'Supplier') &&  ($rfq_statusid == '10') && ($invited == 'yes') && ($interested != 'yes' )){
+        <?php 
+        // show button to register interst when rfq is closed
+        if(($_SESSION['usertype'] == 'Supplier') &&  ($rfq_statusid == '10' || $rfq_statusid == '11') && ($invited == 'yes') && ($interested != 'yes' )){
           if(isset($_GET["rfq_ref"])){
             $rfq_ref =$_GET["rfq_ref"];
             $company_Id = $_SESSION['M_Company_Id'] ;

@@ -214,7 +214,7 @@ if (isset($result)){
                   </td>
                   <td>
                     <?php
-                    $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a> ';
+                    $out = '<a href="index.php?rdp=company_profile&companyid=' . $row["Id"] .'" class="btn btn-warning btn-xs" target="_blank"><span class="icon-pencil"></span>View</a> ';
                     echo $out;
                     ?>
                   </td>

@@ -107,14 +107,14 @@ if(isset($_GET["list"])){
                   <th>Company</th>
                   <th>Ref No.</th>
                   <th>Subject</th>
-                  <th>Created Date</th>
+                  <th>Due Date</th>
                   <th>Status</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus = 9 and t1.M_User_Id = ". $userid;
+                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, q.FinalClosingDate as CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join t_requestforquotation q on t1.Id = q.Document_ID Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus = 9 and t1.M_User_Id = ". $userid . " order by t1.Id DESC";
                 $results = $db->pdoQuery($query)->results();
                 if (!empty($results)){
                   $count = 0;
@@ -157,7 +157,7 @@ if(isset($_GET["list"])){
                 <th>Company</th>
                 <th>Ref No.</th>
                 <th>Subject</th>
-                <th>Created Date</th>
+                <th>Due Date</th>
                 <th>Status</th>
                 <th></th>
               </tr>
@@ -165,9 +165,13 @@ if(isset($_GET["list"])){
             <tbody>
               <?php
               if(($_SESSION['usertype'] == 'Buyer')){
-                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus = 10 and t1.M_User_Id = ". $userid;
+                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, q.FinalClosingDate as CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join t_requestforquotation q on t1.Id = q.Document_ID Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus = 10 and t1.M_User_Id = ". $userid . " order by t1.Id DESC";
               }elseif(($_SESSION['usertype'] == 'Supplier')){
-                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus Inner Join t_targetedsuppliers t3 on t3.T_Document_Id = t1.Id  Inner Join m_user t5 on t5.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t5.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus = 10 and t3.M_Company_Id = ". $company_id;
+                $query = "SELECT 
+                t1.Id, t1.DocumentNo, t1.Title, q.FinalClosingDate as CreatedDate, t4.Name as CompanyName, t2.Name as Status 
+                FROM t_document t1 
+                Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus Inner Join t_targetedsuppliers t3 on t3.T_Document_Id = t1.Id  Inner Join m_user t5 on t5.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t5.M_Company_Id Inner Join t_requestforquotation q on t1.Id = q.Document_ID
+                Where C_DocumentType = 6 and t1.C_RfqStatus = 10 and t3.M_Company_Id = ". $company_id  . " order by t1.Id DESC";
               }
               $results = $db->pdoQuery($query)->results();
               if (!empty($results)){
@@ -215,7 +219,7 @@ if(isset($_GET["list"])){
                 <th>Company</th>
                 <th>Ref No.</th>
                 <th>Subject</th>
-                <th>Created Date</th>
+                <th>Due Date</th>
                 <th>Status</th>
                 <th></th>
               </tr>
@@ -225,9 +229,13 @@ if(isset($_GET["list"])){
               $query = "Update t_document SET C_RfqStatus = 11 Where C_RfqStatus = 10  and  Id IN (SELECT Document_Id FROM t_requestforquotation Where FinalClosingDate < '" . date("Y-m-d") . "')";
               $db->pdoQuery($query);
               if(($_SESSION['usertype'] == 'Buyer')){
-                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus = 11 and t1.M_User_Id = ". $userid;
+                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus = 11 and t1.M_User_Id = ". $userid . " order by t1.Id DESC";
               }elseif(($_SESSION['usertype'] == 'Supplier')){
-                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus Inner Join t_targetedsuppliers t3 on t3.T_Document_Id = t1.Id  Inner Join m_user t5 on t5.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t5.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus = 11 and t3.M_Company_Id = ". $company_id;
+                $query = "SELECT 
+                t1.Id, t1.DocumentNo, t1.Title, q.FinalClosingDate as CreatedDate, t4.Name as CompanyName, t2.Name as Status 
+                FROM t_document t1 
+                Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus Inner Join t_targetedsuppliers t3 on t3.T_Document_Id = t1.Id  Inner Join m_user t5 on t5.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t5.M_Company_Id Inner Join t_requestforquotation q on t1.Id = q.Document_ID
+                Where C_DocumentType = 6 and t1.C_RfqStatus = 11 and t3.M_Company_Id = ". $company_id  . " order by t1.Id DESC";
               }
               $results = $db->pdoQuery($query)->results();
               if (!empty($results)){
@@ -269,7 +277,7 @@ if(isset($_GET["list"])){
                 <th>Company</th>
                 <th>Ref No.</th>
                 <th>Subject</th>
-                <th>Created Date</th>
+                <th>Due Date</th>
                 <th>Status</th>
                 <th></th>
               </tr>
@@ -277,9 +285,13 @@ if(isset($_GET["list"])){
             <tbody>
               <?php
               if(($_SESSION['usertype'] == 'Buyer')){
-                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus in (12,13) and t1.M_User_Id = ". $userid;
+                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, q.FinalClosingDate as CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join t_requestforquotation q on t1.Id = q.Document_ID Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus in (12,13) and t1.M_User_Id = ". $userid . " order by t1.Id DESC";
               }elseif(($_SESSION['usertype'] == 'Supplier')){
-                $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus Inner Join t_targetedsuppliers t3 on t3.T_Document_Id = t1.Id  Inner Join m_user t5 on t5.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t5.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus in (12,13) and t3.M_Company_Id = ". $company_id;
+                $query = "SELECT 
+                t1.Id, t1.DocumentNo, t1.Title, q.FinalClosingDate as CreatedDate, t4.Name as CompanyName, t2.Name as Status 
+                FROM t_document t1 
+                Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus Inner Join t_targetedsuppliers t3 on t3.T_Document_Id = t1.Id  Inner Join m_user t5 on t5.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t5.M_Company_Id Inner Join t_requestforquotation q on t1.Id = q.Document_ID
+                Where C_DocumentType = 6 and t1.C_RfqStatus in (12,13) and t3.M_Company_Id = ". $company_id  . " order by t1.Id DESC";
               }
               $results = $db->pdoQuery($query)->results();
               if (!empty($results)){
@@ -324,7 +336,7 @@ if(isset($_GET["list"])){
                   <th>Company</th>
                   <th>Ref No.</th>
                   <th>Subject</th>
-                  <th>Created Date</th>
+                  <th>Due Date</th>
                   <th>Status</th>
                   <th></th>
                 </tr>
@@ -333,9 +345,13 @@ if(isset($_GET["list"])){
                 <?php
 
                 if(($_SESSION['usertype'] == 'Buyer')){
-                  $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus in (14) and t1.M_User_Id = ". $userid;
+                  $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, q.FinalClosingDate as CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join t_requestforquotation q on t1.Id = q.Document_ID Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus  Inner Join m_user t3 on t3.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t3.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus in (14) and t1.M_User_Id = ". $userid . " order by t1.Id DESC";
                 }elseif(($_SESSION['usertype'] == 'Supplier')){
-                  $query = "SELECT t1.Id, t1.DocumentNo, t1.Title, t1.CreatedDate, t4.Name as CompanyName, t2.Name as Status FROM t_document t1 Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus Inner Join t_targetedsuppliers t3 on t3.T_Document_Id = t1.Id  Inner Join m_user t5 on t5.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t5.M_Company_Id Where C_DocumentType = 6 and t1.C_RfqStatus in (14) and t3.M_Company_Id = ". $company_id;
+                  $query = "SELECT 
+                  t1.Id, t1.DocumentNo, t1.Title, q.FinalClosingDate as CreatedDate, t4.Name as CompanyName, t2.Name as Status 
+                  FROM t_document t1 
+                  Inner Join c_codetable t2 on t2.Id = t1.C_RfqStatus Inner Join t_targetedsuppliers t3 on t3.T_Document_Id = t1.Id  Inner Join m_user t5 on t5.Id = t1.M_User_Id Inner Join m_company t4 on t4.Id = t5.M_Company_Id Inner Join t_requestforquotation q on t1.Id = q.Document_ID
+                  Where C_DocumentType = 6 and t1.C_RfqStatus in (14) and t3.M_Company_Id = ". $company_id  . " order by t1.Id DESC";
                 }
                 $results = $db->pdoQuery($query)->results();
                 if (!empty($results)){
