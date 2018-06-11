@@ -28,6 +28,7 @@
   <!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="application/javascript"></script> -->
   <!-- Theme style -->
   <link rel="stylesheet" href="css/AdminLTE.min.css">
+  <link rel="stylesheet" href="css/loadingspinner.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="css/skins/_all-skins.min.css">
@@ -99,6 +100,7 @@
 					}
 					?>
  <li><a href="index.php?rdp=company_profile&companyid=<?php echo $_SESSION['M_Company_Id'];?>">Company Profile</a></li>
+ <li><a href="index.php?rdp=gallery">Gallery</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <!-- User Account Menu -->

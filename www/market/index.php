@@ -1,7 +1,8 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <?php
 session_start();
 ob_start();
-
+include("config.php");
 include("piwik.php");
 include("dbcon.php");
 include("checkusersession.php");
@@ -21,7 +22,9 @@ date_default_timezone_set("Asia/Singapore");
       <section class="content">
 		<?php
 		if(isset($_GET["rdp"])){
-			if($_GET["rdp"] == "create_rfq"){
+			if($_GET["rdp"] == "gallery"){
+				include("system/gallery.php");
+			}elseif($_GET["rdp"] == "create_rfq"){
 				include("buyer/create_rfq.php");
 			}elseif($_GET["rdp"] == "view_rfq"){
 				include("system/view_rfq.php");
