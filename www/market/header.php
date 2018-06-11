@@ -110,7 +110,7 @@
                             <!-- The user image in the navbar-->
                             <img src="img/user2-160x160.png" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs"><?php echo $_SESSION['user'];?></span>
+                            <!-- <span class="hidden-xs"><?php //echo $_SESSION['user'];?></span> -->
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
@@ -127,8 +127,8 @@
 							               <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="">
-                                  <button class="btn btn-primary btn-sm" type="submit"  onClick="parent.location='index.php?rdp=profile'"><i class="icon-off icon-white"></i> Account</button>
-                                  <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#changeAccountType">Change to <?php
+                                  <button style="padding: 5px 9px;" class="btn btn-primary btn-sm" type="submit"  onClick="parent.location='index.php?rdp=profile'"><i class="icon-off icon-white"></i> Account</button>
+                                  <button style="padding: 5px 9px;" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#changeAccountType">Change to <?php
                                   if(($_SESSION['usertype'] == 'Buyer')){
                                     echo "Supplier";
                                     $changetypeid = "2";
@@ -137,7 +137,7 @@
                                      $changetypeid = "3";
                                   }
                                   ?></button>
-                                  <button class="btn btn-danger btn-sm" type="submit"  onClick="parent.location='logout.php'"><i class="icon-off icon-white"></i>Logout</button>
+                                  <button class="btn btn-danger btn-sm" type="submit"  onClick="parent.location='logout.php'" style="padding: 5px 9px;"><i class="icon-off icon-white"></i>Logout</button>
 
                                 </div>
 

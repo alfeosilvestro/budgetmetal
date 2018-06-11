@@ -80,18 +80,20 @@ $status = "Draft";
             value="<?php echo $company_name; ?>">
           </div>
           <div class="form-group">
-            <label>Contact Person First Name</label>
-            <input name="first_name" type="text" class="form-control" value="<?php echo $username; ?>" placeholder="First Name">
-          </div>
-          <div class="form-group">
-            <label>RFQ Date</label>
+          <label>RFQ Date</label>
 
-            <div class="input-group date col-sm-5">
-              <div class="input-group-addon">
-                <i class="fa fa-calendar"></i>
-              </div>
-              <input type="text" name="rfq_date" class="form-control pull-right" id="rfq_datepicker" value="<?php echo date("d-m-Y");?>" required>
-            </div>
+<div class="input-group date col-sm-5">
+  <div class="input-group-addon">
+    <i class="fa fa-calendar"></i>
+  </div>
+  <input type="text" name="rfq_date" class="form-control pull-right" id="rfq_datepicker" value="<?php echo date("d-m-Y");?>" required>
+</div>
+        </div>
+          <div class="form-group">
+          <label>Contact Person</label>
+            <input name="first_name" type="text" class="form-control" value="<?php echo $username; ?>" placeholder="Full Name">
+          
+            
           </div>
           <div class="form-group">
             <label>Project Name/ No.</label>
@@ -114,8 +116,8 @@ $status = "Draft";
             value="<?php echo $reg_no; ?>">
           </div>
           <div class="form-group">
-            <label>Contact Person Last Name</label>
-            <input name="last_name" type="text"  class="form-control" value="" placeholder="Last Name">
+            <!-- <label>Contact Person Last Name</label>
+            <input name="last_name" type="text"  class="form-control" value="" placeholder="Last Name"> -->
           </div>
           <div class="form-group">
             <label>Due Date</label>
@@ -130,7 +132,7 @@ $status = "Draft";
 
           <div class="form-group">
             <label>Message to Supplier</label>
-            <textarea name="remark"  class="form-control" placeholder="Please enter Remark"></textarea>
+            <textarea name="remark"  class="form-control" placeholder="Please enter Remark" rows="4"></textarea>
           </div>
         </div>
       </div>

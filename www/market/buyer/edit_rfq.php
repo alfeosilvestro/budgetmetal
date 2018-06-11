@@ -121,18 +121,19 @@ if (isset($result)){
                 value="<?php echo $company_name; ?>">
               </div>
               <div class="form-group">
-                <label>Contact Person First Name</label>
-                <input name="first_name" type="text" class="form-control" value="<?php echo $FName; ?>" placeholder="First Name">
+              <label>RFQ Date</label>
+
+<div class="input-group date col-sm-5">
+  <div class="input-group-addon">
+    <i class="fa fa-calendar"></i>
+  </div>
+  <input type="text" name="rfq_date" class="form-control pull-right" id="rfq_datepicker" value="<?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>" required>
+</div>
               </div>
               <div class="form-group">
-                <label>RFQ Date</label>
-
-                <div class="input-group date col-sm-5">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" name="rfq_date" class="form-control pull-right" id="rfq_datepicker" value="<?php 	 echo date('d-m-Y', strtotime($rfq_createddate));?>" required>
-                </div>
+              <label>Contact Person</label>
+                <input name="first_name" type="text" class="form-control" value="<?php echo $FName; ?>" placeholder="Full Name">
+                
               </div>
               <div class="form-group">
                 <label>Project Name/ No.</label>
@@ -169,8 +170,8 @@ if (isset($result)){
                 value="<?php echo $reg_no; ?>">
               </div>
               <div class="form-group">
-                <label>Contact Person Last Name</label>
-                <input name="last_name" type="text"  class="form-control" value="<?php echo $LName; ?>" placeholder="Last Name">
+                <!-- <label>Contact Person Last Name</label>
+                <input name="last_name" type="text"  class="form-control" value="<?php //echo $LName; ?>" placeholder="Last Name"> -->
               </div>
               <div class="form-group">
                 <label>Due Date</label>
@@ -190,7 +191,7 @@ if (isset($result)){
 
               <div class="form-group">
                 <label>Message to Supplier</label>
-                <textarea name="remark"  class="form-control" value="" placeholder="Please enter Remark"><?php echo $Remark; ?></textarea>
+                <textarea name="remark"  class="form-control" rows="4" value="" placeholder="Please enter Remark"><?php echo $Remark; ?></textarea>
               </div>
             </div>
           </div>
