@@ -949,22 +949,46 @@
 				<!-- Carousel indicators -->
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<!-- <li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li> -->
 				</ol>   
 				<!-- Wrapper for carousel items -->
 				<div class="carousel-inner">
 					<div class="item carousel-item active">
 						<div class="row">
-							<div class="col-sm-12">
+							
+							 <div class="col-sm-6">
 								<div class="testimonial-wrapper">
-									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante, commodo iacul viverra.</div>
+									<div class="testimonial">“…good and useful in submitting RFQ... certainly reduce(s) the hassle of finding suppliers/fabricators…”</div>
 									<div class="media">
 										
 										<div class="media-body">
 											<div class="overview">
-												<div class="name"><b>Paula Wilson</b></div>
-												<div class="details">Media Analyst / SkyNet</div>
+												<div class="name"><b>Frankie</b></div>
+												<div class="details">Daifuku</div>
+												 <!-- <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>  -->
+											</div>
+										</div>
+									</div>
+								</div>								
+                            </div> 
+                            <div class="col-sm-6">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">“…this system (is) really good and benefit everyone.”</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Jackson</b></div>
+												<div class="details">PSC Freyssinet</div>
 												<!-- <div class="star-rating">
 													<ul class="list-inline">
 														<li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -979,129 +1003,6 @@
 									</div>
 								</div>								
 							</div>
-							<!-- <div class="col-sm-6">
-								<div class="testimonial-wrapper">
-									<div class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus, metus id mi gravida.</div>
-									<div class="media">
-										
-										<div class="media-body">
-											<div class="overview">
-												<div class="name"><b>Antonio Moreno</b></div>
-												<div class="details">Web Developer / SoftBee</div>
-												 <div class="star-rating">
-													<ul class="list-inline">
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-													</ul>
-												</div> 
-											</div>
-										</div>
-									</div>
-								</div>								
-							</div> -->
-						</div>			
-					</div>
-					<div class="item carousel-item">
-                    <div class="row">
-							<div class="col-sm-12">
-								<div class="testimonial-wrapper">
-									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante, commodo iacul viverra.</div>
-									<div class="media">
-										
-										<div class="media-body">
-											<div class="overview">
-												<div class="name"><b>Paula Wilson</b></div>
-												<div class="details">Media Analyst / SkyNet</div>
-												<!-- <div class="star-rating">
-													<ul class="list-inline">
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-													</ul>
-												</div> -->
-											</div>										
-										</div>
-									</div>
-								</div>								
-							</div>
-							<!-- <div class="col-sm-6">
-								<div class="testimonial-wrapper">
-									<div class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus, metus id mi gravida.</div>
-									<div class="media">
-										
-										<div class="media-body">
-											<div class="overview">
-												<div class="name"><b>Antonio Moreno</b></div>
-												<div class="details">Web Developer / SoftBee</div>
-												 <div class="star-rating">
-													<ul class="list-inline">
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-													</ul>
-												</div> 
-											</div>
-										</div>
-									</div>
-								</div>								
-							</div> -->
-						</div>				
-					</div>
-					<div class="item carousel-item">
-                    <div class="row">
-							<div class="col-sm-12">
-								<div class="testimonial-wrapper">
-									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante, commodo iacul viverra.</div>
-									<div class="media">
-										
-										<div class="media-body">
-											<div class="overview">
-												<div class="name"><b>Paula Wilson</b></div>
-												<div class="details">Media Analyst / SkyNet</div>
-												<!-- <div class="star-rating">
-													<ul class="list-inline">
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
-													</ul>
-												</div> -->
-											</div>										
-										</div>
-									</div>
-								</div>								
-							</div>
-							<!-- <div class="col-sm-6">
-								<div class="testimonial-wrapper">
-									<div class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus, metus id mi gravida.</div>
-									<div class="media">
-										
-										<div class="media-body">
-											<div class="overview">
-												<div class="name"><b>Antonio Moreno</b></div>
-												<div class="details">Web Developer / SoftBee</div>
-												 <div class="star-rating">
-													<ul class="list-inline">
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star"></i></li>
-														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-													</ul>
-												</div> 
-											</div>
-										</div>
-									</div>
-								</div>								
-							</div> -->
 						</div>			
 					</div>
 				</div>
