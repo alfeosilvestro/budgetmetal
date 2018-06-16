@@ -937,6 +937,178 @@
         </div>
     </div>
 </div>
+
+<!-- Testinomial Section -->
+<div id="testimonials">
+    <div class="container"> <!-- Container -->
+        <div class="section-title text-center center">
+            <h2>See What Our Customers Say About Us</h2>
+            <hr> 
+        </div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Carousel indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>   
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner">
+					<div class="item carousel-item active">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante, commodo iacul viverra.</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Paula Wilson</b></div>
+												<div class="details">Media Analyst / SkyNet</div>
+												<!-- <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+													</ul>
+												</div> -->
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+							<!-- <div class="col-sm-6">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus, metus id mi gravida.</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Antonio Moreno</b></div>
+												<div class="details">Web Developer / SoftBee</div>
+												 <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div> 
+											</div>
+										</div>
+									</div>
+								</div>								
+							</div> -->
+						</div>			
+					</div>
+					<div class="item carousel-item">
+                    <div class="row">
+							<div class="col-sm-12">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante, commodo iacul viverra.</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Paula Wilson</b></div>
+												<div class="details">Media Analyst / SkyNet</div>
+												<!-- <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+													</ul>
+												</div> -->
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+							<!-- <div class="col-sm-6">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus, metus id mi gravida.</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Antonio Moreno</b></div>
+												<div class="details">Web Developer / SoftBee</div>
+												 <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div> 
+											</div>
+										</div>
+									</div>
+								</div>								
+							</div> -->
+						</div>				
+					</div>
+					<div class="item carousel-item">
+                    <div class="row">
+							<div class="col-sm-12">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante, commodo iacul viverra.</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Paula Wilson</b></div>
+												<div class="details">Media Analyst / SkyNet</div>
+												<!-- <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+													</ul>
+												</div> -->
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+							<!-- <div class="col-sm-6">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus, metus id mi gravida.</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Antonio Moreno</b></div>
+												<div class="details">Web Developer / SoftBee</div>
+												 <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div> 
+											</div>
+										</div>
+									</div>
+								</div>								
+							</div> -->
+						</div>			
+					</div>
+				</div>
+		</div>
+    </div>
+   
+</div>
 <!-- Contact Section -->
 <div id="contact" class="text-center">
     <div class="container">
