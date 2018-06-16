@@ -48,13 +48,13 @@
             <ul class="nav navbar-nav">
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                 <li class="hidden"><a href="#page-top"></a></li>
-                <li><a class="page-scroll" href="#intro">Home</a></li>
-                <li><a class="page-scroll" href="#about">About</a></li>
-                <li><a class="page-scroll" href="#services">How it works?</a></li>
-				 <li><a class="page-scroll" href="#works">Services</a></li>
-                 <li><a class="page-scroll" href="#testimonial">Testimonial</a></li>
-                <li><a class="page-scroll" href="#contact">Contact</a></li>
-                <li><a class="page-scroll" href="/faq.php" target="_blank">FAQs</a></li>
+                <li><a class="page-scroll" href="index.php#intro">Home</a></li>
+                <li><a class="page-scroll" href="index.php#about">About</a></li>
+                <li><a class="page-scroll" href="index.php#services">How it works?</a></li>
+				 <li><a class="page-scroll" href="index.php#works">Services</a></li>
+                 <li><a class="page-scroll" href="index.php#testimonial">Testimonial</a></li>
+                <li><a class="page-scroll" href="index.php#contact">Contact</a></li>
+                <li><a class="page-scroll" href="#" target="_blank">FAQs</a></li>
                 <li><a class="page-scroll" href="market/register.php">Sign Up for Free</a></li>
 
 
