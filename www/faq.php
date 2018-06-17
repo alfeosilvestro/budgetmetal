@@ -157,7 +157,7 @@
                     will appear under Search Suppliers box.
                 </div>
                 <div>
-                    <img src="img/FQA/5_2.png" class="img-responsive" width="100%">
+                    <img src="img/FAQ/5_2.png" class="img-responsive" width="100%">
                 </div>
                 <br>
                 <div class="about-text">
