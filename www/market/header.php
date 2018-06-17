@@ -100,7 +100,7 @@
 					}
 					?>
  <li><a href="index.php?rdp=company_profile&companyid=<?php echo $_SESSION['M_Company_Id'];?>">Company Profile</a></li>
- <!-- <li><a href="index.php?rdp=gallery">Gallery</a></li> -->
+ <li><a href="index.php?rdp=gallery">Gallery</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <!-- User Account Menu -->
