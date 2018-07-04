@@ -2,7 +2,7 @@
     session_start();
     $username = $_POST["username"]; //Storing username in $username variable.
     $password = $_POST["password"]; //Storing password in $password variable.
-    include("config.php");
+    
     include("dbcon.php"); //including config.php in our file
     include_once('lib/pdowrapper/class.pdowrapper.php');
 	$dbConfig = array("host" => $server, "dbname" => $database, "username" => $db_user, "password" => $db_pass);

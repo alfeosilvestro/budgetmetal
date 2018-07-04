@@ -2,7 +2,7 @@
 <?php
 session_start();
 ob_start();
-include("config.php");
+//include("config.php");
 include("piwik.php");
 include("dbcon.php");
 include("checkusersession.php");

@@ -1,4 +1,5 @@
 <?php
+    include("config.php");
     $database =$config_database ;  // the name of the database.
     $server = $config_server;  // server to connect to. // for development and production.
     //$server = "metalpolis-db";  // server to connect to. // for docker-compose
