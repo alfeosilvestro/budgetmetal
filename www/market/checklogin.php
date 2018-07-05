@@ -2,7 +2,7 @@
     session_start();
     $username = $_POST["username"]; //Storing username in $username variable.
     $password = $_POST["password"]; //Storing password in $password variable.
-    
+    date_default_timezone_set('Asia/Singapore');
     include("dbcon.php"); //including config.php in our file
     include_once('lib/pdowrapper/class.pdowrapper.php');
 	$dbConfig = array("host" => $server, "dbname" => $database, "username" => $db_user, "password" => $db_pass);
@@ -46,15 +46,18 @@
       //echo $usertype. $userid;
 
       $where = array('User_Email' => $_SESSION['user']);
-      $dataArray = array( 'Status' => -1);
-      $db->update('single-sign-on', $dataArray, $where);
+      $dataArray = array( 'Status' => -1, 'UpdatedDate' => date('Y-m-d H:i:s'),'UpdatedBy' =>  $_SESSION['user']);
+      $db->update('single_sign_on', $dataArray, $where);
 
+      // $where = array('User_Email' => $_SESSION['user'], 'Status' => -1);
+      // $dataArray = array( 'Status' => 2, 'UpdatedDate' => date('Y-m-d H:i:s'),'UpdatedBy' => 'a');
+      // $db->update('single_sign_on', $dataArray, $where);
       //setcookie("name","value",time()+3600*24,"/","budgetmetal.com");
       
       //Add to autnentication table
-      
+      $token = md5($_SESSION['user']);
       $t=time() + (120 * 60);
-      $dataArray = array('Authentication_Token' => md5($_SESSION['user']), 
+      $dataArray = array('Authentication_Token' =>  $token, 
       'User_Email' => $_SESSION['user'], 
       'Status' => 1, 
       'Timeout' => date('Y-m-d H:i:s', $t), 
@@ -65,28 +68,48 @@
       'IsActive' => 1, 
       'Version' => ""); 
 
-      $db->insert('single-sign-on', $dataArray);
+      $db->insert('single_sign_on', $dataArray);
 
-    $id = "";
-    if(isset($_POST["id"])){
-      $id = $_POST["id"];
-    }
-    $ref_div = "";
-    if(isset($_POST["ref_div"])){
-      if($_POST["ref_div"] != ""){
-        $ref_div = "#".$_POST["ref_div"];
+      $fileid = "";
+      if(isset($_POST["fileid"])){
+        $fileid = $_POST["fileid"];
       }
+      if(isset($_POST["url"])){
+        if($_POST["url"] == "gallery"){
+          $newURL = $config_gallery. $fileid . "&token=". $token;
+          header('Location: '.$newURL);
+          //header("http://localhost:5685/home/gallery?fileid=" . $fileid . "&token=". $token );
+        }elseif($_POST["url"] == "supplier"){
+            header("location:index.php?rdp=list_supplier&id=".$id.$ref_div);
+        }elseif($_POST["url"] == "rfq"){
+          header("location:index.php?rdp=create_rfq");
+        }else{
+          $id = "";
+          if(isset($_POST["id"])){
+            $id = $_POST["id"];
+          }
+          $ref_div = "";
+          if(isset($_POST["ref_div"])){
+            if($_POST["ref_div"] != ""){
+              $ref_div = "#".$_POST["ref_div"];
+            }
 
-    }
-    if(isset($_POST["doc_type"])){
-      if($_POST["doc_type"] == "RFQ"){
-        header("location:index.php?rdp=view_rfq&rfq_ref=".$id.$ref_div);
-      }elseif($_POST["doc_type"] == "Quotation"){
-          header("location:index.php?rdp=view_quotation&id=".$id.$ref_div);
-      }else{
-        header("location:index.php?rdp=dashboard");
+          }
+          if(isset($_POST["doc_type"])){
+            if($_POST["doc_type"] == "RFQ"){
+              header("location:index.php?rdp=view_rfq&rfq_ref=".$id.$ref_div);
+            }elseif($_POST["doc_type"] == "Quotation"){
+                header("location:index.php?rdp=view_quotation&id=".$id.$ref_div);
+            }else{
+              //echo $_POST["url"];
+              header("location:index.php?rdp=dashboard");
+            }
+          }
+        }
       }
-    }
+      
+
+    
 
     }  else { //if ($username != "zms") {
         header("location:../index.php?l=". $username);

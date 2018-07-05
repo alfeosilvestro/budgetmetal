@@ -121,7 +121,19 @@
                           if(isset($_GET["ref_div"])){
                            $ref_div = $_GET["ref_div"];
                          }
+
+                         $url="";
+                          if(isset($_GET["url"])){
+                           $url = $_GET["url"];
+                         }
+
+                         $fileid="";
+                          if(isset($_GET["fileid"])){
+                           $fileid = $_GET["fileid"];
+                         }
                             ?>
+                            <input type="hidden" name="url" value="<?php echo $url;?>">
+                            <input type="hidden" name="fileid" value="<?php echo $fileid;?>">
                             <input type="hidden" name="doc_type" value="<?php echo $doc_type;?>">
                             <input type="hidden" name="id" value="<?php echo $id;?>">
                               <input type="hidden" name="ref_div" value="<?php echo $ref_div;?>">
