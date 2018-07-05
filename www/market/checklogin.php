@@ -36,14 +36,24 @@
 
    if($num_rows == 1) {
 
-    $_SESSION['user']= $_POST["username"];
-		$_SESSION['usertype']  = $usertype;
-		$_SESSION['userid'] = $userid;
-    $_SESSION['Company_Admin'] = $company_admin;
-    $_SESSION['M_Company_Id'] = $companyid;
-        $_SESSION['start'] = time(); // taking now logged in time
-        $_SESSION['expire'] = $_SESSION['start'] + (180 * 60); // ending a session in 30     minutes from the starting time
-		//echo $usertype. $userid;
+      $_SESSION['user'] = $_POST["username"];
+      $_SESSION['usertype']  = $usertype;
+      $_SESSION['userid'] = $userid;
+      $_SESSION['Company_Admin'] = $company_admin;
+      $_SESSION['M_Company_Id'] = $companyid;
+      $_SESSION['start'] = time(); // taking now logged in time
+      $_SESSION['expire'] = $_SESSION['start'] + (180 * 60); // ending a session in 30     minutes from the starting time
+      //echo $usertype. $userid;
+
+      $where = array('user_email' => $_SESSION['user']);
+      $dataArray = array( 'status' => -1);
+      $db->update('single_sign_on', $dataArray,$where);
+      
+      //Add to autnentication table
+      $dataArray = array('authentication_token' => "test_token", 'user_email' => $_SESSION['user'], 'status' => 1,'timeout' => date('Y-m-d H:i:s'));
+
+      $db->insert('single_sign_on', $dataArray);
+
     $id = "";
     if(isset($_POST["id"])){
       $id = $_POST["id"];
