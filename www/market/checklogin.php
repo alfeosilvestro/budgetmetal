@@ -45,14 +45,27 @@
       $_SESSION['expire'] = $_SESSION['start'] + (180 * 60); // ending a session in 30     minutes from the starting time
       //echo $usertype. $userid;
 
-      $where = array('user_email' => $_SESSION['user']);
-      $dataArray = array( 'status' => -1);
-      $db->update('single_sign_on', $dataArray,$where);
+      $where = array('User_Email' => $_SESSION['user']);
+      $dataArray = array( 'Status' => -1);
+      $db->update('single-sign-on', $dataArray, $where);
+
+      //setcookie("name","value",time()+3600*24,"/","budgetmetal.com");
       
       //Add to autnentication table
-      $dataArray = array('authentication_token' => "test_token", 'user_email' => $_SESSION['user'], 'status' => 1,'timeout' => date('Y-m-d H:i:s'));
+      
+      $t=time() + (120 * 60);
+      $dataArray = array('Authentication_Token' => md5($_SESSION['user']), 
+      'User_Email' => $_SESSION['user'], 
+      'Status' => 1, 
+      'Timeout' => date('Y-m-d H:i:s', $t), 
+      'CreatedDate' => date('Y-m-d H:i:s'), 
+      'CreatedBy' => $_SESSION['user'], 
+      'UpdatedDate' => date('Y-m-d H:i:s'), 
+      'UpdatedBy' => "", 
+      'IsActive' => 1, 
+      'Version' => ""); 
 
-      $db->insert('single_sign_on', $dataArray);
+      $db->insert('single-sign-on', $dataArray);
 
     $id = "";
     if(isset($_POST["id"])){
