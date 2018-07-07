@@ -111,7 +111,22 @@
           header('Location: '.$newURL);
           //header("http://localhost:5685/home/gallery?fileid=" . $fileid . "&token=". $token );
         }elseif($_POST["url"] == "supplier"){
-            header("location:index.php?rdp=list_supplier&id=".$id.$ref_div);
+          $Id = 0;
+          $sql = "SELECT * FROM `m_company`  where 	Reg_No = '".$fileid . "' Limit 1";
+          $result = $conn->query($sql);
+          if (isset($result)){
+            if ($result->num_rows > 0) {
+              while($row = $result->fetch_assoc()) {
+                $Id = $row["Id"];
+              }
+            }
+          }
+          if($Id == 0){
+            header("location:index.php?rdp=list_supplier");
+          }else{
+            header("location:index.php?rdp=company_profile&companyid=". $Id);
+          }
+            
         }elseif($_POST["url"] == "rfq"){
           header("location:index.php?rdp=create_rfq");
         }else{
