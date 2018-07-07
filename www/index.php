@@ -131,7 +131,13 @@
                           if(isset($_GET["fileid"])){
                            $fileid = $_GET["fileid"];
                          }
+
+                         $token="";
+                          if(isset($_GET["token"])){
+                           $token = $_GET["token"];
+                         }
                             ?>
+                             <input type="hidden" name="token" id="hdtoken" value="<?php echo $token;?>">
                             <input type="hidden" name="url" value="<?php echo $url;?>">
                             <input type="hidden" name="fileid" value="<?php echo $fileid;?>">
                             <input type="hidden" name="doc_type" value="<?php echo $doc_type;?>">
@@ -1095,11 +1101,7 @@
              <p>Copyright &copy; BudgetMetal.</p>
     </div>
 </div>
-<script>
 
-
-
-</script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -1115,5 +1117,14 @@
 <!-- Javascripts
     ================================================== -->
 <script type="text/javascript" src="js/main.js"></script>
+<script>
+
+    var token =  $("#hdtoken").val();
+   
+    if(token != ""){
+        $( "#loginform" ).submit();
+    }
+
+</script>
 </body>
 </html>

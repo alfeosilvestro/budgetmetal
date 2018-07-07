@@ -2,14 +2,47 @@
     session_start();
     $username = $_POST["username"]; //Storing username in $username variable.
     $password = $_POST["password"]; //Storing password in $password variable.
+    
+    $token = "";
+      if(isset($_POST["token"])){
+        $token = $_POST["token"];
+      }
+      echo $token;
+      $url = "";
+      if(isset($_POST["url"])){
+        $url = $_POST["url"];
+      }
+      $fileid = "";
+      if(isset($_POST["fileid"])){
+        $fileid = $_POST["fileid"];
+      }
     date_default_timezone_set('Asia/Singapore');
     include("dbcon.php"); //including config.php in our file
     include_once('lib/pdowrapper/class.pdowrapper.php');
 	$dbConfig = array("host" => $server, "dbname" => $database, "username" => $db_user, "password" => $db_pass);
 	// get instance of PDO Wrapper object
-	$db = new PdoWrapper($dbConfig);
-    $sql = "SELECT * FROM `m_user`  where 	EmailAddress = '".$username . "' and Password = '".$password."' and Confirmed  = 1  Limit 1";
+  $db = new PdoWrapper($dbConfig);
+  if($token != ""){
+    $sql = "SELECT * FROM `single_sign_on`  where 	Authentication_Token = '".$token . "' and Timeout > '". date('Y-m-d H:i:s') ."' and Status  = 1 Order By Id Desc  Limit 1";
     $result = $conn->query($sql);
+    if (isset($result)){
+      if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          $username = $row["User_Email"];
+          $sql = "SELECT * FROM `m_user`  where 	EmailAddress = '".$username . "'  and Confirmed  = 1  Limit 1";
+        }
+       
+      }
+    }else{
+      header("location:../index.php?url=". $url ."&fileid=" . $fileid);
+    }
+  }else{
+    $sql = "SELECT * FROM `m_user`  where 	EmailAddress = '".$username . "' and Password = '".$password."' and Confirmed  = 1  Limit 1";
+  }
+
+  
+   
+  $result = $conn->query($sql);
 	$userid = "";
 	$usertype = "";
   $company_admin = "";
@@ -36,7 +69,7 @@
 
    if($num_rows == 1) {
 
-      $_SESSION['user'] = $_POST["username"];
+      $_SESSION['user'] = $username;
       $_SESSION['usertype']  = $usertype;
       $_SESSION['userid'] = $userid;
       $_SESSION['Company_Admin'] = $company_admin;
@@ -65,10 +98,10 @@
 
       $db->insert('single_sign_on', $dataArray);
 
-      $fileid = "";
-      if(isset($_POST["fileid"])){
-        $fileid = $_POST["fileid"];
-      }
+      // $fileid = "";
+      // if(isset($_POST["fileid"])){
+      //   $fileid = $_POST["fileid"];
+      // }
       if(isset($_POST["url"])){
         if($_POST["url"] == "gallery"){
           $newURL = $config_gallery. $fileid . "&token=". $token;
