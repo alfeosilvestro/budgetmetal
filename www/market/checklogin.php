@@ -45,18 +45,13 @@
       $_SESSION['expire'] = $_SESSION['start'] + (180 * 60); // ending a session in 30     minutes from the starting time
       //echo $usertype. $userid;
 
-      $where = array('User_Email' => $_SESSION['user']);
-      $dataArray = array( 'Status' => -1, 'UpdatedDate' => date('Y-m-d H:i:s'),'UpdatedBy' =>  $_SESSION['user']);
-      $db->update('single_sign_on', $dataArray, $where);
-
-      // $where = array('User_Email' => $_SESSION['user'], 'Status' => -1);
-      // $dataArray = array( 'Status' => 2, 'UpdatedDate' => date('Y-m-d H:i:s'),'UpdatedBy' => 'a');
-      // $db->update('single_sign_on', $dataArray, $where);
-      //setcookie("name","value",time()+3600*24,"/","budgetmetal.com");
+      $sql = "Update `single_sign_on` Set `UpdatedBy` ='".$_SESSION['user']."', `UpdatedDate`='". date('Y-m-d H:i:s') ."', Status=-1 where User_Email='".$_SESSION['user']."' AND Status=1";
+      $result = $conn->query($sql);
       
       //Add to autnentication table
       $token = md5($_SESSION['user']);
       $t=time() + (120 * 60);
+
       $dataArray = array('Authentication_Token' =>  $token, 
       'User_Email' => $_SESSION['user'], 
       'Status' => 1, 
