@@ -33,6 +33,9 @@
         }
        
       }
+      else{
+        header("location:../index.php?url=". $url ."&fileid=" . $fileid);
+      }
     }else{
       header("location:../index.php?url=". $url ."&fileid=" . $fileid);
     }
@@ -140,6 +143,6 @@
     
 
     }  else { //if ($username != "zms") {
-        header("location:../index.php?l=". $username);
+       // header("location:../index.php?l=". $username);
     }
 ?>
