@@ -967,8 +967,8 @@
 				<!-- Carousel indicators -->
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<!-- <li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li> -->
+					 <li data-target="#myCarousel" data-slide-to="1"></li>
+					<!--<li data-target="#myCarousel" data-slide-to="2"></li> -->
 				</ol>   
 				<!-- Wrapper for carousel items -->
 				<div class="carousel-inner">
@@ -1007,6 +1007,57 @@
 											<div class="overview">
 												<div class="name"><b>Jackson</b></div>
 												<div class="details">PSC Freyssinet</div>
+												<!-- <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+													</ul>
+												</div> -->
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+						</div>			
+                    </div>
+                    <div class="item carousel-item">
+						<div class="row">
+							
+							 <div class="col-sm-6">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">“…BudgetMetal is a great platform for any projects needing metal works. It is very easy to use, efficient, and gets all the quotes you need to compare and make smarter decisions. Customer service is top notch too! Keep up the good work!”</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Ryan</b></div>
+												<div class="details">Aptos Creations</div>
+												 <!-- <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>  -->
+											</div>
+										</div>
+									</div>
+								</div>								
+                            </div> 
+                            <div class="col-sm-6">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">“The platform has been great at helping me reach out to vendors that I would otherwise not have engaged.… it has been a great experience(interface).”</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Gwen</b></div>
+												<div class="details">Blu Logistics</div>
 												<!-- <div class="star-rating">
 													<ul class="list-inline">
 														<li class="list-inline-item"><i class="fa fa-star"></i></li>
