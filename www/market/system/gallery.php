@@ -75,9 +75,9 @@ $('#loader').show();
         // alert(response.ResultObject.TotalRecords);
         //var image = new Image();
         
-         //console.log(response);
-         var obj = response.ResultObject.Records;
-         //console.log(obj);
+         console.log(response);
+         var obj = response.Result.Records;
+         console.log(obj);
          $(".pagination").empty();
          $("#result").empty();
          for(var k in obj) {
@@ -110,8 +110,8 @@ $('#loader').show();
             "</div>");   
          }
 
-         var totalpage= response.ResultObject.TotalPage;
-         var currentpage= response.ResultObject.CurrentPage;
+         var totalpage= response.Result.TotalPage;
+         var currentpage= response.Result.CurrentPage;
          var i;
         for (i = 1; i <= totalpage; i++) { 
             if(i == currentpage){
