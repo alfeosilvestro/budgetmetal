@@ -9,5 +9,5 @@
     $config_gallery_api = "http://35.198.239.233:8880/Galleries/get?page=";
     $config_gallery_download = "http://35.198.239.233:8880/Galleries/download?fileid=";
     $config_gallery_search = "http://35.198.239.233:8880/Galleries/get?keyword=<search_key>&page=<page_request>";
-    $config_gallery = "http://localhost:5685/home/gallery?fileid=";
+    $config_gallery = "http://35.198.239.233:2052?fileid=";
 ?>
