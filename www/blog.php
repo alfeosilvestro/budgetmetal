@@ -119,6 +119,7 @@
                 </div>
             </div>
         </div>
+        <hr/>
         <div class="row">
             <div class="col-md-12">
                 <div class="about-text">
@@ -158,7 +159,7 @@
                 </div>
             </div>
         </div>
-        </br>
+        </hr>
     </div>
 </body>
 </html>
