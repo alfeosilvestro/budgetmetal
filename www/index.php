@@ -57,7 +57,7 @@
                 <li><a class="page-scroll" href="#testimonials">Testimonial</a></li>
                 <li><a class="page-scroll" href="#contact">Contact</a></li>
                 <li><a class="page-scroll" href="http://35.198.239.233:2052/">Gallery</a></li>
-                <!-- <li><a class="page-scroll" href="#works">Blog</a></li> -->
+                <li><a class="page-scroll" href="blog.php">Blog</a></li>
                 <li><a class="page-scroll" href="faq.php" target="_blank">FAQs</a></li>
                 <li><a class="page-scroll" href="market/register.php">Sign Up for Free</a></li>
 

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +6,7 @@
     <title>BudgetMetal</title>
     <meta name="description" content="BudgetMetal">
     <meta name="author" content="">
-<link rel="shortcut icon" type="image/png" href="fav.ico"/>
+    <link rel="shortcut icon" type="image/png" href="fav.ico"/>
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
@@ -41,23 +39,25 @@
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"><i
                     class="fa fa-bars"></i></button>
-            <a class="navbar-brand page-scroll" href="#page-top"> BudgetMetal | <small style="font-size: 8pt !important;">soft launch</small> </a></div>
+            <a class="navbar-brand page-scroll" href="#page-top"> BudgetMetal </a></div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                 <li class="hidden"><a href="#page-top"></a></li>
-                <li><a class="page-scroll" href="index.php#intro">Home</a></li>
-                <li><a class="page-scroll" href="index.php#about">About</a></li>
-                <li><a class="page-scroll" href="index.php#services">How it works?</a></li>
-				 <li><a class="page-scroll" href="index.php#works">Services</a></li>
-                 <li><a class="page-scroll" href="index.php#testimonial">Testimonial</a></li>
-                <li><a class="page-scroll" href="index.php#contact">Contact</a></li>
-                <li><a class="page-scroll" href="#" target="_blank">FAQs</a></li>
+                <li><a class="page-scroll" href="#intro">Home</a></li>
+                <!-- 
+                <li><a class="page-scroll" href="#about">About</a></li>
+                <li><a class="page-scroll" href="#services">How it works?</a></li> 
+                -->
+				<li><a class="page-scroll" href="#works">Services</a></li>
+                <li><a class="page-scroll" href="#testimonials">Testimonial</a></li>
+                <li><a class="page-scroll" href="#contact">Contact</a></li>
+                <li><a class="page-scroll" href="http://35.198.239.233:2052/">Gallery</a></li>
+                <li><a class="page-scroll" href="blog.php">Blog</a></li>
+                <li><a class="page-scroll" href="faq.php" target="_blank">FAQs</a></li>
                 <li><a class="page-scroll" href="market/register.php">Sign Up for Free</a></li>
-
-
             </ul>
         </div>
         <!-- /.navbar-collapse -->
