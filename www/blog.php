@@ -159,7 +159,55 @@
                 </div>
             </div>
         </div>
-        </hr>
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="about-text">
+                    <h3>Trends in Metal Fabrication</h3>
+                </div>
+                <div class="about-text">
+                    <p>
+                    Just like in the fashion and technology industries, the trends in the metal industry changes very rapidly especially since the turn of the century. The only way to effectively keep up is to stay abreast of the changes and adjust accordingly. The year is beyond the halfway mark and there are distinct patterns that can be seen if only one bothers to look closely. The metal industry is foundation on which several other sectors rest; from aerospace and automobiles to electronics, architecture and construction, here are some of the projections to keep an eye on.
+                    </p>
+                    <p>
+                    <b>Automation</b>
+                    </p>
+                    <p>
+                    The advancement of the technological world has ensured that new ideas for enabling the automation of machines used for different purposes are always increasing. As the use for fabrication increases, the work load becomes impossible to surmount, without remote control service. You definitely want to invest in employing technicians and programmers who are familiar with the IoT (internet of things) can program, design, operate, more efficient automotive options. 
+                    </p>
+                    <p>
+                    <b>Enterprise Resource Planning (ERP)</b>
+                    </p>
+                    <p>
+                    Enterprise resource planning can be said as a process whereby a company (manufacturer) functionally manages and integrates the vital parts of its business. ERP works as the binding glue behind the different computer systems in moderately large firms. With ERP, every unit has its system but can still effectively communicate with the rest of the firm. It can be likened to the central nervous system of the human body. 
+                    </p>
+
+                    <p>
+                    <b>3D metal printing</b>
+                    </p>
+                    <p>
+                    Modern day development of products has a whole lot to do with metal 3D printing. 3D metal printing allows direct manufacturing of difficult parts for end use and also helps in ensuring the tooling for technologies in conventional manufacturing, cost reduction and shorter time frame. To many, 3D technology can also be called Selective Laser Melting (SLM) and Direct Metal Laser Sintering (DMLS)
+                    </p>
+
+                    <p>
+                    <b>Reshoring and Raw materials</b>
+                    </p>
+                    <p>
+                    Another new trend making waves is the shift from ‘offshoring’ where the raw materials are sourced from offshore locations, to ‘onshore’ or ‘nearshore’ where the raw materials are developed close to the production site. With Donald Trump’s new tariff systems, importing raw materials to the United States is problematic and expensive, this has encouraged the internal market and thus, production within the US is relatively more cost effective. Another contributing factor is the increased wages in Asia, especially china, which is driving businesses towards other locations especially the US. 
+                    </p>
+                    <p>
+                    <b>Labor Supply</b>
+                    </p>
+                    <p>
+                    With the increase in demand comes a corresponding need for labor, this is the price to pay for expansion it is a small price that is very much worth the trouble. Alternatively, you can turn ore to robotics and automation as an alternative to hiring more people.
+                    </p>
+                    <p>
+                    These new trends have given the face of the metal industry a new look. It is in prime position to become the world’s largest and leading source of the economy in no time. Even with the major economic shakes and shifts in some continents like Asia, Europe and North America, it will remain strong and on the rise. If you properly harness the advantages now in this relatively fledgling phase, when there is a large market and not enough participation, you will set your company on good grounds for decades. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr/>
     </div>
 </body>
 </html>
