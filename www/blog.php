@@ -30,8 +30,8 @@
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <div id="preloader">
-    <div id="status"><img src="img/preloader.gif" height="64" width="64" alt=""></div>
-    </div>
+    <!-- <div id="status"><img src="img/preloader.gif" height="64" width="64" alt=""></div>
+    </div> -->
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
