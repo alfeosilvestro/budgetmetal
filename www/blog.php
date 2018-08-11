@@ -63,7 +63,7 @@
         </div>
         <!-- /.container -->
     </nav>
-    <div id="about">
+    <div id="blog">
     <div class="container">
         <div class="section-title text-center center">
             <h2>Blog</h2>
