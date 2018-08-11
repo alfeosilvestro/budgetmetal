@@ -868,3 +868,7 @@ form.login a:hover
     background: #1abc9c;
     border: 5px double;    
 }
+
+.blog {
+	font-size: 350% !important;
+  }
