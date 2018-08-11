@@ -6582,3 +6582,7 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.blog {
+  font-size: 150% !important;
+}

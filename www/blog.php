@@ -69,7 +69,7 @@
             <h2>Blog</h2>
             <hr>
         </div>
-        <div class="row">
+        <div class="row blog">
             <div class="col-md-12">
                 <div class="about-text">
                     <h3>CNC (Computer Numerical Control) Cutting </h3>
@@ -120,7 +120,7 @@
             </div>
         </div>
         <hr/>
-        <div class="row">
+        <div class="row blog">
             <div class="col-md-12">
                 <div class="about-text">
                     <h3>Metal Fabrication</h3>
@@ -160,7 +160,7 @@
             </div>
         </div>
         <hr/>
-        <div class="row">
+        <div class="row blog">
             <div class="col-md-12">
                 <div class="about-text">
                     <h3>Trends in Metal Fabrication</h3>
