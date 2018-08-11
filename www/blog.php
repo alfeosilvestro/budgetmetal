@@ -30,8 +30,8 @@
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <div id="preloader">
-    <!-- <div id="status"><img src="img/preloader.gif" height="64" width="64" alt=""></div>
-    </div> -->
+    <!-- <div id="status"><img src="img/preloader.gif" height="64" width="64" alt=""></div> -->
+    </div>
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
@@ -45,14 +45,14 @@
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden"><a href="#page-top"></a></li>
-                    <li><a class="page-scroll" href="#intro">Home</a></li>
+                    <li><a class="page-scroll" href="http://www.budgetmetal.com/#intro">Home</a></li>
                     <!-- 
                     <li><a class="page-scroll" href="#about">About</a></li>
                     <li><a class="page-scroll" href="#services">How it works?</a></li> 
                     -->
-                    <li><a class="page-scroll" href="#works">Services</a></li>
-                    <li><a class="page-scroll" href="#testimonials">Testimonial</a></li>
-                    <li><a class="page-scroll" href="#contact">Contact</a></li>
+                    <li><a class="page-scroll" href="http://www.budgetmetal.com/#works">Services</a></li>
+                    <li><a class="page-scroll" href="http://www.budgetmetal.com/#testimonials">Testimonial</a></li>
+                    <li><a class="page-scroll" href="http://www.budgetmetal.com/#contact">Contact</a></li>
                     <li><a class="page-scroll" href="http://35.198.239.233:2052/">Gallery</a></li>
                     <li><a class="page-scroll" href="blog.php">Blog</a></li>
                     <li><a class="page-scroll" href="faq.php" target="_blank">FAQs</a></li>
