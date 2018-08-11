@@ -29,16 +29,16 @@
     ?>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-<div id="preloader">
-    <!-- <div id="status"><img src="img/preloader.gif" height="64" width="64" alt=""></div> -->
-    </div>
+    <!-- <div id="preloader">
+    <div id="status"><img src="img/preloader.gif" height="64" width="64" alt=""></div>
+    </div> -->
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"><i
                         class="fa fa-bars"></i></button>
-                        <a class="navbar-brand page-scroll" href="#page-top"> BudgetMetal </a></div>
+                        <a class="navbar-brand page-scroll" href="http://www.budgetmetal.com/#page-top"> BudgetMetal </a></div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
@@ -72,7 +72,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="about-text">
-                    CNC (Computer Numerical Control) Cutting 
+                    <h3>CNC (Computer Numerical Control) Cutting </h3>
                 </div>                
                 <div class="about-text">
                     <p>The choice of what type of cutting machine to buy depends on what is most important to you, and what is most valuable to you. Whichever you pick in the end will be decided by:</p>
@@ -123,7 +123,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="about-text">
-                    Metal Fabrication  
+                    <h3>Metal Fabrication</h3>
                 </div>                
                 <div class="about-text">                    
                     <p>
