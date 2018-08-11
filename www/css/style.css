@@ -869,6 +869,6 @@ form.login a:hover
     border: 5px double;    
 }
 
-.blog {
+.blog p li {
 	font-size: 350% !important;
   }
