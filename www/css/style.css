@@ -869,6 +869,11 @@ form.login a:hover
     border: 5px double;    
 }
 
-.blog p li {
+#blog .blog-head h3{
+	font-size: 350% !important;
+}
+
+#blog .blog-body p li {
+	padding: 5px !important;
 	font-size: 350% !important;
   }

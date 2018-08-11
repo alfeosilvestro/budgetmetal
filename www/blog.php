@@ -71,10 +71,10 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="blog">
+                <div class="blog-head">
                     <h3>CNC (Computer Numerical Control) Cutting </h3>
                 </div>                
-                <div class="blog">
+                <div class="blog-body">
                     <p>The choice of what type of cutting machine to buy depends on what is most important to you, and what is most valuable to you. Whichever you pick in the end will be decided by:</p>
 
                     <ul>
@@ -122,10 +122,10 @@
         <hr/>
         <div class="row">
             <div class="col-md-12">
-                <div class="blog">
+                <div class="blog-head">
                     <h3>Metal Fabrication</h3>
                 </div>                
-                <div class="blog">                    
+                <div class="blog-body">                    
                     <p>
                     In the manufacturing industry, different metal tools and parts are used for different purposes, from medical supplies to kitchen silverware and widely in the aerospace and building industries. When making a decision on the material to use for a metal fabrication, the following must be carefully considered:
                     </p>
@@ -162,10 +162,10 @@
         <hr/>
         <div class="row">
             <div class="col-md-12">
-                <div class="blog">
+                <div class="blog-head">
                     <h3>Trends in Metal Fabrication</h3>
                 </div>
-                <div class="blog">
+                <div class="blog-body">
                     <p>
                     Just like in the fashion and technology industries, the trends in the metal industry changes very rapidly especially since the turn of the century. The only way to effectively keep up is to stay abreast of the changes and adjust accordingly. The year is beyond the halfway mark and there are distinct patterns that can be seen if only one bothers to look closely. The metal industry is foundation on which several other sectors rest; from aerospace and automobiles to electronics, architecture and construction, here are some of the projections to keep an eye on.
                     </p>
