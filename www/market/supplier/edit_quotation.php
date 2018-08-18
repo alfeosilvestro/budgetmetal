@@ -342,7 +342,7 @@
     $("input[id='bid_price']").keyup(function () {
         
         var bid_price = $("input[id='bid_price']").val();
-        if(isNaN(bid_price) == false){
+        if(isNaN(bid_price) == true){
             $("input[id='bid_price']").val(parsefloat(bid_price));
         }
     });
