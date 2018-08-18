@@ -404,7 +404,9 @@ $q_id = 0;
 
     $("input[id='bid_price']").keyup(function () {
       var bid_price = $("input[id='bid_price']").val();
-      $("input[id='bid_price']").val(parseInt(bid_price));
+      if(isNaN(bid_price) == false){
+            $("input[id='bid_price']").val(parsefloat(bid_price));
+        }
     });
 
     $("#btnsave_quotation_top").click(function (e) {
