@@ -87,7 +87,7 @@
                                         </a>
                                     </td>
                                     <td>$<?php echo number_format($row["QuotedFigure"], 2); ?></td>
-									<td><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
+									<td  data-sort="<?php echo date('YmdHMs', strtotime($row["CreatedDate"]));?>"><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
 									<td>
                                         <!-- AMK - Substitude document status when user type is buyer -->
                                         <?php

@@ -126,7 +126,7 @@ if(isset($_GET["list"])){
                       <td><?php echo $row["CompanyName"];?></td>
                       <td><?php echo $row["DocumentNo"];?></td>
                       <td><?php echo $row["Title"];?></td>
-                      <td><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
+                      <td data-sort="<?php echo date('YmdHMs', strtotime($row["CreatedDate"]));?>"><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
                       <td><?php echo $row["Status"];?></td>
                       <td><?php
                       $out = '<a href="index.php?rdp=view_rfq&op=view&rfq_ref=' . $row["DocumentNo"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a> <a href="index.php?rdp=edit_rfq&op=edit&rfq_ref=' . $row["DocumentNo"] .
@@ -184,7 +184,7 @@ if(isset($_GET["list"])){
                     <td><?php echo $row["CompanyName"];?></td>
                     <td><?php echo $row["DocumentNo"];?></td>
                     <td><?php echo $row["Title"];?></td>
-                    <td><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
+                    <td  data-sort="<?php echo date('YmdHMs', strtotime($row["CreatedDate"]));?>"><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
                     <td><?php echo $row["Status"];?></td>
                     <td><?php
                     if(($_SESSION['usertype'] == 'Buyer')){
@@ -248,7 +248,7 @@ if(isset($_GET["list"])){
                     <td><?php echo $row["CompanyName"];?></td>
                     <td><?php echo $row["DocumentNo"];?></td>
                     <td><?php echo $row["Title"];?></td>
-                    <td><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
+                    <td  data-sort="<?php echo date('YmdHMs', strtotime($row["CreatedDate"]));?>"><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
                     <td><?php echo $row["Status"];?></td>
                     <td><?php
                     $out = '<a href="index.php?rdp=view_rfq&op=view&rfq_ref=' . $row["DocumentNo"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
@@ -304,7 +304,7 @@ if(isset($_GET["list"])){
                     <td><?php echo $row["CompanyName"];?></td>
                     <td><?php echo $row["DocumentNo"];?></td>
                     <td><?php echo $row["Title"];?></td>
-                    <td><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
+                    <td  data-sort="<?php echo date('YmdHMs', strtotime($row["CreatedDate"]));?>"><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
                     <td><?php echo $row["Status"];?></td>
                     <td><?php
                     $out = '<a href="index.php?rdp=view_rfq&op=view&rfq_ref=' . $row["DocumentNo"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
@@ -364,7 +364,7 @@ if(isset($_GET["list"])){
                       <td><?php echo $row["CompanyName"];?></td>
                       <td><?php echo $row["DocumentNo"];?></td>
                       <td><?php echo $row["Title"];?></td>
-                      <td><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
+                      <td  data-sort="<?php echo date('YmdHMs', strtotime($row["CreatedDate"]));?>"><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
                       <td><?php echo $row["Status"];?></td>
                       <td><?php
                       $out = '<a href="index.php?rdp=view_rfq&op=view&rfq_ref=' . $row["DocumentNo"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a> ';

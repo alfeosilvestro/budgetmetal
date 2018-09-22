@@ -591,7 +591,7 @@ if (isset($result)){
                       <td><?php echo $row["DocumentNo"];?></td>
                       <td><?php echo $row["CompanyName"];?></td>
                       <td><?php echo $row["ContactPersonFName"].' '. $row["ContactPersonLName"];?></td>
-                      <td><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
+                      <td  data-sort="<?php echo date('YmdHMs', strtotime($row["CreatedDate"]));?>"><?php echo date('d-m-Y', strtotime($row["CreatedDate"]));?></td>
                       <td><?php echo $row["Status"];?></td>
                       <td><?php
                       $out = '<a href="index.php?rdp=view_quotation&op=view&id=' . $row["Id"] .'" class="btn btn-warning btn-xs"><span class="icon-pencil"></span>View</a>';
