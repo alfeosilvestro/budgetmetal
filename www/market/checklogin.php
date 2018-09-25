@@ -44,7 +44,7 @@
   }
 
   
-   
+  $num_rows = 0;
   $result = $conn->query($sql);
 	$userid = "";
 	$usertype = "";
@@ -158,6 +158,6 @@
     
 
     }  else { //if ($username != "zms") {
-       // header("location:../index.php?l=". $username);
+        header("location:../index.php?l=". $username);
     }
 ?>
