@@ -147,6 +147,12 @@
                             <input type="hidden" name="doc_type" value="<?php echo $doc_type;?>">
                             <input type="hidden" name="id" value="<?php echo $id;?>">
                               <input type="hidden" name="ref_div" value="<?php echo $ref_div;?>">
+                              <?php
+                                     if(isset($_GET['l'])){
+                                       echo "<div class='row' style='text-align:center;'><div style='color:white;background-color:red;margin:2px;padding:3px;width:100%'>Email or Password is invalid!</div></div>";
+                                     }
+
+                                    ?>
                             <div class="remember-forgot">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -173,12 +179,7 @@
                                             </ul>
                                         -->
                                     </div>
-                                    <?php
-                                     if(isset($_GET['l'])){
-                                       echo "<div class='row'><small style='color:white;'>Email or Password is invalid!</small></div>";
-                                     }
-
-                                    ?>
+                                   
                                 </div>
                             </div>
 
