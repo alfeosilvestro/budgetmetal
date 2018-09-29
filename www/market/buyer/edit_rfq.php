@@ -497,7 +497,7 @@ if (isset($result)){
                     <div id="overlay">
                       <div class="text-center">
                         <br><br><br>
-                        <span style="color:white;" id="addMoreSupplier"><h4>You have reached the limit of 4 chosen suppliers for this RFQ.
+                        <span style="color:white;" id="addMoreSupplier"><h4>You have reached the limit of 12 chosen suppliers for this RFQ.
                           <br><button class="btn btn-warning btn-md" type="button" name="button" OnClick="addMoreSelectedSupplier();" >Click Here</button> to allow BudgetMetal to suggest another 4 suppliers for you. </h4> </span>
                           </div>
 
