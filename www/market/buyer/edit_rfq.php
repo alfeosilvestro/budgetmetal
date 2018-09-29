@@ -673,10 +673,10 @@ if (isset($result)){
         $("#selectedRCount").removeClass("badge");
       }
       else{
-        if(rowCount==4){
+        if(rowCount==12){
           document.getElementById("overlay").style.display = "block";
           $("#addMoreSupplier").show();
-        }else if(rowCount<4){
+        }else if(rowCount<12){
           document.getElementById("overlay").style.display = "none";
           $("#addMoreSupplier").show();
         }else{
