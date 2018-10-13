@@ -791,14 +791,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/2D_01.png"
+                            <a href="img/services/2D_01.jpg"
                                title="2D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>2D Modelling</p>
                                 </div>
-                                <img src="img/services/2D_01.png"
+                                <img src="img/services/2D_01.jpg"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
                     </div>
                 </div>
@@ -806,14 +806,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/2D_02.png"
+                            <a href="img/services/2D_02.jpg"
                                title="2D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>2D Modelling</p>
                                 </div>
-                                <img src="img/services/2D_02.png"
+                                <img src="img/services/2D_02.jpg"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
                     </div>
                 </div>
@@ -821,14 +821,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/CAD01.png"
+                            <a href="img/services/CAD01.jpg"
                                title="3D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>3D Modelling</p>
                                 </div>
-                                <img src="img/services/CAD01.png"
+                                <img src="img/services/CAD01.jpg"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
                     </div>
                 </div>
@@ -836,14 +836,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/CAD02.png"
+                            <a href="img/services/CAD02.jpg"
                                title="3D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>3D Modelling</p>
                                 </div>
-                                <img src="img/services/CAD02.png"
+                                <img src="img/services/CAD02.jpg"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
                     </div>
                 </div>
@@ -851,14 +851,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/CAD03.png"
+                            <a href="img/services/CAD03.jpg"
                                title="3D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>3D Modelling</p>
                                 </div>
-                                <img src="img/services/CAD03.png"
+                                <img src="img/services/CAD03.jpg"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
                     </div>
                 </div>
@@ -866,14 +866,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/Render01A.png"
+                            <a href="img/services/Render01A.jpg"
                                title="Printing"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>Modelling and Simulation</p>
                                 </div>
-                                <img src="img/services/Render01A.png"
+                                <img src="img/services/Render01A.jpg"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
                     </div>
                 </div>
@@ -881,14 +881,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/Render02A.png"
+                            <a href="img/services/Render02A.jpg"
                                title="3D Modelling"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>2D /3D</h4>
                                     <p>3D Modelling</p>
                                 </div>
-                                <img src="img/services/Render02A.png"
+                                <img src="img/services/Render02A.jpg"
                                      class="img-responsive" alt="2D / 3D Modelling and Simulation"> </a></div>
                     </div>
                 </div>
@@ -898,14 +898,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/3D_MetalPrint.png"
+                            <a href="img/services/3D_MetalPrint.jpg"
                                title="3D Metal Printing"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>3D Metal Printing</h4>
                                     <p>Professional metal printing</p>
                                 </div>
-                                <img src="img/services/3D_MetalPrint.png"
+                                <img src="img/services/3D_MetalPrint.jpg"
                                      class="img-responsive" alt="3D Metal Printing"> </a></div>
                     </div>
                 </div>
@@ -913,14 +913,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/3D_MetalPrint02.png"
+                            <a href="img/services/3D_MetalPrint02.jpg"
                                title="3D Metal Printing"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>3D Metal Printing</h4>
                                     <p>Professional metal printing</p>
                                 </div>
-                                <img src="img/services/3D_MetalPrint02.png"
+                                <img src="img/services/3D_MetalPrint02.jpg"
                                      class="img-responsive" alt="3D Metal Printing"> </a></div>
                     </div>
                 </div>
@@ -928,14 +928,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/3D_MetalPrint03.png"
+                            <a href="img/services/3D_MetalPrint03.jpg"
                                title="3D Metal Printing"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>3D Metal Printing</h4>
                                     <p>Professional metal printing</p>
                                 </div>
-                                <img src="img/services/3D_MetalPrint03.png"
+                                <img src="img/services/3D_MetalPrint03.jpg"
                                      class="img-responsive" alt="3D Metal Printing"> </a></div>
                     </div>
                 </div>
@@ -943,14 +943,14 @@
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="img/services/3D_MetalPrint04.png"
+                            <a href="img/services/3D_MetalPrint04.jpg"
                                title="3D Metal Printing"
                                rel="prettyPhoto">
                                 <div class="hover-text">
                                     <h4>3D Metal Printing</h4>
                                     <p>Professional metal printing</p>
                                 </div>
-                                <img src="img/services/3D_MetalPrint04.png"
+                                <img src="img/services/3D_MetalPrint04.jpg"
                                      class="img-responsive" alt="3D Metal Printing"> </a></div>
                     </div>
                 </div>
