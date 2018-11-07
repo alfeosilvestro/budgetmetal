@@ -973,13 +973,63 @@
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 					 <li data-target="#myCarousel" data-slide-to="1"></li>
+                     <li data-target="#myCarousel" data-slide-to="2"></li>
 					<!--<li data-target="#myCarousel" data-slide-to="2"></li> -->
 				</ol>   
 				<!-- Wrapper for carousel items -->
 				<div class="carousel-inner">
 					<div class="item carousel-item active">
 						<div class="row">
-							
+							 <div class="col-sm-6">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">“It is a fantastic platform and I will introduce to my friends. I am able to get competitive quotes from this platform.”</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Aloysious</b></div>
+												<div class="details">Gardens by the Bay</div>
+												 <!-- <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>  -->
+											</div>
+										</div>
+									</div>
+								</div>								
+                            </div> 
+                            <div class="col-sm-6">
+								<div class="testimonial-wrapper">
+									<div class="testimonial">“The response had been excellent, the 2 companies came forward for the quote had been prompt and clear with their supply and fabrication. Budgemetal had made the rates competitive. I have to say job well done.”</div>
+									<div class="media">
+										
+										<div class="media-body">
+											<div class="overview">
+												<div class="name"><b>Galiston</b></div>
+												<div class="details">Survey Consultancy</div>
+												<!-- <div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+													</ul>
+												</div> -->
+											</div>										
+										</div>
+									</div>
+								</div>								
+							</div>
+						</div>			
+                    </div>
+                    <div class="item carousel-item">
+						<div class="row">
 							 <div class="col-sm-6">
 								<div class="testimonial-wrapper">
 									<div class="testimonial">“…good and useful in submitting RFQ... certainly reduce(s) the hassle of finding suppliers/fabricators…”</div>
