@@ -387,7 +387,7 @@
                                      class="img-responsive" alt="Custom Fabrication"> </a></div>
                     </div>
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 custom_fabrication isotope-item"
+                <!-- <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 custom_fabrication isotope-item"
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
                         <div class="hover-bg">
@@ -401,7 +401,7 @@
                                 <img src="img/services/CustomFabrication_Storage_Cage_sauna.jpg"
                                      class="img-responsive" alt="Custom Fabrication"> </a></div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 custom_fabrication isotope-item"
                      style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
                     <div class="portfolio-item">
